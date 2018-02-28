@@ -1,6 +1,7 @@
 #
 #   ORG ADEMPIERE BASE
 #
+Bundle-Name: iDempiere Core
 Import-Package: !bsh*,\
  !it.sauronsoftware.cron4j*,\
  !org.adempiere*,\
