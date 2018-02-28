@@ -554,11 +554,13 @@ public final class Adempiere
 
     private static Adempiere instance;
     
-    private Adempiere(){}	
+    public Adempiere(){
+		instance = this;
+	}	
 
     public static Adempiere getI(){
         if(instance == null){
-            instance = new Adempiere();
+            new Adempiere();
         }
         return instance;
     }
