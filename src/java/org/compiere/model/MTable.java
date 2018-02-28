@@ -170,9 +170,7 @@ public class MTable extends X_AD_Table
 		List<IModelFactory> factoryList = Service.locator().list(IModelFactory.class).getServices();
 		if ( factoryList == null || factoryList.size() == 0 ) {
 			factoryList = Arrays.asList( new IModelFactory[] { new DefaultModelFactory() } );
-			System.out.println( "*** using DefaultModelFactory" );
 		}
-		System.out.println( "factoryList=" + factoryList + ":" + factoryList.size());
 		return factoryList;
 	}
 
@@ -406,7 +404,6 @@ public class MTable extends X_AD_Table
 			for(IModelFactory factory : factoryList)
 			{
 				po = factory.getPO(tableName, Record_ID, trxName);
-				System.out.println( "*** po1:" + po );
 				if (po != null)
 				{
 					if (po.get_ID() != Record_ID && Record_ID > 0)
@@ -417,7 +414,6 @@ public class MTable extends X_AD_Table
 			}
 		}
 
-		System.out.println( "*** po2:" + po );
 		if (po == null)
 		{
 			po = new GenericPO(tableName, getCtx(), Record_ID, trxName);
@@ -425,7 +421,6 @@ public class MTable extends X_AD_Table
 				po = null;
 		}
 
-		System.out.println( "*** po3:" + po );
 		return po;
 	}	//	getPO
 

@@ -247,8 +247,6 @@ public class DefaultModelFactory implements IModelFactory {
 
 	@Override
 	public PO getPO(String tableName, int Record_ID, String trxName) {
-		System.out.println( "getPO called for " + tableName );
-
 		Class<?> clazz = getClass(tableName);
 		if (clazz == null)
 		{
@@ -304,8 +302,6 @@ public class DefaultModelFactory implements IModelFactory {
 
 	@Override
 	public PO getPO(String tableName, ResultSet rs, String trxName) {
-		System.out.println( "getPO called for " + tableName );
-
 		Class<?> clazz = getClass(tableName);
 		if (clazz == null)
 		{

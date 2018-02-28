@@ -333,8 +333,6 @@ public class Query
 	{
 		T po = null;
 		String sql = buildSQL(null, true);
-
-		System.out.println( "*** SQL:" + sql );
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -361,7 +359,6 @@ public class Query
 			DB.close(rs, pstmt);
 			rs = null; pstmt = null;
 		}
-		System.out.println( "*** Pooooo:" + po );
 		return po;
 	}
 	
