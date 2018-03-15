@@ -9,3 +9,4 @@ It does not contain:
 - Callouts
 - technical code (database connection etc.)
 
+The current version is based on the [iDempiere 5.1 source code](http://sourceforge.net/projects/idempiere/files/v5.1/source-repo/idempiere_hgrepo_v5.1.zip/download).
