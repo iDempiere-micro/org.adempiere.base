@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  * Contributor(s): Carlos Ruiz - globalqss                                    *
  *****************************************************************************/
 package org.compiere.model;
@@ -20,6 +20,8 @@ package org.compiere.model;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -34,7 +36,9 @@ import org.adempiere.model.GenericPO;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
-import org.adempiere.base.DefaultModelFactory;
+import org.idempiere.common.util.KeyNamePair;
+
+import org.adempiere.base.DefaultModelFactory; //DAP NEED THIS
 
 /**
  *	Persistent Table Model
@@ -164,7 +168,6 @@ public class MTable extends X_AD_Table
 
 	/**	Static Logger	*/
 	private static CLogger	s_log	= CLogger.getCLogger (MTable.class);
-
 
 	private static List<IModelFactory> getFactoryList() {
 		List<IModelFactory> factoryList = Service.locator().list(IModelFactory.class).getServices();
@@ -365,19 +368,26 @@ public class MTable extends X_AD_Table
 	 * 	Get Identifier Columns of Table
 	 *	@return Identifier columns
 	 */
-	public String[] getIdentifierColumns()
-	{
-		getColumns(false);
-		ArrayList<String> list = new ArrayList<String>();
-		//
-		for (int i = 0; i < m_columns.length; i++)
-		{
-			MColumn column = m_columns[i];
+	public String[] getIdentifierColumns() {
+		ArrayList<KeyNamePair> listkn = new ArrayList<KeyNamePair>();
+		for (MColumn column : getColumns(false)) {
 			if (column.isIdentifier())
-				list.add(column.getColumnName());
+				listkn.add(new KeyNamePair(column.getSeqNo(), column.getColumnName()));
 		}
-		String[] retValue = new String[list.size()];
-		retValue = list.toArray(retValue);
+		// Order by SeqNo
+		Collections.sort(listkn, new Comparator<KeyNamePair>(){
+			public int compare(KeyNamePair s1,KeyNamePair s2){
+				if (s1.getKey() < s2.getKey())
+					return -1;
+				else if (s1.getKey() > s2.getKey())
+					return 1;
+				else
+					return 0;
+			}});
+		String[] retValue = new String[listkn.size()];
+		for (int i = 0; i < listkn.size(); i++) {
+			retValue[i] = listkn.get(i).getName();
+		}
 		return retValue;
 	}	//	getIdentifierColumns
 

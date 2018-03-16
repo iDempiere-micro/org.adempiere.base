@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -23,6 +23,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.adempiere.base.Core;
+import org.adempiere.base.IProductPricing;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -232,9 +234,8 @@ public class MRequisitionLine extends X_M_RequisitionLine
 			return;
 		//
 		if (log.isLoggable(Level.FINE)) log.fine("M_PriceList_ID=" + M_PriceList_ID);
-		boolean isSOTrx = false;
-		MProductPricing pp = new MProductPricing (getM_Product_ID(), 
-			getC_BPartner_ID(), getQty(), isSOTrx, get_TrxName());
+		IProductPricing pp = Core.getProductPricing();
+		pp.setRequisitionLine(this, get_TrxName());
 		pp.setM_PriceList_ID(M_PriceList_ID);
 	//	pp.setPriceDate(getDateOrdered());
 		//

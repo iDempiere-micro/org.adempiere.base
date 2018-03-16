@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -20,6 +20,7 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.Properties;
 
+import org.compiere.process.DocAction;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
@@ -329,7 +330,7 @@ public class MInventoryLine extends X_M_InventoryLine
 				log.saveError("Quantity", Msg.getElement(getCtx(), COLUMNNAME_QtyCount));
 				return false;
 			}
-			if (getQtyInternalUse().signum() == 0) {
+			if (getQtyInternalUse().signum() == 0 && !getParent().getDocAction().equals(DocAction.ACTION_Void)) {
 				log.saveError("FillMandatory", Msg.getElement(getCtx(), COLUMNNAME_QtyInternalUse));
 				return false;
 			}

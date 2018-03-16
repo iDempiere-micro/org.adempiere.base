@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -27,7 +27,7 @@ import org.adempiere.model.ITaxProvider;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
-
+import org.adempiere.base.IProductPricing;
 
 /**
  *	RMA Line Model
@@ -147,7 +147,8 @@ public class MRMALine extends X_M_RMALine
         }
         else if (getM_Product_ID() != 0)
         {
-        	MProductPricing pp = new MProductPricing (getM_Product_ID(), getParent().getC_BPartner_ID(), Env.ONE, getParent().isSOTrx(), get_TrxName());
+        	IProductPricing pp = Core.getProductPricing();
+    		pp.setRMALine(this, get_TrxName());
         	
         	MInvoice invoice = getParent().getOriginalInvoice();
         	if (invoice != null)
@@ -351,7 +352,7 @@ public class MRMALine extends X_M_RMALine
         }
         
         // Set default amount and qty for product
-        if (this.getM_Product_ID() != 0 && this.getQty().doubleValue() <= 0)
+        if (this.getM_Product_ID() != 0 && this.getQty().doubleValue() <= 0 && !MRMA.DOCACTION_Void.equals(getParent().getDocAction()))
         {
             if (getQty().signum() == 0)
                 this.setQty(Env.ONE);
@@ -360,7 +361,7 @@ public class MRMALine extends X_M_RMALine
         }
 
         // Set default amount and qty for charge
-        if (this.getC_Charge_ID() != 0 && this.getQty().doubleValue() <= 0)
+        if (this.getC_Charge_ID() != 0 && this.getQty().doubleValue() <= 0 && !MRMA.DOCACTION_Void.equals(getParent().getDocAction()))
         {
             if (getQty().signum() == 0)
                 this.setQty(Env.ONE);
@@ -369,7 +370,7 @@ public class MRMALine extends X_M_RMALine
         }
         
         // Set amount for products
-        if (this.getM_InOutLine_ID() != 0)
+        if (this.getM_InOutLine_ID() != 0 && !MRMA.DOCACTION_Void.equals(getParent().getDocAction()))
         {
         	this.setM_Product_ID(m_ioLine.getM_Product_ID());
         	this.setC_Charge_ID(m_ioLine.getC_Charge_ID());

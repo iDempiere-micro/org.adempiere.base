@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  * Copyright (C) 2007 Low Heng Sin hengsin@avantz.com                         *
  * Contributor(s):                                                            *
  * Teo Sarca, SC ARHIPAC SERVICE SRL                                          *

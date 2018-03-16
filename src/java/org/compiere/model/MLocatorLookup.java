@@ -12,21 +12,26 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
-
-import org.compiere.util.DisplayType;
-import org.idempiere.common.util.DB;
-import org.idempiere.common.util.KeyNamePair;
-import org.idempiere.common.util.NamePair;
 
 import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Properties;
 import java.util.logging.Level;
+
+import org.idempiere.common.util.DB;
+import org.compiere.util.DisplayType;
+import org.idempiere.common.util.KeyNamePair;
+import org.idempiere.common.util.NamePair;
+import org.idempiere.common.util.Util;
 
 /**
  *	Warehouse Locator Lookup Model.
@@ -251,7 +256,7 @@ public final class MLocatorLookup extends Lookup implements Serializable
 			return null;
 		}
 		//
-		return new MLocator (m_ctx, M_Locator_ID, trxName);
+		return Util.isEmpty(trxName) ? MLocator.get(m_ctx, M_Locator_ID) : new MLocator (m_ctx, M_Locator_ID, trxName);
 	}	//	getMLocator
 
 	/**
@@ -324,7 +329,7 @@ public final class MLocatorLookup extends Lookup implements Serializable
 			int local_only_warehouse_id = getOnly_Warehouse_ID(); // [ 1674891 ] MLocatorLookup - weird error 
 			int local_only_product_id = getOnly_Product_ID();
 			
-			StringBuilder sql = new StringBuilder("SELECT M_Locator.* FROM M_Locator ")
+			StringBuilder sql = new StringBuilder("SELECT M_Locator.M_Locator_ID FROM M_Locator ")
 				.append(" INNER JOIN M_Warehouse wh ON (wh.M_Warehouse_ID=M_Locator.M_Warehouse_ID) ")
 				.append(" WHERE M_Locator.IsActive='Y' ")
 				.append(" AND wh.IsActive='Y'");
@@ -368,8 +373,8 @@ public final class MLocatorLookup extends Lookup implements Serializable
 				//
 				while (rs.next())
 				{
-					MLocator loc = new MLocator(m_ctx, rs, null);
-					int M_Locator_ID = loc.getM_Locator_ID();
+					int M_Locator_ID = rs.getInt(1);
+					MLocator loc = MLocator.get(m_ctx, M_Locator_ID);
 					m_lookup.put(new Integer(M_Locator_ID), loc);
 				}
 			}

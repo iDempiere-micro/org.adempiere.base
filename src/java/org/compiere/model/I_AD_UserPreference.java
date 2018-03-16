@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -154,6 +154,15 @@ public interface I_AD_UserPreference
 	  * The record is active in the system
 	  */
 	public boolean isActive();
+
+    /** Column name IsDetailedZoomAcross */
+    public static final String COLUMNNAME_IsDetailedZoomAcross = "IsDetailedZoomAcross";
+
+	/** Set Detailed Zoom Across	  */
+	public void setIsDetailedZoomAcross (boolean IsDetailedZoomAcross);
+
+	/** Get Detailed Zoom Across	  */
+	public boolean isDetailedZoomAcross();
 
     /** Column name ToggleOnDoubleClick */
     public static final String COLUMNNAME_ToggleOnDoubleClick = "ToggleOnDoubleClick";

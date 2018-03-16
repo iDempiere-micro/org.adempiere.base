@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -621,7 +621,7 @@ public class ModelValidationEngine
 			return;
 		//
 		String propertyName =
-			m_globalValidators.contains(listener)
+			(listener instanceof ModelValidator && m_globalValidators.contains((ModelValidator)listener))
 				? tableName + "*"
 				: tableName + listener.getAD_Client_ID();
 		ArrayList<FactsValidator> list = m_factsValidateListeners.get(propertyName);
@@ -666,7 +666,7 @@ public class ModelValidationEngine
 		if (tableName == null || listener == null)
 			return;
 		String propertyName =
-			m_globalValidators.contains(listener)
+			(listener instanceof ModelValidator && m_globalValidators.contains((ModelValidator)listener))
 				? tableName + "*"
 				: tableName + listener.getAD_Client_ID();
 		ArrayList<FactsValidator> list = m_factsValidateListeners.get(propertyName);
@@ -733,7 +733,7 @@ public class ModelValidationEngine
 			{
 				validator = list.get(i);
 				if (validator.getAD_Client_ID() == po.getAD_Client_ID()
-						|| m_globalValidators.contains(validator))
+						|| (validator instanceof ModelValidator && m_globalValidators.contains((ModelValidator)validator)))
 				{
 					String error = validator.factsValidate(schema, facts, po);
 					if (error != null && error.length() > 0)

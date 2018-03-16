@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -125,6 +125,7 @@ public class SystemIDs
 	public final static int REFERENCE_PAYMENTRULE = 195;
 	public final static int REFERENCE_POSTING_TYPE = 125;
 	public final static int REFERENCE_POSTED = 234;
+	public final static int REFERENCE_SQLORDERBY = 53296;
 	public final static int REFERENCE_YESNO = 319;
 	public final static int REFERENCE_WIZARDSTATUS = 200003;
 	public final static int REFERENCE_WFINSTANCE_STATE = 305;

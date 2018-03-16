@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.util;
 
@@ -46,7 +46,7 @@ public final class Msg
 	private static	Msg				s_msg = null;
 
 	/**	Logger							*/
-	private static CLogger s_log = CLogger.getCLogger (Msg.class);
+	private static CLogger			s_log = CLogger.getCLogger (Msg.class);
 
 	/**
 	 * 	Get Message Object
@@ -68,7 +68,7 @@ public final class Msg
 	}	//	Mag
 
 	/**  The Map                    */
-	private CCache<String,CCache<String,String>> m_languages
+	private CCache<String,CCache<String,String>> m_languages 
 		= new CCache<String,CCache<String,String>>(null, "msg_lang", 2, 0, false);
 	
 	private CCache<String,CCache<String,String>> m_elementCache 
@@ -109,7 +109,7 @@ public final class Msg
 		if (retValue != null && retValue.size() > 0)
 			return retValue;
 
-		retValue = new CCache<String, String>("element", 100);
+		retValue = new CCache<String, String>("element", 100, 0, false, 0);
 		m_elementCache.put(AD_Language, retValue);
 		return retValue;
 	}
@@ -125,7 +125,7 @@ public final class Msg
 	private CCache<String,String> initMsg (String AD_Language)
 	{
 	//	Trace.printStack();
-		CCache<String,String> msg = new CCache<String,String>(I_AD_Message.Table_Name, MAP_SIZE, 0);
+		CCache<String,String> msg = new CCache<String,String>(I_AD_Message.Table_Name, MAP_SIZE, 0, false, 0);
 		//
 		if (!DB.isConnected())
 		{
@@ -699,3 +699,4 @@ public final class Msg
 	}
 
 }	//	Msg
+

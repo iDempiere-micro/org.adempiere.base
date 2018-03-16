@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -32,6 +32,7 @@ import org.adempiere.base.event.EventManager;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
+import org.idempiere.common.util.Language;
 import org.compiere.util.Msg;
 import org.idempiere.common.distributed.IMessageService;
 import org.idempiere.common.distributed.ITopic;
@@ -219,8 +220,15 @@ public class MPInstance extends X_AD_PInstance
 		{
 			MRole role = MRole.get(getCtx(), AD_Role_ID);
 			Boolean access = role.getProcessAccess(AD_Process_ID);
-			if (access == null || !access.booleanValue())
-				throw new IllegalStateException(Msg.getMsg(getCtx(), "CannotAccessProcess", new Object[] {AD_Process_ID, role.getName()}));
+			if (access == null || !access.booleanValue()) {
+				MProcess proc = MProcess.get(getCtx(), AD_Process_ID);
+				StringBuilder procMsg = new StringBuilder("[");
+				if (! Language.isBaseLanguage (Env.getAD_Language(getCtx()))) {
+					procMsg.append(proc.get_Translation("Name")).append(" / ");
+				}
+				procMsg.append(proc.getName()).append("]");
+				throw new IllegalStateException(Msg.getMsg(getCtx(), "CannotAccessProcess", new Object[] {procMsg.toString(), role.getName()}));
+			}
 		}
 		super.setAD_Process_ID (AD_Process_ID);
 	}	//	setAD_Process_ID

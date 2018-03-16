@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -537,7 +537,7 @@ public class MLocation extends X_C_Location implements Comparator<Object>
 		if (isAddressLinesReverse())
 		{
 			//	City, Region, Postal
-			retStr.append(", ").append(parseCRP (getCountry()));
+			retStr.append(parseCRP (getCountry()));
 			if (getAddress5() != null && getAddress5().length() > 0)
 				retStr.append(", ").append(getAddress5());
 			if (getAddress4() != null && getAddress4().length() > 0)
@@ -547,7 +547,7 @@ public class MLocation extends X_C_Location implements Comparator<Object>
 			if (getAddress2() != null && getAddress2().length() > 0)
 				retStr.append(", ").append(getAddress2());
 			if (getAddress1() != null)
-				retStr.append(getAddress1());
+				retStr.append(", ").append(getAddress1());
 		}
 		else
 		{
@@ -564,6 +564,7 @@ public class MLocation extends X_C_Location implements Comparator<Object>
 			//	City, Region, Postal
 			retStr.append(", ").append(parseCRP (getCountry()));
 			//	Add Country would come here
+			// retStr.append(", ").append(getCountry());
 		}
 		return retStr.toString();
 	}	//	toString
@@ -646,8 +647,8 @@ public class MLocation extends X_C_Location implements Comparator<Object>
 		if (getC_City_ID() <= 0 && getCity() != null && getCity().length() > 0) {
 			int city_id = DB.getSQLValue(
 					get_TrxName(),
-					"SELECT C_City_ID FROM C_City WHERE C_Country_ID=? AND COALESCE(C_Region_ID,0)=? AND Name=?",
-					new Object[] {getC_Country_ID(), getC_Region_ID(), getCity()});
+					"SELECT C_City_ID FROM C_City WHERE C_Country_ID=? AND COALESCE(C_Region_ID,0)=? AND Name=? AND AD_Client_ID IN (0,?)",
+					new Object[] {getC_Country_ID(), getC_Region_ID(), getCity(), getAD_Client_ID()});
 			if (city_id > 0)
 				setC_City_ID(city_id);
 		}

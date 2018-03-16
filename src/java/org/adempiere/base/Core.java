@@ -71,11 +71,9 @@ public class Core {
 		};
 	}
 
-
-
 		/**
 	 *
-	 * @param processId Java class name 
+	 * @param processId Java class name or equinox extension id
 	 * @return ProcessCall instance or null if processId not found
 	 */
 	public static ProcessCall getProcess(String processId) {
@@ -92,7 +90,7 @@ public class Core {
 
 	/**
 	 *
-	 * @param validatorId Java class name 
+	 * @param validatorId Java class name or equinox extension Id
 	 * @return ModelValidator instance of null if validatorId not found
 	 */
 	public static ModelValidator getModelValidator(String validatorId) {
@@ -107,7 +105,6 @@ public class Core {
 		
 		return null;
 	}
-
 	
 	/**
 	 *  Get payment processor instance
@@ -394,4 +391,26 @@ public class Core {
 		
 		return myPaymentExporter;
 	}	
+
+	/**
+	 * get ProductPricing instance
+	 * 
+	 * @return instance of the IProductPricing or null
+	 */
+	public static IProductPricing getProductPricing() {
+
+		List<IProductPricingFactory> factoryList = 
+				Service.locator().list(IProductPricingFactory.class).getServices();
+		if (factoryList != null) {
+			for(IProductPricingFactory factory : factoryList) {
+				IProductPricing myProductPricing = factory.newProductPricingInstance();
+				if (myProductPricing != null) {
+					return myProductPricing;
+				}
+			}
+		}
+
+		return null;
+	}
+
 }

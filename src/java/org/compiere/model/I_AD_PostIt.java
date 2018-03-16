@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -62,14 +62,14 @@ public interface I_AD_PostIt
 	  */
 	public int getAD_Org_ID();
 
-    /** Column name AD_Postit_ID */
-    public static final String COLUMNNAME_AD_Postit_ID = "AD_Postit_ID";
+    /** Column name AD_PostIt_ID */
+    public static final String COLUMNNAME_AD_PostIt_ID = "AD_PostIt_ID";
 
 	/** Set Post-it	  */
-	public void setAD_Postit_ID (int AD_Postit_ID);
+	public void setAD_PostIt_ID (int AD_PostIt_ID);
 
 	/** Get Post-it	  */
-	public int getAD_Postit_ID();
+	public int getAD_PostIt_ID();
 
     /** Column name AD_PostIt_UU */
     public static final String COLUMNNAME_AD_PostIt_UU = "AD_PostIt_UU";

@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  * Contributor(s): Teo Sarca                                                  *
  *****************************************************************************/
 package org.compiere.model;
@@ -40,7 +40,6 @@ import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Language;
 import org.compiere.interfaces.Server;
 import org.idempiere.common.base.Service;
-
 /**
  *  Client Model
  *
@@ -120,8 +119,7 @@ public class MClient extends X_AD_Client
 	@SuppressWarnings("unused")
 	private static CLogger	s_log	= CLogger.getCLogger (MClient.class);
 	/**	Cache						*/
-	private static CCache<Integer,MClient>	s_cache = new CCache<Integer,MClient>(Table_Name, 3);
-
+	private static CCache<Integer,MClient>	s_cache = new CCache<Integer,MClient>(Table_Name, 3, 120, true);
 
 	/**
 	 * 	Do we have Multi-Lingual Documents.

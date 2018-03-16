@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
+
 import org.adempiere.base.Core;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.model.ITaxProvider;
@@ -32,7 +33,7 @@ import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
-
+import org.adempiere.base.IProductPricing;
 
 /**
  *	Invoice Line Model
@@ -177,7 +178,7 @@ public class MInvoiceLine extends X_C_InvoiceLine
 	/** Cached Precision			*/
 	private Integer		m_precision = null;
 	/** Product Pricing				*/
-	private MProductPricing	m_productPricing = null;
+	private IProductPricing	m_productPricing = null;
 	/** Parent						*/
 	private MInvoice	m_parent = null;
 
@@ -378,10 +379,9 @@ public class MInvoiceLine extends X_C_InvoiceLine
 			return;
 		//
 		if (log.isLoggable(Level.FINE)) log.fine("M_PriceList_ID=" + M_PriceList_ID);
-		m_productPricing = new MProductPricing (getM_Product_ID(),
-			C_BPartner_ID, getQtyInvoiced(), m_IsSOTrx, get_TrxName());
+		m_productPricing = Core.getProductPricing();
+		m_productPricing.setInvoiceLine(this, get_TrxName());
 		m_productPricing.setM_PriceList_ID(M_PriceList_ID);
-		m_productPricing.setPriceDate(m_DateInvoiced);
 		//
 		setPriceActual (m_productPricing.getPriceStd());
 		setPriceList (m_productPricing.getPriceList());
@@ -457,7 +457,7 @@ public class MInvoiceLine extends X_C_InvoiceLine
 		BigDecimal TaxAmt = Env.ZERO;
 		if (getC_Tax_ID() == 0)
 			return;
-	//	setLineNetAmt();
+		setLineNetAmt();
 		MTax tax = MTax.get (getCtx(), getC_Tax_ID());
 		if (tax.isDocumentLevel() && m_IsSOTrx)		//	AR Inv Tax
 			return;
@@ -842,12 +842,16 @@ public class MInvoiceLine extends X_C_InvoiceLine
 	protected boolean beforeSave (boolean newRecord)
 	{
 		if (log.isLoggable(Level.FINE)) log.fine("New=" + newRecord);
-		if (newRecord && getParent().isComplete()) {
+		boolean parentComplete = getParent().isComplete();
+		boolean isReversal = getParent().isReversal();
+		if (newRecord && parentComplete) {
 			log.saveError("ParentComplete", Msg.translate(getCtx(), "C_InvoiceLine"));
 			return false;
 		}
 		// Re-set invoice header (need to update m_IsSOTrx flag) - phib [ 1686773 ]
 		setInvoice(getParent());
+
+	  if (!parentComplete && !isReversal) {  // do not change things when parent is complete
 		//	Charge
 		if (getC_Charge_ID() != 0)
 		{
@@ -916,6 +920,7 @@ public class MInvoiceLine extends X_C_InvoiceLine
 				return false;
 			}
 		}
+	  }
 		
 		return true;
 	}	//	beforeSave

@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -44,7 +44,6 @@ import org.idempiere.common.util.Ini;
 import org.idempiere.common.util.KeyNamePair;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Trace;
-
 /**
  *	Role Model.
  *	Includes AD_User runtime info for Personal Access
@@ -83,7 +82,7 @@ public final class MRole extends X_AD_Role
 	{
 		int AD_Role_ID = Env.getContextAsInt(ctx, "#AD_Role_ID");
 		int AD_User_ID = Env.getContextAsInt(ctx, "#AD_User_ID");
-//		if (!Ini.getIni().isClient())	//	none for Server
+//		if (!Ini.isClient())	//	none for Server
 //			AD_User_ID = 0;
 		MRole defaultRole = getDefaultRole(); 
 		if (reload || defaultRole == null)
@@ -3174,9 +3173,26 @@ public final class MRole extends X_AD_Role
 					+ "WHERE  AD_Table_ID = ? "
 					+ "       AND iw.IsActive = 'Y' "
 					+ "       AND iwa.IsActive = 'Y' "
-					+ "       AND iwa.AD_Role_ID = ?";
-			int cnt = DB.getSQLValueEx(null, sql, I_M_Product.Table_ID, getAD_Role_ID());
+					+ "       AND (iwa.AD_Role_ID = ? OR iwa.AD_Role_ID IN"
+					+ "       		(SELECT ri.Included_Role_ID FROM AD_Role_Included ri WHERE ri.IsActive='Y' AND ri.AD_Role_ID=?))";
+			int cnt = DB.getSQLValueEx(get_TrxName(), sql, I_M_Product.Table_ID, getAD_Role_ID(), getAD_Role_ID());
 			m_canAccess_Info_Product = new Boolean(cnt > 0);
+
+			// Verify if is excluded in the specific role (it can be allowed in included role and inactive in specific role)
+			if (m_canAccess_Info_Product) {
+				String sqlInactive = ""
+						+ "SELECT COUNT(*) "
+						+ "FROM   AD_InfoWindow iw "
+						+ "       JOIN AD_InfoWindow_Access iwa "
+						+ "         ON ( iwa.AD_InfoWindow_ID = iw.AD_InfoWindow_ID ) "
+						+ "WHERE  AD_Table_ID = ? "
+						+ "       AND iw.IsActive = 'Y' "
+						+ "       AND iwa.IsActive = 'N' "
+						+ "       AND iwa.AD_Role_ID = ?";
+				int cntInactive = DB.getSQLValueEx(get_TrxName(), sqlInactive, I_M_Product.Table_ID, getAD_Role_ID());
+				if (cntInactive > 0)
+					m_canAccess_Info_Product = new Boolean(false);
+			}
 		}
 		return m_canAccess_Info_Product.booleanValue();
 	}

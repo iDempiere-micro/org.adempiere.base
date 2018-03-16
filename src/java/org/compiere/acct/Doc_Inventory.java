@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.acct;
 
@@ -107,6 +107,9 @@ public class Doc_Inventory extends Doc
 		for (int i = 0; i < lines.length; i++)
 		{
 			MInventoryLine line = lines[i];
+			if (!line.isActive())
+				continue;
+
 			String docSubTypeInv;
 			if (Util.isEmpty(parentDocSubTypeInv)) {
 				// IDEMPIERE-675: for backward compatibility - to post old documents that could have subtypeinv empty

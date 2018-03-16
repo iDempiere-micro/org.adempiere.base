@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -21,6 +21,8 @@ import java.sql.ResultSet;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.adempiere.base.Core;
+import org.adempiere.base.IProductPricing;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 
@@ -146,9 +148,8 @@ public class MProjectLine extends X_C_ProjectLine
 			return limitPrice;
 		if (getProject() == null)
 			return limitPrice;
-		boolean isSOTrx = true;
-		MProductPricing pp = new MProductPricing (getM_Product_ID(),
-			m_parent.getC_BPartner_ID(), getPlannedQty(), isSOTrx, get_TrxName());
+		IProductPricing pp = Core.getProductPricing();
+		pp.setProjectLine(this, get_TrxName());
 		pp.setM_PriceList_ID(m_parent.getM_PriceList_ID());
 		if (pp.calculatePrice())
 			limitPrice = pp.getPriceLimit();

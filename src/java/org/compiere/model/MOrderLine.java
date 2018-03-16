@@ -12,7 +12,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
@@ -30,6 +30,7 @@ import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
+import org.adempiere.base.IProductPricing;
 
 /**
  *  Order Line Model.
@@ -196,7 +197,7 @@ public class MOrderLine extends X_C_OrderLine
 	//
 	protected boolean			m_IsSOTrx = true;
 	//	Product Pricing
-	protected MProductPricing	m_productPrice = null;
+	protected IProductPricing	m_productPrice = null;
 
 	/** Tax							*/
 	protected MTax 		m_tax = null;
@@ -321,12 +322,11 @@ public class MOrderLine extends X_C_OrderLine
 	 *	@param M_PriceList_ID id
 	 *	@return product pricing
 	 */
-	protected MProductPricing getProductPricing (int M_PriceList_ID)
+	protected IProductPricing getProductPricing (int M_PriceList_ID)
 	{
-		m_productPrice = new MProductPricing (getM_Product_ID(), 
-			getC_BPartner_ID(), getQtyOrdered(), m_IsSOTrx, get_TrxName());
+		m_productPrice = Core.getProductPricing();
+		m_productPrice.setOrderLine(this, get_TrxName());
 		m_productPrice.setM_PriceList_ID(M_PriceList_ID);
-		m_productPrice.setPriceDate(getDateOrdered());
 		//
 		m_productPrice.calculatePrice();
 		return m_productPrice;

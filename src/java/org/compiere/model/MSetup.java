@@ -12,17 +12,13 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
  * For the text or an alternative of this public license, you may reach us    *
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
- * or via info@compiere.org or http://www.compiere.org/license.html           *
+ * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
 package org.compiere.model;
 
-import org.adempiere.util.ProcessUtil;
-import org.compiere.process.ProcessInfo;
-import org.compiere.process.ProcessInfoParameter;
-import org.compiere.util.DisplayType;
-import org.compiere.util.Msg;
-import org.idempiere.common.exceptions.AdempiereException;
-import org.idempiere.common.util.*;
+import static org.compiere.model.SystemIDs.COUNTRY_US;
+import static org.compiere.model.SystemIDs.SCHEDULE_10_MINUTES;
+import static org.compiere.model.SystemIDs.SCHEDULE_15_MINUTES;
 
 import java.io.File;
 import java.sql.PreparedStatement;
@@ -32,7 +28,18 @@ import java.util.Properties;
 import java.util.UUID;
 import java.util.logging.Level;
 
-import static org.compiere.model.SystemIDs.*;
+import org.idempiere.common.exceptions.AdempiereException;
+import org.adempiere.util.ProcessUtil;
+import org.compiere.process.ProcessInfo;
+import org.compiere.process.ProcessInfoParameter;
+import org.idempiere.common.util.AdempiereUserError;
+import org.idempiere.common.util.CLogger;
+import org.idempiere.common.util.DB;
+import org.compiere.util.DisplayType;
+import org.idempiere.common.util.Env;
+import org.idempiere.common.util.KeyNamePair;
+import org.compiere.util.Msg;
+import org.idempiere.common.util.Trx;
 
 /**
  * Initial Setup Model
@@ -60,9 +67,9 @@ public final class MSetup
 	}   //  MSetup
 
 	/**	Logger			*/
-	protected CLogger log = CLogger.getCLogger(getClass());
+	protected CLogger	log = CLogger.getCLogger(getClass());
 
-	private Trx m_trx = Trx.get(Trx.createTrxName("Setup"), true);
+	private Trx				m_trx = Trx.get(Trx.createTrxName("Setup"), true);
 	private Properties      m_ctx;
 	private String          m_lang;
 	private int             m_WindowNo;
@@ -1018,6 +1025,7 @@ public final class MSetup
 		no = DB.executeUpdateEx(sqlCmd.toString(), m_trx.getTrxName());
 		if (no != 1)
 			log.log(Level.SEVERE, "Channel NOT inserted");
+
 		int C_Campaign_ID = getNextID(getAD_Client_ID(), "C_Campaign");
 		sqlCmd = new StringBuffer("INSERT INTO C_Campaign ");
 		sqlCmd.append("(C_Campaign_ID,C_Channel_ID,").append(m_stdColumns).append(",");
@@ -1040,6 +1048,14 @@ public final class MSetup
 			if (no != 1)
 				log.log(Level.SEVERE, "AcctSchema Element Campaign NOT updated");
 		}
+		// Campaign Translation
+		sqlCmd = new StringBuffer ("INSERT INTO C_Campaign_Trl (AD_Language,C_Campaign_ID, Description,Name, IsTranslated,AD_Client_ID,AD_Org_ID,Created,Createdby,Updated,UpdatedBy,C_Campaign_Trl_UU)");
+		sqlCmd.append(" SELECT l.AD_Language,t.C_Campaign_ID, t.Description,t.Name, 'N',t.AD_Client_ID,t.AD_Org_ID,t.Created,t.Createdby,t.Updated,t.UpdatedBy, generate_uuid() FROM AD_Language l, C_Campaign t");
+		sqlCmd.append(" WHERE l.IsActive='Y' AND l.IsSystemLanguage='Y' AND l.IsBaseLanguage='N' AND t.C_Campaign_ID=").append(C_Campaign_ID);
+		sqlCmd.append(" AND NOT EXISTS (SELECT * FROM C_Campaign_Trl tt WHERE tt.AD_Language=l.AD_Language AND tt.C_Campaign_ID=t.C_Campaign_ID)");
+		no = DB.executeUpdateEx(sqlCmd.toString(), m_trx.getTrxName());
+		if (no < 0)
+			log.log(Level.SEVERE, "Campaign Translation NOT inserted");
 
 		//	Create Sales Region
 		int C_SalesRegion_ID = getNextID(getAD_Client_ID(), "C_SalesRegion");
@@ -1064,6 +1080,14 @@ public final class MSetup
 			if (no != 1)
 				log.log(Level.SEVERE, "AcctSchema Element SalesRegion NOT updated");
 		}
+		// Sales Region Translation
+		sqlCmd = new StringBuffer ("INSERT INTO C_SalesRegion_Trl (AD_Language,C_SalesRegion_ID, Description,Name, IsTranslated,AD_Client_ID,AD_Org_ID,Created,Createdby,Updated,UpdatedBy,C_SalesRegion_Trl_UU)");
+		sqlCmd.append(" SELECT l.AD_Language,t.C_SalesRegion_ID, t.Description,t.Name, 'N',t.AD_Client_ID,t.AD_Org_ID,t.Created,t.Createdby,t.Updated,t.UpdatedBy, generate_uuid() FROM AD_Language l, C_SalesRegion t");
+		sqlCmd.append(" WHERE l.IsActive='Y' AND l.IsSystemLanguage='Y' AND l.IsBaseLanguage='N' AND t.C_SalesRegion_ID=").append(C_SalesRegion_ID);
+		sqlCmd.append(" AND NOT EXISTS (SELECT * FROM C_SalesRegion_Trl tt WHERE tt.AD_Language=l.AD_Language AND tt.C_SalesRegion_ID=t.C_SalesRegion_ID)");
+		no = DB.executeUpdateEx(sqlCmd.toString(), m_trx.getTrxName());
+		if (no < 0)
+			log.log(Level.SEVERE, "Sales Region Translation NOT inserted");
 
 		//	Create Activity
 		int C_Activity_ID = getNextID(getAD_Client_ID(), "C_Activity");
@@ -1088,6 +1112,14 @@ public final class MSetup
 			if (no != 1)
 				log.log(Level.SEVERE, "AcctSchema Element Activity NOT updated");
 		}
+		// Activity Translation
+		sqlCmd = new StringBuffer ("INSERT INTO C_Activity_Trl (AD_Language,C_Activity_ID, Description,Name, IsTranslated,AD_Client_ID,AD_Org_ID,Created,Createdby,Updated,UpdatedBy,C_Activity_Trl_UU)");
+		sqlCmd.append(" SELECT l.AD_Language,t.C_Activity_ID, t.Description,t.Name, 'N',t.AD_Client_ID,t.AD_Org_ID,t.Created,t.Createdby,t.Updated,t.UpdatedBy, generate_uuid() FROM AD_Language l, C_Activity t");
+		sqlCmd.append(" WHERE l.IsActive='Y' AND l.IsSystemLanguage='Y' AND l.IsBaseLanguage='N' AND t.C_Activity_ID=").append(C_Activity_ID);
+		sqlCmd.append(" AND NOT EXISTS (SELECT * FROM C_Activity_Trl tt WHERE tt.AD_Language=l.AD_Language AND tt.C_Activity_ID=t.C_Activity_ID)");
+		no = DB.executeUpdateEx(sqlCmd.toString(), m_trx.getTrxName());
+		if (no < 0)
+			log.log(Level.SEVERE, "Activity Translation NOT inserted");
 
 		/**
 		 *  Business Partner
@@ -1159,8 +1191,9 @@ public final class MSetup
 		if (no != 1)
 			log.log(Level.SEVERE, "TaxCategory NOT inserted");
 		
-		sqlCmd = new StringBuffer ("INSERT INTO C_TaxCategory_Trl (AD_Language,C_TaxCategory_ID, Description,Name, IsTranslated,AD_Client_ID,AD_Org_ID,Created,Createdby,Updated,UpdatedBy)");
-		sqlCmd.append(" SELECT l.AD_Language,t.C_TaxCategory_ID, t.Description,t.Name, 'N',t.AD_Client_ID,t.AD_Org_ID,t.Created,t.Createdby,t.Updated,t.UpdatedBy FROM AD_Language l, C_TaxCategory t");
+		//  TaxCategory translation
+		sqlCmd = new StringBuffer ("INSERT INTO C_TaxCategory_Trl (AD_Language,C_TaxCategory_ID, Description,Name, IsTranslated,AD_Client_ID,AD_Org_ID,Created,Createdby,Updated,UpdatedBy,C_TaxCategory_Trl_UU)");
+		sqlCmd.append(" SELECT l.AD_Language,t.C_TaxCategory_ID, t.Description,t.Name, 'N',t.AD_Client_ID,t.AD_Org_ID,t.Created,t.Createdby,t.Updated,t.UpdatedBy, generate_uuid() FROM AD_Language l, C_TaxCategory t");
 		sqlCmd.append(" WHERE l.IsActive='Y' AND l.IsSystemLanguage='Y' AND l.IsBaseLanguage='N' AND t.C_TaxCategory_ID=").append(C_TaxCategory_ID);
 		sqlCmd.append(" AND NOT EXISTS (SELECT * FROM C_TaxCategory_Trl tt WHERE tt.AD_Language=l.AD_Language AND tt.C_TaxCategory_ID=t.C_TaxCategory_ID)");
 		no = DB.executeUpdateEx(sqlCmd.toString(), m_trx.getTrxName());
@@ -1338,6 +1371,14 @@ public final class MSetup
 		no = DB.executeUpdateEx(sqlCmd.toString(), m_trx.getTrxName());
 		if (no != 1)
 			log.log(Level.SEVERE, "PaymentTerm NOT inserted");
+		// Payment Term Translation
+		sqlCmd = new StringBuffer ("INSERT INTO C_PaymentTerm_Trl (AD_Language,C_PaymentTerm_ID, Description,Name, IsTranslated,AD_Client_ID,AD_Org_ID,Created,Createdby,Updated,UpdatedBy,C_PaymentTerm_Trl_UU)");
+		sqlCmd.append(" SELECT l.AD_Language,t.C_PaymentTerm_ID, t.Description,t.Name, 'N',t.AD_Client_ID,t.AD_Org_ID,t.Created,t.Createdby,t.Updated,t.UpdatedBy, generate_uuid() FROM AD_Language l, C_PaymentTerm t");
+		sqlCmd.append(" WHERE l.IsActive='Y' AND l.IsSystemLanguage='Y' AND l.IsBaseLanguage='N' AND t.C_PaymentTerm_ID=").append(C_PaymentTerm_ID);
+		sqlCmd.append(" AND NOT EXISTS (SELECT * FROM C_PaymentTerm_Trl tt WHERE tt.AD_Language=l.AD_Language AND tt.C_PaymentTerm_ID=t.C_PaymentTerm_ID)");
+		no = DB.executeUpdateEx(sqlCmd.toString(), m_trx.getTrxName());
+		if (no < 0)
+			log.log(Level.SEVERE, "Payment Term Translation NOT inserted");
 
 		//  Project Cycle
 		C_Cycle_ID = getNextID(getAD_Client_ID(), "C_Cycle");
