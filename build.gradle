@@ -24,4 +24,7 @@ dependencies {
 
     compile project(':org.compiere.model')
     compile files('../org.compiere.model/bin')
+
+    compile project(':software.hsharp.core.models')
+    compile files('../software.hsharp.core.models/bin')
 }

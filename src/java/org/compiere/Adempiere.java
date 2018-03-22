@@ -24,6 +24,8 @@ import org.compiere.impl.ModelValidationEngine;
 import org.compiere.util.Login;
 import org.idempiere.common.db.CConnection;
 import org.idempiere.common.util.*;
+import org.osgi.service.component.annotations.Component;
+import software.hsharp.core.services.ISystemImpl;
 
 import java.net.URL;
 import java.util.Properties;
@@ -37,7 +39,8 @@ import java.util.logging.Level;
  *  @version $Id: Adempiere.java,v 1.8 2006/08/11 02:58:14 jjanke Exp $
  *
  */
-public final class Adempiere
+@Component
+public final class Adempiere implements ISystemImpl
 {
 	/** Timestamp                   */
 	 public final String	ID				= "$Id: Adempiere.java,v 1.8 2006/08/11 02:58:14 jjanke Exp $";
@@ -363,7 +366,13 @@ public final class Adempiere
 		return (log != null);
 	}
 
-	/*************************************************************************
+    @Override
+    public void startup() {
+        startup(false);
+    }
+
+
+    /*************************************************************************
 	 *  Startup Client/Server.
 	 *  - Print greeting,
 	 *  - Check Java version and
@@ -567,4 +576,5 @@ public final class Adempiere
         }
         return instance;
     }
+
 }	//	Adempiere

@@ -66,3 +66,4 @@ Export-Package: \
     
 -includeresource: \
     {bsh-2.0b6.jar}
+-dsannotations-options: extender

@@ -44,6 +44,8 @@ import org.compiere.util.Msg;
 import org.idempiere.common.util.Secure;
 import org.idempiere.common.util.SecureEngine;
 import org.idempiere.common.util.Util;
+import org.jetbrains.annotations.NotNull;
+import software.hsharp.core.models.IUser;
 
 /**
  *  User Model
@@ -55,7 +57,7 @@ import org.idempiere.common.util.Util;
  * 			<li>FR [ 2788430 ] MUser.getOfBPartner add trxName parameter
  * 				https://sourceforge.net/tracker/index.php?func=detail&aid=2788430&group_id=176962&atid=879335
  */
-public class MUser extends X_AD_User
+public class MUser extends X_AD_User implements IUser
 {
 	/**
 	 * 
@@ -1089,5 +1091,22 @@ public class MUser extends X_AD_User
 			passwordHistory.saveEx();
 		}
 		return super.afterSave(newRecord, success);
+	}
+
+	@Override
+	public int getKey() {
+		return getAD_User_ID();
+	}
+
+	@NotNull
+	@Override
+	public String toStringX() {
+		return toString();
+	}
+
+	@NotNull
+	@Override
+	public String getID() {
+		return ""+ getAD_User_ID();
 	}
 }	//	MUser

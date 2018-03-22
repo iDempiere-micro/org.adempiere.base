@@ -21,6 +21,10 @@ import org.compiere.impl.*;
 import org.compiere.model.*;
 import org.idempiere.common.db.CConnection;
 import org.idempiere.common.util.*;
+import org.jetbrains.annotations.NotNull;
+import org.osgi.service.component.annotations.Component;
+import software.hsharp.core.services.ILoginUtility;
+import software.hsharp.core.models.INameKeyPair;
 
 import javax.swing.*;
 import java.security.Principal;
@@ -42,7 +46,8 @@ import java.util.logging.Level;
  *  		https://sourceforge.net/tracker/?func=detail&aid=2867246&group_id=176962&atid=879332
  *  @version $Id: Login.java,v 1.6 2006/10/02 05:19:06 jjanke Exp $
  */
-public class Login
+@Component
+public class Login implements ILoginUtility
 {
 	private String loginErrMsg;
 	private boolean isPasswordExpired;
@@ -73,16 +78,16 @@ public class Login
 		//  load role
 		if (roles != null && roles.length > 0)
 		{
-			KeyNamePair[] clients = login.getClients (roles[0]);
+			INameKeyPair[] clients = login.getClients (roles[0]);
 			//  load client
 			if (clients != null && clients.length > 0)
 			{
-				KeyNamePair[] orgs = login.getOrgs(clients[0]);
+				INameKeyPair[] orgs = login.getOrgs(clients[0]);
 				//  load org
 				if (orgs != null && orgs.length > 0)
 				{
 					@SuppressWarnings("unused")
-					KeyNamePair[] whs = login.getWarehouses(orgs[0]);
+					INameKeyPair[] whs = login.getWarehouses(orgs[0]);
 					//
 					login.loadPreferences(orgs[0], null, null, null);
 				}
@@ -131,7 +136,11 @@ public class Login
 			throw new IllegalArgumentException("Context missing");
 		m_ctx = ctx;
 	}	//	Login
-	
+
+	public Login () {
+
+	}
+
 	/**	Logger				*/
 	private static CLogger log = CLogger.getCLogger(Login.class);
 	/** Context				*/
@@ -431,7 +440,7 @@ public class Login
 	 *  @param  role    role information
 	 *  @return list of valid client KeyNodePairs or null if in error
 	 */
-	public KeyNamePair[] getClients (KeyNamePair role)
+	public INameKeyPair[] getClients (INameKeyPair role)
 	{
 		if (role == null)
 			throw new IllegalArgumentException("Role missing");
@@ -506,7 +515,7 @@ public class Login
 	 *  @param  client    client information
 	 *  @return list of valid Org KeyNodePairs or null if in error
 	 */
-	public KeyNamePair[] getOrgs (KeyNamePair rol)
+	public INameKeyPair[] getOrgs (INameKeyPair rol)
 	{
 		if (rol == null)
 			throw new IllegalArgumentException("Rol missing");
@@ -674,7 +683,7 @@ public class Login
 	 * @param org organization
 	 * @return Array of Warehouse Info
 	 */
-	public KeyNamePair[] getWarehouses (KeyNamePair org)
+	public INameKeyPair[] getWarehouses (INameKeyPair org)
 	{
 		if (org == null)
 			throw new IllegalArgumentException("Org missing");
@@ -735,7 +744,7 @@ public class Login
 	 *	@param org log-in org
 	 *	@return error message
 	 */
-	public String validateLogin (KeyNamePair org)
+	public String validateLogin (INameKeyPair org)
 	{
 		int AD_Client_ID = Env.getAD_Client_ID(m_ctx);
 		int AD_Org_ID = org.getKey();
@@ -776,8 +785,8 @@ public class Login
 	 *  @param  printerName optional printer info
 	 *  @return AD_Message of error (NoValidAcctInfo) or ""
 	 */
-	public String loadPreferences (KeyNamePair org, 
-		KeyNamePair warehouse, java.sql.Timestamp timestamp, String printerName)
+	public String loadPreferences (INameKeyPair org,
+								   INameKeyPair warehouse, java.sql.Timestamp timestamp, String printerName)
 	{
 		if (log.isLoggable(Level.INFO)) log.info("Org: " + org.toStringX());
 
@@ -1061,14 +1070,14 @@ public class Login
 		String pwd = Ini.getIni().getProperty(Ini.getIni().P_PWD);
 		
 		String client = Ini.getIni().getProperty(Ini.getIni().P_CLIENT);
-		KeyNamePair[] clients = getClients(uid, pwd);
+		INameKeyPair[] clients = getClients(uid, pwd);
 		if (clients == null || clients.length == 0)
 		{
 			log.severe("User/Password invalid: " + uid);
 			return false;
 		}
-		KeyNamePair clientPP = null;
-		for (KeyNamePair pair : clients)
+		INameKeyPair clientPP = null;
+		for (INameKeyPair pair : clients)
 		{
 			if (pair.getName().equalsIgnoreCase(client))
 			{
@@ -1080,13 +1089,13 @@ public class Login
 		{
 			log.severe("Client invalid: " + client);
 			if (log.isLoggable(Level.INFO)) {
-				for (KeyNamePair pair : clients)
+				for (INameKeyPair pair : clients)
 					log.info("Option: " + pair);
 			}
 			return false;
 		}
-		
-		KeyNamePair[] roles = getRoles(uid, clientPP);
+
+		INameKeyPair[] roles = getRoles(uid, clientPP);
 		if (roles == null || roles.length == 0)
 		{
 			log.severe("No Roles for client: " + client);
@@ -1096,8 +1105,8 @@ public class Login
 		
 		//	Role
 		String role = Ini.getIni().getProperty(Ini.getIni().P_ROLE);
-		KeyNamePair rolePP = null;
-		for (KeyNamePair pair : roles)
+		INameKeyPair rolePP = null;
+		for (INameKeyPair pair : roles)
 		{
 			if (pair.getName().equalsIgnoreCase(role))
 			{
@@ -1118,14 +1127,14 @@ public class Login
 		
 		//	Organization
 		String org = Ini.getIni().getProperty(Ini.getIni().P_ORG);
-		KeyNamePair[] orgs = getOrgs(rolePP);
+		INameKeyPair[] orgs = getOrgs(rolePP);
 		if (orgs == null || orgs.length == 0)
 		{
 			log.severe("No Orgs for Role: " + role);
 			return false;
 		}
-		KeyNamePair orgPP = null;
-		for (KeyNamePair pair : orgs)
+		INameKeyPair orgPP = null;
+		for (INameKeyPair pair : orgs)
 		{
 			if (pair.getName().equalsIgnoreCase(org))
 			{
@@ -1145,10 +1154,10 @@ public class Login
 		
 		//	Warehouse
 		String wh = Ini.getIni().getProperty(Ini.getIni().P_WAREHOUSE);
-		KeyNamePair whPP = null;
+		INameKeyPair whPP = null;
 		
 		if (orgPP.getKey() != 0) {
-			KeyNamePair[] whs = getWarehouses(orgPP);
+			INameKeyPair[] whs = getWarehouses(orgPP);
 			if (whs == null || whs.length == 0)
 			{
 				log.severe("No Warehouses for Org: " + org);
@@ -1156,7 +1165,7 @@ public class Login
 			}
 			for (int i = 0; i < whs.length; i++)
 			{
-				KeyNamePair pair = whs[i];
+				INameKeyPair pair = whs[i];
 				if (pair.getName().equalsIgnoreCase(wh))
 				{
 					whPP = pair;
@@ -1223,7 +1232,7 @@ public class Login
 	 *  @param app_pwd password
 	 *  @return client array or null if in error.
 	 */
-	public KeyNamePair[] getClients(String app_user, String app_pwd) {
+	public INameKeyPair[] getClients(String app_user, String app_pwd) {
 		if (log.isLoggable(Level.INFO)) log.info("User=" + app_user);
 
 		if (Util.isEmpty(app_user))
@@ -1491,7 +1500,7 @@ public class Login
 	 *  @param  client    client information
 	 *  @return list of valid roles KeyNodePairs or null if in error
 	 */
-	public KeyNamePair[] getRoles(String app_user, KeyNamePair client) {
+	public INameKeyPair[] getRoles(String app_user, INameKeyPair client) {
 		if (client == null)
 			throw new IllegalArgumentException("Client missing");
 
@@ -1610,5 +1619,10 @@ public class Login
 		}
 		return retValue;		
 	}
-	
+
+	@NotNull
+	@Override
+	public ILoginUtility init(@NotNull Properties ctx) {
+		return new Login(ctx);
+	}
 }	//	Login
