@@ -29,10 +29,10 @@ import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.exceptions.DBException;
-import org.compiere.model.MColumn;
-import org.compiere.model.MRole;
-import org.compiere.model.Query;
-import org.compiere.model.X_AD_WF_Node;
+import org.compiere.impl.MColumn;
+import org.compiere.impl.MRole;
+import org.compiere.impl.Query;
+import org.compiere.impl.X_AD_WF_Node;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -370,7 +370,7 @@ public class MWFNode extends X_AD_WF_Node
 	
 	/**
 	 * 	Get Attribute Name
-	 *	@see org.compiere.model.X_AD_WF_Node#getAttributeName()
+	 *	@see X_AD_WF_Node#getAttributeName()
 	 *	@return Attribute Name
 	 */
 	public String getAttributeName ()

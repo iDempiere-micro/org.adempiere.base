@@ -19,8 +19,8 @@ package org.compiere.sla;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
-import org.compiere.model.MSLACriteria;
-import org.compiere.model.MSLAGoal;
+import org.compiere.impl.MSLACriteria;
+import org.compiere.impl.MSLAGoal;
 
 /**
  *	Service Level Agreement Criteria

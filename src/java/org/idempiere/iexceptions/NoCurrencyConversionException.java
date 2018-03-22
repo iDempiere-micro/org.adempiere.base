@@ -17,8 +17,8 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.MConversionType;
-import org.compiere.model.MCurrency;
+import org.compiere.impl.MConversionType;
+import org.compiere.impl.MCurrency;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;

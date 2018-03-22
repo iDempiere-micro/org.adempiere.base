@@ -16,9 +16,9 @@
  *****************************************************************************/
 package org.compiere.util;
 
-import org.compiere.model.MCurrency;
-import org.compiere.model.MPaySelectionCheck;
-import org.compiere.model.MPaySelectionLine;
+import org.compiere.impl.MCurrency;
+import org.compiere.impl.MPaySelectionCheck;
+import org.compiere.impl.MPaySelectionLine;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

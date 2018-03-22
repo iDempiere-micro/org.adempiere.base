@@ -6,7 +6,7 @@ package org.idempiere.fa.util;
 import java.text.SimpleDateFormat;
 import java.util.Properties;
 
-import org.compiere.model.MClient;
+import org.compiere.impl.MClient;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Language;
 

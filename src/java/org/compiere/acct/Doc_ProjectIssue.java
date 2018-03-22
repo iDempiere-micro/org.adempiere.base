@@ -22,12 +22,12 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MCostDetail;
-import org.compiere.model.MProduct;
-import org.compiere.model.MProject;
-import org.compiere.model.MProjectIssue;
-import org.compiere.model.ProductCost;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MCostDetail;
+import org.compiere.impl.MProduct;
+import org.compiere.impl.MProject;
+import org.compiere.impl.MProjectIssue;
+import org.compiere.impl.ProductCost;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

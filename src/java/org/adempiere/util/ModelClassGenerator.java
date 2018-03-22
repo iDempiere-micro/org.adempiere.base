@@ -20,7 +20,7 @@
 package org.adempiere.util;
 
 import org.compiere.Adempiere;
-import org.compiere.model.MTable;
+import org.compiere.impl.MTable;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.CLogger;
@@ -42,7 +42,7 @@ import java.util.StringTokenizer;
 import java.util.TreeSet;
 import java.util.logging.Level;
 
-import static org.compiere.model.SystemIDs.REFERENCE_PAYMENTRULE;
+import static org.compiere.impl.SystemIDs.REFERENCE_PAYMENTRULE;
 
 /**
  *  Generate Model Classes extending PO.
@@ -163,6 +163,8 @@ public class ModelClassGenerator
 		addImportClass(java.sql.ResultSet.class);
 		if (!packageName.equals("org.compiere.model"))
 			addImportClass("org.compiere.model.*");
+			if (!packageName.equals("org.compiere.impl"))
+				addImportClass("org.compiere.impl.*");
 		createImports(start);
 		//	Class
 		start.append("/** Generated Model for ").append(tableName).append(NL)
@@ -324,9 +326,9 @@ public class ModelClassGenerator
 						isKeyNamePairCreated = true;
 					}
 					else {
-						
+
 						StringBuilder msgException = new StringBuilder("More than one primary identifier found ")
-									.append(" (AD_Table_ID=").append(AD_Table_ID).append(", ColumnName=").append(columnName).append(")");						
+									.append(" (AD_Table_ID=").append(AD_Table_ID).append(", ColumnName=").append(columnName).append(")");
 						throw new RuntimeException(msgException.toString());
 					}
 				}
@@ -422,19 +424,19 @@ public class ModelClassGenerator
 		sb.append("\tpublic void set").append(columnName).append(" (").append(dataType).append(" ").append(columnName).append(")").append(NL)
 			.append("\t{").append(NL)
 		;
-				
+
 		//	List Validation
 		if (AD_Reference_ID != 0 && String.class == clazz)
 		{
 			String staticVar = addListValidation (sb, AD_Reference_ID, columnName);
 			sb.insert(0, staticVar);
 		}
-		
+
 		//	Payment Validation
 		if (displayType == DisplayType.Payment)
 		{
 			String staticVar = addListValidation (sb, REFERENCE_PAYMENTRULE, columnName);
-			sb.insert(0, staticVar);			
+			sb.insert(0, staticVar);
 		}
 
 		//	setValue ("ColumnName", xx);

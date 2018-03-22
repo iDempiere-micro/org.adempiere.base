@@ -16,7 +16,7 @@
  *****************************************************************************/
 package org.compiere.util;
 
-import org.compiere.model.MCountry;
+import org.compiere.impl.MCountry;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Language;

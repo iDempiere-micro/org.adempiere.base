@@ -2,8 +2,8 @@ package org.idempiere.fa.process;
 
 import java.util.logging.Level;
 
-import org.compiere.model.MAssetAddition;
-import org.compiere.model.MMatchInv;
+import org.compiere.impl.MAssetAddition;
+import org.compiere.impl.MMatchInv;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.fa.exceptions.AssetException;

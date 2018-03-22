@@ -18,8 +18,8 @@ package org.compiere.acct;
 
 import java.math.BigDecimal;
 
-import org.compiere.model.MCashLine;
-import org.compiere.model.MInvoice;
+import org.compiere.impl.MCashLine;
+import org.compiere.impl.MInvoice;
 import org.idempiere.common.util.Env;
 
 /**

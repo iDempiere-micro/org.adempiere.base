@@ -23,9 +23,9 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.MTable;
-import org.compiere.model.MViewColumn;
-import org.compiere.model.MViewComponent;
+import org.compiere.impl.MTable;
+import org.compiere.impl.MViewColumn;
+import org.compiere.impl.MViewComponent;
 import org.idempiere.common.util.DB;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Trx;

@@ -21,11 +21,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-import org.compiere.model.MAccount;
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MRequisition;
-import org.compiere.model.MRequisitionLine;
-import org.compiere.model.ProductCost;
+import org.compiere.impl.MAccount;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MRequisition;
+import org.compiere.impl.MRequisitionLine;
+import org.compiere.impl.ProductCost;
 import org.idempiere.common.util.Env;
 
 /**

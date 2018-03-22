@@ -20,10 +20,10 @@ package org.idempiere.fa.process;
 import java.sql.Timestamp;
 import java.util.logging.Level;
 
-import org.compiere.model.MProductCategory;
-import org.compiere.model.MProject;
-import org.compiere.model.MProduct;
-import org.compiere.model.MAssetAddition;
+import org.compiere.impl.MProductCategory;
+import org.compiere.impl.MProject;
+import org.compiere.impl.MProduct;
+import org.compiere.impl.MAssetAddition;
 import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;

@@ -18,9 +18,9 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.MAddressTransaction;
-import org.compiere.model.MLocation;
-import org.compiere.model.MSysConfig;
+import org.compiere.impl.MAddressTransaction;
+import org.compiere.impl.MLocation;
+import org.compiere.impl.MSysConfig;
 import org.compiere.process.ProcessInfoLog;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;

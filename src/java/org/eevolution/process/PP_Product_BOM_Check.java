@@ -20,7 +20,7 @@ package org.eevolution.process;
 
 import java.util.logging.Level;
 
-import org.compiere.model.MProduct;
+import org.compiere.impl.MProduct;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereUserError;
@@ -28,8 +28,8 @@ import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.ValueNamePair;
-import org.eevolution.model.MPPProductBOM;
-import org.eevolution.model.MPPProductBOMLine;
+import org.eevolution.impl.MPPProductBOM;
+import org.eevolution.impl.MPPProductBOMLine;
 
 /**
  * Title: Check BOM Structure (free of cycles) Description: Tree cannot contain

@@ -16,7 +16,7 @@
  *****************************************************************************/
 package org.compiere.util;
 
-import org.compiere.model.*;
+import org.compiere.impl.*;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -141,7 +141,7 @@ public class WebUser
 	//
 	private MBPartner		 	m_bp;
 	private MUser			 	m_bpc;
-	private MBPartnerLocation 	m_bpl;
+	private MBPartnerLocation m_bpl;
 	private MLocation 			m_loc;
 	//
 	private boolean				m_passwordOK = false;
@@ -672,7 +672,7 @@ public class WebUser
 		boolean retValue = false;
 		if(m_loggedIn)
 		{
-			boolean hash_password=MSysConfig.getBooleanValue(MSysConfig.USER_PASSWORD_HASH, false);		    
+			boolean hash_password= MSysConfig.getBooleanValue(MSysConfig.USER_PASSWORD_HASH, false);
 	    	if(!hash_password)
 		    {
 		      String sql = "SELECT * FROM AD_User "

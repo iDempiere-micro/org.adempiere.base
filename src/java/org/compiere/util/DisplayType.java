@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.logging.Level;
 
-import static org.compiere.model.SystemIDs.*;
+import static org.compiere.impl.SystemIDs.*;
 
 /**
  *	System Display Types.

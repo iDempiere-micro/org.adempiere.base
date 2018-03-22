@@ -19,7 +19,7 @@ package org.compiere.impexp;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
-import org.compiere.model.MBankStatementLoader;
+import org.compiere.impl.MBankStatementLoader;
 
 
 /**

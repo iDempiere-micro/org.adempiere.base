@@ -19,7 +19,7 @@ package org.eevolution.process;
 
 
 import org.compiere.Adempiere;
-import org.compiere.model.*;
+import org.compiere.impl.*;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.exceptions.AdempiereException;
@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import static org.compiere.model.SystemIDs.PROCESS_AD_NATIVE_SEQUENCE_ENABLE;
+import static org.compiere.impl.SystemIDs.PROCESS_AD_NATIVE_SEQUENCE_ENABLE;
 
 /**
  *	Enable Native Sequence
@@ -70,7 +70,7 @@ public class EnableNativeSequence extends SvrProcess
 			createSequence("AD_ChangeLog", null);
 			//
 			final String whereClause = "TableName NOT IN ('AD_Sequence', 'AD_Issue', 'AD_ChangeLog')"; 
-			List<MTable> tables = new Query(getCtx(),X_AD_Table.Table_Name, whereClause, get_TrxName())
+			List<MTable> tables = new Query(getCtx(), X_AD_Table.Table_Name, whereClause, get_TrxName())
 				.setOrderBy("TableName")
 				.list();
 			for(MTable table : tables)

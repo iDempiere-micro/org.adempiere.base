@@ -22,9 +22,9 @@ import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.logging.Level;
 
-import org.compiere.model.MInOut;
-import org.compiere.model.MSLAGoal;
-import org.compiere.model.MSLAMeasure;
+import org.compiere.impl.MInOut;
+import org.compiere.impl.MSLAGoal;
+import org.compiere.impl.MSLAMeasure;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

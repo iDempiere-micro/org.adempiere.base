@@ -7,13 +7,11 @@ import java.sql.Timestamp;
 import java.util.Properties;
 import java.util.logging.Level;
 
-//import org.compiere.model.MAssetClass; //commented by @win
-import org.compiere.model.MAssetGroup;
-import org.compiere.model.PO;
-import org.compiere.model.SetGetModel;
-import org.compiere.model.SetGetUtil;
+//import MAssetClass; //commented by @win
+import org.compiere.impl.PO;
+import org.compiere.impl.SetGetModel;
+import org.compiere.impl.SetGetUtil;
 import org.idempiere.common.util.CLogger;
-import org.compiere.util.Msg;
 import org.compiere.util.TimeUtil;
 
  

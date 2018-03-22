@@ -66,7 +66,7 @@ public class ModelGeneratorDialog extends JDialog implements ActionListener {
 		bFolder.addActionListener(this);
 
 		mainPanel.add(new JLabel("Package Name"));
-		fPackageName = new JTextField("org.compiere.model");
+		fPackageName = new JTextField("org.compiere.impl");
 		mainPanel.add(fPackageName);
 
 		mainPanel.add(new JLabel("Table Name"));
@@ -125,7 +125,7 @@ public class ModelGeneratorDialog extends JDialog implements ActionListener {
 			}
 			if (fGenerateClass.isSelected()) {
 				ModelClassGenerator.generateSource(folder, packageName, entityType, tableName);
-			}			
+			}
 			this.dispose();
 		} else if (e.getSource() == bCancel) {
 			this.dispose();

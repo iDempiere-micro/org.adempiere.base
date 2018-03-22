@@ -20,12 +20,11 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.logging.Level;
 
-import org.compiere.model.MPeriod;
+import org.compiere.impl.MPeriod;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
-import org.idempiere.common.util.Ini;
 import org.compiere.util.Msg;
 
 /**

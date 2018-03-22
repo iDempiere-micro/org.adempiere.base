@@ -25,24 +25,24 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_M_Movement;
 import org.compiere.model.I_M_MovementLine;
-import org.compiere.model.MBPartner;
-import org.compiere.model.MCampaign;
-import org.compiere.model.MColumn;
-import org.compiere.model.MDocType;
-import org.compiere.model.MLocator;
-import org.compiere.model.MMovement;
-import org.compiere.model.MMovementLine;
-import org.compiere.model.MOrg;
-import org.compiere.model.MProduct;
-import org.compiere.model.MProject;
-import org.compiere.model.MShipper;
-import org.compiere.model.MTable;
-import org.compiere.model.Query;
+import org.compiere.impl.MBPartner;
+import org.compiere.impl.MCampaign;
+import org.compiere.impl.MColumn;
+import org.compiere.impl.MDocType;
+import org.compiere.impl.MLocator;
+import org.compiere.impl.MMovement;
+import org.compiere.impl.MMovementLine;
+import org.compiere.impl.MOrg;
+import org.compiere.impl.MProduct;
+import org.compiere.impl.MProject;
+import org.compiere.impl.MShipper;
+import org.compiere.impl.MTable;
+import org.compiere.impl.Query;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
-import org.eevolution.model.X_I_Movement;
+import org.eevolution.impl.X_I_Movement;
 
 
 

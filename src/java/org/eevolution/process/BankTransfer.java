@@ -20,8 +20,8 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.logging.Level;
 
-import org.compiere.model.MBankAccount;
-import org.compiere.model.MPayment;
+import org.compiere.impl.MBankAccount;
+import org.compiere.impl.MPayment;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereUserError;

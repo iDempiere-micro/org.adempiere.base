@@ -1,6 +1,6 @@
 package org.adempiere.base;
 
-import org.compiere.model.MProductPricing;
+import org.compiere.impl.MProductPricing;
 
 public class DefaultProductPricingFactory implements IProductPricingFactory {
 	

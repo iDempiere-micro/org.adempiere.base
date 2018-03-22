@@ -3,8 +3,8 @@
  */
 package org.idempiere.fa.exceptions;
 
-import org.compiere.model.MAsset;
-import org.compiere.model.MRefList;
+import org.compiere.impl.MAsset;
+import org.compiere.impl.MRefList;
 
 
 /**

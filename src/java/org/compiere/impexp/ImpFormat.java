@@ -17,9 +17,9 @@
 package org.compiere.impexp;
 
 import org.compiere.model.I_AD_ImpFormat;
-import org.compiere.model.MSequence;
-import org.compiere.model.X_AD_ImpFormat;
-import org.compiere.model.X_I_GLJournal;
+import org.compiere.impl.MSequence;
+import org.compiere.impl.X_AD_ImpFormat;
+import org.compiere.impl.X_I_GLJournal;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import static org.compiere.model.SystemIDs.*;
+import static org.compiere.impl.SystemIDs.*;
 
 /**
  *	Import Format a Row

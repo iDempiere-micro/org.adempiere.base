@@ -16,7 +16,7 @@
  *****************************************************************************/
 package org.compiere.acct;
 
-import org.compiere.model.*;
+import org.compiere.impl.*;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -81,13 +81,13 @@ public class DocLine
 	private int             	m_C_AcctSchema_ID = 0;
 
 	/**	Product Costs			*/
-	private ProductCost			m_productCost = null;
+	private ProductCost m_productCost = null;
 	/** Production indicator	*/
 	private boolean 			m_productionBOM = false;
 	/** Outside Processing	*/
 	private int 				m_PP_Cost_Collector_ID = 0;
 	/** Account used only for GL Journal    */
-	private MAccount 			m_account = null;
+	private MAccount m_account = null;
 
 	/** Accounting Date				*/
 	private Timestamp			m_DateAcct = null;

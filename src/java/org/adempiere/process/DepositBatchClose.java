@@ -31,7 +31,9 @@ package org.adempiere.process;
 
 
 import java.util.logging.*;
-import org.compiere.model.*;
+
+import org.compiere.impl.MDepositBatch;
+import org.compiere.impl.MDepositBatchLine;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
  

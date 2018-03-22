@@ -5,7 +5,7 @@ package org.compiere.acct;
 
 import java.math.BigDecimal;
 
-import org.compiere.model.MAccount;
+import org.compiere.impl.MAccount;
 
 /**
  * @author ancu

@@ -25,7 +25,7 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.X_AD_ImpFormat_Row;
+import org.compiere.impl.X_AD_ImpFormat_Row;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Util;

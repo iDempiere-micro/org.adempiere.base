@@ -20,8 +20,8 @@ import java.math.BigDecimal;
 import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.MTable;
-import org.compiere.model.PO;
+import org.compiere.impl.MTable;
+import org.compiere.impl.PO;
 import org.idempiere.common.util.CLogger;
 
 /**

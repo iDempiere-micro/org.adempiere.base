@@ -19,9 +19,9 @@ package org.compiere.sla;
 import java.sql.Timestamp;
 import java.util.logging.Level;
 
-import org.compiere.model.MSLACriteria;
-import org.compiere.model.MSLAGoal;
-import org.compiere.model.MSLAMeasure;
+import org.compiere.impl.MSLACriteria;
+import org.compiere.impl.MSLAGoal;
+import org.compiere.impl.MSLAMeasure;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereUserError;

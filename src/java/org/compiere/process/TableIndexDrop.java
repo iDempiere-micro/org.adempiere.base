@@ -14,7 +14,7 @@ package org.compiere.process;
 
 import java.math.BigDecimal;
 
-import org.compiere.model.MTableIndex;
+import org.compiere.impl.MTableIndex;
 import org.idempiere.common.util.DB;
 
 public class TableIndexDrop extends SvrProcess {

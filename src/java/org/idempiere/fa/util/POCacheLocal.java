@@ -6,8 +6,8 @@ package org.idempiere.fa.util;
 import java.util.Properties;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.MTable;
-import org.compiere.model.PO;
+import org.compiere.impl.MTable;
+import org.compiere.impl.PO;
 
 /**
  * @author Teo Sarca, SC ARHIPAC SERVICE SRL

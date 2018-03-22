@@ -19,8 +19,8 @@ package org.compiere.acct;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
-import org.compiere.model.MAllocationLine;
-import org.compiere.model.MPayment;
+import org.compiere.impl.MAllocationLine;
+import org.compiere.impl.MPayment;
 import org.idempiere.common.util.DB;
 
 /**

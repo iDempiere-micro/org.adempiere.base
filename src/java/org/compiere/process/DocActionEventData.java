@@ -3,7 +3,7 @@ package org.compiere.process;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.compiere.model.PO;
+import org.compiere.impl.PO;
 
 public class DocActionEventData {
 

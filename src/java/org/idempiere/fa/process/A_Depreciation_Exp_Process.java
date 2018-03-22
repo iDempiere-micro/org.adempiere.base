@@ -3,7 +3,7 @@
  *****************************************************************************/
 package org.idempiere.fa.process;
 
-import org.compiere.model.MDepreciationExp;
+import org.compiere.impl.MDepreciationExp;
 import org.compiere.process.SvrProcess;
 
 

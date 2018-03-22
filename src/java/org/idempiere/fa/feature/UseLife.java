@@ -5,7 +5,7 @@ package org.idempiere.fa.feature;
 
 import java.sql.Timestamp;
 import java.util.Properties;
-import org.compiere.model.SetGetModel;
+import org.compiere.impl.SetGetModel;
  
  
  /**	Describe Use life Feature

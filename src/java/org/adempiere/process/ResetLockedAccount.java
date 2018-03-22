@@ -3,8 +3,8 @@ package org.adempiere.process;
 import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.MSysConfig;
-import org.compiere.model.MUser;
+import org.compiere.impl.MSysConfig;
+import org.compiere.impl.MUser;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.DB;

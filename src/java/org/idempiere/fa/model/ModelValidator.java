@@ -8,18 +8,19 @@ import java.util.logging.Level;
 
 import org.adempiere.exceptions.FillMandatoryException;
 import org.compiere.acct.Fact;
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MAssetAddition;
-import org.compiere.model.MAssetDisposed;
-import org.compiere.model.MClient;
-import org.compiere.model.MInvoice;
-import org.compiere.model.MInvoiceLine;
-import org.compiere.model.MMatchInv;
-import org.compiere.model.MProduct;
-import org.compiere.model.ModelValidationEngine;
-import org.compiere.model.PO;
-import org.compiere.model.SetGetModel;
-import org.compiere.model.SetGetUtil;
+import org.compiere.impl.FactsValidator;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MAssetAddition;
+import org.compiere.impl.MAssetDisposed;
+import org.compiere.impl.MClient;
+import org.compiere.impl.MInvoice;
+import org.compiere.impl.MInvoiceLine;
+import org.compiere.impl.MMatchInv;
+import org.compiere.impl.MProduct;
+import org.compiere.impl.ModelValidationEngine;
+import org.compiere.impl.PO;
+import org.compiere.impl.SetGetModel;
+import org.compiere.impl.SetGetUtil;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.fa.exceptions.AssetInvoiceWithMixedLines_LRO;
@@ -33,7 +34,7 @@ import org.idempiere.fa.exceptions.AssetProductStockedException;
  *
  */
 public class ModelValidator
-implements org.compiere.model.ModelValidator, org.compiere.model.FactsValidator
+implements org.compiere.impl.ModelValidator, FactsValidator
 {
 	/** Logger */
 	private static CLogger log = CLogger.getCLogger(ModelValidator.class);

@@ -17,8 +17,8 @@
 package org.compiere.util;
 
 import com.sun.mail.smtp.SMTPMessage;
-import org.compiere.model.MClient;
-import org.compiere.model.MSysConfig;
+import org.compiere.impl.MClient;
+import org.compiere.impl.MSysConfig;
 import org.idempiere.common.util.*;
 
 import javax.activation.DataHandler;

@@ -14,8 +14,8 @@
  *****************************************************************************/
 package org.adempiere.model;
 
-import org.compiere.model.MShipper;
-import org.compiere.model.MShippingProcessor;
+import org.compiere.impl.MShipper;
+import org.compiere.impl.MShippingProcessor;
 import org.idempiere.common.util.DB;
 
 /**

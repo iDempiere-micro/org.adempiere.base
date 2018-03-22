@@ -24,15 +24,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Level;
 
-import org.compiere.model.MAccount;
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MClientInfo;
-import org.compiere.model.MCurrency;
-import org.compiere.model.MOrder;
-import org.compiere.model.MOrderLine;
-import org.compiere.model.MRequisitionLine;
-import org.compiere.model.MTax;
-import org.compiere.model.ProductCost;
+import org.compiere.impl.MAccount;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MClientInfo;
+import org.compiere.impl.MCurrency;
+import org.compiere.impl.MOrder;
+import org.compiere.impl.MOrderLine;
+import org.compiere.impl.MRequisitionLine;
+import org.compiere.impl.MTax;
+import org.compiere.impl.ProductCost;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

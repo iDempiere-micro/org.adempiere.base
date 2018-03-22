@@ -24,9 +24,9 @@ package org.adempiere.model;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.compiere.model.MTable;
-import org.compiere.model.PO;
-import org.compiere.model.POInfo;
+import org.compiere.impl.MTable;
+import org.compiere.impl.PO;
+import org.compiere.impl.POInfo;
 
 /**
  * Generic PO implementation, this can be use together with ModelValidator as alternative to the classic 

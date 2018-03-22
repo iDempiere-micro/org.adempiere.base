@@ -29,8 +29,8 @@ import java.util.logging.Level;
 import javax.script.ScriptEngine;
 
 import org.adempiere.base.Core;
-import org.compiere.model.MProcess;
-import org.compiere.model.MRule;
+import org.compiere.impl.MProcess;
+import org.compiere.impl.MRule;
 import org.compiere.process.ProcessCall;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.ProcessInfoParameter;

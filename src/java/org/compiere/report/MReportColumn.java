@@ -21,7 +21,7 @@ import java.sql.ResultSet;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.compiere.model.X_PA_ReportColumn;
+import org.compiere.impl.X_PA_ReportColumn;
 
 /**
  *  Report Column Model

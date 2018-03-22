@@ -3,10 +3,10 @@ package org.adempiere.process;
 import java.math.BigDecimal;
 import java.util.logging.Level;
 
-import org.compiere.model.X_M_ShipperCfg;
-import org.compiere.model.X_M_ShipperLabelsCfg;
-import org.compiere.model.X_M_ShipperPackagingCfg;
-import org.compiere.model.X_M_ShipperPickupTypesCfg;
+import org.compiere.impl.X_M_ShipperCfg;
+import org.compiere.impl.X_M_ShipperLabelsCfg;
+import org.compiere.impl.X_M_ShipperPackagingCfg;
+import org.compiere.impl.X_M_ShipperPickupTypesCfg;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 

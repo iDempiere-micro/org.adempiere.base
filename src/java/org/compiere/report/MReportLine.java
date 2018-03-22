@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.compiere.model.MAcctSchemaElement;
-import org.compiere.model.X_PA_ReportLine;
+import org.compiere.impl.MAcctSchemaElement;
+import org.compiere.impl.X_PA_ReportLine;
 import org.idempiere.common.util.DB;
 
 

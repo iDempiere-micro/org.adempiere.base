@@ -23,7 +23,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-import org.compiere.model.PO;
+import org.compiere.impl.PO;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Ini;

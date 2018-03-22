@@ -21,8 +21,8 @@ import java.text.ParsePosition;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-import org.compiere.model.MBPBankAccount;
-import org.compiere.model.MBPartner;
+import org.compiere.impl.MBPBankAccount;
+import org.compiere.impl.MBPartner;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

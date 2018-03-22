@@ -13,8 +13,9 @@
  *****************************************************************************/
 package org.adempiere.exceptions;
 
-import org.compiere.model.MRefList;
-import org.compiere.model.X_C_DocType;
+import org.compiere.impl.MPeriod;
+import org.compiere.impl.MRefList;
+import org.compiere.impl.X_C_DocType;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;
 
@@ -23,8 +24,8 @@ import java.sql.Timestamp;
 /**
  * Period Closed Exception.
  * This exception is throwed by
- * {@link org.compiere.model.MPeriod#testPeriodOpen(java.util.Properties, Timestamp, int, int)} and
- * {@link org.compiere.model.MPeriod#testPeriodOpen(java.util.Properties, Timestamp, String, int)} methods.
+ * {@link MPeriod#testPeriodOpen(java.util.Properties, Timestamp, int, int)} and
+ * {@link MPeriod#testPeriodOpen(java.util.Properties, Timestamp, String, int)} methods.
  * @author Teo Sarca, SC ARHIPAC SERVICE SRL
  * @author victor.perez@e-evolution.com, e-Evolution http://www.e-evolution.com
  * 				<li>FR [ 2520591 ] Support multiples calendar for Org

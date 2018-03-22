@@ -16,7 +16,7 @@
  *****************************************************************************/
 package org.compiere;
 
-import org.compiere.model.MProductDownload;
+import org.compiere.impl.MProductDownload;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

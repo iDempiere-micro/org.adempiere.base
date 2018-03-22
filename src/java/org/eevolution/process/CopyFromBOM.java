@@ -23,8 +23,8 @@ import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereSystemError;
 import org.idempiere.common.util.Env;
-import org.eevolution.model.MPPProductBOM;
-import org.eevolution.model.MPPProductBOMLine;
+import org.eevolution.impl.MPPProductBOM;
+import org.eevolution.impl.MPPProductBOMLine;
 
 /**
  *	CopyFromBOM Process

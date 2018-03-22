@@ -13,7 +13,7 @@
 package org.compiere.process;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.MTable;
+import org.compiere.impl.MTable;
 import org.idempiere.common.util.DB;
 import org.compiere.util.Msg;
 

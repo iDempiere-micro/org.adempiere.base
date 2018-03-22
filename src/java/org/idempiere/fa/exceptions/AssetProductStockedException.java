@@ -3,7 +3,7 @@
  */
 package org.idempiere.fa.exceptions;
 
-import org.compiere.model.MProduct;
+import org.compiere.impl.MProduct;
 
 /**
  * @author Teo Sarca, SC ARHIPAC SERVICE SRL

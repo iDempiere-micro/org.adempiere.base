@@ -16,7 +16,7 @@ package org.adempiere.base;
 import java.sql.ResultSet;
 
 import org.compiere.acct.Doc;
-import org.compiere.model.MAcctSchema;
+import org.compiere.impl.MAcctSchema;
 
 /**
  *

@@ -4,11 +4,11 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import org.compiere.model.MAccount;
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MAssetAcct;
-import org.compiere.model.MAssetDisposed;
-import org.compiere.model.MDocType;
+import org.compiere.impl.MAccount;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MAssetAcct;
+import org.compiere.impl.MAssetDisposed;
+import org.compiere.impl.MDocType;
 import org.idempiere.common.util.Env;
 
 

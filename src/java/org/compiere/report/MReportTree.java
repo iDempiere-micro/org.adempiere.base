@@ -24,11 +24,11 @@ import java.util.Enumeration;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.compiere.model.MAcctSchemaElement;
-import org.compiere.model.MHierarchy;
-import org.compiere.model.MRole;
-import org.compiere.model.MTree;
-import org.compiere.model.MTreeNode;
+import org.compiere.impl.MAcctSchemaElement;
+import org.compiere.impl.MHierarchy;
+import org.compiere.impl.MRole;
+import org.compiere.impl.MTree;
+import org.compiere.impl.MTreeNode;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

@@ -3,12 +3,11 @@
  */
 package org.idempiere.fa.process;
 
-import org.compiere.model.MDepreciationWorkfile;
-import org.compiere.model.POResultSet;
-import org.compiere.model.Query;
+import org.compiere.impl.MDepreciationWorkfile;
+import org.compiere.impl.POResultSet;
+import org.compiere.impl.Query;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
-import org.idempiere.common.util.DB;
 
 
 /**

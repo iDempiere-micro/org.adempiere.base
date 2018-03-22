@@ -7,12 +7,12 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.compiere.model.MAsset;
-import org.compiere.model.MDepreciationEntry;
-import org.compiere.model.MDepreciationExp;
-import org.compiere.model.MDepreciationWorkfile;
-import org.compiere.model.MPeriod;
-import org.compiere.model.Query;
+import org.compiere.impl.MAsset;
+import org.compiere.impl.MDepreciationEntry;
+import org.compiere.impl.MDepreciationExp;
+import org.compiere.impl.MDepreciationWorkfile;
+import org.compiere.impl.MPeriod;
+import org.compiere.impl.Query;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.DB;

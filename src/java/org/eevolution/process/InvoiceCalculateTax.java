@@ -18,10 +18,10 @@ package org.eevolution.process;
 
 
 import org.adempiere.exceptions.FillMandatoryException;
-import org.compiere.model.MBPartner;
-import org.compiere.model.MFactAcct;
-import org.compiere.model.MInvoice;
-import org.compiere.model.MPeriod;
+import org.compiere.impl.MBPartner;
+import org.compiere.impl.MFactAcct;
+import org.compiere.impl.MInvoice;
+import org.compiere.impl.MPeriod;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 

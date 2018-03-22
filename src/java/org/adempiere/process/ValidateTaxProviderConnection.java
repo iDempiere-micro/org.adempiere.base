@@ -18,7 +18,7 @@ import java.util.logging.Level;
 import org.adempiere.base.Core;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.model.ITaxProvider;
-import org.compiere.model.MTaxProvider;
+import org.compiere.impl.MTaxProvider;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Msg;

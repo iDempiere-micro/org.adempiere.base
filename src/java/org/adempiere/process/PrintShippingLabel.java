@@ -1,9 +1,9 @@
 package org.adempiere.process;
 
 import org.idempiere.common.base.Service;
-import org.compiere.model.MAttachment;
-import org.compiere.model.MPackage;
-import org.compiere.model.MShipperLabels;
+import org.compiere.impl.MAttachment;
+import org.compiere.impl.MPackage;
+import org.compiere.impl.MShipperLabels;
 import org.compiere.process.SvrProcess;
 
 public class PrintShippingLabel extends SvrProcess 

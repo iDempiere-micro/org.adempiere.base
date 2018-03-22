@@ -18,7 +18,7 @@ package org.compiere.util;
 
 import java.io.File;
 
-import org.compiere.model.MPaySelectionCheck;
+import org.compiere.impl.MPaySelectionCheck;
 
 /**
  * 	Custom Payment Export Interface

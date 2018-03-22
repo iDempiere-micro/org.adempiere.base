@@ -13,10 +13,10 @@
  *****************************************************************************/
 package org.adempiere.process;
 
-import org.compiere.model.MColumn;
-import org.compiere.model.MTable;
-import org.compiere.model.M_Element;
-import org.compiere.model.PO;
+import org.compiere.impl.MColumn;
+import org.compiere.impl.MTable;
+import org.compiere.impl.M_Element;
+import org.compiere.impl.PO;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DisplayType;

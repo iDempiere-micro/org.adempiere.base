@@ -39,11 +39,11 @@ import java.util.Vector;
 import java.util.logging.Level;
 
 import org.compiere.model.I_C_Payment;
-import org.compiere.model.MColumn;
-import org.compiere.model.MQuery;
-import org.compiere.model.MRole;
-import org.compiere.model.MSearchDefinition;
-import org.compiere.model.MTable;
+import org.compiere.impl.MColumn;
+import org.compiere.impl.MQuery;
+import org.compiere.impl.MRole;
+import org.compiere.impl.MSearchDefinition;
+import org.compiere.impl.MTable;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

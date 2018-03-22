@@ -16,10 +16,10 @@ package org.adempiere.base.event;
 import java.util.StringTokenizer;
 
 import org.compiere.model.I_C_Location;
-import org.compiere.model.MAddressValidation;
-import org.compiere.model.MLocation;
-import org.compiere.model.MSysConfig;
-import org.compiere.model.PO;
+import org.compiere.impl.MAddressValidation;
+import org.compiere.impl.MLocation;
+import org.compiere.impl.MSysConfig;
+import org.compiere.impl.PO;
 import org.osgi.service.event.Event;
 
 /**

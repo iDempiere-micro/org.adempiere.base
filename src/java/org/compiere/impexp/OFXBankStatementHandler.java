@@ -23,7 +23,6 @@ import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -34,7 +33,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import org.compiere.model.MBankStatementLoader;
+import org.compiere.impl.MBankStatementLoader;
 import org.idempiere.common.util.Env;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;

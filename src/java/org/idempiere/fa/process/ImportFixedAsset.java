@@ -1,6 +1,6 @@
 package org.idempiere.fa.process;
 
-import org.compiere.model.*;
+import org.compiere.impl.*;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.DB;
@@ -80,14 +80,14 @@ public class ImportFixedAsset extends SvrProcess
 		//	Delete Old Imported
 		if (p_DeleteOldImported)
 		{
-			sql = new StringBuffer ("DELETE "+X_I_FixedAsset.Table_Name
+			sql = new StringBuffer ("DELETE "+ X_I_FixedAsset.Table_Name
 				  + " WHERE I_IsImported='Y'").append (sqlCheck);
 			no = DB.executeUpdateEx(sql.toString(), get_TrxName());
 			if (log.isLoggable(Level.FINE)) log.fine("Delete Old Imported =" + no);
 		}
 		
 		//	Set Client, Org, IsActive, Created/Updated
-		sql = new StringBuffer ("UPDATE "+MIFixedAsset.Table_Name+ " "
+		sql = new StringBuffer ("UPDATE "+ MIFixedAsset.Table_Name+ " "
 			  + "SET AD_Client_ID = COALESCE (AD_Client_ID,").append (p_AD_Client_ID).append ("),"
 			  + " AD_Org_ID = COALESCE (AD_Org_ID,").append (p_AD_Org_ID).append ("),"
 			  + " IsActive = COALESCE (IsActive, 'Y'),"

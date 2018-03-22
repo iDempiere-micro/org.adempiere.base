@@ -17,8 +17,8 @@ package org.adempiere.process;
 import java.sql.Timestamp;
 import java.util.logging.Level;
 
-import org.compiere.model.MPackage;
-import org.compiere.model.MShippingTransaction;
+import org.compiere.impl.MPackage;
+import org.compiere.impl.MShippingTransaction;
 import org.compiere.process.ProcessInfoLog;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;

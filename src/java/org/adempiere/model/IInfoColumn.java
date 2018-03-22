@@ -14,7 +14,7 @@
 
 package org.adempiere.model;
 
-import org.compiere.model.MInfoColumn;
+import org.compiere.impl.MInfoColumn;
 
 /**
  * 

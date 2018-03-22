@@ -21,11 +21,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-import org.compiere.model.MAccount;
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MBankAccount;
-import org.compiere.model.MBankStatement;
-import org.compiere.model.MBankStatementLine;
+import org.compiere.impl.MAccount;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MBankAccount;
+import org.compiere.impl.MBankStatement;
+import org.compiere.impl.MBankStatementLine;
 import org.idempiere.common.util.Env;
 
 /**

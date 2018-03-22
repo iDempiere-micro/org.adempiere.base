@@ -1,12 +1,12 @@
 package org.adempiere.process;
 
-import org.compiere.model.MShipper;
-import org.compiere.model.MShipperLabels;
-import org.compiere.model.MShipperPackaging;
-import org.compiere.model.MShipperPickupTypes;
-import org.compiere.model.X_M_ShipperLabelsCfg;
-import org.compiere.model.X_M_ShipperPackagingCfg;
-import org.compiere.model.X_M_ShipperPickupTypesCfg;
+import org.compiere.impl.MShipper;
+import org.compiere.impl.MShipperLabels;
+import org.compiere.impl.MShipperPackaging;
+import org.compiere.impl.MShipperPickupTypes;
+import org.compiere.impl.X_M_ShipperLabelsCfg;
+import org.compiere.impl.X_M_ShipperPackagingCfg;
+import org.compiere.impl.X_M_ShipperPickupTypesCfg;
 import org.compiere.process.SvrProcess;
 
 public class ShipperCreateFrom extends SvrProcess

@@ -18,7 +18,7 @@ package org.compiere.process;
 
 import java.util.logging.Level;
 
-import org.compiere.model.PO;
+import org.compiere.impl.PO;
 
 /**
  *	Adempiere Service.

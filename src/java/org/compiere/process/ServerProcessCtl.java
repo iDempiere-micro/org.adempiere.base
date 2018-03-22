@@ -2,8 +2,8 @@ package org.compiere.process;
 
 import org.adempiere.util.ProcessUtil;
 import org.compiere.interfaces.Server;
-import org.compiere.model.MPInstance;
-import org.compiere.model.MRule;
+import org.compiere.impl.MPInstance;
+import org.compiere.impl.MRule;
 import org.compiere.util.Msg;
 import org.compiere.wf.MWFProcess;
 import org.idempiere.common.base.Service;

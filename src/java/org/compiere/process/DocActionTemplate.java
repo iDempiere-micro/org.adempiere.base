@@ -21,11 +21,11 @@ import java.math.BigDecimal;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.compiere.model.MDocType;
-import org.compiere.model.ModelValidationEngine;
-import org.compiere.model.ModelValidator;
-import org.compiere.model.PO;
-import org.compiere.model.POInfo;
+import org.compiere.impl.MDocType;
+import org.compiere.impl.ModelValidationEngine;
+import org.compiere.impl.ModelValidator;
+import org.compiere.impl.PO;
+import org.compiere.impl.POInfo;
 
 /**
  *	Template for DocAction

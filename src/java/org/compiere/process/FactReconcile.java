@@ -21,10 +21,10 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.MElementValue;
-import org.compiere.model.MFactReconciliation;
-import org.compiere.model.MRule;
-import org.compiere.model.MSequence;
+import org.compiere.impl.MElementValue;
+import org.compiere.impl.MFactReconciliation;
+import org.compiere.impl.MRule;
+import org.compiere.impl.MSequence;
 import org.idempiere.common.util.DB;
 
 /**

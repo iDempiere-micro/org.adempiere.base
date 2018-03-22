@@ -1,7 +1,7 @@
 package org.adempiere.process;
 
-import org.compiere.model.MAttachment;
-import org.compiere.model.MShipperLabels;
+import org.compiere.impl.MAttachment;
+import org.compiere.impl.MShipperLabels;
 
 public interface IPrintShippingLabel {
 

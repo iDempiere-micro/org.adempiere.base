@@ -16,7 +16,7 @@ package org.adempiere.model;
 
 import java.util.Properties;
 
-import org.compiere.model.MShippingTransaction;
+import org.compiere.impl.MShippingTransaction;
 
 /**
  * 

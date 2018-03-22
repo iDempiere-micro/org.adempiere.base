@@ -20,11 +20,9 @@ import java.util.List;
 import java.util.logging.Level;
 
 import org.adempiere.exceptions.FillMandatoryException;
-import org.compiere.model.MPOSKey;
-import org.compiere.model.MProduct;
-import org.compiere.model.Query;
-import org.compiere.process.ProcessInfoParameter;
-import org.compiere.process.SvrProcess;
+import org.compiere.impl.MPOSKey;
+import org.compiere.impl.MProduct;
+import org.compiere.impl.Query;
 import org.idempiere.common.util.Env;
 
 

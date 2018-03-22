@@ -22,8 +22,8 @@ import java.sql.ResultSet;
 import java.util.Properties;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.MIndexColumn;
-import org.compiere.model.MTableIndex;
+import org.compiere.impl.MIndexColumn;
+import org.compiere.impl.MTableIndex;
 import org.idempiere.common.util.DB;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Trx;

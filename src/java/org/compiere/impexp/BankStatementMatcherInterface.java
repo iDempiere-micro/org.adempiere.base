@@ -16,8 +16,8 @@
  *****************************************************************************/
 package org.compiere.impexp;
 
-import org.compiere.model.MBankStatementLine;
-import org.compiere.model.X_I_BankStatement;
+import org.compiere.impl.MBankStatementLine;
+import org.compiere.impl.X_I_BankStatement;
 
 /**
  *	Bank Statement Matcher Algorithm Interface

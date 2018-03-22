@@ -17,8 +17,8 @@
 package org.compiere.util;
 
 import org.compiere.Adempiere;
-import org.compiere.model.MClient;
-import org.compiere.model.MSystem;
+import org.compiere.impl.MClient;
+import org.compiere.impl.MSystem;
 import org.idempiere.common.util.CLogMgt;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Ini;

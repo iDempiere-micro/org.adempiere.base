@@ -13,8 +13,8 @@
  *****************************************************************************/
 package org.adempiere.exceptions;
 
-import org.compiere.model.MProduct;
-import org.compiere.model.MUOM;
+import org.compiere.impl.MProduct;
+import org.compiere.impl.MUOM;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;
 

@@ -17,9 +17,9 @@ import java.sql.ResultSet;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.compiere.model.MInfoColumn;
-import org.compiere.model.MProcess;
-import org.compiere.model.X_AD_InfoProcess;
+import org.compiere.impl.MInfoColumn;
+import org.compiere.impl.MProcess;
+import org.compiere.impl.X_AD_InfoProcess;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Evaluatee;
 import org.idempiere.common.util.Evaluator;

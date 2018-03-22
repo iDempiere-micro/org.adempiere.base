@@ -18,7 +18,7 @@ package org.compiere.cm;
 
 import java.util.logging.Level;
 
-import org.compiere.model.MTemplate;
+import org.compiere.impl.MTemplate;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 

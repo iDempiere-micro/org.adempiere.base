@@ -19,12 +19,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
-import org.compiere.model.MClient;
-import org.compiere.model.MPriceListVersion;
-import org.compiere.model.MProductPrice;
-import org.compiere.model.ModelValidationEngine;
-import org.compiere.model.ModelValidator;
-import org.compiere.model.PO;
+import org.compiere.impl.MClient;
+import org.compiere.impl.MPriceListVersion;
+import org.compiere.impl.MProductPrice;
+import org.compiere.impl.ModelValidationEngine;
+import org.compiere.impl.ModelValidator;
+import org.compiere.impl.PO;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

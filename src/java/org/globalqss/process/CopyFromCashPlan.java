@@ -17,9 +17,9 @@
 
 package org.globalqss.process;
 
-import org.compiere.model.MCashPlan;
-import org.compiere.model.MCashPlanLine;
-import org.compiere.model.PO;
+import org.compiere.impl.MCashPlan;
+import org.compiere.impl.MCashPlanLine;
+import org.compiere.impl.PO;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereSystemError;

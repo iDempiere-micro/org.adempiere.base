@@ -24,13 +24,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MCostDetail;
-import org.compiere.model.MProduct;
-import org.compiere.model.MProductionLineMA;
-import org.compiere.model.ProductCost;
-import org.compiere.model.X_M_Production;
-import org.compiere.model.X_M_ProductionLine;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MCostDetail;
+import org.compiere.impl.MProduct;
+import org.compiere.impl.MProductionLineMA;
+import org.compiere.impl.ProductCost;
+import org.compiere.impl.X_M_Production;
+import org.compiere.impl.X_M_ProductionLine;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

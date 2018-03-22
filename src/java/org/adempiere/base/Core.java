@@ -27,7 +27,7 @@ import org.adempiere.model.ITaxProvider;
 import org.adempiere.model.MShipperFacade;
 import org.compiere.impexp.BankStatementLoaderInterface;
 import org.compiere.impexp.BankStatementMatcherInterface;
-import org.compiere.model.*;
+import org.compiere.impl.*;
 import org.compiere.process.ProcessCall;
 import org.compiere.util.PaymentExport;
 import org.compiere.util.ReplenishInterface;
@@ -248,7 +248,7 @@ public class Core {
 	 * @param validation
 	 * @return address validation instance or null if not found
 	 */
-	public static IAddressValidation getAddressValidation(MAddressValidation validation) 
+	public static IAddressValidation getAddressValidation(MAddressValidation validation)
 	{
 		String className = validation.getAddressValidationClass();
 		if (className == null || className.length() == 0) 

@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.adempiere.exceptions;
 
-import org.compiere.model.MOrg;
+import org.compiere.impl.MOrg;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;
 

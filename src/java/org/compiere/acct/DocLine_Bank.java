@@ -18,7 +18,7 @@ package org.compiere.acct;
 
 import java.math.BigDecimal;
 
-import org.compiere.model.MBankStatementLine;
+import org.compiere.impl.MBankStatementLine;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

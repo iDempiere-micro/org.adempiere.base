@@ -5,10 +5,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import org.compiere.model.MAccount;
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MDepreciationEntry;
-import org.compiere.model.MDepreciationExp;
+import org.compiere.impl.MAccount;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MDepreciationEntry;
+import org.compiere.impl.MDepreciationExp;
 import org.idempiere.common.util.Env;
 
 

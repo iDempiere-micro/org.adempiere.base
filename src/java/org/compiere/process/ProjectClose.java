@@ -19,8 +19,8 @@ package org.compiere.process;
 
 import java.util.logging.Level;
 
-import org.compiere.model.MProject;
-import org.compiere.model.MProjectLine;
+import org.compiere.impl.MProject;
+import org.compiere.impl.MProjectLine;
  
 /**
  *  Close Project.

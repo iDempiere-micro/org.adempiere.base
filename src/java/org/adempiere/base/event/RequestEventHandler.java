@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.adempiere.base.event;
 
-import static org.compiere.model.SystemIDs.MESSAGE_REQUESTUPDATE;
+import static org.compiere.impl.SystemIDs.MESSAGE_REQUESTUPDATE;
 
 import java.io.File;
 import java.sql.PreparedStatement;
@@ -26,16 +26,16 @@ import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.DBException;
 import org.compiere.model.I_R_Request;
-import org.compiere.model.MClient;
-import org.compiere.model.MNote;
-import org.compiere.model.MRequest;
-import org.compiere.model.MRequestAction;
-import org.compiere.model.MRequestType;
-import org.compiere.model.MRequestUpdate;
-import org.compiere.model.MUser;
-import org.compiere.model.PO;
-import org.compiere.model.X_AD_User;
-import org.compiere.model.X_R_Request;
+import org.compiere.impl.MClient;
+import org.compiere.impl.MNote;
+import org.compiere.impl.MRequest;
+import org.compiere.impl.MRequestAction;
+import org.compiere.impl.MRequestType;
+import org.compiere.impl.MRequestUpdate;
+import org.compiere.impl.MUser;
+import org.compiere.impl.PO;
+import org.compiere.impl.X_AD_User;
+import org.compiere.impl.X_R_Request;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

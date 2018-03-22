@@ -21,12 +21,12 @@ import java.sql.Timestamp;
 import java.util.List;
 import java.util.Properties;
 
-import org.compiere.model.AdempiereProcessor;
-import org.compiere.model.AdempiereProcessor2;
-import org.compiere.model.AdempiereProcessorLog;
-import org.compiere.model.MSchedule;
-import org.compiere.model.Query;
-import org.compiere.model.X_AD_WorkflowProcessor;
+import org.compiere.impl.AdempiereProcessor;
+import org.compiere.impl.AdempiereProcessor2;
+import org.compiere.impl.AdempiereProcessorLog;
+import org.compiere.impl.MSchedule;
+import org.compiere.impl.Query;
+import org.compiere.impl.X_AD_WorkflowProcessor;
 import org.idempiere.common.util.DB;
 
 

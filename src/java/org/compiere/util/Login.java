@@ -17,6 +17,7 @@
 package org.compiere.util;
 
 import org.compiere.Adempiere;
+import org.compiere.impl.*;
 import org.compiere.model.*;
 import org.idempiere.common.db.CConnection;
 import org.idempiere.common.util.*;
@@ -608,7 +609,7 @@ public class Login
 	 *	@param Summary_Org_ID summary org
 	 *	@param Summary_Name name
 	 *	@param role role
-	 *	@see org.compiere.model.MRole#loadOrgAccessAdd
+	 *	@see MRole#loadOrgAccessAdd
 	 */
 	private void getOrgsAddSummary (ArrayList<KeyNamePair> list, int Summary_Org_ID, 
 		String Summary_Name, MRole role)

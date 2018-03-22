@@ -6,15 +6,15 @@ import java.util.ArrayList;
 
 import org.compiere.model.I_C_Project;
 import org.compiere.model.I_C_Project_Acct;
-import org.compiere.model.MAccount;
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MAssetAcct;
-import org.compiere.model.MAssetAddition;
-import org.compiere.model.MCharge;
-import org.compiere.model.MDocType;
-import org.compiere.model.MProject;
-import org.compiere.model.ProductCost;
-import org.compiere.model.X_C_Project_Acct;
+import org.compiere.impl.MAccount;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MAssetAcct;
+import org.compiere.impl.MAssetAddition;
+import org.compiere.impl.MCharge;
+import org.compiere.impl.MDocType;
+import org.compiere.impl.MProject;
+import org.compiere.impl.ProductCost;
+import org.compiere.impl.X_C_Project_Acct;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

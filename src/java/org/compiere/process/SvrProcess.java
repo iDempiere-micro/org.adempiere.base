@@ -28,8 +28,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.adempiere.util.IProcessUI;
-import org.compiere.model.MPInstance;
-import org.compiere.model.PO;
+import org.compiere.impl.MPInstance;
+import org.compiere.impl.PO;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

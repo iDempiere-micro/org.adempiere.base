@@ -50,7 +50,7 @@ Export-Package: \
  org.compiere.install*, \
  org.compiere.interfaces*, \
  org.compiere.interfaces.impl*, \
- org.compiere.model*, \
+ org.compiere.impl*, \
  org.compiere.print*, \
  org.compiere.print.layout*, \
  org.compiere.process*, \
@@ -60,7 +60,7 @@ Export-Package: \
  org.compiere.tools*, \
  org.compiere.util*, \
  org.compiere.wf*, \
- org.eevolution.model*, \
+ org.eevolution.impl*, \
  org.idempiere.broadcast*, \
  org.idempiere.model*
     

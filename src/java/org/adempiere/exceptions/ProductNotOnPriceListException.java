@@ -16,8 +16,8 @@ package org.adempiere.exceptions;
 import java.text.DateFormat;
 
 import org.adempiere.base.IProductPricing;
-import org.compiere.model.MPriceList;
-import org.compiere.model.MProduct;
+import org.compiere.impl.MPriceList;
+import org.compiere.impl.MProduct;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;

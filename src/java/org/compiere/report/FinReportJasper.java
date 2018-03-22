@@ -21,8 +21,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 
 import org.adempiere.util.ProcessUtil;
-import org.compiere.model.MPInstance;
-import org.compiere.model.MProcess;
+import org.compiere.impl.MPInstance;
+import org.compiere.impl.MProcess;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.ProcessInfoParameter;
 import org.idempiere.common.util.DB;

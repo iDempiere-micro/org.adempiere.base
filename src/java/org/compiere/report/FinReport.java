@@ -16,8 +16,6 @@
  *****************************************************************************/
 package org.compiere.report;
 
-import static org.compiere.model.SystemIDs.TABLE_T_REPORT;
-
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,15 +25,13 @@ import java.util.List;
 import java.util.logging.Level;
 
 import org.compiere.model.I_C_ValidCombination;
-import org.compiere.model.MAcctSchemaElement;
-import org.compiere.model.MPeriod;
-import org.compiere.model.MReportCube;
+import org.compiere.impl.MAcctSchemaElement;
+import org.compiere.impl.MPeriod;
+import org.compiere.impl.MReportCube;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereUserError;
 import org.idempiere.common.util.DB;
-import org.idempiere.common.util.Env;
-import org.idempiere.common.util.Ini;
 import org.compiere.util.TimeUtil;
 
 /**

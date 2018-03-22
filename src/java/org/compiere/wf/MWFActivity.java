@@ -16,7 +16,7 @@
  *****************************************************************************/
 package org.compiere.wf;
 
-import static org.compiere.model.SystemIDs.MESSAGE_WORKFLOWRESULT;
+import static org.compiere.impl.SystemIDs.MESSAGE_WORKFLOWRESULT;
 
 import java.io.File;
 import java.math.BigDecimal;
@@ -34,27 +34,27 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.MAttachment;
-import org.compiere.model.MBPartner;
-import org.compiere.model.MClient;
-import org.compiere.model.MColumn;
-import org.compiere.model.MConversionRate;
-import org.compiere.model.MMailText;
-import org.compiere.model.MNote;
-import org.compiere.model.MOrg;
-import org.compiere.model.MOrgInfo;
-import org.compiere.model.MPInstance;
-import org.compiere.model.MPInstancePara;
-import org.compiere.model.MProcess;
-import org.compiere.model.MRefList;
-import org.compiere.model.MRole;
-import org.compiere.model.MTable;
-import org.compiere.model.MUser;
-import org.compiere.model.MUserRoles;
-import org.compiere.model.MWFActivityApprover;
-import org.compiere.model.PO;
-import org.compiere.model.Query;
-import org.compiere.model.X_AD_WF_Activity;
+import org.compiere.impl.MAttachment;
+import org.compiere.impl.MBPartner;
+import org.compiere.impl.MClient;
+import org.compiere.impl.MColumn;
+import org.compiere.impl.MConversionRate;
+import org.compiere.impl.MMailText;
+import org.compiere.impl.MNote;
+import org.compiere.impl.MOrg;
+import org.compiere.impl.MOrgInfo;
+import org.compiere.impl.MPInstance;
+import org.compiere.impl.MPInstancePara;
+import org.compiere.impl.MProcess;
+import org.compiere.impl.MRefList;
+import org.compiere.impl.MRole;
+import org.compiere.impl.MTable;
+import org.compiere.impl.MUser;
+import org.compiere.impl.MUserRoles;
+import org.compiere.impl.MWFActivityApprover;
+import org.compiere.impl.PO;
+import org.compiere.impl.Query;
+import org.compiere.impl.X_AD_WF_Activity;
 import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.StateEngine;

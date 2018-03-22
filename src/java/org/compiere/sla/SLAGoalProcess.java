@@ -16,8 +16,8 @@
  *****************************************************************************/
 package org.compiere.sla;
 
-import org.compiere.model.MSLACriteria;
-import org.compiere.model.MSLAGoal;
+import org.compiere.impl.MSLACriteria;
+import org.compiere.impl.MSLAGoal;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereUserError;

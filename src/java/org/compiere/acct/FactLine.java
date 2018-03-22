@@ -24,16 +24,16 @@ import java.sql.Timestamp;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.compiere.model.MAccount;
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MAcctSchemaElement;
-import org.compiere.model.MConversionRate;
-import org.compiere.model.MCurrency;
-import org.compiere.model.MFactAcct;
-import org.compiere.model.MMovement;
-import org.compiere.model.MRevenueRecognitionPlan;
-import org.compiere.model.X_C_AcctSchema_Element;
-import org.compiere.model.X_Fact_Acct;
+import org.compiere.impl.MAccount;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MAcctSchemaElement;
+import org.compiere.impl.MConversionRate;
+import org.compiere.impl.MCurrency;
+import org.compiere.impl.MFactAcct;
+import org.compiere.impl.MMovement;
+import org.compiere.impl.MRevenueRecognitionPlan;
+import org.compiere.impl.X_C_AcctSchema_Element;
+import org.compiere.impl.X_Fact_Acct;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

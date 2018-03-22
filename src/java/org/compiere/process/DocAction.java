@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 import java.util.Properties;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.SystemIDs;
+import org.compiere.impl.SystemIDs;
 import org.idempiere.common.util.CLogger;
 
 /**

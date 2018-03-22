@@ -16,8 +16,8 @@ package org.adempiere.base.event;
 import java.util.List;
 
 import org.compiere.acct.Fact;
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.PO;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.PO;
 
 /**
  *

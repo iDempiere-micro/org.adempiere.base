@@ -32,9 +32,9 @@
 package org.adempiere.util;
 
 import org.compiere.Adempiere;
-import org.compiere.model.MEntityType;
-import org.compiere.model.MQuery;
-import org.compiere.model.MTable;
+import org.compiere.impl.MEntityType;
+import org.compiere.impl.MQuery;
+import org.compiere.impl.MTable;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.CLogger;
@@ -181,6 +181,9 @@ public class ModelInterfaceGenerator
 
 		if (!packageName.equals("org.compiere.model")) {
 			addImportClass("org.compiere.model.*");
+		}
+		if (!packageName.equals("org.compiere.impl")) {
+			addImportClass("org.compiere.impl.*");
 		}
 		addImportClass(java.math.BigDecimal.class);
 		addImportClass(KeyNamePair.class);

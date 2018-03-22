@@ -21,13 +21,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MCostDetail;
-import org.compiere.model.MMovement;
-import org.compiere.model.MMovementLine;
-import org.compiere.model.MMovementLineMA;
-import org.compiere.model.MProduct;
-import org.compiere.model.ProductCost;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MCostDetail;
+import org.compiere.impl.MMovement;
+import org.compiere.impl.MMovementLine;
+import org.compiere.impl.MMovementLineMA;
+import org.compiere.impl.MProduct;
+import org.compiere.impl.ProductCost;
 import org.idempiere.common.util.Env;
 
 /**

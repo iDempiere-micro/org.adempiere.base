@@ -21,10 +21,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-import org.compiere.model.MAccount;
-import org.compiere.model.MAcctSchema;
-import org.compiere.model.MJournal;
-import org.compiere.model.MJournalLine;
+import org.compiere.impl.MAccount;
+import org.compiere.impl.MAcctSchema;
+import org.compiere.impl.MJournal;
+import org.compiere.impl.MJournalLine;
 import org.idempiere.common.util.Env;
 
 /**

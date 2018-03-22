@@ -16,7 +16,7 @@ package org.adempiere.exceptions;
 import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.PO;
+import org.compiere.impl.PO;
 import org.idempiere.common.util.CLogger;
 import org.compiere.util.Msg;
 

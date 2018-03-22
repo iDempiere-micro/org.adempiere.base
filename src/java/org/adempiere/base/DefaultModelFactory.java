@@ -22,9 +22,9 @@ import java.sql.ResultSet;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.compiere.model.MEntityType;
-import org.compiere.model.MTable;
-import org.compiere.model.PO;
+import org.compiere.impl.MEntityType;
+import org.compiere.impl.MTable;
+import org.compiere.impl.PO;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
@@ -47,20 +47,21 @@ public class DefaultModelFactory implements IModelFactory {
 		"org.compiere.impexp",
 		"compiere.model",			//	globalqss allow compatibility with other plugins
 		"adempiere.model",			//	Extensions
-		"org.adempiere.model"
+		"org.adempiere.model",
+		"org.compiere.impl"
 	};
 
 	/**	Special Classes				*/
 	private static final String[]	s_special = new String[] {
-		"AD_Element", "org.compiere.model.M_Element",
-		"AD_Registration", "org.compiere.model.M_Registration",
-		"AD_Tree", "org.compiere.model.MTree_Base",
-		"R_Category", "org.compiere.model.MRequestCategory",
-		"GL_Category", "org.compiere.model.MGLCategory",
-		"K_Category", "org.compiere.model.MKCategory",
-		"C_ValidCombination", "org.compiere.model.MAccount",
-		"C_Phase", "org.compiere.model.MProjectTypePhase",
-		"C_Task", "org.compiere.model.MProjectTypeTask"
+		"AD_Element", "M_Element",
+		"AD_Registration", "M_Registration",
+		"AD_Tree", "MTree_Base",
+		"R_Category", "MRequestCategory",
+		"GL_Category", "MGLCategory",
+		"K_Category", "MKCategory",
+		"C_ValidCombination", "MAccount",
+		"C_Phase", "MProjectTypePhase",
+		"C_Task", "MProjectTypeTask"
 	//	AD_Attribute_Value, AD_TreeNode
 	};
 
@@ -94,7 +95,7 @@ public class DefaultModelFactory implements IModelFactory {
 			MEntityType et = MEntityType.get(Env.getCtx(), entityType);
 			String etmodelpackage = et.getModelPackage();
 			if (etmodelpackage == null || MEntityType.ENTITYTYPE_Dictionary.equals(entityType))
-				etmodelpackage = "org.compiere.model"; // fallback for dictionary or empty model package on entity type
+				etmodelpackage = "org.compiere.impl"; // fallback for dictionary or empty model package on entity type
 			Class<?> clazz = getPOclass(etmodelpackage + ".X_" + tableName, tableName);
 			if (clazz != null)
 			{
@@ -194,6 +195,14 @@ public class DefaultModelFactory implements IModelFactory {
 
 		//	Default
 		clazz = getPOclass("org.compiere.model.X_" + tableName, tableName);
+		if (clazz != null)
+		{
+			s_classCache.put(tableName, clazz);
+			return clazz;
+		}
+
+		//	Default
+		clazz = getPOclass("org.compiere.impl.X_" + tableName, tableName);
 		if (clazz != null)
 		{
 			s_classCache.put(tableName, clazz);

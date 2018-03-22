@@ -16,7 +16,7 @@
  *****************************************************************************/
 package org.compiere.util;
 
-import org.compiere.model.*;
+import org.compiere.impl.*;
 import org.compiere.wf.MWFActivity;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

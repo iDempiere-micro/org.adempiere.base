@@ -16,15 +16,6 @@
  *****************************************************************************/
 package org.compiere;
 
-import static org.compiere.model.SystemIDs.WINDOW_WINDOW_TAB_FIELD;
-
-import java.util.Properties;
-
-import org.compiere.model.MConversionRate;
-import org.compiere.model.MUOMConversion;
-import org.idempiere.common.util.Env;
-import org.compiere.util.Login;
-
 /**
  *  Base Library Test Classes mainly for Optimize it
  *

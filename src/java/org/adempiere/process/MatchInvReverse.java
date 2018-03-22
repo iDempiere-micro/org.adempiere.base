@@ -18,7 +18,7 @@ import java.sql.Timestamp;
 import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.model.MMatchInv;
+import org.compiere.impl.MMatchInv;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.Env;
 

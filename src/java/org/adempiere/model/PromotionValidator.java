@@ -16,12 +16,12 @@ package org.adempiere.model;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.model.I_C_Order;
 import org.compiere.model.I_C_OrderLine;
-import org.compiere.model.MClient;
-import org.compiere.model.MOrder;
-import org.compiere.model.MOrderLine;
-import org.compiere.model.ModelValidationEngine;
-import org.compiere.model.ModelValidator;
-import org.compiere.model.PO;
+import org.compiere.impl.MClient;
+import org.compiere.impl.MOrder;
+import org.compiere.impl.MOrderLine;
+import org.compiere.impl.ModelValidationEngine;
+import org.compiere.impl.ModelValidator;
+import org.compiere.impl.PO;
 import org.idempiere.common.util.DB;
 
 /**

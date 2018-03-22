@@ -13,8 +13,8 @@
  *****************************************************************************/
 package org.adempiere.exceptions;
 
-import org.compiere.model.MLocation;
-import org.compiere.model.MTaxCategory;
+import org.compiere.impl.MLocation;
+import org.compiere.impl.MTaxCategory;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;

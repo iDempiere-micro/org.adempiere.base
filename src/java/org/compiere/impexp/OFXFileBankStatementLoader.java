@@ -17,9 +17,8 @@
 package org.compiere.impexp;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 
-import org.compiere.model.MBankStatementLoader;
+import org.compiere.impl.MBankStatementLoader;
 import org.xml.sax.SAXException;
 
 /**

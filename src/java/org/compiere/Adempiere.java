@@ -17,7 +17,10 @@
 package org.compiere;
 
 import org.adempiere.base.Core;
-import org.compiere.model.*;
+import org.compiere.impl.MClient;
+import org.compiere.impl.MSysConfig;
+import org.compiere.impl.MSystem;
+import org.compiere.impl.ModelValidationEngine;
 import org.compiere.util.Login;
 import org.idempiere.common.db.CConnection;
 import org.idempiere.common.util.*;

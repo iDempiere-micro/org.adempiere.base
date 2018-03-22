@@ -20,9 +20,9 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
-import org.compiere.model.MProcessPara;
-import org.compiere.model.Query;
-import org.compiere.model.X_AD_WF_Node_Para;
+import org.compiere.impl.MProcessPara;
+import org.compiere.impl.Query;
+import org.compiere.impl.X_AD_WF_Node_Para;
 
 
 /**

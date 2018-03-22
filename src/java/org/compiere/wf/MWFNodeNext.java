@@ -21,9 +21,9 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.compiere.model.PO;
-import org.compiere.model.Query;
-import org.compiere.model.X_AD_WF_NodeNext;
+import org.compiere.impl.PO;
+import org.compiere.impl.Query;
+import org.compiere.impl.X_AD_WF_NodeNext;
 import org.compiere.process.DocAction;
 import org.idempiere.common.util.Env;
 
