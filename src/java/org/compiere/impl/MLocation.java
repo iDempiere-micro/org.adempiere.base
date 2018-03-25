@@ -30,6 +30,7 @@ import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Trx;
 import org.idempiere.common.util.Util;
+import org.compiere.model.I_C_Location;
 
 /**
  *	Location (Address)
@@ -45,7 +46,7 @@ import org.idempiere.common.util.Util;
  * 		<li>BF [ 3002736 ] MLocation.get cache all MLocations
  * 			https://sourceforge.net/tracker/?func=detail&aid=3002736&group_id=176962&atid=879332
  */
-public class MLocation extends X_C_Location implements Comparator<Object>
+public class MLocation extends X_C_Location implements I_C_Location, Comparator<Object>
 {
 	/**
 	 * 

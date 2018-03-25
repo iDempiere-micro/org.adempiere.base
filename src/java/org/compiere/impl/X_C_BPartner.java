@@ -26,6 +26,20 @@ import org.compiere.model.I_C_BPartner;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+import org.jetbrains.annotations.NotNull;
+import org.compiere.model.I_C_BP_Group;
+import org.compiere.model.I_C_Dunning;
+import org.compiere.model.I_C_Greeting;
+import org.compiere.model.I_C_InvoiceSchedule;
+import org.compiere.model.I_C_PaymentTerm;
+import org.compiere.model.I_C_1099Box;
+import org.compiere.model.I_AD_PrintFormat;
+import org.compiere.model.I_M_DiscountSchema;
+import org.compiere.model.I_M_PriceList;
+import org.compiere.model.I_M_DiscountSchema;
+import org.compiere.model.I_C_PaymentTerm;
+import org.compiere.model.I_M_PriceList;
+import org.compiere.model.I_AD_User;
 
 /** Generated Model for C_BPartner
  *  @author iDempiere (generated) 
@@ -231,9 +245,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return (String)get_Value(COLUMNNAME_C_BPartner_UU);
 	}
 
-	public org.compiere.model.I_C_BP_Group getC_BP_Group() throws RuntimeException
+	public I_C_BP_Group getC_BP_Group() throws RuntimeException
     {
-		return (org.compiere.model.I_C_BP_Group)MTable.get(getCtx(), org.compiere.model.I_C_BP_Group.Table_Name)
+		return (I_C_BP_Group)MTable.get(getCtx(), I_C_BP_Group.Table_Name)
 			.getPO(getC_BP_Group_ID(), get_TrxName());	}
 
 	/** Set Business Partner Group.
@@ -259,9 +273,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_C_Dunning getC_Dunning() throws RuntimeException
+	public I_C_Dunning getC_Dunning() throws RuntimeException
     {
-		return (org.compiere.model.I_C_Dunning)MTable.get(getCtx(), org.compiere.model.I_C_Dunning.Table_Name)
+		return (I_C_Dunning)MTable.get(getCtx(), I_C_Dunning.Table_Name)
 			.getPO(getC_Dunning_ID(), get_TrxName());	}
 
 	/** Set Dunning.
@@ -287,9 +301,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_C_Greeting getC_Greeting() throws RuntimeException
+	public I_C_Greeting getC_Greeting() throws RuntimeException
     {
-		return (org.compiere.model.I_C_Greeting)MTable.get(getCtx(), org.compiere.model.I_C_Greeting.Table_Name)
+		return (I_C_Greeting)MTable.get(getCtx(), I_C_Greeting.Table_Name)
 			.getPO(getC_Greeting_ID(), get_TrxName());	}
 
 	/** Set Greeting.
@@ -315,9 +329,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_C_InvoiceSchedule getC_InvoiceSchedule() throws RuntimeException
+	public I_C_InvoiceSchedule getC_InvoiceSchedule() throws RuntimeException
     {
-		return (org.compiere.model.I_C_InvoiceSchedule)MTable.get(getCtx(), org.compiere.model.I_C_InvoiceSchedule.Table_Name)
+		return (I_C_InvoiceSchedule)MTable.get(getCtx(), I_C_InvoiceSchedule.Table_Name)
 			.getPO(getC_InvoiceSchedule_ID(), get_TrxName());	}
 
 	/** Set Invoice Schedule.
@@ -343,9 +357,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_C_PaymentTerm getC_PaymentTerm() throws RuntimeException
+	public I_C_PaymentTerm getC_PaymentTerm() throws RuntimeException
     {
-		return (org.compiere.model.I_C_PaymentTerm)MTable.get(getCtx(), org.compiere.model.I_C_PaymentTerm.Table_Name)
+		return (I_C_PaymentTerm)MTable.get(getCtx(), I_C_PaymentTerm.Table_Name)
 			.getPO(getC_PaymentTerm_ID(), get_TrxName());	}
 
 	/** Set Payment Term.
@@ -410,9 +424,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return (String)get_Value(COLUMNNAME_CustomerProfileID);
 	}
 
-	public org.compiere.model.I_C_1099Box getDefault1099Box() throws RuntimeException
+	public I_C_1099Box getDefault1099Box() throws RuntimeException
     {
-		return (org.compiere.model.I_C_1099Box)MTable.get(getCtx(), org.compiere.model.I_C_1099Box.Table_Name)
+		return (I_C_1099Box)MTable.get(getCtx(), I_C_1099Box.Table_Name)
 			.getPO(getDefault1099Box_ID(), get_TrxName());	}
 
 	/** Set Default 1099 Box.
@@ -626,9 +640,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return (String)get_Value(COLUMNNAME_FreightCostRule);
 	}
 
-	public org.compiere.model.I_AD_PrintFormat getInvoice_PrintFormat() throws RuntimeException
+	public I_AD_PrintFormat getInvoice_PrintFormat() throws RuntimeException
     {
-		return (org.compiere.model.I_AD_PrintFormat)MTable.get(getCtx(), org.compiere.model.I_AD_PrintFormat.Table_Name)
+		return (I_AD_PrintFormat)MTable.get(getCtx(), I_AD_PrintFormat.Table_Name)
 			.getPO(getInvoice_PrintFormat_ID(), get_TrxName());	}
 
 	/** Set Invoice Print Format.
@@ -984,9 +998,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_M_DiscountSchema getM_DiscountSchema() throws RuntimeException
+	public I_M_DiscountSchema getM_DiscountSchema() throws RuntimeException
     {
-		return (org.compiere.model.I_M_DiscountSchema)MTable.get(getCtx(), org.compiere.model.I_M_DiscountSchema.Table_Name)
+		return (I_M_DiscountSchema)MTable.get(getCtx(), I_M_DiscountSchema.Table_Name)
 			.getPO(getM_DiscountSchema_ID(), get_TrxName());	}
 
 	/** Set Discount Schema.
@@ -1012,9 +1026,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_M_PriceList getM_PriceList() throws RuntimeException
+	public I_M_PriceList getM_PriceList() throws RuntimeException
     {
-		return (org.compiere.model.I_M_PriceList)MTable.get(getCtx(), org.compiere.model.I_M_PriceList.Table_Name)
+		return (I_M_PriceList)MTable.get(getCtx(), I_M_PriceList.Table_Name)
 			.getPO(getM_PriceList_ID(), get_TrxName());	}
 
 	/** Set Price List.
@@ -1187,9 +1201,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return (String)get_Value(COLUMNNAME_PaymentRulePO);
 	}
 
-	public org.compiere.model.I_M_DiscountSchema getPO_DiscountSchema() throws RuntimeException
+	public I_M_DiscountSchema getPO_DiscountSchema() throws RuntimeException
     {
-		return (org.compiere.model.I_M_DiscountSchema)MTable.get(getCtx(), org.compiere.model.I_M_DiscountSchema.Table_Name)
+		return (I_M_DiscountSchema)MTable.get(getCtx(), I_M_DiscountSchema.Table_Name)
 			.getPO(getPO_DiscountSchema_ID(), get_TrxName());	}
 
 	/** Set PO Discount Schema.
@@ -1215,9 +1229,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_C_PaymentTerm getPO_PaymentTerm() throws RuntimeException
+	public I_C_PaymentTerm getPO_PaymentTerm() throws RuntimeException
     {
-		return (org.compiere.model.I_C_PaymentTerm)MTable.get(getCtx(), org.compiere.model.I_C_PaymentTerm.Table_Name)
+		return (I_C_PaymentTerm)MTable.get(getCtx(), I_C_PaymentTerm.Table_Name)
 			.getPO(getPO_PaymentTerm_ID(), get_TrxName());	}
 
 	/** Set PO Payment Term.
@@ -1243,9 +1257,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_M_PriceList getPO_PriceList() throws RuntimeException
+	public I_M_PriceList getPO_PriceList() throws RuntimeException
     {
-		return (org.compiere.model.I_M_PriceList)MTable.get(getCtx(), org.compiere.model.I_M_PriceList.Table_Name)
+		return (I_M_PriceList)MTable.get(getCtx(), I_M_PriceList.Table_Name)
 			.getPO(getPO_PriceList_ID(), get_TrxName());	}
 
 	/** Set Purchase Pricelist.
@@ -1342,9 +1356,9 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 		return (String)get_Value(COLUMNNAME_ReferenceNo);
 	}
 
-	public org.compiere.model.I_AD_User getSalesRep() throws RuntimeException
+	public I_AD_User getSalesRep() throws RuntimeException
     {
-		return (org.compiere.model.I_AD_User)MTable.get(getCtx(), org.compiere.model.I_AD_User.Table_Name)
+		return (I_AD_User)MTable.get(getCtx(), I_AD_User.Table_Name)
 			.getPO(getSalesRep_ID(), get_TrxName());	}
 
 	/** Set Sales Representative.
@@ -1610,10 +1624,5 @@ public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
 	public String getValue () 
 	{
 		return (String)get_Value(COLUMNNAME_Value);
-	}
-
-	@Override
-	public int getId() {
-		return getC_BPartner_ID();
 	}
 }

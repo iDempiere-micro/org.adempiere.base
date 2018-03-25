@@ -21,6 +21,7 @@ import java.util.Properties;
 
 import org.compiere.model.I_PA_DashboardPreference;
 import org.idempiere.common.util.Env;
+import software.hsharp.business.models.IClientBound;
 
 /**
  * Dashboard preference
@@ -67,7 +68,7 @@ public class MDashboardPreference extends X_PA_DashboardPreference
 		.setParameters(parameters)
 		.setOnlyActiveRecords(false)
 		.setApplyAccessFilter(true, false)
-		.setOrderBy(I_PA_DashboardPreference.COLUMNNAME_ColumnNo+","+ I_PA_DashboardPreference.COLUMNNAME_AD_Client_ID+","+ I_PA_DashboardPreference.COLUMNNAME_Line);
+		.setOrderBy(I_PA_DashboardPreference.COLUMNNAME_ColumnNo+","+ IClientBound.COLUMNNAME_AD_Client_ID+","+ I_PA_DashboardPreference.COLUMNNAME_Line);
 	}
 	
 	public static MDashboardPreference[] getForSession(int AD_User_ID, int AD_Role_ID)
@@ -93,7 +94,7 @@ public class MDashboardPreference extends X_PA_DashboardPreference
 		.setParameters(parameters)
 		.setOnlyActiveRecords(false)
 		.setApplyAccessFilter(true, false)
-		.setOrderBy(I_PA_DashboardPreference.COLUMNNAME_ColumnNo+","+ I_PA_DashboardPreference.COLUMNNAME_AD_Client_ID+","+ I_PA_DashboardPreference.COLUMNNAME_Line);
+		.setOrderBy(I_PA_DashboardPreference.COLUMNNAME_ColumnNo+","+ IClientBound.COLUMNNAME_AD_Client_ID+","+ I_PA_DashboardPreference.COLUMNNAME_Line);
 	}
 	
     public MDashboardPreference (Properties ctx, int PA_DashboardPreference_ID, String trxName)

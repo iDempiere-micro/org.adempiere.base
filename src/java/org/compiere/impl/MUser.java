@@ -1100,12 +1100,6 @@ public class MUser extends X_AD_User implements IUser
 
 	@NotNull
 	@Override
-	public String toStringX() {
-		return toString();
-	}
-
-	@NotNull
-	@Override
 	public String getID() {
 		return ""+ getAD_User_ID();
 	}

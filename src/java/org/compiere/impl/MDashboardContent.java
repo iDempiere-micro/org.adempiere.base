@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import org.compiere.model.I_AD_Menu;
 import org.idempiere.common.util.Env;
+import software.hsharp.business.models.IClientBound;
 
 /**
  * @author teo_sarca
@@ -59,7 +60,7 @@ public class MDashboardContent extends X_PA_DashboardContent
 		.setParameters(parameters)
 		.setOnlyActiveRecords(true)
 		.setApplyAccessFilter(true, false)
-		.setOrderBy(COLUMNNAME_ColumnNo+","+COLUMNNAME_AD_Client_ID+","+COLUMNNAME_Line);
+		.setOrderBy(COLUMNNAME_ColumnNo+","+IClientBound.COLUMNNAME_AD_Client_ID+","+COLUMNNAME_Line);
 	}
 	
 	public static MDashboardContent[] getForUserList( int AD_User_ID, int AD_Role_ID)
@@ -92,7 +93,7 @@ public class MDashboardContent extends X_PA_DashboardContent
 		}
 		
 		if(AD_Client_ID >= 0){
-			whereClause.append(" AND ").append( COLUMNNAME_AD_Client_ID).append(" IN ( 0 ,?)");
+			whereClause.append(" AND ").append( IClientBound.COLUMNNAME_AD_Client_ID).append(" IN ( 0 ,?)");
 			parameters.add(AD_Client_ID);
 		}
 		
@@ -104,7 +105,7 @@ public class MDashboardContent extends X_PA_DashboardContent
 		}
 		query.setOnlyActiveRecords(true);
 		query.setApplyAccessFilter(true, false);
-		query.setOrderBy(COLUMNNAME_ColumnNo+","+COLUMNNAME_AD_Client_ID+","+COLUMNNAME_Line);
+		query.setOrderBy(COLUMNNAME_ColumnNo+","+IClientBound.COLUMNNAME_AD_Client_ID+","+COLUMNNAME_Line);
 		return query;
 	}
 	
@@ -138,7 +139,7 @@ public class MDashboardContent extends X_PA_DashboardContent
 		.setParameters(parameters)
 		.setOnlyActiveRecords(true)
 		.setApplyAccessFilter(true, false)
-		.setOrderBy(COLUMNNAME_ColumnNo+","+COLUMNNAME_AD_Client_ID+","+COLUMNNAME_Line);
+		.setOrderBy(COLUMNNAME_ColumnNo+","+IClientBound.COLUMNNAME_AD_Client_ID+","+COLUMNNAME_Line);
 	}
 	
     public MDashboardContent (Properties ctx, int PA_DashboardContent_ID, String trxName)

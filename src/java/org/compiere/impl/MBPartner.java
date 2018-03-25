@@ -29,6 +29,7 @@ import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
+import software.hsharp.business.models.IBusinessPartner;
 
 /**
  *	Business Partner Model
@@ -43,7 +44,7 @@ import org.compiere.util.Msg;
  *      <LI>BF [ 2041226 ] BP Open Balance should count only Completed Invoice
  *			<LI>BF [ 2498949 ] BP Get Not Invoiced Shipment Value return null
  */
-public class MBPartner extends X_C_BPartner
+public class MBPartner extends X_C_BPartner implements IBusinessPartner
 {
 	/**
 	 * 
@@ -426,6 +427,9 @@ public class MBPartner extends X_C_BPartner
 		return users[0];
 	}	//	getContact
 	
+	public MBPartnerLocation[] getLocations() {
+		return getLocations(false);
+	}
 	
 	/**
 	 * Get All Locations (only active)
@@ -987,5 +991,15 @@ public class MBPartner extends X_C_BPartner
 			delete_Tree(MTree_Base.TREETYPE_BPartner);
 		return success;
 	}	//	afterDelete
+
+	@Override
+	public int getKey() {
+		return getC_BPartner_ID();
+	}
+
+	@Override
+	public String getID() {
+		return ""+getC_BPartner_ID();
+	}
 
 }	//	MBPartner

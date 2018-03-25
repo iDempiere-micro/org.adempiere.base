@@ -20,6 +20,8 @@ import java.sql.Timestamp;
 import java.util.Properties;
 
 import org.idempiere.common.exceptions.AdempiereException;
+import software.hsharp.business.models.IClientBound;
+
 
 /**
  *	Processor Interface
@@ -27,14 +29,9 @@ import org.idempiere.common.exceptions.AdempiereException;
  *  @author Jorg Janke
  *  @version $Id: AdempiereProcessor.java,v 1.2 2006/07/30 00:51:03 jjanke Exp $
  */
-public interface AdempiereProcessor
+public interface AdempiereProcessor extends IClientBound
 {
-	/**
-	 * 	Get Client
-	 *	@return AD_Client_ID
-	 */
-	public int getAD_Client_ID();	
-	
+
 	/**
 	 * 	Get Name
 	 *	@return Name

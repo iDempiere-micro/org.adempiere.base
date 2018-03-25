@@ -470,7 +470,7 @@ public class Login implements ILoginUtility
 
 			if (!rs.next())
 			{
-				log.log(Level.SEVERE, "No Clients for Role: " + role.toStringX());
+				log.log(Level.SEVERE, "No Clients for Role: " + role.toString());
 				return null;
 			}
 
@@ -493,7 +493,7 @@ public class Login implements ILoginUtility
 			//
 			retValue = new KeyNamePair[list.size()];
 			list.toArray(retValue);
-			if (log.isLoggable(Level.FINE)) log.fine("Role: " + role.toStringX() + " - clients #" + retValue.length);
+			if (log.isLoggable(Level.FINE)) log.fine("Role: " + role.toString() + " - clients #" + retValue.length);
 		}
 		catch (SQLException ex)
 		{
@@ -557,7 +557,7 @@ public class Login implements ILoginUtility
 			//  load Orgs
 			if (!rs.next())
 			{
-			   log.log(Level.SEVERE, "No org for Role: " + rol.toStringX());
+			   log.log(Level.SEVERE, "No org for Role: " + rol.toString());
 				return null;
 			}
 			//  Role Info
@@ -706,7 +706,7 @@ public class Login implements ILoginUtility
 
 			if (!rs.next())
 			{
-				if (log.isLoggable(Level.INFO)) log.info("No Warehouses for Org: " + org.toStringX());
+				if (log.isLoggable(Level.INFO)) log.info("No Warehouses for Org: " + org.toString());
 				return null;
 			}
 
@@ -723,7 +723,7 @@ public class Login implements ILoginUtility
 			//
 			retValue = new KeyNamePair[list.size()];
 			list.toArray(retValue);
-			if (log.isLoggable(Level.FINE)) log.fine("Org: " + org.toStringX()
+			if (log.isLoggable(Level.FINE)) log.fine("Org: " + org.toString()
 				+ " - warehouses #" + retValue.length);
 		}
 		catch (SQLException ex)
@@ -788,7 +788,7 @@ public class Login implements ILoginUtility
 	public String loadPreferences (INameKeyPair org,
 								   INameKeyPair warehouse, java.sql.Timestamp timestamp, String printerName)
 	{
-		if (log.isLoggable(Level.INFO)) log.info("Org: " + org.toStringX());
+		if (log.isLoggable(Level.INFO)) log.info("Org: " + org.toString());
 
 		if (m_ctx == null || org == null)
 			throw new IllegalArgumentException("Required parameter missing");
@@ -1539,7 +1539,7 @@ public class Login implements ILoginUtility
 
 			if (!rs.next())
 			{
-				log.log(Level.SEVERE, "No Roles for Client: " + client.toStringX());
+				log.log(Level.SEVERE, "No Roles for Client: " + client.toString());
 				return null;
 			}
 
@@ -1555,7 +1555,7 @@ public class Login implements ILoginUtility
 			//
 			retValue = new KeyNamePair[rolesList.size()];
 			rolesList.toArray(retValue);
-			if (log.isLoggable(Level.FINE)) log.fine("Role: " + client.toStringX() + " - clients #" + retValue.length);
+			if (log.isLoggable(Level.FINE)) log.fine("Role: " + client.toString() + " - clients #" + retValue.length);
 		}
 		catch (SQLException ex)
 		{

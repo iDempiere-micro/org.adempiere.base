@@ -19,6 +19,8 @@ package org.compiere.impl;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
+import software.hsharp.business.models.IBusinessPartnerLocation;
+import software.hsharp.business.models.ILocation;
 
 /**
  * Partner Location Model
@@ -31,7 +33,7 @@ import java.util.Properties;
  *         .net/tracker/index.php?func=detail&aid=2788465&group_id
  *         =176962&atid=879335
  */
-public class MBPartnerLocation extends X_C_BPartner_Location {
+public class MBPartnerLocation extends X_C_BPartner_Location implements IBusinessPartnerLocation {
 	/**
 	 * 
 	 */
@@ -127,6 +129,12 @@ public class MBPartnerLocation extends X_C_BPartner_Location {
 	/** Unique Name */
 	private String m_uniqueName = null;
 	private int m_unique = 0;
+
+
+	@Override
+	public ILocation getLocation() {
+		return getLocation(false);
+	}
 
 	/**
 	 * Get Location/Address
