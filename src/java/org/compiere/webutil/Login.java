@@ -14,11 +14,12 @@
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
  * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
-package org.compiere.util;
+package org.compiere.webutil;
 
 import org.compiere.Adempiere;
 import org.compiere.impl.*;
 import org.compiere.model.*;
+import org.compiere.util.Msg;
 import org.idempiere.common.db.CConnection;
 import org.idempiere.common.util.*;
 import org.jetbrains.annotations.NotNull;

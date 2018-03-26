@@ -26,6 +26,7 @@ import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.util.SystemIDs;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;

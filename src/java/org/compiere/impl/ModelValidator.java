@@ -17,7 +17,8 @@
  *****************************************************************************/
 package org.compiere.impl;
 
-import org.adempiere.base.event.IEventTopics;
+import org.idempiere.orm.IEventTopics;
+ 
 
 /**
  *	Model Validator

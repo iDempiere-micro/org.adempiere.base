@@ -24,7 +24,7 @@ import org.adempiere.util.PaymentUtil;
 import org.compiere.model.I_C_BP_BankAccount;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
-import org.compiere.util.IBAN;
+import org.compiere.webutil.IBAN;
 import org.idempiere.common.util.Util;
 
 /**

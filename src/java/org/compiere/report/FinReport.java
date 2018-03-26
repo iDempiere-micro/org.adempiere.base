@@ -32,7 +32,7 @@ import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereUserError;
 import org.idempiere.common.util.DB;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 /**
  *  Financial Report Engine

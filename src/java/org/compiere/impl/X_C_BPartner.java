@@ -26,7 +26,7 @@ import org.compiere.model.I_C_BPartner;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
-import org.jetbrains.annotations.NotNull;
+ 
 import org.compiere.model.I_C_BP_Group;
 import org.compiere.model.I_C_Dunning;
 import org.compiere.model.I_C_Greeting;
@@ -36,15 +36,13 @@ import org.compiere.model.I_C_1099Box;
 import org.compiere.model.I_AD_PrintFormat;
 import org.compiere.model.I_M_DiscountSchema;
 import org.compiere.model.I_M_PriceList;
-import org.compiere.model.I_M_DiscountSchema;
-import org.compiere.model.I_C_PaymentTerm;
-import org.compiere.model.I_M_PriceList;
 import org.compiere.model.I_AD_User;
+ 
 
 /** Generated Model for C_BPartner
  *  @author iDempiere (generated) 
  *  @version Release 5.1 - $Id$ */
-public class X_C_BPartner extends PO implements I_C_BPartner, I_Persistent
+public class X_C_BPartner extends /*org.idempiere.orm.*/PO implements I_C_BPartner, I_Persistent
 {
 
 	/**

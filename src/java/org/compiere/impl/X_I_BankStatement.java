@@ -25,6 +25,8 @@ import java.util.Properties;
 import org.compiere.model.I_I_BankStatement;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for I_BankStatement
  *  @author iDempiere (generated) 

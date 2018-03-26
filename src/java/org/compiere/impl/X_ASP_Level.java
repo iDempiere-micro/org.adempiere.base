@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_ASP_Level;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for ASP_Level
  *  @author iDempiere (generated) 

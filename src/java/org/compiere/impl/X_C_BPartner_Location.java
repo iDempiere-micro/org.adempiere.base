@@ -24,6 +24,8 @@ import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.model.I_C_Location;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for C_BPartner_Location
  *  @author iDempiere (generated) 

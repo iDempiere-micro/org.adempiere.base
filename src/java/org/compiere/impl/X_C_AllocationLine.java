@@ -26,6 +26,8 @@ import org.compiere.model.I_C_AllocationLine;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for C_AllocationLine
  *  @author iDempiere (generated) 

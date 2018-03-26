@@ -39,6 +39,8 @@ import org.idempiere.common.util.DB;
 import org.idempiere.common.util.KeyNamePair;
 
 import org.adempiere.base.DefaultModelFactory; //DAP NEED THIS
+ 
+ 
 
 /**
  *	Persistent Table Model
@@ -398,7 +400,7 @@ public class MTable extends X_AD_Table
 	 *	@param trxName
 	 *	@return PO for Record or null
 	 */
-	public PO getPO (int Record_ID, String trxName)
+	public org.idempiere.orm.PO getPO (int Record_ID, String trxName)
 	{
 		String tableName = getTableName();
 		if (Record_ID != 0 && !isSingleKey())
@@ -407,7 +409,7 @@ public class MTable extends X_AD_Table
 			return null;
 		}
 
-		PO po = null;
+		org.idempiere.orm.PO po = null;
 		List<IModelFactory> factoryList = getFactoryList();
 		if (factoryList != null)
 		{
@@ -440,11 +442,11 @@ public class MTable extends X_AD_Table
 	 *	@param trxName transaction
 	 *	@return PO for Record or null
 	 */
-	public PO getPO (ResultSet rs, String trxName)
+	public org.idempiere.orm.PO getPO (ResultSet rs, String trxName)
 	{
 		String tableName = getTableName();
 
-		PO po = null;
+		org.idempiere.orm.PO po = null;
 		List<IModelFactory> factoryList = getFactoryList();
 		if (factoryList != null)
 		{
@@ -471,7 +473,7 @@ public class MTable extends X_AD_Table
 	 */
 	public PO getPO (String whereClause, String trxName)
 	{
-		return getPO(whereClause, null, trxName);
+		return (PO)getPO(whereClause, null, trxName);
 	}	//	getPO
 
 	/**
@@ -481,12 +483,12 @@ public class MTable extends X_AD_Table
 	 * @param trxName
 	 * @return
 	 */
-	public PO getPO(String whereClause, Object[] params, String trxName)
+	public org.idempiere.orm.PO getPO(String whereClause, Object[] params, String trxName)
 	{
 		if (whereClause == null || whereClause.length() == 0)
 			return null;
 		//
-		PO po = null;
+		org.idempiere.orm.PO po = null;
 		POInfo info = POInfo.getPOInfo(getCtx(), getAD_Table_ID(), trxName);
 		if (info == null) return null;
 		StringBuilder sqlBuffer = info.buildSelect();

@@ -22,7 +22,7 @@ import java.util.Properties;
 
 import org.compiere.model.I_M_ProductPrice;
 import org.compiere.util.DisplayType;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 /**
  *	Price List Version Model

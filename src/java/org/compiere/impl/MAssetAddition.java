@@ -24,6 +24,7 @@ import org.idempiere.fa.exceptions.AssetNotImplementedException;
 import org.idempiere.fa.exceptions.AssetNotSupportedException;
 import org.idempiere.fa.feature.UseLifeImpl;
 import org.idempiere.fa.util.POCacheLocal;
+ 
 
 
 /**

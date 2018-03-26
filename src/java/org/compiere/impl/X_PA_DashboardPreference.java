@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_PA_DashboardPreference;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for PA_DashboardPreference
  *  @author iDempiere (generated) 

@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_AD_Package_UUID_Map;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for AD_Package_UUID_Map
  *  @author iDempiere (generated) 

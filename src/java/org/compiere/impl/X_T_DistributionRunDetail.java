@@ -25,6 +25,8 @@ import org.compiere.model.I_Persistent;
 import org.compiere.model.I_T_DistributionRunDetail;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for T_DistributionRunDetail
  *  @author iDempiere (generated) 

@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_W_ClickCount;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for W_ClickCount
  *  @author iDempiere (generated) 

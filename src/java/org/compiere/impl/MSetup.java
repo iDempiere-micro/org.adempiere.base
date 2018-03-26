@@ -16,9 +16,9 @@
  *****************************************************************************/
 package org.compiere.impl;
 
-import static org.compiere.impl.SystemIDs.COUNTRY_US;
-import static org.compiere.impl.SystemIDs.SCHEDULE_10_MINUTES;
-import static org.compiere.impl.SystemIDs.SCHEDULE_15_MINUTES;
+import static org.compiere.util.SystemIDs.COUNTRY_US;
+import static org.compiere.util.SystemIDs.SCHEDULE_10_MINUTES;
+import static org.compiere.util.SystemIDs.SCHEDULE_15_MINUTES;
 
 import java.io.File;
 import java.sql.PreparedStatement;
@@ -41,6 +41,7 @@ import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Trx;
+ 
 
 /**
  * Initial Setup Model
@@ -837,7 +838,7 @@ public final class MSetup
 	private void createAccountingRecord(String tableName) throws Exception
 	{
 		MTable table = MTable.get(m_ctx, tableName);
-		PO acct = table.getPO(0, m_trx.getTrxName());
+		PO acct = (PO)table.getPO(0, m_trx.getTrxName());
 		
 		MColumn[] cols = table.getColumns(false);
 		for (MColumn c : cols) {

@@ -20,6 +20,7 @@ import org.adempiere.util.ContextRunnable;
 import org.compiere.Adempiere;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.*;
+import org.idempiere.orm.Lookup;
 
 import java.io.Serializable;
 import java.sql.PreparedStatement;
@@ -697,7 +698,6 @@ public final class MLookup extends Lookup implements Serializable
 	 * 	@param query query
 	 *  @return Zoom Window
 	 */
-	@Override
 	public int getZoom(MQuery query)
 	{
 		if (m_info.ZoomWindowPO == 0 || query == null)
@@ -708,7 +708,6 @@ public final class MLookup extends Lookup implements Serializable
 		return getZoom(isSOTrx);
 	}	//	getZoom
 
-	@Override
 	public int getZoom(boolean isSOTrx)
 	{
 		if (m_info.ZoomWindowPO == 0)

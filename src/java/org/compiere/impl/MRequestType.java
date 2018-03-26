@@ -461,8 +461,8 @@ public class MRequestType extends X_R_RequestType
 	 * 	@param role role
 	 *	@return query
 	 */
-	public MQuery getQuery(MGoalRestriction[] restrictions, 
-		String MeasureDisplay, Timestamp date, int R_Status_ID, MRole role)
+	public MQuery getQuery(MGoalRestriction[] restrictions,
+                           String MeasureDisplay, Timestamp date, int R_Status_ID, MRole role)
 	{
 		String dateColumn = "Created";
 		String orgColumn = "AD_Org_ID";

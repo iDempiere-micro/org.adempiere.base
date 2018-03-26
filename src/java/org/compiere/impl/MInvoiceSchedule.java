@@ -24,7 +24,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.idempiere.common.util.CCache;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 /**
  *	Invoice Schedule Model

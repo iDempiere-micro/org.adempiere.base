@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_R_StatusCategory;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for R_StatusCategory
  *  @author iDempiere (generated) 

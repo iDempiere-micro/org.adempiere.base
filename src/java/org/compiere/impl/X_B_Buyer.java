@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_B_Buyer;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for B_Buyer
  *  @author iDempiere (generated) 

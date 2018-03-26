@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_M_Product_QualityTest;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for M_Product_QualityTest
  *  @author iDempiere (generated) 

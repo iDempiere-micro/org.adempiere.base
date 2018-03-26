@@ -20,9 +20,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 
-import org.compiere.impl.DocWorkflowMgr;
-import org.compiere.impl.PO;
-import static org.compiere.impl.SystemIDs.*;
+import org.idempiere.orm.DocWorkflowMgr;
+import org.idempiere.orm.PO;
+import static org.compiere.util.SystemIDs.*;
 import org.compiere.process.ProcessInfo;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

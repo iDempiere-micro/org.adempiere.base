@@ -27,6 +27,8 @@ import org.compiere.model.I_M_MatchPO;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for M_MatchPO
  *  @author iDempiere (generated) 

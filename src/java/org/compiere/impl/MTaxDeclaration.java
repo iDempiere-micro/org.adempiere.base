@@ -19,7 +19,7 @@ package org.compiere.impl;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 /**
  * 	Tax Declaration Model

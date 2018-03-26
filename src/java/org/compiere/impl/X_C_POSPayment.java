@@ -25,6 +25,8 @@ import java.util.Properties;
 import org.compiere.model.I_C_POSPayment;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for C_POSPayment
  *  @author iDempiere (generated) 

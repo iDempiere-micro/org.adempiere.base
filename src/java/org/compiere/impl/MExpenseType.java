@@ -16,6 +16,8 @@
  *****************************************************************************/
 package org.compiere.impl;
 
+ 
+
 import java.sql.ResultSet;
 import java.util.Properties;
 

@@ -19,6 +19,8 @@ package org.compiere.impl;
 
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_WS_WebServiceTypeAccess;
+ 
+ 
 
 import java.sql.ResultSet;
 import java.util.Properties;

@@ -176,7 +176,7 @@ public class POWrapper implements InvocationHandler
 		}
 		
 		// Load Persistent Object
-		PO child = MTable.get(po.getCtx(), tableName).getPO(record_id, po.get_TrxName());
+		PO child = (PO)MTable.get(po.getCtx(), tableName).getPO(record_id, po.get_TrxName());
 		return child;
 	}
 	

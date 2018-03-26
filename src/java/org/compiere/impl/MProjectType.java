@@ -272,8 +272,8 @@ public class MProjectType extends X_C_ProjectType
 	 * 	@param role role 
 	 *	@return query
 	 */
-	public MQuery getQuery(MGoalRestriction[] restrictions, 
-		String MeasureDisplay, Timestamp date, int C_Phase_ID, MRole role)
+	public MQuery getQuery(MGoalRestriction[] restrictions,
+                           String MeasureDisplay, Timestamp date, int C_Phase_ID, MRole role)
 	{
 		String dateColumn = "Created";
 		String orgColumn = "AD_Org_ID";

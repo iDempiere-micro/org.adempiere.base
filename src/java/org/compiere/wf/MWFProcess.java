@@ -22,17 +22,13 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.compiere.impl.MRole;
-import org.compiere.impl.MTable;
-import org.compiere.impl.PO;
-import org.compiere.impl.Query;
-import org.compiere.impl.X_AD_WF_Process;
+import org.compiere.impl.*;
 import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.StateEngine;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 import org.idempiere.common.util.Util;
 
 
@@ -109,7 +105,7 @@ public class MWFProcess extends X_AD_WF_Process
 		setAD_Table_ID(wf.getAD_Table_ID());
 		setRecord_ID(pi.getRecord_ID());
 		if (pi.getPO() != null)
-			m_po = pi.getPO();
+			m_po = (PO)pi.getPO();
 		if (getPO() == null)
 		{
 			setTextMsg("No PO with ID=" + pi.getRecord_ID());
@@ -146,7 +142,7 @@ public class MWFProcess extends X_AD_WF_Process
 	private ProcessInfo			m_pi = null;
  */
 	/**	Persistent Object			*/
-	private PO					m_po = null;
+	private PO m_po = null;
 	/** Message from Activity		*/
 	private String				m_processMsg = null;
 	
@@ -529,7 +525,7 @@ public class MWFProcess extends X_AD_WF_Process
 			return null;
 		
 		MTable table = MTable.get (getCtx(), getAD_Table_ID());
-		m_po = table.getPO(getRecord_ID(), get_TrxName());
+		m_po = (PO)table.getPO(getRecord_ID(), get_TrxName());
 		return m_po;
 	}	//	getPO
 

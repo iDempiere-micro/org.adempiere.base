@@ -26,6 +26,8 @@ import org.compiere.model.I_M_AttributeSetInstance;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_T_InventoryValue;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for T_InventoryValue
  *  @author iDempiere (generated) 

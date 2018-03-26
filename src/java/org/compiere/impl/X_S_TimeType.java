@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_S_TimeType;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for S_TimeType
  *  @author iDempiere (generated) 

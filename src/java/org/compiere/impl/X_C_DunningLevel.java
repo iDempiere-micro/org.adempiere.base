@@ -25,6 +25,8 @@ import org.compiere.model.I_C_DunningLevel;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for C_DunningLevel
  *  @author iDempiere (generated) 

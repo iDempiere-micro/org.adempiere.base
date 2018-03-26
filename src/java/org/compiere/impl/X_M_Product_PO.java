@@ -25,6 +25,8 @@ import java.util.Properties;
 import org.compiere.model.I_M_Product_PO;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for M_Product_PO
  *  @author iDempiere (generated) 

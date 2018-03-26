@@ -14,7 +14,7 @@
 package org.adempiere.base.event;
 
 import org.adempiere.process.ImportProcess;
-import org.compiere.impl.PO;
+import org.idempiere.orm.PO;
 
 /**
  *

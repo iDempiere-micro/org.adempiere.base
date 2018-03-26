@@ -25,6 +25,8 @@ import org.compiere.model.I_AD_Color;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for AD_Color
  *  @author iDempiere (generated) 

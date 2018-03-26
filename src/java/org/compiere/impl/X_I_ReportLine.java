@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_I_ReportLine;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for I_ReportLine
  *  @author iDempiere (generated) 

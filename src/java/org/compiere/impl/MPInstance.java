@@ -30,7 +30,7 @@ import java.util.logging.Level;
 import org.compiere.model.I_AD_PInstance;
 import org.compiere.model.I_AD_PInstance_Para;
 import org.idempiere.common.base.Service;
-import org.adempiere.base.event.EventManager;
+import org.idempiere.orm.EventManager;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

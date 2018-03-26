@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_AD_Table;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for AD_Table
  *  @author iDempiere (generated) 
@@ -91,8 +93,6 @@ public class X_AD_Table extends PO implements I_AD_Table, I_Persistent
 
 	/** AccessLevel AD_Reference_ID=5 */
 	public static final int ACCESSLEVEL_AD_Reference_ID=5;
-	/** Organization = 1 */
-	public static final String ACCESSLEVEL_Organization = "1";
 	/** Client+Organization = 3 */
 	public static final String ACCESSLEVEL_ClientPlusOrganization = "3";
 	/** System only = 4 */

@@ -23,7 +23,7 @@ import java.util.Properties;
 
 import org.compiere.impl.MTable;
 import org.compiere.impl.PO;
-import org.compiere.impl.POInfo;
+import org.idempiere.orm.POInfo;
 import org.compiere.model.*;
 import org.eevolution.model.I_DD_NetworkDistribution;
 import org.idempiere.common.util.KeyNamePair;

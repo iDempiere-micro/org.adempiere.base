@@ -28,6 +28,7 @@ import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.KeyNamePair;
 import org.idempiere.common.util.NamePair;
+import org.idempiere.orm.Lookup;
 
 /**
  *	Product Attribute Lookup Model (not Cached)

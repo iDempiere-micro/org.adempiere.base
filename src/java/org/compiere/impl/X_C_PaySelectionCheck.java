@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_C_PaySelectionCheck;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for C_PaySelectionCheck
  *  @author iDempiere (generated) 

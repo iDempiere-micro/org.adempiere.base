@@ -28,6 +28,7 @@ import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Util;
+ 
 
 /**
  * 	Request Mail Template Model.
@@ -69,7 +70,7 @@ public class MMailText extends X_R_MailText
 	/** Parse BPartner		*/
 	private MBPartner	m_bpartner = null;
 	/** Parse PO			*/
-	private PO			m_po = null;
+	private PO m_po = null;
 	/** Translated Header	*/
 	private String		m_MailHeader = null;
 	/** Translated Text		*/

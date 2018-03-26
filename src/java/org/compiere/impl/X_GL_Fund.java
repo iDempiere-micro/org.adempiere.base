@@ -26,6 +26,8 @@ import org.compiere.model.I_GL_Fund;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for GL_Fund
  *  @author iDempiere (generated) 

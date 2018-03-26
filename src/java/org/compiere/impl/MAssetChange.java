@@ -18,6 +18,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.idempiere.common.util.CLogger;
+ 
 
 /**
  *  Asset Addition Model

@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_GL_FundRestriction;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for GL_FundRestriction
  *  @author iDempiere (generated) 

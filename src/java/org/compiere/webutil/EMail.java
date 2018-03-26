@@ -14,7 +14,7 @@
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
  * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
-package org.compiere.util;
+package org.compiere.webutil;
 
 import com.sun.mail.smtp.SMTPMessage;
 import org.compiere.impl.MClient;
@@ -73,7 +73,7 @@ public final class EMail implements Serializable
 	 *  @param message  The message
 	 */
 	public EMail (MClient client, String from, String to,
-		String subject, String message)
+                  String subject, String message)
 	{
 		this (client.getCtx(), client.getSMTPHost(), client.getSMTPPort(), client.isSecureSMTP(), from, to, subject, message, false);
 	}	//	EMail
@@ -1183,7 +1183,7 @@ public final class EMail implements Serializable
 
 	/**************************************************************************
 	 *  Test.
-	 *  java -cp CTools.jar;CClient.jar org.compiere.util.EMail main info@adempiere.org jjanke@adempiere.org "My Subject"  "My Message"
+	 *  java -cp CTools.jar;CClient.jar org.compiere.webutil.EMail main info@adempiere.org jjanke@adempiere.org "My Subject"  "My Message"
 	 * 	--
 	 * 	If you get SendFailedException: 550 5.7.1 Unable to relay for ..
 	 * 	Check:
@@ -1199,7 +1199,7 @@ public final class EMail implements Serializable
 		if (args.length != 5)
 		{
 			System.out.println("Parameters: smtpHost from to subject message");
-			System.out.println("Example: java org.compiere.util.EMail mail.acme.com joe@acme.com sue@acme.com HiThere CheersJoe");
+			System.out.println("Example: java org.compiere.webutil.EMail mail.acme.com joe@acme.com sue@acme.com HiThere CheersJoe");
 			System.exit(1);
 		}
 		EMail email = new EMail(System.getProperties(), args[0], args[1], args[2], args[3], args[4]);

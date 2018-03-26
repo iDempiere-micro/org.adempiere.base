@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_M_AttributeSetInstance;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for M_AttributeSetInstance
  *  @author iDempiere (generated) 

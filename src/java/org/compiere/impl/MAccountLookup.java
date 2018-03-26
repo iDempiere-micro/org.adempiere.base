@@ -26,6 +26,7 @@ import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
 import org.idempiere.common.util.NamePair;
+import org.idempiere.orm.Lookup;
 
 /**
  *	Account Model Lookup - Maintains ValidCombination Info for Display & Edit - not cached

@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_R_RequestProcessor;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for R_RequestProcessor
  *  @author iDempiere (generated) 

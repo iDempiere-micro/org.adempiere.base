@@ -16,13 +16,13 @@ package org.adempiere.process;
 import org.compiere.impl.MColumn;
 import org.compiere.impl.MTable;
 import org.compiere.impl.M_Element;
-import org.compiere.impl.PO;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DisplayType;
 import org.compiere.util.Msg;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.*;
+import org.idempiere.orm.PO;
 
 import java.math.BigDecimal;
 import java.sql.*;

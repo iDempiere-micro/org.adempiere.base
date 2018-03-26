@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_AD_Replication_Log;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for AD_Replication_Log
  *  @author iDempiere (generated) 

@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_C_Subscription;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for C_Subscription
  *  @author iDempiere (generated) 

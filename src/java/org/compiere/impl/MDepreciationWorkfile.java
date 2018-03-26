@@ -13,7 +13,7 @@ import org.idempiere.common.util.CLogMgt;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 import org.idempiere.fa.feature.UseLife;
 import org.idempiere.fa.feature.UseLifeImpl;
 

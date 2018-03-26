@@ -25,7 +25,7 @@ import org.compiere.impl.MDocType;
 import org.compiere.impl.ModelValidationEngine;
 import org.compiere.impl.ModelValidator;
 import org.compiere.impl.PO;
-import org.compiere.impl.POInfo;
+import org.idempiere.orm.POInfo;
 
 /**
  *	Template for DocAction

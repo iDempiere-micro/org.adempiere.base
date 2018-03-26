@@ -26,6 +26,8 @@ import org.compiere.model.I_Persistent;
 import org.compiere.model.I_R_RequestUpdate;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for R_RequestUpdate
  *  @author iDempiere (generated) 

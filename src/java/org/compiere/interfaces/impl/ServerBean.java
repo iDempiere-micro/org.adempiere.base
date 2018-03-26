@@ -27,7 +27,7 @@ import org.compiere.impl.MTask;
 import org.compiere.process.ProcessInfo;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.CacheMgt;
-import org.compiere.util.EMail;
+import org.compiere.webutil.EMail;
 import org.idempiere.common.util.Env;
 
 /**

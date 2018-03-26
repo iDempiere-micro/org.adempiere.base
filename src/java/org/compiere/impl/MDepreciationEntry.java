@@ -14,7 +14,7 @@ import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.process.DocAction;
 import org.compiere.process.DocumentEngine;
 import org.idempiere.common.util.DB;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 import org.idempiere.common.util.Trx;
 import org.idempiere.common.util.TrxRunnable;
 import org.idempiere.fa.exceptions.AssetArrayException;

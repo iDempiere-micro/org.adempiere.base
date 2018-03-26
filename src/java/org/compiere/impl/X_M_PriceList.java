@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_M_PriceList;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for M_PriceList
  *  @author iDempiere (generated) 

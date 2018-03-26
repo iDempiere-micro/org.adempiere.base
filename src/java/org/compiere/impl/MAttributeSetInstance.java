@@ -28,7 +28,7 @@ import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.KeyNamePair;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 /**
  *  Product Attribute Set Instance

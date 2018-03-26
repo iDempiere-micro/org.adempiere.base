@@ -33,7 +33,7 @@ import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 /**
  *	Cash Journal Model

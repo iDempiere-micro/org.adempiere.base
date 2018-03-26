@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_C_PaymentBatch;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for C_PaymentBatch
  *  @author iDempiere (generated) 

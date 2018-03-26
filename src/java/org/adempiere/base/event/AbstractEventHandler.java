@@ -15,7 +15,8 @@ package org.adempiere.base.event;
 
 import java.util.List;
 
-import org.compiere.impl.PO;
+import org.idempiere.orm.IEventManager;
+import org.idempiere.orm.PO;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventHandler;
 

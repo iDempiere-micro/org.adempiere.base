@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_PA_Report;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for PA_Report
  *  @author iDempiere (generated) 

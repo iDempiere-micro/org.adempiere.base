@@ -26,6 +26,8 @@ import org.compiere.model.I_PA_SLA_Goal;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for PA_SLA_Goal
  *  @author iDempiere (generated) 

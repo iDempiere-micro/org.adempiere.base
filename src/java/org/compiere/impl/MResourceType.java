@@ -26,7 +26,7 @@ import java.util.Properties;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.FillMandatoryException;
 import org.idempiere.common.util.CCache;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 
 /**

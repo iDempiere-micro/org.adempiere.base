@@ -3,6 +3,7 @@ package org.compiere.impl;
 import java.util.List;
 
 import org.compiere.acct.Fact;
+ 
 
 public interface FactsValidator {
 	

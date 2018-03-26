@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_AD_Package_Exp_Detail;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for AD_Package_Exp_Detail
  *  @author iDempiere (generated) 

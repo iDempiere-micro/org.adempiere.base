@@ -20,7 +20,7 @@
 * MA 02110-1301, USA.                                                 *
 **********************************************************************/
 
-package org.compiere.util;
+package org.compiere.webutil;
 
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.CLogMgt;
@@ -38,7 +38,7 @@ import java.util.regex.Pattern;
 
 /**
  * provide function for sent, receive email in imap protocol
- * current only support receive email, for sent email refer {@link org.compiere.util.EMail}
+ * current only support receive email, for sent email refer {@link EMail}
  * in case internet line is slow, handle error when analysis message by fetch message part when need can complicate.
  * consider to add flag fetch all message at one time (with retry when error).
  * after that, analysis offline message.

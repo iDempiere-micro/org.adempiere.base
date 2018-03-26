@@ -28,6 +28,7 @@ import org.compiere.model.I_AD_Scheduler_Para;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
 import org.compiere.util.Msg;
+ 
 
 
 /**
@@ -260,7 +261,7 @@ public class MScheduler extends X_AD_Scheduler
 			}
 			// Validate the record must exists on the same client of the scheduler
 			MTable table = MTable.get(getCtx(), getAD_Table_ID());
-			PO po = table.getPO(getRecord_ID(), get_TrxName());
+			PO po = (PO)table.getPO(getRecord_ID(), get_TrxName());
 			if (po == null || po.get_ID() <= 0 || po.getAD_Client_ID() != getAD_Client_ID()) {
 				log.saveError("Error", Msg.getMsg(getCtx(), "NoRecordID"));
 				return false;

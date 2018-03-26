@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_R_IssueRecommendation;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for R_IssueRecommendation
  *  @author iDempiere (generated) 

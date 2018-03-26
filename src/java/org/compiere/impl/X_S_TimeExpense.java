@@ -26,6 +26,8 @@ import org.compiere.model.I_Persistent;
 import org.compiere.model.I_S_TimeExpense;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for S_TimeExpense
  *  @author iDempiere (generated) 

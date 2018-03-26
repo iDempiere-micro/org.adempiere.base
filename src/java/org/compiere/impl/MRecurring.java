@@ -23,6 +23,7 @@ import java.util.Properties;
 
 import org.idempiere.common.util.DB;
 import org.compiere.util.Msg;
+ 
 
 /**
  * 	Recurring Model

@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_C_OrderLandedCostAllocation;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for C_OrderLandedCostAllocation
  *  @author iDempiere (generated) 

@@ -24,6 +24,8 @@ import java.util.Properties;
 
 import org.compiere.model.*;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for A_Asset
  *  @author iDempiere (generated) 

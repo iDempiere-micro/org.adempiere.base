@@ -42,7 +42,7 @@ import java.util.StringTokenizer;
 import java.util.TreeSet;
 import java.util.logging.Level;
 
-import static org.compiere.impl.SystemIDs.REFERENCE_PAYMENTRULE;
+import static org.compiere.util.SystemIDs.REFERENCE_PAYMENTRULE;
 
 /**
  *  Generate Model Classes extending PO.

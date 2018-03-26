@@ -28,11 +28,12 @@ import java.util.logging.Level;
 import javax.script.ScriptEngine;
 
 import org.adempiere.base.Core;
-import org.adempiere.base.event.EventManager;
-import org.adempiere.base.event.EventProperty;
+import org.compiere.webutil.Login;
+import org.idempiere.orm.EventManager;
+import org.idempiere.orm.EventProperty;
 import org.adempiere.base.event.FactsEventData;
-import org.adempiere.base.event.IEventManager;
-import org.adempiere.base.event.IEventTopics;
+import org.idempiere.orm.IEventManager;
+import org.idempiere.orm.IEventTopics;
 import org.adempiere.base.event.ImportEventData;
 import org.adempiere.base.event.LoginEventData;
 import org.adempiere.model.ImportValidator;
@@ -42,6 +43,7 @@ import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
 import org.idempiere.common.util.Util;
+ 
 import org.osgi.service.event.Event;
 
 /**
@@ -856,7 +858,7 @@ public class ModelValidationEngine
 	/**
 	 * After Load Preferences into Context for selected client.
 	 * @param ctx context
-	 * @see org.compiere.util.Login#loadPreferences(KeyNamePair, KeyNamePair, java.sql.Timestamp, String)
+	 * @see Login#loadPreferences(KeyNamePair, KeyNamePair, java.sql.Timestamp, String)
 	 * @author Teo Sarca - FR [ 1670025 ] - https://sourceforge.net/tracker/index.php?func=detail&aid=1670025&group_id=176962&atid=879335
 	 */
 	public void afterLoadPreferences (Properties ctx)

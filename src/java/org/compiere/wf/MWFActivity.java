@@ -16,7 +16,7 @@
  *****************************************************************************/
 package org.compiere.wf;
 
-import static org.compiere.impl.SystemIDs.MESSAGE_WORKFLOWRESULT;
+import static org.compiere.util.SystemIDs.MESSAGE_WORKFLOWRESULT;
 
 import java.io.File;
 import java.math.BigDecimal;
@@ -33,28 +33,8 @@ import java.util.Properties;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
+import org.compiere.impl.*;
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.impl.MAttachment;
-import org.compiere.impl.MBPartner;
-import org.compiere.impl.MClient;
-import org.compiere.impl.MColumn;
-import org.compiere.impl.MConversionRate;
-import org.compiere.impl.MMailText;
-import org.compiere.impl.MNote;
-import org.compiere.impl.MOrg;
-import org.compiere.impl.MOrgInfo;
-import org.compiere.impl.MPInstance;
-import org.compiere.impl.MPInstancePara;
-import org.compiere.impl.MProcess;
-import org.compiere.impl.MRefList;
-import org.compiere.impl.MRole;
-import org.compiere.impl.MTable;
-import org.compiere.impl.MUser;
-import org.compiere.impl.MUserRoles;
-import org.compiere.impl.MWFActivityApprover;
-import org.compiere.impl.PO;
-import org.compiere.impl.Query;
-import org.compiere.impl.X_AD_WF_Activity;
 import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.StateEngine;
@@ -354,9 +334,9 @@ public class MWFActivity extends X_AD_WF_Activity implements Runnable
 
 		MTable table = MTable.get (getCtx(), getAD_Table_ID());
 		if (trx != null)
-			m_po = table.getPO(getRecord_ID(), trx.getTrxName());
+			m_po = (PO)table.getPO(getRecord_ID(), trx.getTrxName());
 		else
-			m_po = table.getPO(getRecord_ID(), null);
+			m_po = (PO)table.getPO(getRecord_ID(), null);
 		return m_po;
 	}	//	getPO
 
@@ -806,7 +786,7 @@ public class MWFActivity extends X_AD_WF_Activity implements Runnable
 			rs = pstmt.executeQuery ();
 			while (rs.next ()) {
 				int doc_id = rs.getInt(1);
-				PO doc = tablepo.getPO(doc_id, get_TrxName());
+				PO doc = (PO)tablepo.getPO(doc_id, get_TrxName());
 				BigDecimal docamt = ((DocAction) doc).getApprovalAmt();
 				if (docamt != null)
 					amtaccum = amtaccum.add(docamt);
@@ -1296,7 +1276,7 @@ public class MWFActivity extends X_AD_WF_Activity implements Runnable
 				MTable refTable = MTable.get(Env.getCtx(), referenceTableName);
 				dbValue = Integer.valueOf(value);
 				boolean validValue = true;
-				PO po = refTable.getPO((Integer)dbValue, trx.getTrxName());
+				PO po = (PO)refTable.getPO((Integer)dbValue, trx.getTrxName());
 				if (po == null || po.get_ID() == 0) {
 					// foreign key does not exist
 					validValue = false;

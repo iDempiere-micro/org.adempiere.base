@@ -31,6 +31,7 @@ import org.compiere.util.Msg;
 import org.idempiere.common.util.Trx;
 import org.idempiere.common.util.Util;
 import org.compiere.model.I_C_Location;
+ 
 
 /**
  *	Location (Address)

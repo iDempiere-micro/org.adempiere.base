@@ -26,6 +26,8 @@ import org.compiere.model.I_C_Conversion_Rate;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for C_Conversion_Rate
  *  @author iDempiere (generated) 

@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_A_Registration;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for A_Registration
  *  @author iDempiere (generated) 

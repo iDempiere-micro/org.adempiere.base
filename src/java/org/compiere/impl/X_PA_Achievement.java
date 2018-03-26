@@ -26,6 +26,8 @@ import org.compiere.model.I_PA_Achievement;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for PA_Achievement
  *  @author iDempiere (generated) 

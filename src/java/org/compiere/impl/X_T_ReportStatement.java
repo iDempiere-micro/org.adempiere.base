@@ -26,6 +26,8 @@ import org.compiere.model.I_Persistent;
 import org.compiere.model.I_T_ReportStatement;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for T_ReportStatement
  *  @author iDempiere (generated) 

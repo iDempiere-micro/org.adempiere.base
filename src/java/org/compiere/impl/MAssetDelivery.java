@@ -22,7 +22,7 @@ import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.compiere.util.EMail;
+import org.compiere.webutil.EMail;
 
 /**
  *  Asset Delivery Model

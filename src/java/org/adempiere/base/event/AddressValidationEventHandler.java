@@ -19,7 +19,8 @@ import org.compiere.model.I_C_Location;
 import org.compiere.impl.MAddressValidation;
 import org.compiere.impl.MLocation;
 import org.compiere.impl.MSysConfig;
-import org.compiere.impl.PO;
+import org.idempiere.orm.IEventTopics;
+import org.idempiere.orm.PO;
 import org.osgi.service.event.Event;
 
 /**
@@ -32,7 +33,7 @@ public class AddressValidationEventHandler extends AbstractEventHandler {
 	@Override
 	protected void doHandleEvent(Event event) {
 		String topic = event.getTopic();
-		if (topic.equals(IEventTopics.PO_BEFORE_NEW) || topic.equals(IEventTopics.PO_BEFORE_CHANGE)) 
+		if (topic.equals(IEventTopics.PO_BEFORE_NEW) || topic.equals(IEventTopics.PO_BEFORE_CHANGE))
 		{
 			PO po = getPO(event);
 			if (po.get_TableName().equals(I_C_Location.Table_Name))

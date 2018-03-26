@@ -32,6 +32,7 @@ import org.compiere.util.DisplayType;
 import org.idempiere.common.util.KeyNamePair;
 import org.idempiere.common.util.NamePair;
 import org.idempiere.common.util.Util;
+import org.idempiere.orm.Lookup;
 
 /**
  *	Warehouse Locator Lookup Model.

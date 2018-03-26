@@ -26,6 +26,8 @@ import org.compiere.model.I_C_Location;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_T_1099Extract;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for T_1099Extract
  *  @author iDempiere (generated) 

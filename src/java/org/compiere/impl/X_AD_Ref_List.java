@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_AD_Ref_List;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for AD_Ref_List
  *  @author iDempiere (generated) 

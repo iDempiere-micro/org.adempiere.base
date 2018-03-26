@@ -25,6 +25,8 @@ import org.compiere.model.I_M_AttributeSetInstance;
 import org.compiere.model.I_M_CostQueue;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for M_CostQueue
  *  @author iDempiere (generated) 

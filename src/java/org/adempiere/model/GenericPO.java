@@ -26,7 +26,7 @@ import java.util.Properties;
 
 import org.compiere.impl.MTable;
 import org.compiere.impl.PO;
-import org.compiere.impl.POInfo;
+import org.idempiere.orm.POInfo;
 
 /**
  * Generic PO implementation, this can be use together with ModelValidator as alternative to the classic 

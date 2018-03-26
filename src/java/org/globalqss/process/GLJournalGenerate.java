@@ -234,7 +234,7 @@ public class GLJournalGenerate extends SvrProcess
 									int id = rs.getInt(column);
 									if (id > 0) {
 										MTable table = MTable.get(getCtx(), tablename);
-										PO po = table.getPO(id, get_TrxName());
+										PO po = (PO)table.getPO(id, get_TrxName());
 										bpIdOut = po.get_ValueAsInt(columnname);
 									}
 									dimensions.add(bpIdOut);

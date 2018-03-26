@@ -27,9 +27,9 @@ import java.util.Properties;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 
-import org.adempiere.base.event.EventManager;
-import org.adempiere.base.event.EventProperty;
-import org.adempiere.base.event.IEventTopics;
+import org.idempiere.orm.EventManager;
+import org.idempiere.orm.EventProperty;
+import org.idempiere.orm.IEventTopics;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.acct.Doc;
 import org.compiere.impl.MAcctSchema;

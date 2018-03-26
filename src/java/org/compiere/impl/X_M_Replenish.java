@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_M_Replenish;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for M_Replenish
  *  @author iDempiere (generated) 

@@ -24,6 +24,7 @@ import java.util.logging.Level;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.KeyNamePair;
 import org.idempiere.common.util.NamePair;
+import org.idempiere.orm.Lookup;
 
 /**
  *	Address Loaction Lookup Model.

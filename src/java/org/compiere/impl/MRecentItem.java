@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.idempiere.common.base.Service;
-import org.adempiere.base.event.EventManager;
+import org.idempiere.orm.EventManager;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
@@ -32,6 +32,7 @@ import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Util;
 import org.idempiere.common.distributed.IMessageService;
 import org.idempiere.common.distributed.ITopic;
+ 
 import org.osgi.service.event.Event;
 
 /**
@@ -292,7 +293,7 @@ public class MRecentItem extends X_AD_RecentItem
 			windowName = win.get_Translation("Name");
 		}
 		MTable table = MTable.get(getCtx(), getAD_Table_ID());
-		PO po = table.getPO(getRecord_ID(), null);
+		PO po = (PO)table.getPO(getRecord_ID(), null);
 		if (po == null) {
 			/* Recent Item was deleted (probably with direct SQL DELETE) */
 			this.deleteEx(true, null);

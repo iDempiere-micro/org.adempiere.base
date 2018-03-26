@@ -14,13 +14,13 @@
 
 package org.idempiere.broadcast;
 
-import org.adempiere.base.event.EventManager;
-import org.adempiere.base.event.IEventTopics;
+import org.idempiere.orm.EventManager;
+import org.idempiere.orm.IEventTopics;
 import org.adempiere.model.MBroadcastMessage;
 import org.compiere.Adempiere;
 import org.compiere.impl.MNote;
 import org.compiere.impl.MUser;
-import org.compiere.util.WebUtil;
+import org.compiere.webutil.WebUtil;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

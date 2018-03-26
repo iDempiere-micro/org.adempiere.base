@@ -11,9 +11,10 @@ import java.util.logging.Level;
 import javax.servlet.http.HttpServletRequest;
 
 import org.idempiere.common.util.DB;
-import org.compiere.util.EMail;
+import org.compiere.webutil.EMail;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
+ 
 
 /**
  * Asset Model

@@ -17,7 +17,7 @@ import java.util.List;
 
 import org.compiere.acct.Fact;
 import org.compiere.impl.MAcctSchema;
-import org.compiere.impl.PO;
+import org.idempiere.orm.PO;
 
 /**
  *

@@ -39,11 +39,12 @@ import org.compiere.process.ProcessInfo;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
-import org.compiere.util.IBAN;
+import org.compiere.webutil.IBAN;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Trx;
 import org.idempiere.common.util.Util;
 import org.idempiere.common.util.ValueNamePair;
+ 
 
 /**
  *  Payment Model.

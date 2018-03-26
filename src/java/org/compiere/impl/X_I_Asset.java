@@ -28,6 +28,8 @@ import org.compiere.model.I_M_AttributeSetInstance;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for I_Asset
  *  @author iDempiere (generated) 

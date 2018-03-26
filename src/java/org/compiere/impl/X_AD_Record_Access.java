@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_AD_Record_Access;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for AD_Record_Access
  *  @author iDempiere (generated) 

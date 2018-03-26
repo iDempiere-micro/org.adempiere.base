@@ -27,6 +27,8 @@ import org.compiere.model.I_GL_JournalLine;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for GL_JournalLine
  *  @author iDempiere (generated) 

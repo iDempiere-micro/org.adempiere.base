@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_PA_MeasureCalc;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for PA_MeasureCalc
  *  @author iDempiere (generated) 

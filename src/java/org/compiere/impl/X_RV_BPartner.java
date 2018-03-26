@@ -26,6 +26,8 @@ import org.compiere.model.I_C_Location;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_RV_BPartner;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for RV_BPartner
  *  @author iDempiere (generated) 

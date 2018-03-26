@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_U_WebMenu;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for U_WebMenu
  *  @author iDempiere (generated) 

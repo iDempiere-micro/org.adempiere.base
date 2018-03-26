@@ -24,7 +24,8 @@ import org.compiere.model.I_S_Resource;
 import org.compiere.model.I_S_ResourceUnAvailable;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
+ 
 
 
 /**

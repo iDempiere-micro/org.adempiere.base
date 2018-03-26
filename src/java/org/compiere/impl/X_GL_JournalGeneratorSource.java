@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_GL_JournalGeneratorSource;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for GL_JournalGeneratorSource
  *  @author iDempiere (generated) 

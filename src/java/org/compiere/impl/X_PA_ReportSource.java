@@ -24,6 +24,8 @@ import org.compiere.model.I_C_Location;
 import org.compiere.model.I_PA_ReportSource;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for PA_ReportSource
  *  @author iDempiere (generated) 

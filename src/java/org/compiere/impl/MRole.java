@@ -16,8 +16,8 @@
  *****************************************************************************/
 package org.compiere.impl;
 
-import static org.compiere.impl.SystemIDs.USER_SUPERUSER;
-import static org.compiere.impl.SystemIDs.USER_SYSTEM;
+import static org.compiere.util.SystemIDs.USER_SUPERUSER;
+import static org.compiere.util.SystemIDs.USER_SYSTEM;
 
 import java.io.Serializable;
 import java.lang.reflect.Array;
@@ -36,6 +36,7 @@ import java.util.Set;
 import java.util.logging.Level;
 
 import org.compiere.model.I_M_Product;
+import org.compiere.webutil.Login;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
@@ -77,7 +78,7 @@ public final class MRole extends X_AD_Role
 	 * 	@param ctx context
 	 * 	@param reload if true forces load
 	 *	@return role
-	 *	@see org.compiere.util.Login#loadPreferences(KeyNamePair, KeyNamePair, java.sql.Timestamp, String)
+	 *	@see Login#loadPreferences(KeyNamePair, KeyNamePair, java.sql.Timestamp, String)
 	 */
 	public static MRole getDefault (Properties ctx, boolean reload)
 	{
@@ -799,7 +800,7 @@ public final class MRole extends X_AD_Role
 	 * 	Load Org Access Add Tree to List
 	 *	@param list list
 	 *	@param oa org access
-	 *	@see org.compiere.util.Login
+	 *	@see Login
 	 */
 	private void loadOrgAccessAdd (ArrayList<OrgAccess> list, OrgAccess oa)
 	{

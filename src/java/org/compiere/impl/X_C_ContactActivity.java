@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_C_ContactActivity;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for C_ContactActivity
  *  @author iDempiere (generated) 

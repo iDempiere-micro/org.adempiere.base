@@ -12,7 +12,7 @@ import org.compiere.impl.PO;
 import org.compiere.impl.SetGetModel;
 import org.compiere.impl.SetGetUtil;
 import org.idempiere.common.util.CLogger;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
  
  

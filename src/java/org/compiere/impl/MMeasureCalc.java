@@ -205,8 +205,8 @@ public class MMeasureCalc extends X_PA_MeasureCalc
 	 * 	@param role role
 	 *	@return query
 	 */
-	public MQuery getQuery(MGoalRestriction[] restrictions, 
-		String MeasureDisplay, Timestamp date, MRole role)
+	public MQuery getQuery(MGoalRestriction[] restrictions,
+                           String MeasureDisplay, Timestamp date, MRole role)
 	{
 		MQuery query = new MQuery(getAD_Table_ID());
 		//

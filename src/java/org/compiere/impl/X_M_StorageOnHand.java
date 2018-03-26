@@ -27,6 +27,8 @@ import org.compiere.model.I_M_Locator;
 import org.compiere.model.I_M_StorageOnHand;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for M_StorageOnHand
  *  @author iDempiere (generated) 

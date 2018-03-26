@@ -26,6 +26,8 @@ import org.compiere.model.I_A_Depreciation_Workfile;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for A_Depreciation_Workfile
  *  @author iDempiere (generated) 

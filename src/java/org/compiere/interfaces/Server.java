@@ -4,7 +4,7 @@ package org.compiere.interfaces;
 import java.util.Properties;
 
 import org.compiere.process.ProcessInfo;
-import org.compiere.util.EMail;
+import org.compiere.webutil.EMail;
 
 /**
  * Interface for adempiere/Server.

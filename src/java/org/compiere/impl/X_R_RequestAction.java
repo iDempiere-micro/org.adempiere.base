@@ -25,6 +25,8 @@ import java.util.Properties;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_R_RequestAction;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for R_RequestAction
  *  @author iDempiere (generated) 

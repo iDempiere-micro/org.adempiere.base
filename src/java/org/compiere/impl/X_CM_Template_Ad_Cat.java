@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_CM_Template_Ad_Cat;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for CM_Template_Ad_Cat
  *  @author iDempiere (generated) 

@@ -27,6 +27,8 @@ import org.compiere.model.I_M_Locator;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_T_Transaction;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for T_Transaction
  *  @author iDempiere (generated) 

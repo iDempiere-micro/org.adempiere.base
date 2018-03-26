@@ -14,7 +14,7 @@
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
  * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
-package org.compiere.util;
+package org.compiere.webutil;
 
 import org.compiere.impl.*;
 import org.idempiere.common.util.CLogger;
@@ -139,10 +139,10 @@ public class WebUser
 
 	private Properties			m_ctx;
 	//
-	private MBPartner		 	m_bp;
-	private MUser			 	m_bpc;
+	private MBPartner m_bp;
+	private MUser m_bpc;
 	private MBPartnerLocation m_bpl;
-	private MLocation 			m_loc;
+	private MLocation m_loc;
 	//
 	private boolean				m_passwordOK = false;
 	private String				m_passwordMessage;

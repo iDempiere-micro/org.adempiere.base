@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_C_DocType;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for C_DocType
  *  @author iDempiere (generated) 

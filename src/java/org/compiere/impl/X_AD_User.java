@@ -25,6 +25,8 @@ import org.compiere.model.I_AD_User;
 import org.compiere.model.I_C_Location;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for AD_User
  *  @author iDempiere (generated) 

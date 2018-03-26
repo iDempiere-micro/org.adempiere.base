@@ -32,7 +32,7 @@ import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.PORelationException;
 import org.adempiere.model.ZoomInfoFactory.ZoomInfo;
 import org.compiere.model.I_AD_Ref_Table;
-import org.compiere.impl.Lookup;
+import org.idempiere.orm.Lookup;
 import org.compiere.impl.MColumn;
 import org.compiere.impl.MQuery;
 import org.compiere.impl.MRefTable;
@@ -192,7 +192,7 @@ public class MRelationType extends X_AD_RelationType implements IZoomProvider {
 		if (Util.isEmpty(keyValue)) {
 			return "";
 		}
-		final Lookup lookup = this.p_info.getColumnLookup(colIdx);
+		final Lookup lookup = this.getP_info2().getColumnLookup(colIdx);
 		return lookup.getDisplay(keyValue);
 	}
 

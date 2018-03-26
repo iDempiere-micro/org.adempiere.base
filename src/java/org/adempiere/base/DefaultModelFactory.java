@@ -24,7 +24,7 @@ import java.util.logging.Level;
 
 import org.compiere.impl.MEntityType;
 import org.compiere.impl.MTable;
-import org.compiere.impl.PO;
+import org.idempiere.orm.PO;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;

@@ -37,6 +37,7 @@ import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Language;
 import org.idempiere.common.util.Util;
+ 
 
 
 public class SetGetUtil
@@ -263,7 +264,7 @@ public class SetGetUtil
 		int copiedFields = 0;
 		for (int idx_from = 0; idx_from < from.get_ColumnCount(); idx_from++)
 		{
-			String colName = from.p_info.getColumnName(idx_from);
+			String colName = from.getP_info().getColumnName(idx_from);
 			boolean isExcluded = false;
 			//
 			//  Ignore Standard Values
@@ -318,7 +319,7 @@ public class SetGetUtil
 				if (s_log.isLoggable(Level.FINEST)) s_log.finest("Field " + colName + " [SKIP:idx_to < 0]");
 				continue;
 			}
-			if (to.p_info.isVirtualColumn(idx_to) || to.p_info.isKey(idx_to))
+			if (to.getP_info().isVirtualColumn(idx_to) || to.getP_info().isKey(idx_to))
 			{ // KeyColumn
 				if (s_log.isLoggable(Level.FINEST)) s_log.finest("Field " + colName + " [SKIP:virtual or key]");
 				continue;

@@ -21,12 +21,14 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.util.SystemIDs;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.NamePair;
 import org.idempiere.common.util.Util;
 import org.idempiere.common.util.ValueNamePair;
+import org.idempiere.orm.Lookup;
 
 /**
  * 

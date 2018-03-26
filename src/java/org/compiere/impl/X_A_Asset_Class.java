@@ -19,6 +19,8 @@ package org.compiere.impl;
 
 import org.compiere.model.I_A_Asset_Class;
 import org.compiere.model.I_Persistent;
+ 
+ 
 
 import java.sql.ResultSet;
 import java.util.Properties;

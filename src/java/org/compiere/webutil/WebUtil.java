@@ -14,9 +14,10 @@
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
  * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
-package org.compiere.util;
+package org.compiere.webutil;
 
 import org.compiere.impl.*;
+import org.compiere.util.DisplayType;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Language;
@@ -714,7 +715,7 @@ public final class WebUtil
 			message.append(ftr);
 		
 		//	Create Mail
-		EMail email = wStore.createEMail(to.getEmail(), 
+		EMail email = wStore.createEMail(to.getEmail(),
 			subject.toString(), message.toString());
 		//	CC Order
 		if (msgType.equals(MMailMsg.MAILMSGTYPE_OrderAcknowledgement))

@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_K_CategoryValue;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for K_CategoryValue
  *  @author iDempiere (generated) 

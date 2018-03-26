@@ -34,6 +34,7 @@ import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Trx;
+ 
 
 /**
  *	Currency Conversion Rate Model
@@ -326,7 +327,7 @@ public class MConversionRate extends X_C_Conversion_Rate
 	 *	@param MultiplyRate multiply rate
 	 *	@param ValidFrom valid from
 	 */
-	public MConversionRate (PO po, 
+	public MConversionRate (PO po,
 		int C_ConversionType_ID, 
 		int C_Currency_ID, int C_Currency_ID_To, 
 		BigDecimal MultiplyRate, Timestamp ValidFrom)

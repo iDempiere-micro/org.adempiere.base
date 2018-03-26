@@ -20,11 +20,11 @@ package org.eevolution.impl;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.compiere.impl.PO;
-import org.compiere.impl.POInfo;
+import org.idempiere.orm.POInfo;
 import org.compiere.model.*;
 import org.eevolution.model.I_C_TaxType;
 import org.idempiere.common.util.KeyNamePair;
+import org.compiere.impl.PO;
 
 /** Generated Model for C_TaxType
  *  @author iDempiere (generated) 

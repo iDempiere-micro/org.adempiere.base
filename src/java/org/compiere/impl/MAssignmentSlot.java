@@ -24,7 +24,7 @@ import java.util.Comparator;
 import java.util.GregorianCalendar;
 
 import org.idempiere.common.util.Language;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 /**
  *	Assignment Slot.

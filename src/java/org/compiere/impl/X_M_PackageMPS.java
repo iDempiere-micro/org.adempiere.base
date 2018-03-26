@@ -25,6 +25,8 @@ import org.compiere.model.I_M_PackageMPS;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for M_PackageMPS
  *  @author iDempiere (generated) 

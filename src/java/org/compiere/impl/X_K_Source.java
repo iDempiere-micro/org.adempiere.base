@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_K_Source;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for K_Source
  *  @author iDempiere (generated) 

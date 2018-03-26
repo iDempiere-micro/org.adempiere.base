@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_RV_WarehousePrice;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for RV_WarehousePrice
  *  @author iDempiere (generated) 

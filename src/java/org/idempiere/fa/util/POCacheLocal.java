@@ -7,7 +7,7 @@ import java.util.Properties;
 
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.impl.MTable;
-import org.compiere.impl.PO;
+import org.idempiere.orm.PO;
 
 /**
  * @author Teo Sarca, SC ARHIPAC SERVICE SRL

@@ -26,10 +26,11 @@ import org.compiere.process.DocAction;
 import org.compiere.process.ProcessCall;
 import org.compiere.process.ProcessInfo;
 import org.idempiere.common.util.Env;
-import org.compiere.util.IBAN;
+import org.compiere.webutil.IBAN;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Trx;
 import org.idempiere.common.util.Util;
+ 
 
 /**
  * 

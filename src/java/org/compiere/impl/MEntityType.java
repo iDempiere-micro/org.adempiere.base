@@ -16,8 +16,8 @@
  *****************************************************************************/
 package org.compiere.impl;
 
-import static org.compiere.impl.SystemIDs.ENTITYTYPE_ADEMPIERE;
-import static org.compiere.impl.SystemIDs.ENTITYTYPE_DICTIONARY;
+import static org.compiere.util.SystemIDs.ENTITYTYPE_ADEMPIERE;
+import static org.compiere.util.SystemIDs.ENTITYTYPE_DICTIONARY;
 
 import java.sql.ResultSet;
 import java.util.Properties;

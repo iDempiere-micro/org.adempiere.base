@@ -26,14 +26,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.impl.*;
 import org.idempiere.common.exceptions.DBException;
-import org.compiere.impl.MColumn;
-import org.compiere.impl.MMenu;
-import org.compiere.impl.MProduct;
-import org.compiere.impl.MTable;
-import org.compiere.impl.PO;
-import org.compiere.impl.Query;
-import org.compiere.impl.X_AD_Workflow;
 import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.ServerProcessCtl;

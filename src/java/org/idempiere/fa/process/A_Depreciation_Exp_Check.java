@@ -16,7 +16,7 @@ import org.compiere.impl.Query;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.DB;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 
 /**

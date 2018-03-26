@@ -24,6 +24,8 @@ import org.compiere.model.I_C_BP_Group_Acct;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for C_BP_Group_Acct
  *  @author iDempiere (generated) 

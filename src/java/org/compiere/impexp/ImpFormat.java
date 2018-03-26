@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import static org.compiere.impl.SystemIDs.*;
+import static org.compiere.util.SystemIDs.*;
 
 /**
  *	Import Format a Row

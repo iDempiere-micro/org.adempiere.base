@@ -20,6 +20,8 @@ package org.compiere.impl;
 import org.compiere.model.I_AD_Registration;
 import org.compiere.model.I_C_Location;
 import org.compiere.model.I_Persistent;
+ 
+ 
 
 import java.sql.ResultSet;
 import java.sql.Timestamp;

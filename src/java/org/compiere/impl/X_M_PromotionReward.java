@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_M_PromotionReward;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for M_PromotionReward
  *  @author iDempiere (generated) 

@@ -24,6 +24,8 @@ import java.util.Properties;
 import org.compiere.model.I_K_Index;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for K_Index
  *  @author iDempiere (generated) 

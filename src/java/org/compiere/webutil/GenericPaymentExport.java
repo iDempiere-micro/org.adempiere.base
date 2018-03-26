@@ -14,11 +14,14 @@
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
  * or via info@compiere.org or http://www.idempiere.org/license.html           *
  *****************************************************************************/
-package org.compiere.util;
+package org.compiere.webutil;
 
 import org.compiere.impl.MCurrency;
 import org.compiere.impl.MPaySelectionCheck;
 import org.compiere.impl.MPaySelectionLine;
+import org.compiere.model.I_C_PaySelectionCheck;
+import org.compiere.model.I_C_PaySelectionLine;
+import org.compiere.util.PaymentExport;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -77,7 +80,7 @@ public class GenericPaymentExport implements PaymentExport
 	 *  @return number of lines
 	 */
 	public int exportToFile(MPaySelectionCheck[] checks, boolean depositBatch, String paymentRule, File file,
-			StringBuffer err) {
+							StringBuffer err) {
 		if (checks == null || checks.length == 0)
 			return 0;
 		//  Must be a file

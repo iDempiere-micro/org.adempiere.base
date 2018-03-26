@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_AD_UserMail;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for AD_UserMail
  *  @author iDempiere (generated) 

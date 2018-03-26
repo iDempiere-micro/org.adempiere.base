@@ -30,8 +30,9 @@ import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 import org.idempiere.common.util.Util;
+ 
 
 
 /**
@@ -409,7 +410,7 @@ public class MMeasure extends X_PA_Measure
 		for (MGoal goal:goals)
 		{
 			BigDecimal amt = Env.ZERO;
-			PO po = new MTable(getCtx(),get_Table_ID(),get_TrxName()).getPO(get_ID(), get_TrxName());
+			PO po = (PO)new MTable(getCtx(),get_Table_ID(),get_TrxName()).getPO(get_ID(), get_TrxName());
 			StringTokenizer st = new StringTokenizer(getCalculationClass(), ";,", false);
 			while (st.hasMoreTokens())      //  for each class
 			{

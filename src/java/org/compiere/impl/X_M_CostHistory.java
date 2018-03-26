@@ -25,6 +25,8 @@ import org.compiere.model.I_M_AttributeSetInstance;
 import org.compiere.model.I_M_CostHistory;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for M_CostHistory
  *  @author iDempiere (generated) 

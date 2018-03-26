@@ -25,6 +25,7 @@ import java.util.Properties;
 import org.compiere.model.I_M_MatchInv;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
+ 
 
 /**
  *	Match Invoice (Receipt<>Invoice) Model.

@@ -18,7 +18,7 @@ package org.compiere.impl;
 
 import org.compiere.db.LDAP;
 import org.compiere.util.DisplayType;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 import org.idempiere.common.db.CConnection;
 import org.idempiere.common.db.Database;
 import org.idempiere.common.exceptions.AdempiereException;

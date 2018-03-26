@@ -17,6 +17,7 @@
 package org.compiere.impl;
 
 import org.compiere.Adempiere;
+import org.compiere.util.SystemIDs;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

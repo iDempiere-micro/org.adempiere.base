@@ -21,8 +21,11 @@ import java.sql.ResultSet;
 import java.util.Properties;
 
 import org.compiere.model.I_AD_ClientShare;
+import org.compiere.model.I_AD_Table;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for AD_ClientShare
  *  @author iDempiere (generated) 
@@ -113,7 +116,7 @@ public class X_AD_ClientShare extends PO implements I_AD_ClientShare, I_Persiste
 		return (String)get_Value(COLUMNNAME_AD_ClientShare_UU);
 	}
 
-	public org.compiere.model.I_AD_Table getAD_Table() throws RuntimeException
+	public I_AD_Table getAD_Table() throws RuntimeException
     {
 		return (org.compiere.model.I_AD_Table)MTable.get(getCtx(), org.compiere.model.I_AD_Table.Table_Name)
 			.getPO(getAD_Table_ID(), get_TrxName());	}

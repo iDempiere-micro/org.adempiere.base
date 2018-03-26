@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.adempiere.base.event;
 
-import static org.compiere.impl.SystemIDs.MESSAGE_REQUESTUPDATE;
+import static org.compiere.util.SystemIDs.MESSAGE_REQUESTUPDATE;
 
 import java.io.File;
 import java.sql.PreparedStatement;
@@ -33,7 +33,9 @@ import org.compiere.impl.MRequestAction;
 import org.compiere.impl.MRequestType;
 import org.compiere.impl.MRequestUpdate;
 import org.compiere.impl.MUser;
-import org.compiere.impl.PO;
+import org.idempiere.orm.EventManager;
+import org.idempiere.orm.IEventTopics;
+import org.idempiere.orm.PO;
 import org.compiere.impl.X_AD_User;
 import org.compiere.impl.X_R_Request;
 import org.idempiere.common.util.CLogger;
@@ -58,7 +60,7 @@ public class RequestEventHandler extends AbstractEventHandler implements Managed
 	protected void doHandleEvent(Event event) 
 	{
 		String topic = event.getTopic();
-		if (topic.equals(IEventTopics.REQUEST_SEND_EMAIL)) 
+		if (topic.equals(IEventTopics.REQUEST_SEND_EMAIL))
 		{
 			RequestSendEMailEventData eventData = (RequestSendEMailEventData) event.getProperty(EventManager.EVENT_DATA);
 			if (!eventData.getClient().sendEMail(eventData.getFrom(), eventData.getTo(), eventData.getSubject(), eventData.getMessage(), eventData.getAttachment()))

@@ -27,7 +27,7 @@ import java.util.logging.Level;
 import javax.servlet.http.HttpServletRequest;
 
 import org.idempiere.common.util.DB;
-import org.compiere.util.WebUtil;
+import org.compiere.webutil.WebUtil;
 
 /**
  *	Asset Registration Model

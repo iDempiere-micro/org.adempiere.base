@@ -27,7 +27,7 @@ import org.compiere.model.I_R_RequestAction;
 import org.compiere.model.I_R_RequestUpdate;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 /**
  * 	Request Model

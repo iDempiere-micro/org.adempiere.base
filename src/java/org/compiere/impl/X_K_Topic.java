@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_K_Topic;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for K_Topic
  *  @author iDempiere (generated) 

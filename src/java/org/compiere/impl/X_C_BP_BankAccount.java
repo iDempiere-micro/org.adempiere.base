@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_C_BP_BankAccount;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for C_BP_BankAccount
  *  @author iDempiere (generated) 

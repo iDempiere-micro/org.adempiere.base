@@ -19,6 +19,8 @@ package org.compiere.impl;
 
 import org.compiere.model.I_M_CommodityShipment;
 import org.compiere.model.I_Persistent;
+ 
+ 
 
 import java.sql.ResultSet;
 import java.util.Properties;

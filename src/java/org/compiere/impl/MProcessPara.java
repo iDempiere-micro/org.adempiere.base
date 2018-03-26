@@ -24,6 +24,7 @@ import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;
+import org.idempiere.orm.Lookup;
 
 
 /**
@@ -116,7 +117,7 @@ public class MProcessPara extends X_AD_Process_Para
 	public static int		TAB_NO = 0;
 	
 	/**	The Lookup				*/
-	private Lookup		m_lookup = null;
+	private Lookup m_lookup = null;
 	
 
 	/**

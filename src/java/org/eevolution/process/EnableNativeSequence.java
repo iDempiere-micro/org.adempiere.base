@@ -22,6 +22,7 @@ import org.compiere.Adempiere;
 import org.compiere.impl.*;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.SvrProcess;
+import org.compiere.util.SystemIDs;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.CLogMgt;
 import org.idempiere.common.util.CacheMgt;
@@ -31,7 +32,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import static org.compiere.impl.SystemIDs.PROCESS_AD_NATIVE_SEQUENCE_ENABLE;
+import static org.compiere.util.SystemIDs.PROCESS_AD_NATIVE_SEQUENCE_ENABLE;
 
 /**
  *	Enable Native Sequence

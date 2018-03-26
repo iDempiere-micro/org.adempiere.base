@@ -8,7 +8,7 @@ import java.util.Properties;
 
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.Env;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 /**
  *  Asset Acct Model

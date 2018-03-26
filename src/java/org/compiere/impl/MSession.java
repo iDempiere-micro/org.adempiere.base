@@ -17,8 +17,8 @@
 package org.compiere.impl;
 
 import org.compiere.Adempiere;
-import org.compiere.util.TimeUtil;
-import org.compiere.util.WebUtil;
+import org.compiere.webutil.TimeUtil;
+import org.compiere.webutil.WebUtil;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Ini;

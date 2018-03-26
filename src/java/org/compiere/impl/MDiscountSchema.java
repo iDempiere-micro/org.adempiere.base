@@ -26,7 +26,7 @@ import java.util.logging.Level;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 /**
  *	Discount Schema Model

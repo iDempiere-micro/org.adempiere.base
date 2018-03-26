@@ -25,6 +25,7 @@ import java.util.Properties;
 
 import org.compiere.model.I_U_POSTerminal;
 import org.idempiere.common.util.CCache;
+ 
 
 /**
  * @author Ashley G Ramdass

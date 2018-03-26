@@ -33,8 +33,9 @@ import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 import org.idempiere.common.util.Util;
+ 
 
 /**
  *  Calendar Period Model
@@ -276,7 +277,7 @@ public class MPeriod extends X_C_Period
 	 */
 	public static boolean isOpen (Properties ctx, int tableID, int recordID, String trxName) {
 		MTable table = MTable.get(ctx, tableID);
-		PO po = table.getPO(recordID, trxName);
+		org.idempiere.orm.PO po = table.getPO(recordID, trxName);
 
 		// obtain DateAcct
 		int idxdate = -1;

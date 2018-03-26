@@ -21,7 +21,7 @@ import java.util.Properties;
 
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.Env;
-import org.compiere.util.IBAN;
+import org.compiere.webutil.IBAN;
 import org.idempiere.common.util.Util;
 
 

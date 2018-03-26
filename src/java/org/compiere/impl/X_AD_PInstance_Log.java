@@ -25,6 +25,8 @@ import java.util.Properties;
 import org.compiere.model.I_AD_PInstance_Log;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for AD_PInstance_Log
  *  @author iDempiere (generated) 

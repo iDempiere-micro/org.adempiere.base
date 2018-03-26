@@ -25,6 +25,8 @@ import java.util.Properties;
 import org.compiere.model.I_M_ShippingTransaction;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for M_ShippingTransaction
  *  @author iDempiere (generated) 

@@ -26,6 +26,8 @@ import org.compiere.model.I_C_Conversion_Rate;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_T_CashFlow;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for T_CashFlow
  *  @author iDempiere (generated) 

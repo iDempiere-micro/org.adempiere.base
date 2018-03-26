@@ -19,6 +19,8 @@ package org.compiere.impl;
 
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_U_POSTerminal;
+ 
+ 
 
 import java.sql.ResultSet;
 import java.sql.Timestamp;

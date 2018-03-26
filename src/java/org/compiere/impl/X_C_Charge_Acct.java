@@ -20,6 +20,8 @@ package org.compiere.impl;
 import org.compiere.model.I_C_Charge_Acct;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.model.I_Persistent;
+ 
+ 
 
 import java.sql.ResultSet;
 import java.util.Properties;

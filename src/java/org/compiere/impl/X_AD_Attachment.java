@@ -20,6 +20,8 @@ package org.compiere.impl;
 import org.compiere.model.I_AD_Attachment;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 import java.sql.ResultSet;
 import java.util.Properties;

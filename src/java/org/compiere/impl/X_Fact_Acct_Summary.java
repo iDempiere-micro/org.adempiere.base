@@ -25,6 +25,8 @@ import java.util.Properties;
 import org.compiere.model.I_Fact_Acct_Summary;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for Fact_Acct_Summary
  *  @author iDempiere (generated) 

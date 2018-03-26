@@ -27,6 +27,7 @@ import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;
+ 
 
 /**
  * 	Maintain AD_Table_ID/Record_ID constraint
@@ -180,7 +181,7 @@ public class PO_Record
 				String dependentTableName = (String) row.get(0);
 				String dependentColumnName = (String) row.get(1);
 				String dependentWhere = dependentColumnName + "=?";
-				List<PO> poList = new Query(Env.getCtx(), 
+				List<PO> poList = new Query(Env.getCtx(),
 						dependentTableName,
 						dependentWhere,
 						trxName).setParameters(Record_ID).list();

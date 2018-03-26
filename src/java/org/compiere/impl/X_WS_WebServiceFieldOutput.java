@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_WS_WebServiceFieldOutput;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for WS_WebServiceFieldOutput
  *  @author iDempiere (generated) 

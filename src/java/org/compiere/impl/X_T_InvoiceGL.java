@@ -25,6 +25,8 @@ import java.util.Properties;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_T_InvoiceGL;
 import org.idempiere.common.util.Env;
+ 
+ 
 
 /** Generated Model for T_InvoiceGL
  *  @author iDempiere (generated) 

@@ -23,6 +23,8 @@ import java.util.Properties;
 import org.compiere.model.I_A_Depreciation_Method;
 import org.compiere.model.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
+ 
+ 
 
 /** Generated Model for A_Depreciation_Method
  *  @author iDempiere (generated) 

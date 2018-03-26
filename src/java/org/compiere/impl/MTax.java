@@ -27,7 +27,7 @@ import org.compiere.model.I_C_TaxPostal;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
-import org.compiere.util.TimeUtil;
+import org.compiere.webutil.TimeUtil;
 
 /**
  *  Tax Model
