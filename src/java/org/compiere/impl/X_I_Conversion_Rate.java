@@ -23,7 +23,7 @@ import java.sql.Timestamp;
 import java.util.Properties;
 
 import org.compiere.model.I_I_Conversion_Rate;
-import org.compiere.model.I_Persistent;
+import org.idempiere.orm.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
  

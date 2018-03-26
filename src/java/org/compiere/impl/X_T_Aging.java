@@ -22,7 +22,7 @@ import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.Properties;
 
-import org.compiere.model.I_Persistent;
+import org.idempiere.orm.I_Persistent;
 import org.compiere.model.I_T_Aging;
 import org.idempiere.common.util.Env;
  

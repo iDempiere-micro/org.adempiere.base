@@ -22,7 +22,7 @@ import java.util.Properties;
 
 import org.compiere.model.I_AD_ClientShare;
 import org.compiere.model.I_AD_Table;
-import org.compiere.model.I_Persistent;
+import org.idempiere.orm.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
  
  

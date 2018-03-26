@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.compiere.model.I_Persistent;
+import org.idempiere.orm.I_Persistent;
 import org.compiere.model.I_RV_WarehousePrice;
 import org.idempiere.common.util.Env;
  

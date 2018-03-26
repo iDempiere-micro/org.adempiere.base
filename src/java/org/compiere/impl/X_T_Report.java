@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.compiere.model.I_Persistent;
+import org.idempiere.orm.I_Persistent;
 import org.compiere.model.I_T_Report;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;

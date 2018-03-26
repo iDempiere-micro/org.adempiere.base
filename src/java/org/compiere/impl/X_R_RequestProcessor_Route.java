@@ -20,7 +20,7 @@ package org.compiere.impl;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.compiere.model.I_Persistent;
+import org.idempiere.orm.I_Persistent;
 import org.compiere.model.I_R_RequestProcessor_Route;
 import org.idempiere.common.util.KeyNamePair;
  

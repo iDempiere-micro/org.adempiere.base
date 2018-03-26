@@ -242,18 +242,6 @@ public abstract class PO extends org.idempiere.orm.PO {
         }
     }
 
-    /**
-     *  Set Value w/o check (update, r/o, ..).
-     * 	Used when Column is R/O
-     *  Required for key and parent values
-     *  @param ColumnName column name
-     *  @param value value
-     *  @return true if value set
-     */
-    public final boolean set_ValueNoCheck (String ColumnName, Object value)
-    {
-        return set_Value(ColumnName, value, false);
-    }   //  set_ValueNoCheck
 
     /**
      *  Set Encrypted Value w/o check (update, r/o, ..).
@@ -441,15 +429,6 @@ public abstract class PO extends org.idempiere.orm.PO {
     }	//	setAD_Client_ID
 
     /**
-     * 	Set AD_Org
-     * 	@param AD_Org_ID org
-     */
-    final public void setAD_Org_ID (int AD_Org_ID)
-    {
-        set_ValueNoCheck ("AD_Org_ID", new Integer(AD_Org_ID));
-    }	//	setAD_Org_ID
-
-    /**
      * 	Overwrite Client Org if different
      *	@param AD_Client_ID client
      *	@param AD_Org_ID org
@@ -513,6 +492,7 @@ public abstract class PO extends org.idempiere.orm.PO {
      * 	To reload call load() - not updated
      *  @return true if saved
      */
+    @Override
     public boolean save()
     {
         checkValidContext();
@@ -762,7 +742,8 @@ public abstract class PO extends org.idempiere.orm.PO {
      *	@param success success
      *	@return true if saved
      */
-    private boolean saveFinish (boolean newRecord, boolean success)
+    @Override
+    protected boolean saveFinish (boolean newRecord, boolean success)
     {
         //	Translations
         if (success)
@@ -881,8 +862,8 @@ public abstract class PO extends org.idempiere.orm.PO {
         saveEx();
     }
 
-
-    private boolean doUpdate(boolean withValues) {
+    @Override
+    protected boolean doUpdate(boolean withValues) {
         //params for insert statement
         List<Object> params = new ArrayList<Object>();
 
@@ -1160,7 +1141,8 @@ public abstract class PO extends org.idempiere.orm.PO {
      *  Create New Record
      *  @return true if new record inserted
      */
-    private boolean saveNew()
+    @Override
+    protected boolean saveNew()
     {
         //  Set ID for single key - Multi-Key values need explicitly be set previously
         if (m_IDs.length == 1 && p_info.hasKeyColumn()
@@ -1245,7 +1227,8 @@ public abstract class PO extends org.idempiere.orm.PO {
         return saveFinish (true, ok);
     }   //  saveNew
 
-    private boolean doInsert(boolean withValues) {
+    @Override
+    protected boolean doInsert(boolean withValues) {
         int index;
         lobReset();
 
@@ -2393,17 +2376,6 @@ public abstract class PO extends org.idempiere.orm.PO {
     }	//	PO
 
 
-
-    /**
-     * 	Update Record directly
-     * 	@return true if updated
-     */
-    protected boolean saveUpdate()
-    {
-        boolean ok = doUpdate(isLogSQLScript());
-
-        return saveFinish (false, ok);
-    }   //  saveUpdate
 
     /**
      *  Get Lookup

@@ -18,7 +18,7 @@
 package org.compiere.impl;
 
 import org.compiere.model.I_M_PromotionGroupLine;
-import org.compiere.model.I_Persistent;
+import org.idempiere.orm.I_Persistent;
  
  
 

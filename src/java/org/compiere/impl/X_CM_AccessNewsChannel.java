@@ -18,7 +18,7 @@
 package org.compiere.impl;
 
 import org.compiere.model.I_CM_AccessNewsChannel;
-import org.compiere.model.I_Persistent;
+import org.idempiere.orm.I_Persistent;
  
  
 

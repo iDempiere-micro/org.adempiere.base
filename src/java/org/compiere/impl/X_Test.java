@@ -25,8 +25,8 @@ import java.util.Properties;
 import org.compiere.model.*;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
- 
- 
+import org.idempiere.orm.I_Persistent;
+
 
 /** Generated Model for Test
  *  @author iDempiere (generated) 

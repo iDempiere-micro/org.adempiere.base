@@ -21,8 +21,8 @@ import java.sql.ResultSet;
 import java.util.Properties;
 
 import org.compiere.impl.PO;
+import org.idempiere.orm.I_Persistent;
 import org.idempiere.orm.POInfo;
-import org.compiere.model.*;
 import org.eevolution.model.I_HR_ListType;
 import org.idempiere.common.util.KeyNamePair;
 

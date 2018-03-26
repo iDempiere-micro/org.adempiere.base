@@ -24,7 +24,7 @@ import java.util.Properties;
 import org.compiere.model.I_M_AttributeSetInstance;
 import org.compiere.model.I_M_Locator;
 import org.compiere.model.I_M_MovementLine;
-import org.compiere.model.I_Persistent;
+import org.idempiere.orm.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
  
