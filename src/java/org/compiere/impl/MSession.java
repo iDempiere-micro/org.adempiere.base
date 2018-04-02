@@ -17,6 +17,7 @@
 package org.compiere.impl;
 
 import org.compiere.Adempiere;
+import org.compiere.orm.MRole;
 import org.compiere.webutil.TimeUtil;
 import org.compiere.webutil.WebUtil;
 import org.idempiere.common.util.CCache;

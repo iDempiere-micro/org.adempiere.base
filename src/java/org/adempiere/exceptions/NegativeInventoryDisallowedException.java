@@ -14,6 +14,7 @@
 package org.adempiere.exceptions;
 
 import org.compiere.impl.*;
+import org.compiere.orm.MSysConfig;
 import org.compiere.util.Msg;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;

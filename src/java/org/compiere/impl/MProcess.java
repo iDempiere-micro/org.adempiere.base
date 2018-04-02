@@ -24,6 +24,8 @@ import java.util.logging.Level;
 import org.adempiere.util.ProcessUtil;
 import org.compiere.model.I_AD_Process;
 import org.compiere.model.I_AD_Process_Para;
+import org.compiere.orm.MRole;
+import org.compiere.orm.Query;
 import org.compiere.process.ProcessInfo;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;

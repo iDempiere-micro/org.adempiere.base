@@ -9,6 +9,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.I_A_Asset_Disposed;
+import org.compiere.orm.MDocType;
 import org.compiere.process.DocAction;
 import org.compiere.process.DocumentEngine;
 import org.idempiere.common.util.Env;

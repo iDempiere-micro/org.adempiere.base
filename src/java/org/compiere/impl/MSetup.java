@@ -29,6 +29,7 @@ import java.util.UUID;
 import java.util.logging.Level;
 
 import org.compiere.model.I_C_AcctSchema;
+import org.compiere.orm.*;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.util.ProcessUtil;
 import org.compiere.process.ProcessInfo;

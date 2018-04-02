@@ -28,6 +28,7 @@ import java.util.logging.Level;
 import org.compiere.model.I_C_Order;
 import org.compiere.model.I_M_InOutConfirm;
 import org.compiere.model.I_M_InOutLine;
+import org.compiere.orm.*;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.NegativeInventoryDisallowedException;
 import org.adempiere.exceptions.PeriodClosedException;

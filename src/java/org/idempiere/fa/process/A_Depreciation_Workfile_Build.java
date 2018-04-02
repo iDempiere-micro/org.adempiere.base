@@ -4,8 +4,8 @@
 package org.idempiere.fa.process;
 
 import org.compiere.impl.MDepreciationWorkfile;
-import org.compiere.impl.POResultSet;
-import org.compiere.impl.Query;
+import org.compiere.orm.POResultSet;
+import org.compiere.orm.Query;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 

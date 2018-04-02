@@ -22,6 +22,7 @@ import java.util.Properties;
 
 import org.compiere.model.I_C_AcctSchema_Element;
 import org.compiere.model.I_C_Location;
+import org.compiere.orm.MTable;
 import org.idempiere.orm.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
  

@@ -24,6 +24,7 @@ import java.util.Properties;
 
 import org.compiere.model.I_C_AcctProcessor;
 import org.compiere.model.I_C_AcctProcessorLog;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.DB;
 import org.compiere.util.Msg;
 

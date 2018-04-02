@@ -20,6 +20,7 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.DB;
 import org.compiere.util.Msg;

@@ -21,6 +21,8 @@ import java.sql.ResultSet;
 import java.util.Properties;
 
 import org.compiere.model.I_M_InventoryLine;
+import org.compiere.orm.MDocType;
+import org.compiere.orm.Query;
 import org.compiere.process.DocAction;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

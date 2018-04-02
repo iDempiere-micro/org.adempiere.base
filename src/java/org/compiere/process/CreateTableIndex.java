@@ -21,10 +21,10 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.logging.Level;
 
-import org.compiere.impl.MColumn;
-import org.compiere.impl.MIndexColumn;
-import org.compiere.impl.MTable;
-import org.compiere.impl.MTableIndex;
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MIndexColumn;
+import org.compiere.orm.MTable;
+import org.compiere.orm.MTableIndex;
 import org.idempiere.common.util.DB;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Trx;

@@ -19,6 +19,7 @@ package org.compiere.impl;
 
 import org.compiere.model.I_C_InterOrg_Acct;
 import org.compiere.model.I_C_ValidCombination;
+import org.compiere.orm.MTable;
 import org.idempiere.orm.I_Persistent;
  
  

@@ -34,37 +34,9 @@ import java.util.List;
  * 	@author 	Jorg Janke
  * 	@version 	$Id: TimeUtil.java,v 1.3 2006/07/30 00:54:35 jjanke Exp $
  */
-public class TimeUtil
+public class TimeUtil extends org.compiere.orm.TimeUtil
 {
-	/**
-	 * 	Get earliest time of a day (truncate)
-	 *  @param time day and time
-	 *  @return day with 00:00
-	 */
-	static public Timestamp getDay (long time)
-	{
-		if (time == 0)
-			time = System.currentTimeMillis();
-		GregorianCalendar cal = new GregorianCalendar(Language.getLoginLanguage().getLocale());
-		cal.setTimeInMillis(time);
-		cal.set(Calendar.HOUR_OF_DAY, 0);
-		cal.set(Calendar.MINUTE, 0);
-		cal.set(Calendar.SECOND, 0);
-		cal.set(Calendar.MILLISECOND, 0);
-		return new Timestamp (cal.getTimeInMillis());
-	}	//	getDay
 
-	/**
-	 * 	Get earliest time of a day (truncate)
-	 *  @param dayTime day and time
-	 *  @return day with 00:00
-	 */
-	static public Timestamp getDay (Timestamp dayTime)
-	{
-		if (dayTime == null)
-			return getDay(System.currentTimeMillis());
-		return getDay(dayTime.getTime());
-	}	//	getDay
 
 	/**
 	 * 	Get earliest time of a day (truncate)

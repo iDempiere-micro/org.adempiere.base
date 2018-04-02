@@ -23,6 +23,7 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_M_CostElement;
 import org.compiere.model.I_M_Product_Category_Acct;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
@@ -56,7 +57,7 @@ public class MCostElement extends X_M_CostElement
 	 *	@param CostingMethod method
 	 *	@return cost element
 	 */
-	public static MCostElement getMaterialCostElement (PO po, String CostingMethod)
+	public static MCostElement getMaterialCostElement (org.compiere.orm.PO po, String CostingMethod)
 	{
 		if (CostingMethod == null || CostingMethod.length() == 0)
 		{

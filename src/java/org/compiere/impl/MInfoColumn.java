@@ -17,7 +17,11 @@
 package org.compiere.impl;
 
 import org.adempiere.model.IInfoColumn;
-import org.compiere.impl.AccessSqlParser.TableInfo;
+import org.compiere.orm.AccessSqlParser.TableInfo;
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MRole;
+import org.compiere.orm.MTable;
+import org.compiere.orm.M_Element;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Evaluatee;
 import org.idempiere.common.util.Evaluator;

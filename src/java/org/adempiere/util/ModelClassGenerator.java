@@ -20,7 +20,7 @@
 package org.adempiere.util;
 
 import org.compiere.Adempiere;
-import org.compiere.impl.MTable;
+import org.compiere.orm.MTable;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.CLogger;

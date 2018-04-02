@@ -17,6 +17,7 @@
 package org.compiere.impl;
 
 import org.compiere.model.I_C_Campaign;
+import org.compiere.orm.MTree_Base;
 
 import java.sql.ResultSet;
 import java.util.Properties;

@@ -20,6 +20,9 @@ import java.sql.ResultSet;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.orm.MRefTable;
+import org.compiere.orm.M_Element;
+import org.compiere.orm.X_AD_Reference;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;

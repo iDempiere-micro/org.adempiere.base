@@ -28,6 +28,7 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_C_AllocationHdr;
 import org.compiere.model.I_C_Invoice;
+import org.compiere.orm.*;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.PeriodClosedException;
 import org.compiere.process.DocAction;

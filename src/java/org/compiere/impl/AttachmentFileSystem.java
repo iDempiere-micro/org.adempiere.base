@@ -37,6 +37,8 @@ import org.compiere.model.IAttachmentStore;
 import org.compiere.model.I_AD_Attachment;
 import org.compiere.model.I_AD_AttachmentEntry;
 import org.compiere.model.I_AD_StorageProvider;
+import org.compiere.orm.MAttachment;
+import org.compiere.orm.MAttachmentEntry;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Util;
 import org.w3c.dom.Document;

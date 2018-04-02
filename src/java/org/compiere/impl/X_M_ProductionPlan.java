@@ -23,6 +23,7 @@ import java.util.Properties;
 
 import org.compiere.model.I_M_Locator;
 import org.compiere.model.I_M_ProductionPlan;
+import org.compiere.orm.MTable;
 import org.idempiere.orm.I_Persistent;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;

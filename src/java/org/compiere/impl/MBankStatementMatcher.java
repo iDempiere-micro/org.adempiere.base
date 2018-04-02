@@ -24,6 +24,7 @@ import java.util.logging.Level;
 
 import org.adempiere.base.Core;
 import org.compiere.impexp.BankStatementMatcherInterface;
+import org.compiere.orm.MRole;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

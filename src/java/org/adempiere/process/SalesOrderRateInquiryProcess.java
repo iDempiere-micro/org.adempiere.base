@@ -36,7 +36,7 @@ import org.compiere.impl.MShipperPackaging;
 import org.compiere.impl.MShipperPickupTypes;
 import org.compiere.impl.MShippingTransaction;
 import org.compiere.impl.MShippingTransactionLine;
-import org.compiere.impl.MSysConfig;
+import org.compiere.orm.MSysConfig;
 import org.compiere.impl.MUOM;
 import org.compiere.process.ProcessInfoLog;
 import org.compiere.process.ProcessInfoParameter;

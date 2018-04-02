@@ -49,7 +49,7 @@ import org.compiere.impl.MJournalGeneratorSource;
 import org.compiere.impl.MJournalLine;
 import org.compiere.impl.MPeriod;
 import org.compiere.impl.MProduct;
-import org.compiere.impl.MTable;
+import org.compiere.orm.MTable;
 import org.compiere.impl.PO;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;

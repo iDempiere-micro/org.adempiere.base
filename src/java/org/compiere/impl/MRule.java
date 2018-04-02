@@ -27,6 +27,7 @@ import javax.script.ScriptEngine;
 
 import org.adempiere.base.Core;
 import org.compiere.model.I_AD_Rule;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.compiere.util.Msg;

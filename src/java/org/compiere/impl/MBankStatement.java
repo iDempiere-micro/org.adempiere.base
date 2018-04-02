@@ -25,6 +25,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.I_C_BankStatementLine;
+import org.compiere.orm.MDocType;
+import org.compiere.orm.Query;
 import org.compiere.process.DocAction;
 import org.compiere.process.DocumentEngine;
 import org.idempiere.common.util.DB;

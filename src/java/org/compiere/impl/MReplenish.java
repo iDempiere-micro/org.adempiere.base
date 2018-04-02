@@ -36,6 +36,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.compiere.model.I_M_Replenish;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.Env;
 
 /**

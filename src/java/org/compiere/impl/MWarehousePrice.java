@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.orm.MRole;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 
@@ -88,7 +89,7 @@ public class MWarehousePrice extends X_RV_WarehousePrice
 			sql.append(" AND (").append(sb).append(")");
 		sql.append(" ORDER BY Value");
 		//
-		String finalSQL = MRole.getDefault().addAccessSQL(sql.toString(), 
+		String finalSQL = MRole.getDefault().addAccessSQL(sql.toString(),
 			"RV_WarehousePrice", MRole.SQL_NOTQUALIFIED, MRole.SQL_RO);
 		if (s_log.isLoggable(Level.FINE)) s_log.fine("find - M_PriceList_Version_ID=" + M_PriceList_Version_ID 
 			+ ", M_Warehouse_ID=" + M_Warehouse_ID

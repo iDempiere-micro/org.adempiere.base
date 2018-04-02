@@ -10,6 +10,8 @@ import java.util.logging.Level;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.compiere.orm.MTable;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.DB;
 import org.compiere.webutil.EMail;
 import org.idempiere.common.util.Env;

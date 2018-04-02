@@ -16,6 +16,7 @@
  *****************************************************************************/
 package org.compiere.impl;
 
+import org.compiere.orm.MSequence;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 

@@ -19,7 +19,7 @@ package org.compiere.wf;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.compiere.impl.MRole;
+import org.compiere.orm.MRole;
 import org.compiere.impl.X_AD_WF_Responsible;
 import org.idempiere.common.util.CCache;
 import org.compiere.util.Msg;

@@ -29,7 +29,7 @@ import org.idempiere.common.base.ServiceQuery;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.exceptions.DBException;
 import org.compiere.impl.MAcctSchema;
-import org.compiere.impl.MTable;
+import org.compiere.orm.MTable;
 import org.idempiere.common.util.AdempiereUserError;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

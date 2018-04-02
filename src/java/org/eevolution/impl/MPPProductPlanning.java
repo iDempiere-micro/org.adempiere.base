@@ -21,9 +21,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.impl.MOrgInfo;
+import org.compiere.orm.MOrgInfo;
 import org.compiere.impl.MResource;
-import org.compiere.impl.Query;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CLogMgt;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

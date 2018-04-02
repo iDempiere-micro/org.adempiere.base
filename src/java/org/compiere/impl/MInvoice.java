@@ -32,6 +32,7 @@ import org.adempiere.base.Core;
 import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_C_InvoiceLine;
 import org.compiere.model.I_C_InvoiceTax;
+import org.compiere.orm.*;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.BPartnerNoAddressException;
 import org.idempiere.common.exceptions.DBException;

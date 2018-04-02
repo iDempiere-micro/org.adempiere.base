@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Properties;
 
 import org.compiere.model.I_M_ProductionLineMA;
+import org.compiere.orm.MTable;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Util;
 

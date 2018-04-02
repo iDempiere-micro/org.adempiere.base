@@ -19,6 +19,8 @@ package org.compiere.impl;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MTable;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

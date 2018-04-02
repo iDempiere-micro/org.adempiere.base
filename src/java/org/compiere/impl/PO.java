@@ -2,8 +2,8 @@ package org.compiere.impl;
 
 import org.adempiere.process.UUIDGenerator;
 import org.compiere.acct.Doc;
-import org.compiere.model.I_AD_Table;
 import org.compiere.model.I_C_ElementValue;
+import org.compiere.orm.*;
 import org.compiere.util.DisplayType;
 import org.compiere.util.Msg;
 import org.idempiere.common.exceptions.AdempiereException;
@@ -20,10 +20,7 @@ import java.sql.*;
 import java.util.*;
 import java.util.logging.Level;
 
-public abstract class PO extends org.idempiere.orm.PO {
-
-    /**	Attachment with entries	*/
-    private MAttachment			m_attachment = null;
+public abstract class PO extends org.compiere.orm.PO {
 
     public PO(Properties ctx) {
         super(ctx);
@@ -43,11 +40,11 @@ public abstract class PO extends org.idempiere.orm.PO {
 
     /** Model Info              */
     protected org.idempiere.orm.POInfo getP_info() {
-        return p_info;
+        return super.p_info;
     }
     /** Model Info              */
     protected POInfo getP_info2() {
-        return (POInfo)p_info;
+        return (POInfo)super.p_info;
     }
 
     /**************************************************************************
@@ -419,37 +416,6 @@ public abstract class PO extends org.idempiere.orm.PO {
         to.setAD_Org_ID(AD_Org_ID);
     }	//	copyValues
 
-    /**************************************************************************
-     * 	Set AD_Client
-     * 	@param AD_Client_ID client
-     */
-    final protected void setAD_Client_ID (int AD_Client_ID)
-    {
-        set_ValueNoCheck ("AD_Client_ID", new Integer(AD_Client_ID));
-    }	//	setAD_Client_ID
-
-    /**
-     * 	Overwrite Client Org if different
-     *	@param AD_Client_ID client
-     *	@param AD_Org_ID org
-     */
-    protected void setClientOrg (int AD_Client_ID, int AD_Org_ID)
-    {
-        if (AD_Client_ID != getAD_Client_ID())
-            setAD_Client_ID(AD_Client_ID);
-        if (AD_Org_ID != getAD_Org_ID())
-            setAD_Org_ID(AD_Org_ID);
-    }	//	setClientOrg
-
-    /**
-     * 	Overwrite Client Org if different
-     *	@param po persistent object
-     */
-    protected void setClientOrg (org.idempiere.orm.PO po)
-    {
-        setClientOrg(po.getAD_Client_ID(), po.getAD_Org_ID());
-    }	//	setClientOrg
-
 
     /**
      * 	Set UpdatedBy
@@ -464,6 +430,7 @@ public abstract class PO extends org.idempiere.orm.PO {
      * 	Is new record
      *	@return true if new
      */
+    @Override
     public boolean is_new()
     {
         if (m_createNew)
@@ -716,26 +683,6 @@ public abstract class PO extends org.idempiere.orm.PO {
         }
     }	//	save
 
-
-    /**
-     * Update Value or create new record.
-     * @throws AdempiereException
-     * @see #save()
-     */
-    public void saveEx() throws AdempiereException
-    {
-        if (!save()) {
-            String msg = null;
-            ValueNamePair err = CLogger.retrieveError();
-            String val = err != null ? Msg.translate(getCtx(), err.getValue()) : "";
-            if (err != null)
-                msg = (val != null ? val + ": " : "") + err.getName();
-            if (msg == null || msg.length() == 0)
-                msg = "SaveError";
-            throw new AdempiereException(msg);
-        }
-    }
-
     /**
      * 	Finish Save Process
      *	@param newRecord new
@@ -832,33 +779,9 @@ public abstract class PO extends org.idempiere.orm.PO {
         return success;
     }	//	saveFinish
 
-    /**
-     *  Update Value or create new record.
-     * 	To reload call load() - not updated
-     *	@param trxName transaction
-     *  @return true if saved
-     */
-    public boolean save (String trxName)
-    {
-        set_TrxName(trxName);
-        return save();
-    }	//	save
-
     public void saveReplica (boolean isFromReplication) throws AdempiereException
     {
         setReplication(isFromReplication);
-        saveEx();
-    }
-
-    /**
-     * Update Value or create new record.
-     * @param trxName transaction
-     * @throws AdempiereException
-     * @see #saveEx(String)
-     */
-    public void saveEx(String trxName) throws AdempiereException
-    {
-        set_TrxName(trxName);
         saveEx();
     }
 
@@ -1455,6 +1378,7 @@ public abstract class PO extends org.idempiere.orm.PO {
      * 	@param force delete also processed records
      * 	@return true if deleted
      */
+    @Override
     public boolean delete (boolean force)
     {
         checkValidContext();
@@ -2116,23 +2040,13 @@ public abstract class PO extends org.idempiere.orm.PO {
         return no > 0;
     }	//	insert_Accounting
 
-
-    /**
-     * 	Insert id data into Tree
-     * 	@param treeType MTree TREETYPE_*
-     *	@return true if inserted
-     */
-    protected boolean insert_Tree (String treeType)
-    {
-        return insert_Tree (treeType, 0);
-    }	//	insert_Tree
-
     /**
      * 	Insert id data into Tree
      * 	@param treeType MTree TREETYPE_*
      * 	@param C_Element_ID element for accounting element values
      *	@return true if inserted
      */
+    @Override
     protected boolean insert_Tree (String treeType, int C_Element_ID)
     {
         String tableName = MTree_Base.getNodeTableName(treeType);
@@ -2192,6 +2106,7 @@ public abstract class PO extends org.idempiere.orm.PO {
      * 	@param treeType MTree TREETYPE_*
      *	@return true if inserted
      */
+    @Override
     public void update_Tree (String treeType)
     {
         int idxValueCol = get_ColumnIndex("Value");
@@ -2250,46 +2165,7 @@ public abstract class PO extends org.idempiere.orm.PO {
         }
     }	//	update_Tree
 
-    /**
-     * 	Delete ID Tree Nodes
-     *	@param treeType MTree TREETYPE_*
-     *	@return true if deleted
-     */
-    protected boolean delete_Tree (String treeType)
-    {
-        int id = get_ID();
-        if (id == 0)
-            id = get_IDOld();
 
-        // IDEMPIERE-2453
-        StringBuilder countSql = new StringBuilder("SELECT COUNT(*) FROM ")
-                .append(MTree_Base.getNodeTableName(treeType))
-                .append(" n JOIN AD_Tree t ON n.AD_Tree_ID=t.AD_Tree_ID")
-                .append(" WHERE Parent_ID=? AND t.TreeType=?");
-        if (MTree_Base.TREETYPE_CustomTable.equals(treeType))
-            countSql.append(" AND t.AD_Table_ID=").append(get_Table_ID());
-        int cnt = DB.getSQLValueEx( get_TrxName(), countSql.toString(), id, treeType);
-        if (cnt > 0)
-            throw new AdempiereException(Msg.getMsg(Env.getCtx(),"NoParentDelete", new Object[] {cnt}));
-
-        StringBuilder sb = new StringBuilder ("DELETE FROM ")
-                .append(MTree_Base.getNodeTableName(treeType))
-                .append(" n WHERE Node_ID=").append(id)
-                .append(" AND EXISTS (SELECT * FROM AD_Tree t "
-                        + "WHERE t.AD_Tree_ID=n.AD_Tree_ID AND t.TreeType='")
-                .append(treeType).append("'");
-        if (MTree_Base.TREETYPE_CustomTable.equals(treeType))
-            sb.append(" AND t.AD_Table_ID=").append(get_Table_ID());
-        sb.append(")");
-        int no = DB.executeUpdate(sb.toString(), get_TrxName());
-        if (no > 0) {
-            if (log.isLoggable(Level.FINE)) log.fine("#" + no + " - TreeType=" + treeType);
-        } else {
-            if (! MTree_Base.TREETYPE_CustomTable.equals(treeType))
-                log.warning("#" + no + " - TreeType=" + treeType);
-        }
-        return no > 0;
-    }	//	delete_Tree
 
 
     /* Doc - To be used on ModelValidator to get the corresponding Doc from the PO */
@@ -2418,4 +2294,27 @@ public abstract class PO extends org.idempiere.orm.PO {
     protected boolean set_Value (String ColumnName, Object value) {
         return super.set_Value(ColumnName, value);
     }
+
+    @Override
+    protected void setClientOrg (int AD_Client_ID, int AD_Org_ID) {
+        super.setClientOrg (AD_Client_ID, AD_Org_ID);
+    }
+
+    protected void setClientOrg (org.compiere.orm.PO po) {
+        super.setClientOrg (po);
+    }
+
+    protected void setClientOrg (PO po) {
+        super.setClientOrg (po);
+    }
+
+    /**************************************************************************
+     * 	Set AD_Client
+     * 	@param AD_Client_ID client
+     */
+    protected void setAD_Client_ID (int AD_Client_ID)
+    {
+        super.setAD_Client_ID(AD_Client_ID);
+    }	//	setAD_Client_ID
+
 }

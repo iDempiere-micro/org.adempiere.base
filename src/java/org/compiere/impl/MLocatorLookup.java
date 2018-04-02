@@ -27,6 +27,7 @@ import java.util.LinkedHashMap;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.orm.MRole;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.KeyNamePair;

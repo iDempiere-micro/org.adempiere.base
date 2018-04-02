@@ -17,6 +17,7 @@
 package org.compiere.impl;
 
 import org.compiere.model.I_C_CommissionLine;
+import org.compiere.orm.Query;
 
 import java.sql.ResultSet;
 import java.sql.Timestamp;

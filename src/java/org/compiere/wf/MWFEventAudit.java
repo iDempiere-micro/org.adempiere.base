@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import org.compiere.impl.Query;
+import org.compiere.orm.Query;
 import org.compiere.impl.X_AD_WF_EventAudit;
 import org.idempiere.common.util.Env;
 

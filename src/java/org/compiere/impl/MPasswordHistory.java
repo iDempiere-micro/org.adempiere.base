@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
+import org.compiere.orm.Query;
 import org.idempiere.common.util.Env;
 
 public class MPasswordHistory extends X_AD_Password_History {

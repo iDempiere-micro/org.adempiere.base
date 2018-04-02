@@ -20,6 +20,7 @@ import java.sql.ResultSet;
 import java.util.Properties;
 
 import org.compiere.model.I_CM_WebProject;
+import org.compiere.orm.MTree_Base;
 import org.idempiere.common.util.CCache;
 
 /**
@@ -91,7 +92,7 @@ public class MWebProject extends X_CM_WebProject
 		//	Create Trees
 		if (newRecord)
 		{
-			MTree_Base tree = new MTree_Base (getCtx(), 
+			MTree_Base tree = new MTree_Base (getCtx(),
 				getName()+MTree_Base.TREETYPE_CMContainer, MTree_Base.TREETYPE_CMContainer, get_TrxName());
 			if (!tree.save())
 				return false;

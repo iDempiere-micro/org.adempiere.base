@@ -13,9 +13,9 @@
  *****************************************************************************/
 package org.adempiere.process;
 
-import org.compiere.impl.MColumn;
-import org.compiere.impl.MTable;
-import org.compiere.impl.M_Element;
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MTable;
+import org.compiere.orm.M_Element;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DisplayType;

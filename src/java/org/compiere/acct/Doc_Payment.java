@@ -26,7 +26,7 @@ import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MBankAccount;
 import org.compiere.impl.MCharge;
 import org.compiere.impl.MPayment;
-import org.compiere.impl.MSysConfig;
+import org.compiere.orm.MSysConfig;
 import org.idempiere.common.util.Env;
 
 /**

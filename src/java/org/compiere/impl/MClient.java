@@ -32,6 +32,10 @@ import java.util.logging.Level;
 import javax.mail.internet.InternetAddress;
 
 import org.compiere.model.I_AD_Client;
+import org.compiere.orm.MSysConfig;
+import org.compiere.orm.MTree_Base;
+import org.compiere.orm.Query;
+import org.compiere.orm.X_AD_Tree;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
@@ -52,29 +56,20 @@ import org.idempiere.common.base.Service;
  * @author Teo Sarca, SC ARHIPAC SERVICE SRL
  * 			<li>BF [ 1886480 ] Print Format Item Trl not updated even if not multilingual
  */
-public class MClient extends X_AD_Client
+public class MClient extends org.compiere.orm.MClient
 {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -4420908648355523008L;
 
-	/**
-	 * 	Get client
-	 *	@param ctx context
-	 * 	@param AD_Client_ID id
-	 *	@return client
-	 */
-	public static MClient get (Properties ctx, int AD_Client_ID)
-	{
-		Integer key = new Integer (AD_Client_ID);
-		MClient client = (MClient)s_cache.get(key);
-		if (client != null)
-			return client;
-		client = new MClient (ctx, AD_Client_ID, null);
-		s_cache.put (key, client);
-		return client;
-	}	//	get
+	public MClient(Properties ctx, int ad_client_id, String trxName) {
+		super(ctx, ad_client_id, trxName);
+	}
+
+    public MClient (Properties ctx, int AD_Client_ID, boolean createNew, String trxName) {
+	    super(ctx, AD_Client_ID, createNew, trxName);
+    }
 
 	/**
 	 * 	Get all clients
@@ -105,21 +100,10 @@ public class MClient extends X_AD_Client
 		return retValue;
 	}	//	getAll
 
-	/**
-	 * 	Get optionally cached client
-	 *	@param ctx context
-	 *	@return client
-	 */
-	public static MClient get (Properties ctx)
-	{
-		return get (ctx, Env.getAD_Client_ID(ctx));
-	}	//	get
 
 	/**	Static Logger				*/
 	@SuppressWarnings("unused")
 	private static CLogger	s_log	= CLogger.getCLogger (MClient.class);
-	/**	Cache						*/
-	private static CCache<Integer,MClient>	s_cache = new CCache<Integer,MClient>(Table_Name, 3, 120, true);
 
 	/**
 	 * 	Do we have Multi-Lingual Documents.
@@ -132,72 +116,6 @@ public class MClient extends X_AD_Client
 		return MClient.get(ctx).isMultiLingualDocument();
 	}	//	isMultiLingualDocument
 
-	/**************************************************************************
-	 * 	Standard Constructor
-	 * 	@param ctx context
-	 * 	@param AD_Client_ID id
-	 * 	@param createNew create new
-	 *	@param trxName transaction
-	 */
-	public MClient (Properties ctx, int AD_Client_ID, boolean createNew, String trxName)
-	{
-		super (ctx, AD_Client_ID, trxName);
-		m_createNew = createNew;
-		if (AD_Client_ID == 0)
-		{
-			if (m_createNew)
-			{
-			//	setValue (null);
-			//	setName (null);
-				setAD_Org_ID(0);
-				setIsMultiLingualDocument (false);
-				setIsSmtpAuthorization (false);
-				setIsUseBetaFunctions (true);
-				setIsServerEMail(false);
-				setAD_Language(Language.getBaseAD_Language());
-				setAutoArchive(AUTOARCHIVE_None);
-				setMMPolicy (MMPOLICY_FiFo);	// F
-				setIsPostImmediate(false);
-			}
-			else
-				load(get_TrxName());
-		}
-	}	//	MClient
-
-	/**
-	 * 	Standard Constructor
-	 * 	@param ctx context
-	 * 	@param AD_Client_ID id
-	 *	@param trxName transaction
-	 */
-	public MClient (Properties ctx, int AD_Client_ID, String trxName)
-	{
-		this (ctx, AD_Client_ID, false, trxName);
-	}	//	MClient
-
-	/**
-	 * 	Load Constructor
-	 *	@param ctx context
-	 *	@param rs result set
-	 *	@param trxName transaction
-	 */
-	public MClient (Properties ctx, ResultSet rs, String trxName)
-	{
-		super (ctx, rs, trxName);
-	}	//	MClient
-
-	/**
-	 * 	Simplified Constructor
-	 * 	@param ctx context
-	 *	@param trxName transaction
-	 */
-	public MClient (Properties ctx, String trxName)
-	{
-		this (ctx, Env.getAD_Client_ID(ctx), trxName);
-	}	//	MClient
-
-	/**	Client Info					*/
-	private MClientInfo 		m_info = null;
 	/** Language					*/
 	private Language			m_language = null;
 	/** New Record					*/
@@ -205,16 +123,6 @@ public class MClient extends X_AD_Client
 	/** Client Info Setup Tree for Account	*/
 	private int					m_AD_Tree_Account_ID;
 
-	/**
-	 *	Get Client Info
-	 *	@return Client Info
-	 */
-	public MClientInfo getInfo()
-	{
-		if (m_info == null)
-			m_info = MClientInfo.get (getCtx(), getAD_Client_ID(), get_TrxName());
-		return m_info;
-	}	//	getMClientInfo
 
 	/**
 	 * 	String Representation
@@ -229,6 +137,19 @@ public class MClient extends X_AD_Client
 	}	//	toString
 
 	/**
+	 *	Get Client Info
+	 *	@return Client Info
+	 */
+	@Override
+	public MClientInfo getInfo()
+	{
+		if (m_info == null)
+			m_info = org.compiere.orm.MClientInfo.get (getCtx(), getAD_Client_ID(), get_TrxName());
+		return (MClientInfo)m_info;
+	}	//	getMClientInfo
+
+
+	/**
 	 *	Get Default Accounting Currency
 	 *	@return currency or 0
 	 */
@@ -237,7 +158,7 @@ public class MClient extends X_AD_Client
 		if (m_info == null)
 			getInfo();
 		if (m_info != null)
-			return m_info.getC_Currency_ID();
+			return getInfo().getC_Currency_ID();
 		return 0;
 	}	//	getC_Currency_ID
 
@@ -488,7 +409,7 @@ public class MClient extends X_AD_Client
 		if (getRequestEMail() == null || getRequestEMail().length() == 0){
 			StringBuilder msgreturn = new StringBuilder("No Request EMail for ").append(getName());
 			return msgreturn.toString();
-		}	
+		}
 		//
 		String systemName = MSystem.get(getCtx()).getName();
 		StringBuilder msgce = new StringBuilder(systemName).append(" EMail Test: ").append(toString());
@@ -497,7 +418,7 @@ public class MClient extends X_AD_Client
 		if (email == null){
 			StringBuilder msgreturn = new StringBuilder("Could not create EMail: ").append(getName());
 			return msgreturn.toString();
-		}	
+		}
 		try
 		{
 			String msg = null;
@@ -644,7 +565,7 @@ public class MClient extends X_AD_Client
 			return false;
 		}
 	}	//	sendEMail
-	
+
 	/**
 	 * 	Send EMail from Request User - no trace
 	 *	@param to recipient email address
@@ -1022,11 +943,11 @@ public class MClient extends X_AD_Client
 				 .append("                 AND cl.IsActive = 'Y' ")
 				 .append("                 AND f.ASP_Status = 'H' ")
 				 .append("                  AND f.AD_Field_ID NOT IN (")
-				 .append(" 				 SELECT AD_Field_ID")             
-				 .append(" 				 FROM ASP_ClientException ce")            
-				 .append(" 				 WHERE ce.AD_Client_ID =").append(getAD_Client_ID())             
-				 .append(" 				 AND ce.IsActive = 'Y'") 
-				 .append("                  AND ce.AD_Field_ID IS NOT NULL")              
+				 .append(" 				 SELECT AD_Field_ID")
+				 .append(" 				 FROM ASP_ClientException ce")
+				 .append(" 				 WHERE ce.AD_Client_ID =").append(getAD_Client_ID())
+				 .append(" 				 AND ce.IsActive = 'Y'")
+				 .append("                  AND ce.AD_Field_ID IS NOT NULL")
 				 .append(" 				 AND ce.ASP_Status <> 'H')")
 				 .append("   UNION ALL ")
 				 // minus ASP hide exceptions for client
@@ -1143,6 +1064,38 @@ public class MClient extends X_AD_Client
 				MAIL_SEND_CREDENTIALS_USER, // default
 				Env.getAD_Client_ID(Env.getCtx()));
 		return (MAIL_SEND_CREDENTIALS_SYSTEM.equalsIgnoreCase(msc));
+	}
+
+	/**
+	 * 	Get optionally cached client
+	 *	@param ctx context
+	 *	@return client
+	 */
+	public static MClient get (Properties ctx)
+	{
+		return get (ctx, Env.getAD_Client_ID(ctx));
+	}	//	get
+
+
+	/**
+	 * 	Get client
+	 *	@param ctx context
+	 * 	@param AD_Client_ID id
+	 *	@return client
+	 */
+	public static MClient get (Properties ctx, int AD_Client_ID)
+	{
+		Integer key = new Integer (AD_Client_ID);
+		MClient client = (MClient)s_cache.get(key);
+		if (client != null)
+			return client;
+		client = new MClient(ctx, AD_Client_ID, null);
+		s_cache.put (key, client);
+		return client;
+	}	//	get
+
+	public MClient (Properties ctx, ResultSet rs, String trxName) {
+		super(ctx, rs, trxName);
 	}
 
 }	//	MClient

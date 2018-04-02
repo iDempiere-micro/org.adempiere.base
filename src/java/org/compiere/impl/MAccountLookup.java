@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.compiere.model.I_C_ValidCombination;
+import org.compiere.orm.Query;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;

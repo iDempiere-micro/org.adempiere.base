@@ -31,6 +31,7 @@
 package org.compiere.impl;
 
 import org.compiere.model.I_M_FreightCategory;
+import org.compiere.orm.Query;
 
 import java.sql.ResultSet;
 import java.util.Properties;

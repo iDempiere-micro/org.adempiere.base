@@ -17,7 +17,7 @@
 package org.compiere.impexp;
 
 import org.compiere.model.I_AD_ImpFormat;
-import org.compiere.impl.MSequence;
+import org.compiere.orm.MSequence;
 import org.compiere.impl.X_AD_ImpFormat;
 import org.compiere.impl.X_I_GLJournal;
 import org.idempiere.common.util.CLogger;

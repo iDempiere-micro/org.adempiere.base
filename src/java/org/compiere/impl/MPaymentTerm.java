@@ -26,6 +26,7 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_C_InvoicePaySchedule;
 import org.compiere.model.I_C_OrderPaySchedule;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

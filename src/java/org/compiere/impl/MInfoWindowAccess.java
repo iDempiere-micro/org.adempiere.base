@@ -3,6 +3,8 @@
  */
 package org.compiere.impl;
 
+import org.compiere.orm.MRole;
+
 import java.sql.ResultSet;
 import java.util.Properties;
 

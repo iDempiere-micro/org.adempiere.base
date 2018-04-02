@@ -35,8 +35,8 @@ import org.compiere.model.I_M_PromotionLine;
 import org.compiere.model.I_M_PromotionReward;
 import org.compiere.impl.MOrder;
 import org.compiere.impl.MOrderLine;
-import org.compiere.impl.MTable;
-import org.compiere.impl.Query;
+import org.compiere.orm.MTable;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

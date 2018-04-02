@@ -20,7 +20,7 @@ import java.util.logging.Level;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.impl.MAddressTransaction;
 import org.compiere.impl.MLocation;
-import org.compiere.impl.MSysConfig;
+import org.compiere.orm.MSysConfig;
 import org.compiere.process.ProcessInfoLog;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;

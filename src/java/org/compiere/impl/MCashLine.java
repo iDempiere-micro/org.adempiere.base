@@ -22,6 +22,7 @@ import java.sql.Timestamp;
 import java.util.Properties;
 
 import org.compiere.model.I_C_CashLine;
+import org.compiere.orm.MDocType;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

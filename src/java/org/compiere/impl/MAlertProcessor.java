@@ -24,6 +24,7 @@ import java.util.Properties;
 import org.compiere.model.I_AD_Alert;
 import org.compiere.model.I_AD_AlertProcessor;
 import org.compiere.model.I_AD_AlertProcessorLog;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

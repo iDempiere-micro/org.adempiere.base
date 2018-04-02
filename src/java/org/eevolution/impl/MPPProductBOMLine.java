@@ -32,7 +32,7 @@ import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.exceptions.DBException;
 import org.compiere.impl.MProduct;
 import org.compiere.impl.MUOM;
-import org.compiere.impl.Query;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

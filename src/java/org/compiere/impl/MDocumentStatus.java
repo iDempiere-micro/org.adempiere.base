@@ -34,6 +34,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import org.compiere.orm.MRole;
+import org.compiere.orm.MTable;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

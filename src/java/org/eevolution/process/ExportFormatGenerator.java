@@ -20,13 +20,13 @@ import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.model.I_EXP_Format;
-import org.compiere.impl.MColumn;
+import org.compiere.orm.MColumn;
 import org.compiere.impl.MEXPFormat;
 import org.compiere.impl.MEXPFormatLine;
 import org.compiere.impl.MTab;
-import org.compiere.impl.MTable;
+import org.compiere.orm.MTable;
 import org.compiere.impl.MWindow;
-import org.compiere.impl.Query;
+import org.compiere.orm.Query;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.DB;

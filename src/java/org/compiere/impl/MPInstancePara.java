@@ -17,6 +17,7 @@
 package org.compiere.impl;
 
 import org.compiere.model.I_AD_PInstance_Para;
+import org.compiere.orm.Query;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;

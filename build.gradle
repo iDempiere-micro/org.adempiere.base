@@ -30,4 +30,7 @@ dependencies {
 
     compile project(':org.idempiere.orm')
     compile files('../org.idempiere.orm/bin')
+
+    compile project(':org.compiere.orm')
+    compile files('../org.compiere.orm/bin')
 }

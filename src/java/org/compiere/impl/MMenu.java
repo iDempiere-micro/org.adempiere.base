@@ -24,6 +24,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.I_AD_Menu;
+import org.compiere.orm.MTree_Base;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 

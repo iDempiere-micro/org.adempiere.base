@@ -28,6 +28,7 @@ import java.util.regex.Pattern;
 
 import org.adempiere.base.Core;
 import org.compiere.model.*;
+import org.compiere.orm.*;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.BPartnerNoBillToAddressException;
 import org.adempiere.exceptions.BPartnerNoShipToAddressException;

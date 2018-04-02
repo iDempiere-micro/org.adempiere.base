@@ -16,6 +16,9 @@
  *****************************************************************************/
 package org.compiere.impl;
 
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MTable;
+
 import java.sql.ResultSet;
 import java.util.Properties;
 

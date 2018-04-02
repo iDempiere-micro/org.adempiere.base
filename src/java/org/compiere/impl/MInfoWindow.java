@@ -26,10 +26,14 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_AD_InfoColumn;
 import org.compiere.model.I_AD_InfoWindow;
+import org.compiere.orm.AccessSqlParser;
+import org.compiere.orm.MRole;
+import org.compiere.orm.MTable;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.model.MInfoProcess;
 import org.adempiere.model.MInfoRelated;
-import org.compiere.impl.AccessSqlParser.TableInfo;
+import org.compiere.orm.AccessSqlParser.TableInfo;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;

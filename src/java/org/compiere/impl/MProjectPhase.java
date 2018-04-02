@@ -25,6 +25,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.I_C_ProjectLine;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
  

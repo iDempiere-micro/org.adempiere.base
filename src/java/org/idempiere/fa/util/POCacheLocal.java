@@ -6,7 +6,7 @@ package org.idempiere.fa.util;
 import java.util.Properties;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.impl.MTable;
+import org.compiere.orm.MTable;
 import org.idempiere.orm.PO;
 
 /**

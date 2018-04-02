@@ -19,6 +19,7 @@ package org.compiere.impl;
 
 import org.compiere.model.I_AD_Registration;
 import org.compiere.model.I_C_Location;
+import org.compiere.orm.MTable;
 import org.idempiere.orm.I_Persistent;
  
  

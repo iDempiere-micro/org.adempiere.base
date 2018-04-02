@@ -21,6 +21,7 @@ import java.util.Properties;
 import java.util.List;
 
 import org.compiere.model.I_C_Tax;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
 
 /**

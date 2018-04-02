@@ -25,6 +25,7 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_C_OrderLandedCost;
 import org.compiere.model.I_C_OrderLandedCostAllocation;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Util;
 

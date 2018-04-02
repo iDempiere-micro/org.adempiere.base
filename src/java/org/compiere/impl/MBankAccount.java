@@ -19,6 +19,7 @@ package org.compiere.impl;
 import java.sql.ResultSet;
 import java.util.Properties;
 
+import org.compiere.orm.MSysConfig;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.Env;
 import org.compiere.webutil.IBAN;

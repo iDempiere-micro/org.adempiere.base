@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.compiere.model.I_A_Asset_Group_Acct;
+import org.compiere.orm.Query;
 import org.idempiere.fa.feature.UseLife;
 import org.idempiere.fa.feature.UseLifeImpl;
 

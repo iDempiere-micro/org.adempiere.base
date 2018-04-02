@@ -24,6 +24,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.I_PA_MeasureCalc;
+import org.compiere.orm.MRole;
+import org.compiere.orm.MTable;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

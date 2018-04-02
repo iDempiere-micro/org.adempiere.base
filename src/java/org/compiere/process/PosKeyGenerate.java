@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import org.adempiere.exceptions.FillMandatoryException;
 import org.compiere.impl.MPOSKey;
 import org.compiere.impl.MProduct;
-import org.compiere.impl.Query;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.Env;
 
 

@@ -18,6 +18,8 @@ package org.compiere.impl;
 
 import org.adempiere.util.ContextRunnable;
 import org.compiere.Adempiere;
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MTable;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.*;
 import org.idempiere.orm.Lookup;

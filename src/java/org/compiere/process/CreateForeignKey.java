@@ -21,9 +21,9 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.logging.Level;
 
-import org.compiere.impl.DatabaseKey;
-import org.compiere.impl.MColumn;
-import org.compiere.impl.MTable;
+import org.compiere.orm.DatabaseKey;
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MTable;
 import org.compiere.impl.PO;
 import org.idempiere.common.util.DB;
 import org.compiere.util.Msg;

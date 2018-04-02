@@ -34,6 +34,9 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 
 import org.compiere.model.I_AD_User;
+import org.compiere.orm.MRole;
+import org.compiere.orm.MSysConfig;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;

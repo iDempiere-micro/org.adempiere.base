@@ -24,6 +24,10 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_M_CostDetail;
 import org.compiere.model.I_M_ProductDownload;
+import org.compiere.orm.MTable;
+import org.compiere.orm.MTree_Base;
+import org.compiere.orm.Query;
+import org.compiere.orm.X_AD_Tree;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;

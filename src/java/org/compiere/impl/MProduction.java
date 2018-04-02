@@ -12,6 +12,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.I_M_ProductionPlan;
+import org.compiere.orm.MDocType;
+import org.compiere.orm.MSysConfig;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.PeriodClosedException;
 import org.compiere.acct.Doc;

@@ -27,6 +27,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.impl.*;
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MTable;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.DBException;
 import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfo;

@@ -18,6 +18,9 @@ package org.compiere.impl;
 
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.model.I_Fact_Acct;
+import org.compiere.orm.MTree_Base;
+import org.compiere.orm.POResultSet;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;
 

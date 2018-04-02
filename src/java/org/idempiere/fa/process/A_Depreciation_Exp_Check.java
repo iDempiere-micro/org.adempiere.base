@@ -12,7 +12,7 @@ import org.compiere.impl.MDepreciationEntry;
 import org.compiere.impl.MDepreciationExp;
 import org.compiere.impl.MDepreciationWorkfile;
 import org.compiere.impl.MPeriod;
-import org.compiere.impl.Query;
+import org.compiere.orm.Query;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.DB;

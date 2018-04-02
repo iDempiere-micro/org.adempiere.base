@@ -22,6 +22,7 @@ import java.util.Properties;
 
 import org.compiere.model.I_S_Resource;
 import org.compiere.model.I_S_ResourceUnAvailable;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
 import org.compiere.webutil.TimeUtil;

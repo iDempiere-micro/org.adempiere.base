@@ -28,6 +28,7 @@ import org.adempiere.base.IProductPricing;
 import org.compiere.model.I_M_Product;
 import org.compiere.model.I_M_Requisition;
 import org.compiere.model.I_M_RequisitionLine;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

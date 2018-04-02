@@ -18,6 +18,8 @@ package org.compiere.impl;
 
 import org.compiere.model.I_C_AcctSchema_Element;
 import org.compiere.model.I_C_ValidCombination;
+import org.compiere.orm.MColumn;
+import org.compiere.orm.Query;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.*;
 

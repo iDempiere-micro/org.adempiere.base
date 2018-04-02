@@ -34,6 +34,11 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 
 import org.compiere.impl.*;
+import org.compiere.impl.MClient;
+import org.compiere.impl.MOrg;
+import org.compiere.impl.PO;
+import org.compiere.orm.*;
+import org.compiere.orm.MRole;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfo;

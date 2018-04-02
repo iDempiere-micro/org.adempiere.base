@@ -16,7 +16,7 @@
  *****************************************************************************/
 package org.compiere.wf;
 
-import org.compiere.impl.MSequence;
+import org.compiere.orm.MSequence;
 import org.compiere.impl.PO;
 import org.compiere.impl.X_AD_WF_NextCondition;
 

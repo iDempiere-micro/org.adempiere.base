@@ -18,7 +18,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.impl.MInfoColumn;
-import org.compiere.impl.Query;
+import org.compiere.orm.Query;
 import org.compiere.impl.X_AD_InfoRelated;
 
 public class MInfoRelated extends X_AD_InfoRelated implements IInfoColumn {

@@ -23,6 +23,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.impl.*;
+import org.compiere.orm.MRole;
+import org.compiere.orm.MTable;
+import org.compiere.orm.Query;
 import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.StateEngine;
@@ -383,7 +386,7 @@ public class MWFProcess extends X_AD_WF_Process
 	public void setAD_WF_Responsible_ID ()
 	{
 		int AD_WF_Responsible_ID = DB.getSQLValueEx(null,
-			MRole.getDefault(getCtx(), false).addAccessSQL(	
+			MRole.getDefault(getCtx(), false).addAccessSQL(
 			"SELECT AD_WF_Responsible_ID FROM AD_WF_Responsible "
 			+ "WHERE ResponsibleType='H' AND COALESCE(AD_User_ID,0)=0 "
 			+ "ORDER BY AD_Client_ID DESC", 

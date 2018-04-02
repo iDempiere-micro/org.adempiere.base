@@ -11,7 +11,7 @@ import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MAssetAcct;
 import org.compiere.impl.MAssetAddition;
 import org.compiere.impl.MCharge;
-import org.compiere.impl.MDocType;
+import org.compiere.orm.MDocType;
 import org.compiere.impl.MProject;
 import org.compiere.impl.ProductCost;
 import org.compiere.impl.X_C_Project_Acct;

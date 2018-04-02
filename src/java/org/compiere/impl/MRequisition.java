@@ -25,6 +25,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.I_M_RequisitionLine;
+import org.compiere.orm.MDocType;
+import org.compiere.orm.MSequence;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.process.DocAction;
 import org.compiere.process.DocumentEngine;

@@ -21,6 +21,7 @@ import java.sql.ResultSet;
 import java.util.Properties;
 
 import org.compiere.model.I_M_ProductPrice;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CLogger;
 
 /**

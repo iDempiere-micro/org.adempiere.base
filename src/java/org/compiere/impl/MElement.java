@@ -19,6 +19,7 @@ package org.compiere.impl;
 import java.sql.ResultSet;
 import java.util.Properties;
 
+import org.compiere.orm.X_AD_Tree;
 import org.compiere.util.Msg;
 
 /**
@@ -82,7 +83,7 @@ public class MElement extends X_C_Element
 	}	//	MElement
 
 	/** Tree Used			*/
-	private X_AD_Tree	m_tree = null;
+	private X_AD_Tree m_tree = null;
 	
 	/**
 	 * 	Get Tree

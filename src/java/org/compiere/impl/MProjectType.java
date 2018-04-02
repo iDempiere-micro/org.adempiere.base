@@ -25,6 +25,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.I_C_ProjectType;
+import org.compiere.orm.MRole;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;
 

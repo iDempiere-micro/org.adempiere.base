@@ -18,6 +18,7 @@
 package org.compiere.impl;
 
 import org.compiere.model.I_EXP_Processor;
+import org.compiere.orm.MTable;
 import org.idempiere.orm.I_Persistent;
  
  

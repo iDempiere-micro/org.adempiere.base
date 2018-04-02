@@ -29,6 +29,9 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.orm.MRole;
+import org.compiere.orm.MSysConfig;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;

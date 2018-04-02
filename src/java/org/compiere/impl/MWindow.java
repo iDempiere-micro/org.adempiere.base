@@ -27,6 +27,8 @@ import java.util.logging.Level;
 import org.compiere.model.I_AD_Tab;
 import org.compiere.model.I_AD_WF_Node;
 import org.compiere.model.I_AD_Window;
+import org.compiere.orm.MRole;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

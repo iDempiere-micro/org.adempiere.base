@@ -20,7 +20,7 @@ import java.util.logging.Level;
 
 import org.compiere.acct.Doc;
 import org.compiere.impl.MAcctSchema;
-import org.compiere.impl.MTable;
+import org.compiere.orm.MTable;
 import org.idempiere.common.util.AdempiereUserError;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

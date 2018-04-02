@@ -24,6 +24,10 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.I_AD_Ref_Table;
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MRole;
+import org.compiere.orm.MSysConfig;
+import org.compiere.orm.MTable;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

@@ -22,6 +22,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import org.compiere.orm.MSequence;
+import org.compiere.orm.MSysConfig;
+import org.compiere.orm.MTable;
+import org.compiere.orm.Query;
 import org.idempiere.common.base.Service;
 import org.idempiere.orm.EventManager;
 import org.idempiere.common.exceptions.AdempiereException;

@@ -21,6 +21,7 @@ import java.util.Iterator;
 import java.util.Properties;
 
 import org.compiere.model.I_C_CashBook;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 

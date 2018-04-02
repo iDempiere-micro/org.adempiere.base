@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import org.compiere.model.I_AD_Style;
 import org.compiere.model.I_AD_StyleLine;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.Env;
 

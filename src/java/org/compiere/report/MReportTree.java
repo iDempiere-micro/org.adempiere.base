@@ -26,7 +26,7 @@ import java.util.logging.Level;
 
 import org.compiere.impl.MAcctSchemaElement;
 import org.compiere.impl.MHierarchy;
-import org.compiere.impl.MRole;
+import org.compiere.orm.MRole;
 import org.compiere.impl.MTree;
 import org.compiere.impl.MTreeNode;
 import org.idempiere.common.util.CCache;

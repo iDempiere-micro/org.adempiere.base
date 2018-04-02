@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.adempiere.exceptions;
 
-import org.compiere.impl.MDocType;
+import org.compiere.orm.MDocType;
 import org.compiere.impl.MRefList;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;

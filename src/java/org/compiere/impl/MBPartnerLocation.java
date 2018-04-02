@@ -19,6 +19,9 @@ package org.compiere.impl;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
+
+import org.compiere.orm.MSysConfig;
+import org.compiere.orm.Query;
 import software.hsharp.business.models.IBusinessPartnerLocation;
 import software.hsharp.business.models.ILocation;
 

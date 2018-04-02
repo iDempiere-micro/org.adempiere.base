@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.apache.commons.collections4.keyvalue.MultiKey;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogMgt;
 import org.idempiere.common.util.CLogger;

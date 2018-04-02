@@ -28,6 +28,9 @@ import java.util.logging.Level;
 
 import javax.sql.RowSet;
 
+import org.compiere.orm.MRole;
+import org.compiere.orm.MTable;
+import org.compiere.orm.MTree_Base;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogMgt;
 import org.idempiere.common.util.CLogger;

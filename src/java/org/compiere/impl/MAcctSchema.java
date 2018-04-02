@@ -18,6 +18,8 @@ package org.compiere.impl;
 
 import org.compiere.model.I_AD_ClientInfo;
 import org.compiere.model.I_C_AcctSchema;
+import org.compiere.orm.MOrg;
+import org.compiere.orm.Query;
 import org.compiere.report.MReportTree;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.KeyNamePair;
@@ -218,7 +220,7 @@ public class MAcctSchema extends X_C_AcctSchema
 	private int						m_costPrecision = -1;
 	
 	/** Only Post Org					*/
-	private MOrg					m_onlyOrg = null;
+	private MOrg m_onlyOrg = null;
 	/** Only Post Org Childs			*/
 	private Integer[] 				m_onlyOrgs = null; 
 

@@ -25,11 +25,11 @@ import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.impl.MQuery;
-import org.compiere.impl.MRole;
-import org.compiere.impl.MSequence;
-import org.compiere.impl.MSysConfig;
+import org.compiere.orm.MRole;
+import org.compiere.orm.MSequence;
+import org.compiere.orm.MSysConfig;
 import org.compiere.impl.MTab;
-import org.compiere.impl.MTable;
+import org.compiere.orm.MTable;
 import org.compiere.impl.PO;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

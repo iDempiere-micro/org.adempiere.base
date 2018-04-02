@@ -26,6 +26,9 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_C_Cash;
 import org.compiere.model.I_C_CashLine;
+import org.compiere.orm.MDocType;
+import org.compiere.orm.MOrg;
+import org.compiere.orm.Query;
 import org.compiere.process.DocAction;
 import org.compiere.process.DocumentEngine;
 import org.idempiere.common.util.CLogger;

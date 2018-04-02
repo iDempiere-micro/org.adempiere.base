@@ -17,6 +17,7 @@
 package org.compiere.impl;
 
 import org.compiere.model.I_R_ContactInterest;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
 

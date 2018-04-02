@@ -18,6 +18,7 @@ package org.compiere.impl;
 import java.sql.ResultSet;
 import java.util.Properties;
 import org.adempiere.exceptions.WarehouseInvalidForOrgException;
+import org.compiere.orm.MOrg;
 
 
 /**

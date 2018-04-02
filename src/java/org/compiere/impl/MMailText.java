@@ -22,6 +22,8 @@ import java.text.SimpleDateFormat;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MSequence;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;

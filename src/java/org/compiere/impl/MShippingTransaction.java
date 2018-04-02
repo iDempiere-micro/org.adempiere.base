@@ -7,6 +7,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.adempiere.base.Core;
+import org.compiere.orm.MOrg;
+import org.compiere.orm.MOrgInfo;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.model.IShipmentProcessor;
 import org.adempiere.model.MShipperFacade;

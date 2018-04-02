@@ -29,6 +29,8 @@ import java.util.logging.Level;
 import org.adempiere.base.Core;
 import org.compiere.model.I_C_InvoiceLine;
 import org.compiere.model.I_M_InOutLine;
+import org.compiere.orm.MRole;
+import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.model.ITaxProvider;
 import org.idempiere.common.util.CLogger;

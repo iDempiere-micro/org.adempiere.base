@@ -8,7 +8,7 @@ import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MAssetTransfer;
 import org.compiere.impl.MDepreciationWorkfile;
-import org.compiere.impl.MDocType;
+import org.compiere.orm.MDocType;
 import org.idempiere.common.util.Env;
 
 

@@ -26,6 +26,7 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.orm.MDocType;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.acct.Doc;
 import org.compiere.process.DocAction;

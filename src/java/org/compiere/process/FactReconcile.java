@@ -24,7 +24,7 @@ import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.impl.MElementValue;
 import org.compiere.impl.MFactReconciliation;
 import org.compiere.impl.MRule;
-import org.compiere.impl.MSequence;
+import org.compiere.orm.MSequence;
 import org.idempiere.common.util.DB;
 
 /**

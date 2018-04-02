@@ -29,9 +29,9 @@ import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.exceptions.DBException;
-import org.compiere.impl.MColumn;
-import org.compiere.impl.MRole;
-import org.compiere.impl.Query;
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MRole;
+import org.compiere.orm.Query;
 import org.compiere.impl.X_AD_WF_Node;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;

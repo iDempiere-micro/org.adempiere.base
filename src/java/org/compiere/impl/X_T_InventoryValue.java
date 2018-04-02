@@ -23,6 +23,7 @@ import java.sql.Timestamp;
 import java.util.Properties;
 
 import org.compiere.model.I_M_AttributeSetInstance;
+import org.compiere.orm.MTable;
 import org.idempiere.orm.I_Persistent;
 import org.compiere.model.I_T_InventoryValue;
 import org.idempiere.common.util.Env;

@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.orm.MAttachment;
+import org.compiere.orm.MAttachmentEntry;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 

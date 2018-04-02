@@ -25,7 +25,7 @@ import org.compiere.impl.AdempiereProcessor;
 import org.compiere.impl.AdempiereProcessor2;
 import org.compiere.impl.AdempiereProcessorLog;
 import org.compiere.impl.MSchedule;
-import org.compiere.impl.Query;
+import org.compiere.orm.Query;
 import org.compiere.impl.X_AD_WorkflowProcessor;
 import org.idempiere.common.util.DB;
 

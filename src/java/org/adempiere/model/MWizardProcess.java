@@ -18,7 +18,7 @@ package org.adempiere.model;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.compiere.impl.Query;
+import org.compiere.orm.Query;
 import org.compiere.impl.X_AD_WizardProcess;
 
 public class MWizardProcess extends X_AD_WizardProcess {

@@ -23,6 +23,7 @@ import java.util.Properties;
 
 import org.compiere.model.I_AD_ReplicationDocument;
 import org.compiere.model.I_AD_ReplicationTable;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CLogger;
 
 /**

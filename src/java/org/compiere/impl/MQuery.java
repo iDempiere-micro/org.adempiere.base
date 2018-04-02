@@ -16,6 +16,8 @@
  *****************************************************************************/
 package org.compiere.impl;
 
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MTable;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.*;
 

@@ -1,6 +1,7 @@
 package org.compiere.impl;
 
 import org.compiere.model.I_AD_WF_ActivityApprover;
+import org.compiere.orm.Query;
 
 import java.sql.ResultSet;
 import java.util.List;

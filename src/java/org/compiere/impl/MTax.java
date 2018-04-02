@@ -24,6 +24,7 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_C_Tax;
 import org.compiere.model.I_C_TaxPostal;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;

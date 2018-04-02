@@ -22,6 +22,7 @@ import java.util.logging.Level;
 
 import org.adempiere.util.IProcessUI;
 import org.adempiere.util.PaymentUtil;
+import org.compiere.orm.MSysConfig;
 import org.compiere.process.DocAction;
 import org.compiere.process.ProcessCall;
 import org.compiere.process.ProcessInfo;

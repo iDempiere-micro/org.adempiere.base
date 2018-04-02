@@ -3,7 +3,7 @@ package org.adempiere.model;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.compiere.impl.Query;
+import org.compiere.orm.Query;
 import org.compiere.impl.X_AD_Tab_Customization;
 
 public class MTabCustomization extends X_AD_Tab_Customization {

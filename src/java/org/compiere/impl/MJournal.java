@@ -25,6 +25,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.I_GL_JournalLine;
+import org.compiere.orm.MDocType;
+import org.compiere.orm.MSequence;
+import org.compiere.orm.Query;
 import org.compiere.process.DocAction;
 import org.compiere.process.DocumentEngine;
 import org.idempiere.common.util.DB;

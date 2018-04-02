@@ -17,6 +17,8 @@
 package org.compiere.webutil;
 
 import org.compiere.impl.*;
+import org.compiere.orm.MSysConfig;
+import org.compiere.orm.MTable;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

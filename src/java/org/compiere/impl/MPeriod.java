@@ -28,6 +28,10 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.adempiere.exceptions.PeriodClosedException;
+import org.compiere.orm.MDocType;
+import org.compiere.orm.MOrgInfo;
+import org.compiere.orm.MTable;
+import org.compiere.orm.Query;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

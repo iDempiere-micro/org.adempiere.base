@@ -19,6 +19,7 @@ package org.compiere.impl;
 import java.sql.ResultSet;
 import java.util.Properties;
 
+import org.compiere.orm.MTree_Base;
 import org.idempiere.common.util.CCache;
 
 

@@ -1,5 +1,7 @@
 package org.compiere.impl;
 
+import org.compiere.orm.Query;
+
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;

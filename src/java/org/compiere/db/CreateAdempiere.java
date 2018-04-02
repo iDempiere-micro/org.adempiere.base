@@ -17,9 +17,9 @@
 package org.compiere.db;
 
 import org.compiere.Adempiere;
-import org.compiere.impl.MColumn;
-import org.compiere.impl.MTable;
-import org.compiere.impl.M_Element;
+import org.compiere.orm.MColumn;
+import org.compiere.orm.MTable;
+import org.compiere.orm.M_Element;
 import org.compiere.util.DisplayType;
 import org.idempiere.icommon.db.AdempiereDatabase;
 import org.idempiere.common.db.Database;

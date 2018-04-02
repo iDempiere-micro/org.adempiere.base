@@ -17,6 +17,8 @@
 package org.compiere.webutil;
 
 import org.compiere.impl.*;
+import org.compiere.orm.MAttachment;
+import org.compiere.orm.MAttachmentEntry;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
@@ -532,8 +534,8 @@ public final class WebUtil
 	 *	@param attachmentIndex logical index
 	 *	@return error message or null
 	 */
-	public static String streamAttachment (HttpServletResponse response, 
-		MAttachment attachment, int attachmentIndex)
+	public static String streamAttachment (HttpServletResponse response,
+                                           MAttachment attachment, int attachmentIndex)
 	{
 		if (attachment == null)
 			return "No Attachment";
