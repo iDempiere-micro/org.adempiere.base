@@ -15,9 +15,9 @@ package org.adempiere.base.event;
 
 import java.util.StringTokenizer;
 
+import org.compiere.impl.MLocation;
 import org.compiere.model.I_C_Location;
 import org.compiere.impl.MAddressValidation;
-import org.compiere.impl.MLocation;
 import org.compiere.orm.MSysConfig;
 import org.idempiere.orm.IEventTopics;
 import org.idempiere.orm.PO;

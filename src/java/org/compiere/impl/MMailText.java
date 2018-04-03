@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.crm.MUser;
 import org.compiere.orm.MColumn;
 import org.compiere.orm.MSequence;
 import org.idempiere.common.util.CCache;
@@ -68,11 +69,11 @@ public class MMailText extends X_R_MailText
 	}	//	MMailText
 
 	/**	Parse User			*/
-	private MUser		m_user = null;
+	private MUser m_user = null;
 	/** Parse BPartner		*/
 	private MBPartner	m_bpartner = null;
 	/** Parse PO			*/
-	private PO m_po = null;
+	private org.compiere.orm.PO m_po = null;
 	/** Translated Header	*/
 	private String		m_MailHeader = null;
 	/** Translated Text		*/
@@ -178,7 +179,7 @@ public class MMailText extends X_R_MailText
 	 *	@param po object
 	 *	@return parsed text
 	 */
-	private String parse (String text, PO po)
+	private String parse (String text, org.compiere.orm.PO po)
 	{
 		if (po == null || Util.isEmpty(text) || text.indexOf('@') == -1)
 			return text;
@@ -217,7 +218,7 @@ public class MMailText extends X_R_MailText
 	 *	@param po po
 	 *	@return translated variable or if not found the original tag
 	 */
-	private String parseVariable (String variable, PO po)
+	private String parseVariable (String variable, org.compiere.orm.PO po)
 	{
 		if (variable.contains("<") && variable.contains(">")) { // IDEMPIERE-3096
 			return MSequence.parseVariable("@"+variable+"@", po, get_TrxName(), true);
@@ -293,6 +294,12 @@ public class MMailText extends X_R_MailText
 	{
 		m_po = po;
 	}	//	setPO
+
+	public void setPO (org.compiere.orm.PO po)
+	{
+		m_po = po;
+	}	//	setPO
+
 
 	/**
 	 * 	Set PO for parse
@@ -421,7 +428,7 @@ public class MMailText extends X_R_MailText
 		m_language = language;
 	}
 
-	public PO getPO()
+	public org.compiere.orm.PO getPO()
 	{
 		return m_po;
 	}

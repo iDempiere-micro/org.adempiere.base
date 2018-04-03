@@ -7,6 +7,10 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.adempiere.base.Core;
+import org.compiere.crm.MBPartnerLocation;
+import org.compiere.crm.MLocation;
+import org.compiere.crm.MUser;
+import org.compiere.crm.X_C_Country;
 import org.compiere.orm.MOrg;
 import org.compiere.orm.MOrgInfo;
 import org.compiere.orm.Query;

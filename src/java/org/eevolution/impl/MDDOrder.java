@@ -26,12 +26,13 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.model.I_C_BPartner_Location;
 import org.eevolution.model.I_DD_Order;
 import org.eevolution.model.I_DD_OrderLine;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.NegativeInventoryDisallowedException;
 import org.compiere.impl.MBPartner;
-import org.compiere.impl.MBPartnerLocation;
+import org.compiere.crm.MBPartnerLocation;
 import org.compiere.orm.MDocType;
 import org.compiere.impl.MLocator;
 import org.compiere.impl.MMovement;
@@ -40,7 +41,7 @@ import org.compiere.impl.MProduct;
 import org.compiere.impl.MProject;
 import org.compiere.impl.MRefList;
 import org.compiere.impl.MStorageOnHand;
-import org.compiere.impl.MUser;
+import org.compiere.crm.MUser;
 import org.compiere.impl.ModelValidationEngine;
 import org.compiere.impl.ModelValidator;
 import org.compiere.orm.Query;
@@ -297,7 +298,7 @@ public class MDDOrder extends X_DD_Order implements DocAction
 		}
 
 		//	Set Locations
-		MBPartnerLocation[] locs = bp.getLocations(false);
+		I_C_BPartner_Location[] locs = bp.getLocations(false);
 		if (locs != null)
 		{
 			for (int i = 0; i < locs.length; i++)

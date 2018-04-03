@@ -4,7 +4,7 @@ import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.orm.MSysConfig;
-import org.compiere.impl.MUser;
+import org.compiere.crm.MUser;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.DB;

@@ -27,6 +27,8 @@ import java.util.logging.Level;
 import java.util.regex.Pattern;
 
 import org.adempiere.base.Core;
+import org.compiere.crm.MBPartnerLocation;
+import org.compiere.crm.MUser;
 import org.compiere.model.*;
 import org.compiere.orm.*;
 import org.idempiere.common.exceptions.AdempiereException;
@@ -474,7 +476,7 @@ public class MOrder extends X_C_Order implements DocAction
 
 
 		//	Set Locations
-		MBPartnerLocation[] locs = bp.getLocations(false);
+		I_C_BPartner_Location[] locs = bp.getLocations(false);
 		if (locs != null)
 		{
 			for (int i = 0; i < locs.length; i++)

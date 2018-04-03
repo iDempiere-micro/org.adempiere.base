@@ -16,6 +16,8 @@
  *****************************************************************************/
 package org.compiere.impl;
 
+import org.compiere.crm.MLocation;
+import org.compiere.crm.X_C_BPartner;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.orm.MOrg;
 import org.compiere.orm.Query;
@@ -644,7 +646,7 @@ public class MAccount extends X_C_ValidCombination
 			{
 				if (getC_BPartner_ID() != 0)
 				{
-					X_C_BPartner partner = new X_C_BPartner (getCtx(), getC_BPartner_ID(),get_TrxName());
+					X_C_BPartner partner = new X_C_BPartner(getCtx(), getC_BPartner_ID(),get_TrxName());
 					combiStr = partner.getValue();
 					descrStr = partner.getName();
 				}

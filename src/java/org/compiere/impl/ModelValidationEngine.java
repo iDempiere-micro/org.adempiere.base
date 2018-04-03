@@ -772,6 +772,42 @@ public class ModelValidationEngine
 	 * @param targetModel target model (e.g. MBPartner, MBPartnerLocation, MUser)
 	 * @param timing see ImportValidator.TIMING_* constants
 	 */
+	public void fireImportValidate (ImportProcess process, org.compiere.orm.PO importModel,  org.compiere.orm.PO targetModel, int timing)
+	{
+
+		String propertyName = process.getImportTableName() + "*";
+		ArrayList<ImportValidator> list = m_impValidateListeners.get(propertyName);
+		if (list != null)
+		{
+			for (ImportValidator validator : list)
+			{
+				validator.validate(process, importModel, targetModel, timing);
+			}
+		}
+
+		//osgi event handler
+		ImportEventData eventData = new ImportEventData(process, importModel, targetModel);
+		String topic = null;
+		if (timing == ImportValidator.TIMING_AFTER_IMPORT)
+			topic = IEventTopics.IMPORT_AFTER_IMPORT;
+		else if (timing == ImportValidator.TIMING_AFTER_VALIDATE)
+			topic = IEventTopics.IMPORT_AFTER_VALIDATE;
+		else if (timing == ImportValidator.TIMING_BEFORE_IMPORT)
+			topic = IEventTopics.IMPORT_BEFORE_IMPORT;
+		else if (timing == ImportValidator.TIMING_BEFORE_VALIDATE)
+			topic = IEventTopics.IMPORT_BEFORE_VALIDATE;
+		Event event = EventManager.newEvent(topic, new EventProperty(EventManager.EVENT_DATA, eventData), new EventProperty("importTableName", process.getImportTableName()));
+		EventManager.getInstance().sendEvent(event);
+	}
+
+	/**
+	 * Fire Import Validation.
+	 * Call {@link ImportValidator#validate(ImportProcess, Object, Object, int)} or registered validators.
+	 * @param process import process
+	 * @param importModel import record (e.g. X_I_BPartner)
+	 * @param targetModel target model (e.g. MBPartner, MBPartnerLocation, MUser)
+	 * @param timing see ImportValidator.TIMING_* constants
+	 */
 	public void fireImportValidate (ImportProcess process, PO importModel, PO targetModel, int timing)
 	{
 

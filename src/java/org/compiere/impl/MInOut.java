@@ -25,6 +25,9 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.crm.MBPartnerLocation;
+import org.compiere.crm.MUser;
+import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.model.I_C_Order;
 import org.compiere.model.I_M_InOutConfirm;
 import org.compiere.model.I_M_InOutLine;
@@ -860,7 +863,7 @@ public class MInOut extends X_M_InOut implements DocAction
 		setC_BPartner_ID(bp.getC_BPartner_ID());
 
 		//	Set Locations
-		MBPartnerLocation[] locs = bp.getLocations(false);
+		I_C_BPartner_Location[] locs = bp.getLocations(false);
 		if (locs != null)
 		{
 			for (int i = 0; i < locs.length; i++)

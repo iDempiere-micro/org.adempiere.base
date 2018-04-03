@@ -16,6 +16,7 @@
  *****************************************************************************/
 package org.compiere.impl;
 
+import org.compiere.crm.MUser;
 import org.compiere.orm.MColumn;
 import org.compiere.orm.MTable;
 

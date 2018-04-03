@@ -24,7 +24,12 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.crm.MBPGroup;
+import org.compiere.crm.MBPartnerLocation;
+import org.compiere.crm.MUser;
+import org.compiere.crm.X_I_BPartner;
 import org.compiere.model.I_C_BPartner;
+import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.orm.MTree_Base;
 import org.compiere.orm.Query;
 import org.idempiere.common.util.CLogger;
@@ -46,7 +51,7 @@ import software.hsharp.business.models.IBusinessPartner;
  *      <LI>BF [ 2041226 ] BP Open Balance should count only Completed Invoice
  *			<LI>BF [ 2498949 ] BP Get Not Invoiced Shipment Value return null
  */
-public class MBPartner extends X_C_BPartner implements IBusinessPartner
+public class MBPartner extends X_C_BPartner implements IBusinessPartner, I_C_BPartner
 {
 	/**
 	 * 
@@ -312,7 +317,7 @@ public class MBPartner extends X_C_BPartner implements IBusinessPartner
 	/** Users							*/
 	private MUser[]					m_contacts = null;
 	/** Addressed						*/
-	private MBPartnerLocation[]		m_locations = null;
+	private I_C_BPartner_Location[]		m_locations = null;
 	/** BP Bank Accounts				*/
 	private MBPBankAccount[]		m_accounts = null;
 	/** Prim Address					*/
@@ -320,7 +325,7 @@ public class MBPartner extends X_C_BPartner implements IBusinessPartner
 	/** Prim User						*/
 	private Integer					m_primaryAD_User_ID = null;
 	/** BP Group						*/
-	private MBPGroup				m_group = null;
+	private MBPGroup m_group = null;
 	
 	/**
 	 * 	Load Default BPartner
@@ -429,7 +434,7 @@ public class MBPartner extends X_C_BPartner implements IBusinessPartner
 		return users[0];
 	}	//	getContact
 	
-	public MBPartnerLocation[] getLocations() {
+	public I_C_BPartner_Location[] getLocations() {
 		return getLocations(false);
 	}
 	
@@ -438,7 +443,7 @@ public class MBPartner extends X_C_BPartner implements IBusinessPartner
 	 * @param reload if true locations will be requeried
 	 * @return locations
 	 */
-	public MBPartnerLocation[] getLocations (boolean reload)
+	public I_C_BPartner_Location[] getLocations (boolean reload)
 	{
 		if (reload || m_locations == null || m_locations.length == 0)
 			;
@@ -468,7 +473,7 @@ public class MBPartner extends X_C_BPartner implements IBusinessPartner
 			rs = null; pstmt = null;
 		}
 
-		m_locations = new MBPartnerLocation[list.size()];
+		m_locations = new I_C_BPartner_Location[list.size()];
 		list.toArray(m_locations);
 		return m_locations;
 	}	//	getLocations
@@ -478,12 +483,12 @@ public class MBPartner extends X_C_BPartner implements IBusinessPartner
 	 * 	@param C_BPartner_Location_ID optional explicit location
 	 *	@return location or null
 	 */
-	public MBPartnerLocation getLocation(int C_BPartner_Location_ID)
+	public I_C_BPartner_Location getLocation(int C_BPartner_Location_ID)
 	{
-		MBPartnerLocation[] locations = getLocations(false);
+		I_C_BPartner_Location[] locations = getLocations(false);
 		if (locations.length == 0)
 			return null;
-		MBPartnerLocation retValue = null;
+		I_C_BPartner_Location retValue = null;
 		for (int i = 0; i < locations.length; i++)
 		{
 			if (locations[i].getC_BPartner_Location_ID() == C_BPartner_Location_ID)
@@ -606,7 +611,7 @@ public class MBPartner extends X_C_BPartner implements IBusinessPartner
 	{
 		if (m_primaryC_BPartner_Location_ID == null)
 		{
-			MBPartnerLocation[] locs = getLocations(false);
+			I_C_BPartner_Location[] locs = getLocations(false);
 			for (int i = 0; m_primaryC_BPartner_Location_ID == null && i < locs.length; i++)
 			{
 				if (locs[i].isBillTo())

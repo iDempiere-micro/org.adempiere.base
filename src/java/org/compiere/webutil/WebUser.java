@@ -16,7 +16,11 @@
  *****************************************************************************/
 package org.compiere.webutil;
 
+import org.compiere.crm.MBPartnerLocation;
+import org.compiere.crm.MLocation;
+import org.compiere.crm.MUser;
 import org.compiere.impl.*;
+import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.orm.MSysConfig;
 import org.compiere.orm.MTable;
 import org.idempiere.common.util.CLogger;
@@ -143,7 +147,7 @@ public class WebUser
 	//
 	private MBPartner m_bp;
 	private MUser m_bpc;
-	private MBPartnerLocation m_bpl;
+	private I_C_BPartner_Location m_bpl;
 	private MLocation m_loc;
 	//
 	private boolean				m_passwordOK = false;
@@ -228,7 +232,7 @@ public class WebUser
 			}
 			else
 			{
-				MBPartnerLocation[] bpls = m_bp.getLocations(false);
+				I_C_BPartner_Location[] bpls = m_bp.getLocations(false);
 				if (bpls != null && bpls.length > 0)
 				{
 					m_bpl = bpls[0];
@@ -327,7 +331,7 @@ public class WebUser
 			}
 			else
 			{
-				MBPartnerLocation[] bpls = m_bp.getLocations(false);
+				I_C_BPartner_Location[] bpls = m_bp.getLocations(false);
 				if (bpls != null && bpls.length > 0)
 				{
 					m_bpl = bpls[0];

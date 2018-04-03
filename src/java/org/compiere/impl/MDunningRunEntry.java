@@ -23,6 +23,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.adempiere.exceptions.BPartnerNoAddressException;
+import org.compiere.crm.MBPartnerLocation;
+import org.compiere.crm.MUser;
+import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.model.I_C_DunningLevel;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
@@ -106,17 +109,17 @@ public class MDunningRunEntry extends X_C_DunningRunEntry
 	public void setBPartner (MBPartner bp, boolean isSOTrx)
 	{
 		setC_BPartner_ID(bp.getC_BPartner_ID());
-		MBPartnerLocation[] locations = bp.getLocations(false);
+		I_C_BPartner_Location[] locations = bp.getLocations(false);
 		//	Location
 		if (locations.length == 1)
 			setC_BPartner_Location_ID (locations[0].getC_BPartner_Location_ID());
 		else
 		{
-			MBPartnerLocation firstActive = null;
-			MBPartnerLocation firstBillTo = null;
+			I_C_BPartner_Location firstActive = null;
+			I_C_BPartner_Location firstBillTo = null;
 			for (int i = 0; i < locations.length; i++)
 			{
-				MBPartnerLocation location = locations[i];
+				I_C_BPartner_Location location = locations[i];
 				if (!location.isActive())
 				{
 					continue;

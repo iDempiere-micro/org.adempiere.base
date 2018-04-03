@@ -18,6 +18,8 @@
  *****************************************************************************/
 package org.compiere.impl;
 
+import org.compiere.model.I_AD_PasswordRule;
+import org.compiere.orm.MClient;
 import org.compiere.util.Msg;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;
@@ -83,7 +85,7 @@ public class MPasswordRule extends X_AD_PasswordRule {
 		if (isUsingDictionary()) {
 			StringBuilder msg = new StringBuilder();
 			if (Util.isEmpty(getPathDictionary())) {
-				msg.append(Msg.getElement(getCtx(), COLUMNNAME_PathDictionary));
+				msg.append(Msg.getElement(getCtx(), I_AD_PasswordRule.COLUMNNAME_PathDictionary));
 			}
 			if (msg.length() > 0) {
 				log.saveError("FillMandatory", msg.toString());

@@ -15,7 +15,7 @@ package org.adempiere.model;
 
 import java.util.Properties;
 
-import org.compiere.impl.MAddressTransaction;
+import org.compiere.crm.MAddressTransaction;
 
 /**
  * Address validation interface

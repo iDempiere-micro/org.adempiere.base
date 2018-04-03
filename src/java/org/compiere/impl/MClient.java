@@ -31,12 +31,12 @@ import java.util.logging.Level;
 
 import javax.mail.internet.InternetAddress;
 
+import org.compiere.crm.MUser;
 import org.compiere.model.I_AD_Client;
 import org.compiere.orm.MSysConfig;
 import org.compiere.orm.MTree_Base;
 import org.compiere.orm.Query;
 import org.compiere.orm.X_AD_Tree;
-import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.compiere.webutil.EMail;

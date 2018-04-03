@@ -18,7 +18,7 @@ package org.compiere.wf;
 
 import java.util.logging.Level;
 
-import org.compiere.impl.MUser;
+import org.compiere.crm.MUser;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.StateEngine;
 import org.compiere.process.SvrProcess;

@@ -16,6 +16,7 @@
  *****************************************************************************/
 package org.compiere.webutil;
 
+import org.compiere.crm.X_AD_UserBPAccess;
 import org.compiere.impl.*;
 import org.compiere.orm.MDocType;
 import org.compiere.wf.MWFActivity;
@@ -216,7 +217,7 @@ public class WebInfo
 		m_infoMessage = null;
 		ArrayList<MOrder> list = new ArrayList<MOrder>();
 		if (m_wu != null && 
-			!m_wu.hasBPAccess(X_AD_UserBPAccess.BPACCESSTYPE_BusinessDocuments, 
+			!m_wu.hasBPAccess(X_AD_UserBPAccess.BPACCESSTYPE_BusinessDocuments,
 				new Object[] {MDocType.DOCBASETYPE_PurchaseOrder, MDocType.DOCBASETYPE_SalesOrder}))
 		{
 			log.info("No Access");

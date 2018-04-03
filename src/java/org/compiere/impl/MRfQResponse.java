@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.crm.MUser;
 import org.idempiere.common.util.DB;
 import org.compiere.webutil.EMail;
 import org.idempiere.common.util.Env;

@@ -17,7 +17,7 @@ package org.adempiere.base.event;
 import java.io.File;
 
 import org.compiere.impl.MClient;
-import org.compiere.impl.MUser;
+import org.compiere.crm.MUser;
 
 /**
  * 

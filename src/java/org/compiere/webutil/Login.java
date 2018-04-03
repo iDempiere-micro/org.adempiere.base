@@ -17,6 +17,8 @@
 package org.compiere.webutil;
 
 import org.compiere.Adempiere;
+import org.compiere.crm.MCountry;
+import org.compiere.crm.MUser;
 import org.compiere.impl.*;
 import org.compiere.impl.MClientInfo;
 import org.compiere.impl.MSystem;

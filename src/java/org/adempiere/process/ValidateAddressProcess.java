@@ -17,9 +17,9 @@ import java.sql.Timestamp;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
-import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.impl.MAddressTransaction;
 import org.compiere.impl.MLocation;
+import org.idempiere.common.exceptions.AdempiereException;
+import org.compiere.crm.MAddressTransaction;
 import org.compiere.orm.MSysConfig;
 import org.compiere.process.ProcessInfoLog;
 import org.compiere.process.ProcessInfoParameter;

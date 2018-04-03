@@ -23,6 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import org.compiere.crm.MBPGroup;
+import org.compiere.crm.MUser;
+import org.compiere.crm.X_C_BP_Group;
 import org.compiere.model.I_R_RequestAction;
 import org.compiere.model.I_R_RequestUpdate;
 import org.compiere.orm.Query;
@@ -156,7 +159,7 @@ public class MRequest extends X_R_Request
 	/**	BPartner					*/
 	private MBPartner		m_partner = null;
 	/** User/Contact				*/
-	private MUser			m_user = null;
+	private MUser m_user = null;
 
 	/** Separator line				*/
 	public static final String	SEPARATOR = 

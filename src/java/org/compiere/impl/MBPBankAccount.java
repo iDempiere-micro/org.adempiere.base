@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.Properties;
 
 import org.adempiere.util.PaymentUtil;
+import org.compiere.crm.MLocation;
+import org.compiere.crm.MUser;
 import org.compiere.model.I_C_BP_BankAccount;
 import org.compiere.orm.MSysConfig;
 import org.compiere.orm.Query;

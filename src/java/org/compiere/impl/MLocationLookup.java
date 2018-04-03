@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.crm.MLocation;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.KeyNamePair;
 import org.idempiere.common.util.NamePair;

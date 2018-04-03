@@ -20,6 +20,7 @@ import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Properties;
 
+import org.compiere.crm.MUser;
 import org.idempiere.common.util.DB;
 import org.compiere.util.Msg;
 

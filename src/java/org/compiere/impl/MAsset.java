@@ -10,6 +10,8 @@ import java.util.logging.Level;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.compiere.crm.MBPartnerLocation;
+import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.orm.MTable;
 import org.compiere.orm.Query;
 import org.idempiere.common.util.DB;
@@ -328,8 +330,8 @@ public class MAsset extends X_A_Asset
 		if (is_ValueChanged(COLUMNNAME_C_BPartner_Location_ID) && getC_BPartner_Location_ID() > 0)
 		{
 			// Goodwill BF: Error: MAsset cannot be cast to SetGetModel
-			SetGetUtil.copyValues(SetGetUtil.wrap(this), MBPartnerLocation.Table_Name, getC_BPartner_Location_ID(),
-					new String[]{MBPartnerLocation.COLUMNNAME_C_Location_ID}
+			SetGetUtil.copyValues(SetGetUtil.wrap(this), I_C_BPartner_Location.Table_Name, getC_BPartner_Location_ID(),
+					new String[]{I_C_BPartner_Location.COLUMNNAME_C_Location_ID}
 			);
 		}
 		//

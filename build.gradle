@@ -33,4 +33,8 @@ dependencies {
 
     compile project(':org.compiere.orm')
     compile files('../org.compiere.orm/bin')
+
+    compile project(':org.compiere.crm')
+    compile files('../org.compiere.crm/bin')
+
 }

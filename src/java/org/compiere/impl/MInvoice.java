@@ -29,6 +29,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.adempiere.base.Core;
+import org.compiere.crm.MBPartnerLocation;
+import org.compiere.crm.MUser;
+import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_C_InvoiceLine;
 import org.compiere.model.I_C_InvoiceTax;
@@ -461,7 +464,7 @@ public class MInvoice extends X_C_Invoice implements DocAction
 
 
 		//	Set Locations
-		MBPartnerLocation[] locs = bp.getLocations(false);
+		I_C_BPartner_Location[] locs = bp.getLocations(false);
 		if (locs != null)
 		{
 			for (int i = 0; i < locs.length; i++)

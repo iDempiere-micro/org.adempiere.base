@@ -16,7 +16,7 @@
  *****************************************************************************/
 package org.compiere.webutil;
 
-import org.compiere.impl.MCountry;
+import org.compiere.crm.MCountry;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Language;

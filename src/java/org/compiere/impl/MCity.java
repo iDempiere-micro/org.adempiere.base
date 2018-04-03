@@ -22,6 +22,7 @@ import java.text.Collator;
 import java.util.Comparator;
 import java.util.Properties;
 
+import org.compiere.crm.MRegion;
 import org.compiere.model.I_C_City;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;

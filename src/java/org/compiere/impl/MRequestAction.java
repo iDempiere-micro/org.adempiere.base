@@ -19,6 +19,7 @@ package org.compiere.impl;
 import java.sql.ResultSet;
 import java.util.Properties;
 
+import org.compiere.crm.MUser;
 import org.compiere.util.Msg;
 
 /**

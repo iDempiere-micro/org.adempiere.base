@@ -55,7 +55,7 @@ import java.util.logging.Level;
  *  @version  $Id: EMail.java,v 1.4 2006/07/30 00:54:35 jjanke Exp $
  *	@author	Michael Judd BF [ 2736995 ] - toURL() in java.io.File has been depreciated
  */
-public final class EMail implements Serializable
+public final class EMail extends org.compiere.crm.EMail implements Serializable
 {
 	/**
 	 * 
@@ -215,9 +215,6 @@ public final class EMail implements Serializable
 	private List<ValueNamePair> additionalHeaders = new ArrayList<ValueNamePair>();
 	/**	Mail Sent OK Status				*/
 	public static final String      SENT_OK = "OK";
-
-	/**	Logger							*/
-	protected transient static CLogger log = CLogger.getCLogger (EMail.class);
 
 	/**
 	 *	Send Mail direct
@@ -1163,23 +1160,6 @@ public final class EMail implements Serializable
 		return sb.toString ();
 	}	//	toString
 
-	/**
-	 * 	Validate format of an email address
-	 *  IDEMPIERE-1409
-	 *	@return true if email has proper format
-	 */
-	public static boolean validate(final String email) {
-		try
-		{
-			new InternetAddress (email, true);
-		}
-		catch (Exception e)
-		{
-			log.log(Level.WARNING, email + ": " + e.toString());
-			return false;
-		}
-		return true;
-	}
 
 	/**************************************************************************
 	 *  Test.

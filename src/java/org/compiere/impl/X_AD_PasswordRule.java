@@ -21,10 +21,11 @@ import java.sql.ResultSet;
 import java.util.Properties;
 
 import org.compiere.model.I_AD_PasswordRule;
+import org.compiere.orm.PO;
 import org.idempiere.orm.I_Persistent;
 import org.idempiere.common.util.KeyNamePair;
- 
- 
+import org.idempiere.orm.POInfo;
+
 
 /** Generated Model for AD_PasswordRule
  *  @author iDempiere (generated) 

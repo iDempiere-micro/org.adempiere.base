@@ -28,6 +28,9 @@ import java.util.Properties;
 import java.util.UUID;
 import java.util.logging.Level;
 
+import org.compiere.crm.MBPGroup;
+import org.compiere.crm.MBPartnerLocation;
+import org.compiere.crm.MLocation;
 import org.compiere.model.I_C_AcctSchema;
 import org.compiere.orm.*;
 import org.idempiere.common.exceptions.AdempiereException;

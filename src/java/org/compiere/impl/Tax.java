@@ -23,6 +23,7 @@ import java.sql.Timestamp;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.crm.MLocation;
 import org.idempiere.common.exceptions.DBException;
 import org.adempiere.exceptions.TaxCriteriaNotFoundException;
 import org.adempiere.exceptions.TaxForChangeNotFoundException;
@@ -561,7 +562,7 @@ public class Tax
 		}
 
 		MTax[] taxes = MTax.getAll (ctx);
-		MLocation lFrom = new MLocation (ctx, billFromC_Location_ID, trxName); 
+		MLocation lFrom = new MLocation (ctx, billFromC_Location_ID, trxName);
 		MLocation lTo = new MLocation (ctx, billToC_Location_ID, trxName); 
 		if (log.isLoggable(Level.FINER)){
 			log.finer("From=" + lFrom);

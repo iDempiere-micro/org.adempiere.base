@@ -33,6 +33,7 @@ import java.util.Properties;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
+import org.compiere.crm.MUser;
 import org.compiere.impl.*;
 import org.compiere.impl.MClient;
 import org.compiere.impl.MOrg;

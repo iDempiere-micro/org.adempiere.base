@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.crm.MUser;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.X_C_DocType;
 import org.compiere.process.DocAction;

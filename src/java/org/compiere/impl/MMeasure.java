@@ -26,6 +26,7 @@ import java.util.logging.Level;
 import javax.script.ScriptEngine;
 
 import org.adempiere.util.MeasureInterface;
+import org.compiere.crm.MUser;
 import org.compiere.orm.MRole;
 import org.compiere.orm.MTable;
 import org.idempiere.common.util.CCache;
