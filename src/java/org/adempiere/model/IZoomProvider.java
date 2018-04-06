@@ -15,7 +15,6 @@ package org.adempiere.model;
 
 import java.util.List;
 
-import org.compiere.impl.MQuery;
 import org.compiere.impl.PO;
 
 /**

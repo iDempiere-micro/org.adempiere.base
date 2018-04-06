@@ -37,13 +37,14 @@ import org.compiere.crm.MUser;
 import org.compiere.impl.*;
 import org.compiere.impl.MClient;
 import org.compiere.impl.MOrg;
+import org.compiere.impl.MProcess;
 import org.compiere.impl.PO;
 import org.compiere.orm.*;
 import org.compiere.orm.MRole;
+import org.compiere.process.*;
+import org.compiere.process2.DocAction;
+import org.compiere.process2.StateEngine;
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.process.DocAction;
-import org.compiere.process.ProcessInfo;
-import org.compiere.process.StateEngine;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
@@ -133,7 +134,7 @@ public class MWFActivity extends X_AD_WF_Activity implements Runnable
 		super (ctx, AD_WF_Activity_ID, trxName);
 		if (AD_WF_Activity_ID == 0)
 			throw new IllegalArgumentException ("Cannot create new WF Activity directly");
-		m_state = new StateEngine (getWFState());
+		m_state = new StateEngine(getWFState());
 	}	//	MWFActivity
 
 	/**

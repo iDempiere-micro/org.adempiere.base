@@ -24,6 +24,7 @@ import java.util.Iterator;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.rule.MRule;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
 

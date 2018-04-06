@@ -31,6 +31,7 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_AD_CtxHelpMsg;
 import org.compiere.orm.Query;
+import org.compiere.process.X_AD_Process;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

@@ -24,7 +24,7 @@ import org.compiere.impl.MProductCategory;
 import org.compiere.impl.MProject;
 import org.compiere.impl.MProduct;
 import org.compiere.impl.MAssetAddition;
-import org.compiere.process.DocAction;
+import org.compiere.process2.DocAction;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 

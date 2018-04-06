@@ -30,6 +30,7 @@ import javax.script.ScriptEngine;
 import org.adempiere.base.Core;
 import org.compiere.orm.MTable;
 import org.compiere.orm.Query;
+import org.compiere.rule.MRule;
 import org.compiere.webutil.Login;
 import org.idempiere.orm.EventManager;
 import org.idempiere.orm.EventProperty;

@@ -372,7 +372,7 @@ public abstract class PO extends org.compiere.orm.PO {
 
     /*
      * Classes which override save() method:
-     * org.compiere.process.DocActionTemplate
+     * DocActionTemplate
      * MClient
      * MClientInfo
      * MSystem

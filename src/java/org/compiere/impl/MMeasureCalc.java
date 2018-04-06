@@ -26,6 +26,7 @@ import java.util.logging.Level;
 import org.compiere.model.I_PA_MeasureCalc;
 import org.compiere.orm.MRole;
 import org.compiere.orm.MTable;
+import org.compiere.query.MQuery;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -208,7 +209,7 @@ public class MMeasureCalc extends X_PA_MeasureCalc
 	 *	@return query
 	 */
 	public MQuery getQuery(MGoalRestriction[] restrictions,
-                           String MeasureDisplay, Timestamp date, MRole role)
+						   String MeasureDisplay, Timestamp date, MRole role)
 	{
 		MQuery query = new MQuery(getAD_Table_ID());
 		//

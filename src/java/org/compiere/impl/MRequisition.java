@@ -30,8 +30,8 @@ import org.compiere.orm.MDocType;
 import org.compiere.orm.MSequence;
 import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.process.DocAction;
-import org.compiere.process.DocumentEngine;
+import org.compiere.process2.DocAction;
+import org.compiere.process2.DocumentEngine;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
 

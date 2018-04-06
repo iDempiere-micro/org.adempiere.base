@@ -24,7 +24,7 @@ import java.util.logging.Level;
 import org.idempiere.orm.PO;
 import org.compiere.orm.Query;
 import org.compiere.impl.X_AD_WF_NodeNext;
-import org.compiere.process.DocAction;
+import org.compiere.process2.DocAction;
 import org.idempiere.common.util.Env;
 
 /**

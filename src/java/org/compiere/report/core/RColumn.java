@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Properties;
 
-import org.compiere.impl.MLookupFactory;
+import org.compiere.lookups.MLookupFactory;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Language;

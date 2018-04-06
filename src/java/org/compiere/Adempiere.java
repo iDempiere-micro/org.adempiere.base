@@ -18,6 +18,7 @@ package org.compiere;
 
 import org.adempiere.base.Core;
 import org.compiere.impl.MClient;
+import org.compiere.lookups.MLookup;
 import org.compiere.orm.MSysConfig;
 import org.compiere.impl.MSystem;
 import org.compiere.impl.ModelValidationEngine;
@@ -79,10 +80,10 @@ public final class Adempiere implements ISystemImpl
 
 	/**	Logging								*/
 	private  CLogger		log = null;
-	
+
 	/** Thread pool **/
 	private  ScheduledThreadPoolExecutor threadPoolExecutor = null;
-	
+
 /* DAP
 	 {
 		ClassLoader loader = Adempiere.class.getClassLoader();
@@ -129,7 +130,7 @@ public final class Adempiere implements ISystemImpl
 		return "Unknown";
 	}   //  getVersion
 
-	public  boolean isVersionShown(){ 
+	public  boolean isVersionShown(){
 		return MSysConfig.getBooleanValue(MSysConfig.APPLICATION_MAIN_VERSION_SHOWN, true);
 	}
 
@@ -152,19 +153,19 @@ public final class Adempiere implements ISystemImpl
 		return MSysConfig.getBooleanValue(MSysConfig.APPLICATION_OS_INFO_SHOWN, defaultVal);
 	}
 
-	public  boolean isHostShown() 
+	public  boolean isHostShown()
 	{
 		boolean defaultVal = MSystem.get(Env.getCtx()).getSystemStatus().equalsIgnoreCase("P") ? false : true;
 		return MSysConfig.getBooleanValue(MSysConfig.APPLICATION_HOST_SHOWN, defaultVal);
 	}
 
-	public  String getDatabaseVersion() 
+	public  String getDatabaseVersion()
 	{
 //		return DB.getSQLValueString(null, "select lastmigrationscriptapplied from ad_system");
 		return MSysConfig.getValue(MSysConfig.APPLICATION_DATABASE_VERSION,
 				DB.getSQLValueString(null, "select lastmigrationscriptapplied from ad_system"));
 	}
-	
+
 	/**
 	 *	Short Summary (Windows)
 	 *  @return summary
@@ -394,7 +395,7 @@ public final class Adempiere implements ISystemImpl
 			System.exit(1);
 
 		Ini.getIni().setClient(isClient);		//	init logging in Ini
-		
+
 		if (! isClient)  // Calling this on client is dropping the link with eclipse console
 			CLogMgt.initialize(isClient);
 		//	Init Log
@@ -431,7 +432,7 @@ public final class Adempiere implements ISystemImpl
 				}
 			}
 		}
-		
+
 		//	Set UI
 		if (isClient)
 		{
@@ -442,7 +443,7 @@ public final class Adempiere implements ISystemImpl
 		//  Set Default Database Connection from Ini
 		DB.setDBTarget(CConnection.get(getCodeBaseHost()));
 		createThreadPool();
-				
+
 		if (isClient)		//	don't test connection
 			return false;	//	need to call
 
@@ -462,10 +463,10 @@ public final class Adempiere implements ISystemImpl
 		if (max <= 0) {
 			max = defaultMax;
 		}
-		
+
 		// start thread pool
-		threadPoolExecutor = new ScheduledThreadPoolExecutor(max);		
-		
+		threadPoolExecutor = new ScheduledThreadPoolExecutor(max);
+
 		//Trx.startTrxMonitor(); TODO DAP the other way around
 	}
 
@@ -484,7 +485,7 @@ public final class Adempiere implements ISystemImpl
 			log.severe ("No Database");
 			return false;
 		}
-		
+
 		//	Check Build
 		if (!DB.isBuildOK(Env.getCtx()))
 		{
@@ -493,11 +494,11 @@ public final class Adempiere implements ISystemImpl
 			log = null;
 			return false;
 		}
-		
+
 		MSystem system = MSystem.get(Env.getCtx());	//	Initializes Base Context too
 		if (system == null)
 			return false;
-		
+
 		//	Initialize main cached Singletons
 		ModelValidationEngine.get();
 		try
@@ -538,24 +539,24 @@ public final class Adempiere implements ISystemImpl
 		{
 			log.warning("Not started: " + className + " - " + e.getMessage());
 		}
-		
+
 		if (!isClient)
 			DB.updateMail();
-				
+
 		return true;
 	}	//	startupEnvironment
 
 	public  URL getResource(String name) {
 		return Core.getResourceFinder().getResource(name);
 	}
-	
+
 	public  synchronized void stop() {
 		if (threadPoolExecutor != null) {
 			threadPoolExecutor.shutdown();
 		}
 		log = null;
 	}
-	
+
 	public  ScheduledThreadPoolExecutor getThreadPoolExecutor() {
 		return threadPoolExecutor;
 	}
@@ -565,10 +566,16 @@ public final class Adempiere implements ISystemImpl
 	}
 
     private static Adempiere instance;
-    
+
     public Adempiere(){
 		instance = this;
-	}	
+
+		try {
+			MLookup.setThreadPoolExecutor(getThreadPoolExecutor());
+		} catch ( AdempiereSystemError ex ) {
+			ex.printStackTrace();
+		}
+	}
 
     public static Adempiere getI(){
         if(instance == null){

@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
+import org.compiere.process2.DocAction;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.exceptions.DBException;
 import org.compiere.impl.MAccount;
@@ -522,7 +523,7 @@ public class GLJournalGenerate extends SvrProcess
 		if (j != null && p_DocAction != null) {
 			// DocAction
 			if (!j.processIt(p_DocAction))
-				throw new AdempiereException("Couldn't set docAction: " + p_DocAction + ((org.compiere.process.DocAction) j).getProcessMsg()+ " journal");
+				throw new AdempiereException("Couldn't set docAction: " + p_DocAction + ((DocAction) j).getProcessMsg()+ " journal");
 			j.saveEx();
 		}
 		

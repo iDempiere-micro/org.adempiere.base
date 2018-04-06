@@ -37,7 +37,7 @@ import org.compiere.model.I_M_MatchInv;
 import org.compiere.model.I_M_MatchPO;
 import org.compiere.model.I_M_Production;
 import org.compiere.orm.MDocType;
-import org.compiere.process.DocumentEngine;
+import org.compiere.process2.DocumentEngine;
 import org.idempiere.common.util.AdempiereUserError;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

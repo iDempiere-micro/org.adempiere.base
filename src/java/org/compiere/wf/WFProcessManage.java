@@ -20,7 +20,7 @@ import java.util.logging.Level;
 
 import org.compiere.crm.MUser;
 import org.compiere.process.ProcessInfoParameter;
-import org.compiere.process.StateEngine;
+import org.compiere.process2.StateEngine;
 import org.compiere.process.SvrProcess;
 
 /**

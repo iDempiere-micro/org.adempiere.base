@@ -19,8 +19,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 
-import org.compiere.impl.MQuery;
 import org.compiere.impl.PO;
+import org.compiere.query.MQuery;
 import org.idempiere.common.util.CLogger;
 
 /**

@@ -23,8 +23,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.query.MQuery;
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.impl.MQuery;
 import org.compiere.orm.MRole;
 import org.compiere.orm.MSequence;
 import org.compiere.orm.MSysConfig;

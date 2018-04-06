@@ -19,8 +19,8 @@ package org.eevolution.process;
 
 
 import org.compiere.Adempiere;
-import org.compiere.impl.*;
 import org.compiere.orm.*;
+import org.compiere.process.MPInstance;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.SystemIDs;

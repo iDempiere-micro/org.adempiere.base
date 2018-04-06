@@ -27,7 +27,6 @@ import java.util.logging.Level;
 import java.util.regex.Pattern;
 
 import org.adempiere.base.Core;
-import org.compiere.crm.MBPartnerLocation;
 import org.compiere.crm.MUser;
 import org.compiere.model.*;
 import org.compiere.orm.*;
@@ -37,8 +36,8 @@ import org.adempiere.exceptions.BPartnerNoShipToAddressException;
 import org.adempiere.exceptions.FillMandatoryException;
 import org.adempiere.model.ITaxProvider;
 import org.adempiere.process.SalesOrderRateInquiryProcess;
-import org.compiere.process.DocAction;
-import org.compiere.process.DocumentEngine;
+import org.compiere.process2.DocAction;
+import org.compiere.process2.DocumentEngine;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

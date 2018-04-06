@@ -17,6 +17,7 @@
 
 package org.compiere.impl;
 
+import org.compiere.bo.MOpportunity;
 import org.idempiere.common.util.CLogger;
  
 

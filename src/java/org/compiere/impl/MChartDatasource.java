@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
+import org.compiere.query.MQuery;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

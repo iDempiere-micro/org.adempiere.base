@@ -20,10 +20,10 @@ import java.sql.Timestamp;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.adempiere.util.IProcessUI;
 import org.adempiere.util.PaymentUtil;
 import org.compiere.orm.MSysConfig;
-import org.compiere.process.DocAction;
+import org.compiere.process2.DocAction;
+import org.compiere.process.IProcessUI;
 import org.compiere.process.ProcessCall;
 import org.compiere.process.ProcessInfo;
 import org.idempiere.common.util.Env;

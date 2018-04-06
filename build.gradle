@@ -37,4 +37,18 @@ dependencies {
     compile project(':org.compiere.crm')
     compile files('../org.compiere.crm/bin')
 
+    compile project(':org.compiere.bo')
+    compile files('../org.compiere.bo/bin')
+
+    compile project(':org.compiere.process')
+    compile files('../org.compiere.process/bin')
+
+    compile project(':org.compiere.query')
+    compile files('../org.compiere.query/bin')
+
+    compile project(':org.compiere.lookups')
+    compile files('../org.compiere.lookups/bin')
+
+    compile project(':org.compiere.rule')
+    compile files('../org.compiere.rule/bin')
 }

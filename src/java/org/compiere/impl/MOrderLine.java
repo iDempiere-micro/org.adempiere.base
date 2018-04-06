@@ -25,7 +25,7 @@ import java.util.logging.Level;
 import org.adempiere.base.Core;
 import org.compiere.orm.MRole;
 import org.idempiere.common.exceptions.AdempiereException;
-import org.adempiere.exceptions.ProductNotOnPriceListException;
+import org.adempiere.exceptions2.ProductNotOnPriceListException;
 import org.adempiere.model.ITaxProvider;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

@@ -28,13 +28,13 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.logging.Level;
 
+import org.compiere.query.MQuery;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.PORelationException;
 import org.adempiere.model.ZoomInfoFactory.ZoomInfo;
 import org.compiere.model.I_AD_Ref_Table;
 import org.idempiere.orm.Lookup;
 import org.compiere.orm.MColumn;
-import org.compiere.impl.MQuery;
 import org.compiere.orm.MRefTable;
 import org.compiere.orm.MTable;
 import org.compiere.impl.PO;

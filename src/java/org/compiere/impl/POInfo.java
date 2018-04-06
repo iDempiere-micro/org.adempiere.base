@@ -1,5 +1,6 @@
 package org.compiere.impl;
 
+import org.compiere.lookups.MLookupFactory;
 import org.compiere.model.I_AD_Table;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.Env;

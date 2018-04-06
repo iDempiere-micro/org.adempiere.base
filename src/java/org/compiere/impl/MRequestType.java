@@ -26,6 +26,7 @@ import java.util.logging.Level;
 import org.compiere.model.I_R_RequestType;
 import org.compiere.orm.MRole;
 import org.compiere.orm.Query;
+import org.compiere.query.MQuery;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
@@ -464,7 +465,7 @@ public class MRequestType extends X_R_RequestType
 	 *	@return query
 	 */
 	public MQuery getQuery(MGoalRestriction[] restrictions,
-                           String MeasureDisplay, Timestamp date, int R_Status_ID, MRole role)
+						   String MeasureDisplay, Timestamp date, int R_Status_ID, MRole role)
 	{
 		String dateColumn = "Created";
 		String orgColumn = "AD_Org_ID";

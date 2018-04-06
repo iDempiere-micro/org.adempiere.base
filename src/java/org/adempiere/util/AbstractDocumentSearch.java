@@ -40,10 +40,10 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_C_Payment;
 import org.compiere.orm.MColumn;
-import org.compiere.impl.MQuery;
 import org.compiere.orm.MRole;
 import org.compiere.impl.MSearchDefinition;
 import org.compiere.orm.MTable;
+import org.compiere.query.MQuery;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

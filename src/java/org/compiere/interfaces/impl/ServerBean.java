@@ -19,12 +19,13 @@ package org.compiere.interfaces.impl;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.adempiere.util.ProcessUtil;
 import org.compiere.acct.Doc;
 import org.compiere.interfaces.Server;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MTask;
 import org.compiere.process.ProcessInfo;
+import org.compiere.process.ProcessUtil;
+import org.compiere.process2.ServerProcessCtl;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.CacheMgt;
 import org.compiere.webutil.EMail;
@@ -91,7 +92,7 @@ public class ServerBean implements Server
 	public ProcessInfo workflow (Properties ctx, ProcessInfo pi, int AD_Workflow_ID)
 	{
 		if (log.isLoggable(Level.INFO)) log.info ("AD_Workflow_ID=" + AD_Workflow_ID);
-		ProcessUtil.startWorkFlow(ctx, pi, AD_Workflow_ID);
+		ServerProcessCtl.startWorkFlow(ctx, pi, AD_Workflow_ID);
 		return pi;
 	}	//	workflow
 

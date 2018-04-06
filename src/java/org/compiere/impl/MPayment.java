@@ -29,14 +29,12 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_C_Payment;
 import org.compiere.orm.*;
+import org.compiere.process.*;
+import org.compiere.process2.DocAction;
+import org.compiere.process2.DocumentEngine;
 import org.idempiere.common.exceptions.AdempiereException;
-import org.adempiere.exceptions.PeriodClosedException;
-import org.adempiere.util.IProcessUI;
+import org.adempiere.exceptions2.PeriodClosedException;
 import org.adempiere.util.PaymentUtil;
-import org.compiere.process.DocAction;
-import org.compiere.process.DocumentEngine;
-import org.compiere.process.ProcessCall;
-import org.compiere.process.ProcessInfo;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

@@ -23,7 +23,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.idempiere.common.exceptions.AdempiereException;
-import org.adempiere.exceptions.NegativeInventoryDisallowedException;
+import org.adempiere.exceptions2.NegativeInventoryDisallowedException;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;

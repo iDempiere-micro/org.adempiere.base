@@ -26,6 +26,7 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_C_ProjectType;
 import org.compiere.orm.MRole;
+import org.compiere.query.MQuery;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;
 
@@ -274,7 +275,7 @@ public class MProjectType extends X_C_ProjectType
 	 *	@return query
 	 */
 	public MQuery getQuery(MGoalRestriction[] restrictions,
-                           String MeasureDisplay, Timestamp date, int C_Phase_ID, MRole role)
+						   String MeasureDisplay, Timestamp date, int C_Phase_ID, MRole role)
 	{
 		String dateColumn = "Created";
 		String orgColumn = "AD_Org_ID";

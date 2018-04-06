@@ -16,6 +16,7 @@ Import-Package: !bsh*,\
  !org.idempiere.fa.process*,\
  !org.idempiere.fa.util*,\
  !org.idempiere.util2*,\
+ !org.adempiere.base*,\
  *
 Export-Package: \
  bsh*, \
@@ -53,7 +54,7 @@ Export-Package: \
  org.compiere.impl*, \
  org.compiere.print*, \
  org.compiere.print.layout*, \
- org.compiere.process*, \
+ org.compiere.process2*, \
  org.compiere.report*, \
  org.compiere.report.core*, \
  org.compiere.sla*, \

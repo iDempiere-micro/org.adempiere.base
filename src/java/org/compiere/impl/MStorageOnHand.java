@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.adempiere.exceptions.NegativeInventoryDisallowedException;
+import org.adempiere.exceptions2.NegativeInventoryDisallowedException;
 import org.compiere.model.I_M_AttributeSetInstance;
 import org.compiere.orm.Query;
 import org.idempiere.common.util.CLogger;

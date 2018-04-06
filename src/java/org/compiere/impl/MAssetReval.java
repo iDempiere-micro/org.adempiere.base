@@ -11,8 +11,8 @@ import java.util.Properties;
 
 import org.compiere.orm.MDocType;
 import org.idempiere.common.exceptions.AdempiereException;
-import org.compiere.process.DocAction;
-import org.compiere.process.DocumentEngine;
+import org.compiere.process2.DocAction;
+import org.compiere.process2.DocumentEngine;
 import org.idempiere.common.util.Env;
 import org.compiere.webutil.TimeUtil;
 

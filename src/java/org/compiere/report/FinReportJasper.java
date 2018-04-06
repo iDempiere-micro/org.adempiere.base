@@ -20,11 +20,11 @@ import java.sql.CallableStatement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-import org.adempiere.util.ProcessUtil;
-import org.compiere.impl.MPInstance;
 import org.compiere.impl.MProcess;
+import org.compiere.process.MPInstance;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.ProcessInfoParameter;
+import org.compiere.process.ProcessUtil;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;

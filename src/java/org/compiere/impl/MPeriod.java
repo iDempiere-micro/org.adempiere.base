@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.adempiere.exceptions.PeriodClosedException;
+import org.adempiere.exceptions2.PeriodClosedException;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.MOrgInfo;
 import org.compiere.orm.MTable;

@@ -27,7 +27,7 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 
 import org.adempiere.exceptions.FillMandatoryException;
-import org.adempiere.util.IProcessUI;
+import org.compiere.process.IProcessUI;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Language;
