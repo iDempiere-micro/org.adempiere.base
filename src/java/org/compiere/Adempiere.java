@@ -408,7 +408,7 @@ public final class Adempiere implements ISystemImpl
 	//	EnvLoader.load(Ini.getIni().ENV_PREFIX);
 
 		//  System properties
-		Ini.getIni().loadProperties (false);
+		Ini.getIni().getProperties();
 
 		//	Set up Log
 		/*
