@@ -729,4 +729,15 @@ public class MTree extends MTree_Base
 		sb.append("]");
 		return sb.toString();
 	}
+
+	/**
+	 * 	Load Constructor
+	 *	@param ctx context
+	 *	@param rs result set
+	 *	@param trxName transaction
+	 */
+	public MTree (Properties ctx, ResultSet rs, String trxName)
+	{
+		super(ctx, rs, trxName);
+	}	//	MTree_Base
 }   //  MTree
