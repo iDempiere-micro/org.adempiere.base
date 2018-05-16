@@ -1,9 +1,10 @@
 package org.compiere.impl;
 
-import org.adempiere.process.UUIDGenerator;
 import org.compiere.acct.Doc;
 import org.compiere.model.I_C_ElementValue;
 import org.compiere.orm.*;
+import org.compiere.product.MAttributeInstance;
+import org.compiere.product.UUIDGenerator;
 import org.compiere.util.DisplayType;
 import org.compiere.util.Msg;
 import org.idempiere.common.exceptions.AdempiereException;
@@ -20,7 +21,7 @@ import java.sql.*;
 import java.util.*;
 import java.util.logging.Level;
 
-public abstract class PO extends org.compiere.orm.PO {
+public abstract class PO extends org.compiere.orm.PO implements IPODoc {
 
     public PO(Properties ctx) {
         super(ctx);
@@ -46,28 +47,6 @@ public abstract class PO extends org.compiere.orm.PO {
     protected POInfo getP_info2() {
         return (POInfo)super.p_info;
     }
-
-    /**************************************************************************
-     * 	Get Attachments.
-     * 	An attachment may have multiple entries
-     *	@return Attachment or null
-     */
-    public MAttachment getAttachment ()
-    {
-        return getAttachment(false);
-    }	//	getAttachment
-
-    /**
-     * 	Get Attachments
-     * 	@param requery requery
-     *	@return Attachment or null
-     */
-    public MAttachment getAttachment (boolean requery)
-    {
-        if (m_attachment == null || requery)
-            m_attachment = MAttachment.get (getCtx(), p_info.getAD_Table_ID(), get_ID());
-        return m_attachment;
-    }	//	getAttachment
 
     /**
      * 	Create/return Attachment for PO.
@@ -200,29 +179,6 @@ public abstract class PO extends org.compiere.orm.PO {
     {
         return set_Value (ColumnName, value);
     }   //  setValueE
-
-    /* FR 2962094 - Finish implementation of weighted average costing
-       Fill the column ProcessedOn (if it exists) with a bigdecimal representation of current timestamp (with nanoseconds)
-    */
-    public void setProcessedOn(String ColumnName, Object value, Object oldValue) {
-        if ("Processed".equals(ColumnName)
-                && value instanceof Boolean
-                && ((Boolean)value).booleanValue() == true
-                && (oldValue == null
-                || (oldValue instanceof Boolean
-                && ((Boolean)oldValue).booleanValue() == false))) {
-            if (get_ColumnIndex("ProcessedOn") > 0) {
-                // fill processed on column
-                //get current time from db
-                Timestamp ts = DB.getSQLValueTS(null, "SELECT CURRENT_TIMESTAMP FROM DUAL");
-                long mili = ts.getTime();
-                int nano = ts.getNanos();
-                double doublets = Double.parseDouble(Long.toString(mili) + "." + Integer.toString(nano));
-                BigDecimal bdtimestamp = BigDecimal.valueOf(doublets);
-                set_Value("ProcessedOn", bdtimestamp);
-            }
-        }
-    }
 
 
     /**
@@ -1636,49 +1592,6 @@ public abstract class PO extends org.compiere.orm.PO {
         return success;
     }	//	delete
 
-    /**
-     * Delete Current Record
-     * @param force delete also processed records
-     * @throws AdempiereException
-     * @see #delete(boolean)
-     */
-    public void deleteEx(boolean force) throws AdempiereException
-    {
-        if (!delete(force)) {
-            String msg = null;
-            ValueNamePair err = CLogger.retrieveError();
-            if (err != null)
-                msg = err.getName();
-            if (msg == null || msg.length() == 0)
-                msg = "DeleteError";
-            throw new AdempiereException(msg);
-        }
-    }
-
-    /**
-     * 	Delete Current Record
-     * 	@param force delete also processed records
-     *	@param trxName transaction
-     *	@return true if deleted
-     */
-    public boolean delete (boolean force, String trxName)
-    {
-        set_TrxName(trxName);
-        return delete (force);
-    }	//	delete
-
-    /**
-     * Delete Current Record
-     * @param force delete also processed records
-     * @param trxName transaction
-     * @throws AdempiereException
-     * @see {@link #deleteEx(boolean)}
-     */
-    public void deleteEx(boolean force, String trxName) throws AdempiereException
-    {
-        set_TrxName(trxName);
-        deleteEx(force);
-    }
 
     /**
      * 	Insert (missing) Translation Records

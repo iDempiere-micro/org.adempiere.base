@@ -17,6 +17,7 @@
  *****************************************************************************/
 package org.compiere.impl;
 
+import org.idempiere.icommon.model.IPO;
 import org.idempiere.orm.IEventTopics;
  
 
@@ -187,7 +188,7 @@ public interface ModelValidator
      *	@return error message or null
      *	@exception Exception if the recipient wishes the change to be not accept.
      */
-	public String modelChange (PO po, int type) throws Exception;
+	public String modelChange (IPO po, int type) throws Exception;
 
 
 	/**
@@ -201,6 +202,6 @@ public interface ModelValidator
      *	@return error message or null -
      *	if not null, the document will be marked as Invalid.
 	 */
-	public String docValidate (PO po, int timing);
+	public String docValidate (IPO po, int timing);
 
 }	//	ModelValidator

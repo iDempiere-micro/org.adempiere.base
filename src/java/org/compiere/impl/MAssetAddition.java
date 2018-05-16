@@ -11,10 +11,12 @@ import java.util.logging.Level;
 import org.adempiere.exceptions.FillMandatoryException;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.Query;
-import org.compiere.process2.DocAction;
+import org.compiere.orm.SetGetUtil;
+import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process2.ProjectClose;
+import org.compiere.product.MAttributeSetInstance;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -380,7 +382,7 @@ public class MAssetAddition extends X_A_Asset_Addition
 	 * @param M_MatchInv_ID - matching invoice id
 	 * @param newRecord new object model is created
 	 */
-	public static boolean setM_MatchInv(SetGetModel model, int M_MatchInv_ID)
+	public static boolean setM_MatchInv(org.compiere.impl.SetGetModel model, int M_MatchInv_ID)
 	{
 		boolean newRecord = false;
 		String trxName = null;

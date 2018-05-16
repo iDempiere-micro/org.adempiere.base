@@ -9,6 +9,8 @@ import java.sql.Timestamp;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.orm.SetGetUtil;
+import org.compiere.product.MCurrency;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
@@ -36,8 +38,8 @@ public final class MConversionRateUtil
 	 * @param	changedColumnName	the column that has changed (the controller); optional
 	 * @return	converted amount or null if error
 	 */
-	public static BigDecimal convertBase(SetGetModel model, String DateName,
-			String SourceAmtName, String AmtName, String changedColumnName)
+	public static BigDecimal convertBase(org.compiere.impl.SetGetModel model, String DateName,
+										 String SourceAmtName, String AmtName, String changedColumnName)
 	{
 		// If Currency changed, reset rate
 		if (changedColumnName != null && "C_Currency_ID".equalsIgnoreCase(changedColumnName))

@@ -22,6 +22,7 @@ import java.sql.Timestamp;
 import java.util.Properties;
 
 import org.compiere.model.I_C_CashLine;
+import org.compiere.model.I_C_Invoice;
 import org.compiere.orm.MDocType;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.DB;
@@ -98,7 +99,7 @@ public class MCashLine extends X_C_CashLine
 	/** Bank Account			*/
 	private MBankAccount 	m_bankAccount = null;
 	/** Invoice					*/
-	private MInvoice		m_invoice = null;
+	private I_C_Invoice		m_invoice = null;
 	
 
 	/**
@@ -163,7 +164,7 @@ public class MCashLine extends X_C_CashLine
 			// end added
 			order.saveEx(trxName);
 			//	Set Invoice
-			MInvoice[] invoices = order.getInvoices();
+			I_C_Invoice[] invoices = order.getInvoices();
 			int length = invoices.length;
 			if (length > 0)		//	get last invoice
 			{
@@ -263,7 +264,7 @@ public class MCashLine extends X_C_CashLine
 	 * 	Get Invoice
 	 *	@return invoice
 	 */
-	public MInvoice getInvoice()
+	public I_C_Invoice getInvoice()
 	{
 		if (m_invoice == null && getC_Invoice_ID() != 0)
 			m_invoice = MInvoice.get(getCtx(), getC_Invoice_ID());

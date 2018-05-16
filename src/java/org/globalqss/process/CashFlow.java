@@ -24,14 +24,14 @@ import java.util.Calendar;
 import java.util.logging.Level;
 
 import org.compiere.impl.MAcctSchemaElement;
-import org.compiere.impl.MCurrency;
 import org.compiere.impl.MFactAcct;
 import org.compiere.impl.MInvoice;
 import org.compiere.impl.MOrder;
-import org.compiere.impl.MOrderPaySchedule;
+import org.compiere.order.MOrderPaySchedule;
 import org.compiere.impl.X_T_CashFlow;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
+import org.compiere.product.MCurrency;
 import org.compiere.report.MReportTree;
 import org.idempiere.common.util.AdempiereSystemError;
 import org.idempiere.common.util.DB;

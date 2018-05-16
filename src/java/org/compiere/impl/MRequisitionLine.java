@@ -24,7 +24,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.adempiere.base.Core;
-import org.adempiere.base.IProductPricing;
+import org.compiere.order.MCharge;
+import org.compiere.product.IProductPricing;
 import org.compiere.model.I_M_Product;
 import org.compiere.model.I_M_Requisition;
 import org.compiere.model.I_M_RequisitionLine;
@@ -238,7 +239,7 @@ public class MRequisitionLine extends X_M_RequisitionLine
 			return;
 		//
 		if (log.isLoggable(Level.FINE)) log.fine("M_PriceList_ID=" + M_PriceList_ID);
-		IProductPricing pp = Core.getProductPricing();
+		IProductPricing pp = MProduct.getProductPricing();
 		pp.setRequisitionLine(this, get_TrxName());
 		pp.setM_PriceList_ID(M_PriceList_ID);
 	//	pp.setPriceDate(getDateOrdered());

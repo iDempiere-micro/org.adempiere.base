@@ -27,30 +27,19 @@ import java.util.Properties;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 
+import org.compiere.impl.*;
+import org.compiere.process.DocAction;
+import org.idempiere.icommon.model.IPO;
 import org.idempiere.orm.EventManager;
 import org.idempiere.orm.EventProperty;
 import org.idempiere.orm.IEventTopics;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.acct.Doc;
-import org.compiere.impl.MAcctSchema;
-import org.compiere.impl.MAllocationHdr;
-import org.compiere.impl.MBankStatement;
-import org.compiere.impl.MCash;
-import org.compiere.impl.MClient;
 import org.compiere.orm.MColumn;
-import org.compiere.impl.MInOut;
-import org.compiere.impl.MInventory;
-import org.compiere.impl.MInvoice;
-import org.compiere.impl.MJournal;
-import org.compiere.impl.MJournalBatch;
-import org.compiere.impl.MMovement;
-import org.compiere.impl.MOrder;
-import org.compiere.impl.MPayment;
-import org.compiere.impl.MProduction;
-import org.compiere.impl.MRMA;
+import org.compiere.order.MInOut;
+import org.compiere.order.MRMA;
 import org.compiere.orm.MRole;
 import org.compiere.orm.MTable;
-import org.compiere.impl.PO;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -322,7 +311,7 @@ public class DocumentEngine implements DocAction
 			if (m_document != null && ok)
 			{
 				// PostProcess documents when invoice or inout (this is to postprocess the generated MatchPO and MatchInv if any)
-				ArrayList<PO> docsPostProcess = new ArrayList<PO>();
+				ArrayList<org.compiere.orm.PO> docsPostProcess = new ArrayList<org.compiere.orm.PO>();
 				if (m_document instanceof MInvoice || m_document instanceof MInOut) {
 					if (m_document instanceof MInvoice) {
 						docsPostProcess  = ((MInvoice) m_document).getDocsPostProcess();
@@ -333,7 +322,7 @@ public class DocumentEngine implements DocAction
 				}
 				if (m_document instanceof PO && docsPostProcess.size() > 0) {
 					// Process (this is to update the ProcessedOn flag with a timestamp after the original document)
-					for (PO docafter : docsPostProcess) {
+					for (org.compiere.orm.PO docafter : docsPostProcess) {
 						docafter.setProcessedOn("Processed", true, false);
 						docafter.saveEx();
 					}
@@ -345,7 +334,7 @@ public class DocumentEngine implements DocAction
 					postIt();
 
 					if (m_document instanceof PO && docsPostProcess.size() > 0) {
-						for (PO docafter : docsPostProcess) {
+						for (org.compiere.orm.PO docafter : docsPostProcess) {
 							@SuppressWarnings("unused")
 							String ignoreError = DocumentEngine.postImmediate(docafter.getCtx(), docafter.getAD_Client_ID(), docafter.get_Table_ID(), docafter.get_ID(), true, docafter.get_TrxName());
 						}

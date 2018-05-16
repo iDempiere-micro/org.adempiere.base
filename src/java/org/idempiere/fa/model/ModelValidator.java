@@ -9,11 +9,13 @@ import java.util.logging.Level;
 import org.adempiere.exceptions.FillMandatoryException;
 import org.compiere.acct.Fact;
 import org.compiere.impl.*;
+import org.compiere.impl.SetGetModel;
+import org.compiere.orm.SetGetUtil;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.fa.exceptions.AssetInvoiceWithMixedLines_LRO;
 import org.idempiere.fa.exceptions.AssetProductStockedException;
-
+import org.idempiere.icommon.model.IPO;
 
 
 /**
@@ -54,11 +56,12 @@ implements org.compiere.impl.ModelValidator, FactsValidator
 		return null;
 	}
 
-	public String modelChange(PO po, int type) throws Exception
+	public String modelChange(IPO po, int type) throws Exception
 	{
 		if (po instanceof MMatchInv
 				&& (TYPE_AFTER_NEW == type 
-						|| (TYPE_AFTER_CHANGE == type && po.is_ValueChanged(MMatchInv.COLUMNNAME_Processed))))
+						|| (TYPE_AFTER_CHANGE == type && (po instanceof org.idempiere.orm.PO)
+		&& ((org.idempiere.orm.PO)po).is_ValueChanged(MMatchInv.COLUMNNAME_Processed))))
 		{
 			MMatchInv mi = (MMatchInv)po;
 			if (mi.isProcessed())
@@ -85,7 +88,7 @@ implements org.compiere.impl.ModelValidator, FactsValidator
 		
 	}
 
-	public String docValidate(PO po, int timing)
+	public String docValidate(IPO po, int timing)
 	{
 			
 		if (log.isLoggable(Level.INFO)) log.info(po.get_TableName() + " Timing: " + timing);
@@ -250,7 +253,7 @@ implements org.compiere.impl.ModelValidator, FactsValidator
 	
 
 	
-	public String factsValidate(MAcctSchema schema, List<Fact> facts, PO po) {
+	public String factsValidate(MAcctSchema schema, List<Fact> facts, IPO po) {
 		// TODO: implement it
 		return null;
 	}

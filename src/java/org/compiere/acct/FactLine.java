@@ -28,12 +28,12 @@ import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MAcctSchemaElement;
 import org.compiere.impl.MConversionRate;
-import org.compiere.impl.MCurrency;
 import org.compiere.impl.MFactAcct;
 import org.compiere.impl.MMovement;
 import org.compiere.impl.MRevenueRecognitionPlan;
 import org.compiere.impl.X_C_AcctSchema_Element;
 import org.compiere.impl.X_Fact_Acct;
+import org.compiere.product.MCurrency;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

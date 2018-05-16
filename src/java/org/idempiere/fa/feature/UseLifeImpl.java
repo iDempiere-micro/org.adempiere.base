@@ -10,7 +10,7 @@ import java.util.logging.Level;
 //import MAssetClass; //commented by @win
 import org.compiere.impl.PO;
 import org.compiere.impl.SetGetModel;
-import org.compiere.impl.SetGetUtil;
+import org.compiere.orm.SetGetUtil;
 import org.idempiere.common.util.CLogger;
 import org.compiere.webutil.TimeUtil;
 

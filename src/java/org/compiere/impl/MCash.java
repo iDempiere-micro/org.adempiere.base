@@ -26,10 +26,11 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_C_Cash;
 import org.compiere.model.I_C_CashLine;
+import org.compiere.model.I_C_Invoice;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.MOrg;
 import org.compiere.orm.Query;
-import org.compiere.process2.DocAction;
+import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
@@ -466,7 +467,7 @@ public class MCash extends X_C_Cash implements DocAction
 			if (MCashLine.CASHTYPE_Invoice.equals(line.getCashType()))
 			{
 				// Check if the invoice is completed - teo_sarca BF [ 1894524 ]
-				MInvoice invoice = line.getInvoice();
+				I_C_Invoice invoice = line.getInvoice();
 				if (   !MInvoice.DOCSTATUS_Completed.equals(invoice.getDocStatus())
 					&& !MInvoice.DOCSTATUS_Closed.equals(invoice.getDocStatus())
 					&& !MInvoice.DOCSTATUS_Reversed.equals(invoice.getDocStatus())

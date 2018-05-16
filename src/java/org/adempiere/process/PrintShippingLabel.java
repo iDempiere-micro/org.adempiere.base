@@ -1,9 +1,9 @@
 package org.adempiere.process;
 
+import org.compiere.order.MShipperLabels;
 import org.idempiere.common.base.Service;
 import org.compiere.orm.MAttachment;
 import org.compiere.impl.MPackage;
-import org.compiere.impl.MShipperLabels;
 import org.compiere.process.SvrProcess;
 
 public class PrintShippingLabel extends SvrProcess 
@@ -30,7 +30,7 @@ public class PrintShippingLabel extends SvrProcess
 		IPrintShippingLabel service = Service.locator().locate(IPrintShippingLabel.class).getService();
 		if (service != null)
 		{
-			MShipperLabels label = new MShipperLabels(getCtx(), labelId, get_TrxName());		
+			MShipperLabels label = new MShipperLabels(getCtx(), labelId, get_TrxName());
 			if (MShipperLabels.LABELPRINTMETHOD_Image.equals(label.getLabelPrintMethod()))
 				return service.printImageLabel(attachment, label, getProcessInfo().getTitle());
 			else

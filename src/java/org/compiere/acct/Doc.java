@@ -36,6 +36,7 @@ import org.compiere.model.I_C_ProjectIssue;
 import org.compiere.model.I_M_MatchInv;
 import org.compiere.model.I_M_MatchPO;
 import org.compiere.model.I_M_Production;
+import org.compiere.order.MInOut;
 import org.compiere.orm.MDocType;
 import org.compiere.process2.DocumentEngine;
 import org.idempiere.common.util.AdempiereUserError;
@@ -45,6 +46,7 @@ import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Trx;
 import org.idempiere.common.util.Util;
+import org.idempiere.icommon.model.IPO;
 
 /**
  *  Posting Document Root.
@@ -336,7 +338,7 @@ public abstract class Doc
 		try
 		{
 			Constructor<?> constructor = clazz.getConstructor(new Class[]{Properties.class, ResultSet.class, String.class});
-			p_po = (PO)constructor.newInstance(new Object[]{m_ctx, rs, trxName});
+			p_po = (IPODoc)constructor.newInstance(new Object[]{m_ctx, rs, trxName});
 		}
 		catch (Exception e)
 		{
@@ -376,7 +378,7 @@ public abstract class Doc
 	/** Transaction Name			*/
 	private String				m_trxName = null;
 	/** The Document				*/
-	protected PO				p_po = null;
+	protected IPODoc				p_po = null;
 	/** Document Type      			*/
 	private String				m_DocumentType = null;
 	/** Document Status      			*/
@@ -475,7 +477,7 @@ public abstract class Doc
 	 * 	Get Persistent Object
 	 *	@return po
 	 */
-	public PO getPO()
+	public IPODoc getPO()
 	{
 		return p_po;
 	}	//	getPO

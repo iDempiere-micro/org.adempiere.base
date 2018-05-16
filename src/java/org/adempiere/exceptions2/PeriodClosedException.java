@@ -14,7 +14,7 @@
 package org.adempiere.exceptions2;
 
 import org.compiere.impl.MPeriod;
-import org.compiere.impl.MRefList;
+import org.compiere.orm.MRefList;
 import org.compiere.orm.X_C_DocType;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;

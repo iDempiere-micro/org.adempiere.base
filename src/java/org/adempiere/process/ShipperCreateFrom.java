@@ -1,9 +1,9 @@
 package org.adempiere.process;
 
-import org.compiere.impl.MShipper;
-import org.compiere.impl.MShipperLabels;
-import org.compiere.impl.MShipperPackaging;
-import org.compiere.impl.MShipperPickupTypes;
+import org.compiere.order.MShipper;
+import org.compiere.order.MShipperLabels;
+import org.compiere.order.MShipperPackaging;
+import org.compiere.order.MShipperPickupTypes;
 import org.compiere.impl.X_M_ShipperLabelsCfg;
 import org.compiere.impl.X_M_ShipperPackagingCfg;
 import org.compiere.impl.X_M_ShipperPickupTypesCfg;

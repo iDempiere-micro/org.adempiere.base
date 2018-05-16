@@ -21,11 +21,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-import org.compiere.impl.MAccount;
-import org.compiere.impl.MAcctSchema;
-import org.compiere.impl.MBankAccount;
-import org.compiere.impl.MCharge;
-import org.compiere.impl.MPayment;
+import org.compiere.impl.*;
 import org.compiere.orm.MSysConfig;
 import org.idempiere.common.util.Env;
 

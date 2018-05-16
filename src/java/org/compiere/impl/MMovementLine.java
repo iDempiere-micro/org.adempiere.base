@@ -21,6 +21,7 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
+import org.compiere.model.I_M_Product;
 import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.DB;
@@ -264,7 +265,7 @@ public class MMovementLine extends X_M_MovementLine
 		setDD_OrderLine_ID(oLine.getDD_OrderLine_ID()); 
 		setLine(oLine.getLine()); 
 		//setC_UOM_ID(oLine.getC_UOM_ID()); 
-		MProduct product = oLine.getProduct(); 
+		I_M_Product product = oLine.getProduct();
 		if (product == null) 
 		{ 
 			set_ValueNoCheck(COLUMNNAME_M_Product_ID, null); 

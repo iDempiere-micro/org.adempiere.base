@@ -29,6 +29,7 @@ import java.util.logging.Level;
 import org.compiere.model.I_M_InOut;
 import org.compiere.model.I_M_InOutLine;
 import org.compiere.model.I_M_InOutLineMA;
+import org.compiere.order.MInOutLine;
 import org.compiere.orm.MTable;
 import org.compiere.orm.Query;
 import org.idempiere.common.exceptions.AdempiereException;
@@ -132,7 +133,7 @@ public class MInOutLineMA extends X_M_InOutLineMA
 	 *	@param MovementQty qty
 	 *  @param DateMaterialPolicy
 	 */
-	public MInOutLineMA (MInOutLine parent, int M_AttributeSetInstance_ID, BigDecimal MovementQty,Timestamp DateMaterialPolicy)
+	public MInOutLineMA (MInOutLine parent, int M_AttributeSetInstance_ID, BigDecimal MovementQty, Timestamp DateMaterialPolicy)
 	{
 		this (parent,M_AttributeSetInstance_ID,MovementQty,DateMaterialPolicy,true);
 	}

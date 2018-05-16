@@ -18,7 +18,7 @@ package org.compiere.process2;
 
 import static org.compiere.util.SystemIDs.REFERENCE_WFINSTANCE_STATE;
 
-import org.compiere.impl.MRefList;
+import org.compiere.orm.MRefList;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Util;

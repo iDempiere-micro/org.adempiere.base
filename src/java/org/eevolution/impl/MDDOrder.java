@@ -27,6 +27,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.I_C_BPartner_Location;
+import org.compiere.model.I_M_Product;
 import org.eevolution.model.I_DD_Order;
 import org.eevolution.model.I_DD_OrderLine;
 import org.idempiere.common.exceptions.AdempiereException;
@@ -38,13 +39,13 @@ import org.compiere.impl.MMovement;
 import org.compiere.impl.MPeriod;
 import org.compiere.impl.MProduct;
 import org.compiere.impl.MProject;
-import org.compiere.impl.MRefList;
+import org.compiere.orm.MRefList;
 import org.compiere.impl.MStorageOnHand;
 import org.compiere.crm.MUser;
 import org.compiere.impl.ModelValidationEngine;
 import org.compiere.impl.ModelValidator;
 import org.compiere.orm.Query;
-import org.compiere.process2.DocAction;
+import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -797,7 +798,7 @@ public class MDDOrder extends X_DD_Order implements DocAction
 			for (int i = 0; i < lines.length; i++) 
 			{
 				MDDOrderLine line = lines[i];
-				MProduct product = line.getProduct();
+				I_M_Product product = line.getProduct();
 				if (product != null && product.isExcludeAutoDelivery())
 				{
 					m_processMsg = "@M_Product_ID@ "+product.getValue()+" @IsExcludeAutoDelivery@";
@@ -856,7 +857,7 @@ public class MDDOrder extends X_DD_Order implements DocAction
 				.subtract(line.getQtyDelivered()); 
 			if (reserved_ordered.signum() == 0)
 			{
-				MProduct product = line.getProduct();
+				I_M_Product product = line.getProduct();
 				if (product != null)
 				{
 					Volume = Volume.add(product.getVolume().multiply(line.getQtyOrdered()));
@@ -870,7 +871,7 @@ public class MDDOrder extends X_DD_Order implements DocAction
 				+ ",Reserved=" + line.getQtyReserved() + ",Delivered=" + line.getQtyDelivered());
 
 			//	Check Product - Stocked and Item
-			MProduct product = line.getProduct();
+            I_M_Product product = line.getProduct();
 			if (product != null) 
 			{
 				try

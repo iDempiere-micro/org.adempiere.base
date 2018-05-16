@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
-import org.compiere.process2.DocAction;
+import org.compiere.process.DocAction;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.exceptions.DBException;
 import org.compiere.impl.MAccount;

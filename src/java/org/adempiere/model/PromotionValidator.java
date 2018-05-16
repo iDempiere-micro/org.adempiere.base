@@ -23,6 +23,7 @@ import org.compiere.impl.ModelValidationEngine;
 import org.compiere.impl.ModelValidator;
 import org.compiere.impl.PO;
 import org.idempiere.common.util.DB;
+import org.idempiere.icommon.model.IPO;
 
 /**
  *
@@ -33,7 +34,7 @@ public class PromotionValidator implements ModelValidator {
 
 	private int m_AD_Client_ID;
 
-	public String docValidate(PO po, int timing) {
+	public String docValidate(IPO po, int timing) {
 		if (po instanceof MOrder ) {
 			if (timing == TIMING_AFTER_PREPARE) {
 				MOrder order = (MOrder) po;
@@ -95,7 +96,7 @@ public class PromotionValidator implements ModelValidator {
 		}
 	}
 
-	private int findPromotionPreConditionId(MOrder order, String promotionCode,
+	private int findPromotionPreConditionId(I_C_Order order, String promotionCode,
 			Integer promotionID) {
 		String bpFilter = "M_PromotionPreCondition.C_BPartner_ID = ? OR M_PromotionPreCondition.C_BP_Group_ID = ? OR (M_PromotionPreCondition.C_BPartner_ID IS NULL AND M_PromotionPreCondition.C_BP_Group_ID IS NULL)";
 		String priceListFilter = "M_PromotionPreCondition.M_PriceList_ID IS NULL OR M_PromotionPreCondition.M_PriceList_ID = ?";
@@ -151,11 +152,11 @@ public class PromotionValidator implements ModelValidator {
 		return null;
 	}
 
-	public String modelChange(PO po, int type) throws Exception {
+	public String modelChange(IPO po, int type) throws Exception {
 		if (po instanceof MOrderLine) {
 			if (type == TYPE_AFTER_DELETE) {
 				MOrderLine ol = (MOrderLine) po;
-				MOrder order = ol.getParent();
+				I_C_Order order = ol.getParent();
 				String promotionCode = (String)order.get_Value("PromotionCode");
 				if (ol.getC_Charge_ID() > 0) {
 					Integer promotionID = (Integer) ol.get_Value("M_Promotion_ID");

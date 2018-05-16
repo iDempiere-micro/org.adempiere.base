@@ -21,6 +21,7 @@ import org.compiere.crm.X_C_BPartner;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.orm.MOrg;
 import org.compiere.orm.Query;
+import org.compiere.product.X_M_Product;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
 

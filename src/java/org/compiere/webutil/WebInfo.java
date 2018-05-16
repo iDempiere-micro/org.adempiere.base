@@ -18,6 +18,7 @@ package org.compiere.webutil;
 
 import org.compiere.crm.X_AD_UserBPAccess;
 import org.compiere.impl.*;
+import org.compiere.order.MInOut;
 import org.compiere.orm.MDocType;
 import org.compiere.wf.MWFActivity;
 import org.idempiere.common.util.CLogger;

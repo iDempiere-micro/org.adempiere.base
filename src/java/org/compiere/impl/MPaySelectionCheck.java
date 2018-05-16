@@ -26,10 +26,11 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.order.X_C_Order;
 import org.compiere.orm.MDocType;
+import org.compiere.process.DocAction;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.acct.Doc;
-import org.compiere.process2.DocAction;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

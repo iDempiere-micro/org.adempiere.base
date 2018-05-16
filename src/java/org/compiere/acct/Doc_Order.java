@@ -27,12 +27,12 @@ import java.util.logging.Level;
 import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MClientInfo;
-import org.compiere.impl.MCurrency;
 import org.compiere.impl.MOrder;
 import org.compiere.impl.MOrderLine;
 import org.compiere.impl.MRequisitionLine;
-import org.compiere.impl.MTax;
 import org.compiere.impl.ProductCost;
+import org.compiere.product.MCurrency;
+import org.compiere.tax.MTax;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

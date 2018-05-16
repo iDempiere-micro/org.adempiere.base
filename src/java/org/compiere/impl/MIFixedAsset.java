@@ -9,6 +9,7 @@ import java.util.logging.Level;
 
 import org.adempiere.exceptions.FillMandatoryException;
 import org.compiere.model.I_I_FixedAsset;
+import org.compiere.product.MUOM;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.Env;

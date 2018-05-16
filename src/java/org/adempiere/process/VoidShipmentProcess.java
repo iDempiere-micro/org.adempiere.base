@@ -19,7 +19,7 @@ import java.sql.Timestamp;
 import java.util.logging.Level;
 
 import org.compiere.impl.MPackage;
-import org.compiere.impl.MShippingTransaction;
+import org.compiere.order.MShippingTransaction;
 import org.compiere.process.ProcessInfoLog;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;

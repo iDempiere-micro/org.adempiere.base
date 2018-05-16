@@ -20,6 +20,7 @@ import org.compiere.model.I_AD_ClientInfo;
 import org.compiere.model.I_C_AcctSchema;
 import org.compiere.orm.MOrg;
 import org.compiere.orm.Query;
+import org.compiere.product.MCurrency;
 import org.compiere.report.MReportTree;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.KeyNamePair;

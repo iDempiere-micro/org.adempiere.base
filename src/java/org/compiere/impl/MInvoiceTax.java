@@ -23,7 +23,12 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.model.I_C_Invoice;
+import org.compiere.model.I_C_InvoiceLine;
+import org.compiere.model.I_C_InvoiceTax;
+import org.compiere.model.I_C_Tax;
 import org.compiere.orm.Query;
+import org.compiere.tax.MTax;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
@@ -38,7 +43,7 @@ import org.idempiere.common.util.Env;
  *  @author Teo Sarca, www.arhipac.ro
  *  		<li>FR [ 2214883 ] Remove SQL code and Replace for Query
  */
-public class MInvoiceTax extends X_C_InvoiceTax
+public class MInvoiceTax extends X_C_InvoiceTax implements I_C_InvoiceTax
 {
 	/**
 	 * 
@@ -54,17 +59,17 @@ public class MInvoiceTax extends X_C_InvoiceTax
 	 *	@param trxName transaction name
 	 *	@return existing or new tax
 	 */
-	public static MInvoiceTax get (MInvoiceLine line, int precision, 
-		boolean oldTax, String trxName)
+	public static MInvoiceTax get (I_C_InvoiceLine line, int precision,
+								   boolean oldTax, String trxName)
 	{
 		MInvoiceTax retValue = null;
 		if (line == null || line.getC_Invoice_ID() == 0)
 			return null;
 		int C_Tax_ID = line.getC_Tax_ID();
-		boolean isOldTax = oldTax && line.is_ValueChanged(MInvoiceLine.COLUMNNAME_C_Tax_ID); 
+		boolean isOldTax = oldTax && (line instanceof org.idempiere.orm.PO) && ((org.idempiere.orm.PO)line).is_ValueChanged(MInvoiceLine.COLUMNNAME_C_Tax_ID);
 		if (isOldTax)
 		{
-			Object old = line.get_ValueOld(MInvoiceLine.COLUMNNAME_C_Tax_ID);
+			Object old = ((org.idempiere.orm.PO)line).get_ValueOld(MInvoiceLine.COLUMNNAME_C_Tax_ID);
 			if (old == null)
 				return null;
 			C_Tax_ID = ((Integer)old).intValue();
@@ -138,7 +143,7 @@ public class MInvoiceTax extends X_C_InvoiceTax
 	}	//	MInvoiceTax
 	
 	/** Tax							*/
-	private MTax 		m_tax = null;
+	private MTax m_tax = null;
 	/** Cached Precision			*/
 	private Integer		m_precision = null;
 	
@@ -167,7 +172,7 @@ public class MInvoiceTax extends X_C_InvoiceTax
 	 * 	Get Tax
 	 *	@return tax
 	 */
-	protected MTax getTax()
+	public I_C_Tax getTax()
 	{
 		if (m_tax == null)
 			m_tax = MTax.get(getCtx(), getC_Tax_ID());
@@ -185,7 +190,7 @@ public class MInvoiceTax extends X_C_InvoiceTax
 		BigDecimal taxAmt = Env.ZERO;
 		//
 		boolean documentLevel = getTax().isDocumentLevel();
-		MTax tax = getTax();
+		I_C_Tax tax = getTax();
 		//
 		String sql = "SELECT il.LineNetAmt, COALESCE(il.TaxAmt,0), i.IsSOTrx "
 			+ "FROM C_InvoiceLine il"
@@ -258,5 +263,10 @@ public class MInvoiceTax extends X_C_InvoiceTax
 			.append ("]");
 		return sb.toString ();
 	}	//	toString
+
+	protected void setClientOrg (I_C_Invoice po)
+	{
+		super.setClientOrg (po);
+	}	//	setClientOrg
 
 }	//	MInvoiceTax

@@ -34,20 +34,32 @@ import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_C_InvoiceLine;
 import org.compiere.model.I_C_InvoiceTax;
+import org.compiere.order.*;
+import org.compiere.order.MInOut;
+import org.compiere.order.MInOutLine;
+import org.compiere.order.MRMA;
+import org.compiere.order.MRMALine;
+import org.compiere.product.MCurrency;
+import org.compiere.product.MPriceList;
+import org.compiere.product.MPriceListVersion;
 import org.compiere.orm.*;
+import org.compiere.product.MProductBOM;
+import org.compiere.tax.IInvoiceTaxProvider;
+import org.compiere.tax.ITaxProvider;
+import org.compiere.tax.MTax;
+import org.compiere.tax.MTaxProvider;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.BPartnerNoAddressException;
 import org.idempiere.common.exceptions.DBException;
 import org.adempiere.exceptions2.PeriodClosedException;
-import org.adempiere.model.ITaxProvider;
-import org.compiere.process2.DocAction;
+import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
- 
+import org.idempiere.icommon.model.IPO;
 
 
 /**
@@ -65,7 +77,7 @@ import org.compiere.util.Msg;
  *  Modifications: Added RMA functionality (Ashley Ramdass)
  *  Modifications: Generate DocNo^ instead of using a new number whan an invoice is reversed (Diego Ruiz-globalqss)
  */
-public class MInvoice extends X_C_Invoice implements DocAction
+public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice
 {
 	/**
 	 * 
@@ -585,7 +597,7 @@ public class MInvoice extends X_C_Invoice implements DocAction
             }
             setIsSOTrx(rma.isSOTrx());
 
-            MOrder rmaOrder = rma.getOriginalOrder();
+            org.compiere.order.MOrder rmaOrder = rma.getOriginalOrder();
             if (rmaOrder != null) {
                 setM_PriceList_ID(rmaOrder.getM_PriceList_ID());
                 setIsTaxIncluded(rmaOrder.isTaxIncluded());
@@ -1622,7 +1634,7 @@ public class MInvoice extends X_C_Invoice implements DocAction
 		MTaxProvider[] providers = getTaxProviders();
 		for (MTaxProvider provider : providers)
 		{
-			ITaxProvider calculator = Core.getTaxProvider(provider);
+			IInvoiceTaxProvider calculator = MTaxProvider.getTaxProvider(provider, new StandardTaxProvider());
 			if (calculator == null)
 				throw new AdempiereException(Msg.getMsg(getCtx(), "TaxNoProvider"));
 			
@@ -2119,13 +2131,13 @@ public class MInvoice extends X_C_Invoice implements DocAction
 	}	//	completeIt
 
 	/* Save array of documents to process AFTER completing this one */
-	ArrayList<PO> docsPostProcess = new ArrayList<PO>();
+	ArrayList<org.compiere.orm.PO> docsPostProcess = new ArrayList<org.compiere.orm.PO>();
 
 	private void addDocsPostProcess(PO doc) {
 		docsPostProcess.add(doc);
 	}
 
-	public ArrayList<PO> getDocsPostProcess() {
+	public ArrayList<org.compiere.orm.PO> getDocsPostProcess() {
 		return docsPostProcess;
 	}
 
@@ -2466,7 +2478,7 @@ public class MInvoice extends X_C_Invoice implements DocAction
 		reversal.saveEx(get_TrxName());
 		//
 		reversal.docsPostProcess = this.docsPostProcess;
-		this.docsPostProcess = new ArrayList<PO>();
+		this.docsPostProcess = new ArrayList<org.compiere.orm.PO>();
 		//
 		if (!reversal.processIt(DocAction.ACTION_Complete))
 		{
@@ -2651,7 +2663,7 @@ public class MInvoice extends X_C_Invoice implements DocAction
 	 *
 	 * @param rma
 	 */
-	public void setRMA(MRMA rma)
+	public void setRMA(org.compiere.impl.MRMA rma)
 	{
 		setM_RMA_ID(rma.getM_RMA_ID());
         setAD_Org_ID(rma.getAD_Org_ID());
@@ -2663,7 +2675,7 @@ public class MInvoice extends X_C_Invoice implements DocAction
         setIsSOTrx(rma.isSOTrx());
         setTotalLines(rma.getAmt());
 
-        MInvoice originalInvoice = rma.getOriginalInvoice();
+        I_C_Invoice originalInvoice = rma.getOriginalInvoice();
 
         if (originalInvoice == null)
         {
@@ -2698,16 +2710,16 @@ public class MInvoice extends X_C_Invoice implements DocAction
 	 * Get original order
 	 * @return order
 	 */
-	public MOrder getOriginalOrder()
+	public org.compiere.order.MOrder getOriginalOrder()
 	{
 		if (getM_RMA_ID() > 0)
 		{
-			MRMA rma = new MRMA(getCtx(), getM_RMA_ID(), get_TrxName());
-			MOrder originalOrder = rma.getOriginalOrder();
+			org.compiere.impl.MRMA rma = new org.compiere.impl.MRMA(getCtx(), getM_RMA_ID(), get_TrxName());
+			org.compiere.order.MOrder originalOrder = rma.getOriginalOrder();
 			if (originalOrder != null)
 				return originalOrder;
 			
-			MInvoice originalInvoice = rma.getOriginalInvoice();
+			I_C_Invoice originalInvoice = rma.getOriginalInvoice();
 			if (originalInvoice.getC_Order_ID() > 0)
 			{
 				originalOrder = new MOrder(getCtx(), originalInvoice.getC_Order_ID(), get_TrxName());

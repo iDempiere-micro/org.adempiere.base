@@ -29,6 +29,7 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_C_Conversion_Rate;
 import org.compiere.orm.Query;
+import org.compiere.product.MCurrency;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.compiere.util.DisplayType;
@@ -142,7 +143,7 @@ public class MConversionRate extends X_C_Conversion_Rate
 			
 		//	Get Amount in Currency Precision
 		retValue = retValue.multiply(Amt);
-		int stdPrecision = isCosting ? MCurrency.getCostingPrecision(ctx, CurTo_ID): MCurrency.getStdPrecision(ctx, CurTo_ID);		
+		int stdPrecision = isCosting ? MCurrency.getCostingPrecision(ctx, CurTo_ID): MCurrency.getStdPrecision(ctx, CurTo_ID);
 
 		if (retValue.scale() > stdPrecision)
 			retValue = retValue.setScale(stdPrecision, BigDecimal.ROUND_HALF_UP);

@@ -26,6 +26,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.crm.MBPGroup;
+import org.compiere.model.I_C_Order;
+import org.compiere.order.MInOutLine;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.MSysConfig;
 import org.idempiere.common.util.CLogger;
@@ -283,7 +285,7 @@ public class MMatchPO extends X_M_MatchPO
 	 *	@param qty qty
 	 *	@return Match Record
 	 */
-	public static MMatchPO create (MInvoiceLine iLine, MInOutLine sLine,  
+	public static MMatchPO create (MInvoiceLine iLine, MInOutLine sLine,
 		Timestamp dateTrx, BigDecimal qty)
 	{
 		String trxName = null;
@@ -752,7 +754,7 @@ public class MMatchPO extends X_M_MatchPO
 	{
 		MInvoiceLine iLine = getInvoiceLine();
 		MInvoice invoice = iLine.getParent();
-		MOrder order = getOrderLine().getParent();
+		I_C_Order order = getOrderLine().getParent();
 
 		BigDecimal priceActual = iLine.getPriceActual();
 		int invoiceCurrency_ID = invoice.getC_Currency_ID();

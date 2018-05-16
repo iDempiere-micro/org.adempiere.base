@@ -21,8 +21,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.adempiere.util.PaymentUtil;
+import org.compiere.order.MOnlineTrxHistory;
 import org.compiere.orm.MSysConfig;
-import org.compiere.process2.DocAction;
+import org.compiere.process.DocAction;
 import org.compiere.process.IProcessUI;
 import org.compiere.process.ProcessCall;
 import org.compiere.process.ProcessInfo;

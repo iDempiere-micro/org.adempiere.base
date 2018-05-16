@@ -26,6 +26,7 @@ import org.adempiere.base.Core;
 import org.compiere.impexp.BankStatementLoaderInterface;
 import org.compiere.orm.MTable;
 import org.compiere.orm.Query;
+import org.compiere.product.X_C_Currency;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Util;
  

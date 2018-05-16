@@ -21,6 +21,7 @@ import org.compiere.model.I_C_OrderLine;
 import org.compiere.model.I_C_ProjectLine;
 import org.compiere.model.I_M_RMALine;
 import org.compiere.model.I_M_RequisitionLine;
+import org.compiere.product.IProductPricing;
 import org.idempiere.common.util.Env;
 
 public abstract class AbstractProductPricing implements IProductPricing {

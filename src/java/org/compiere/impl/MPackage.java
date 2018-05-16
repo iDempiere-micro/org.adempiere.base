@@ -22,8 +22,9 @@ import java.sql.Timestamp;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.adempiere.util.ShippingUtil;
+import org.compiere.order.*;
 import org.compiere.orm.MAttachment;
+import org.compiere.product.MProductBOM;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;

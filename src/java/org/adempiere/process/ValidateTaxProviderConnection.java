@@ -16,9 +16,10 @@ package org.adempiere.process;
 import java.util.logging.Level;
 
 import org.adempiere.base.Core;
+import org.compiere.impl.StandardTaxProvider;
+import org.compiere.tax.ITaxProvider;
 import org.idempiere.common.exceptions.AdempiereException;
-import org.adempiere.model.ITaxProvider;
-import org.compiere.impl.MTaxProvider;
+import org.compiere.tax.MTaxProvider;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Msg;
@@ -48,7 +49,7 @@ public class ValidateTaxProviderConnection extends SvrProcess
 	protected String doIt() throws Exception 
 	{
 		MTaxProvider provider = new MTaxProvider(getCtx(), getRecord_ID(), get_TrxName());			
-		ITaxProvider calculator = Core.getTaxProvider(provider);
+		ITaxProvider calculator = MTaxProvider.getTaxProvider(provider, new StandardTaxProvider());
 		if (calculator == null)
 			throw new AdempiereException(Msg.getMsg(getCtx(), "TaxNoProvider"));
 		return calculator.validateConnection(provider, getProcessInfo());

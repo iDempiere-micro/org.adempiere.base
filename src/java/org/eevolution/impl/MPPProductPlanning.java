@@ -20,9 +20,9 @@ import java.sql.ResultSet;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.product.MResource;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.orm.MOrgInfo;
-import org.compiere.impl.MResource;
 import org.compiere.orm.Query;
 import org.idempiere.common.util.CLogMgt;
 import org.idempiere.common.util.CLogger;

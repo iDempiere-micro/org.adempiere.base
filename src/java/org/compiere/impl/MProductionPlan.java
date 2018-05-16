@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import org.compiere.product.MAttributeSetInstance;
+import org.compiere.product.MProductCategory;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.AdempiereUserError;
 import org.idempiere.common.util.DB;

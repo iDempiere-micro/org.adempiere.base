@@ -1,15 +1,17 @@
 package org.adempiere.base;
 
 import org.adempiere.model.IAddressValidation;
-import org.adempiere.model.IShipmentProcessor;
-import org.adempiere.model.ITaxProvider;
-import org.adempiere.model.MShipperFacade;
 import org.adempiere.osgi.OSGiScriptEngineManager;
 import org.compiere.impexp.BankStatementLoaderInterface;
 import org.compiere.impexp.BankStatementMatcherInterface;
 import org.compiere.impl.*;
+import org.compiere.order.IShipmentProcessor;
+import org.compiere.order.IShipmentProcessorFactory;
+import org.compiere.order.MShipperFacade;
 import org.compiere.process.IProcessFactory;
 import org.compiere.process.ProcessCall;
+import org.compiere.product.IProductPricing;
+import org.compiere.tax.MTaxProvider;
 import org.compiere.util.PaymentExport;
 import org.compiere.util.ReplenishInterface;
 import org.idempiere.common.base.Service;
@@ -252,46 +254,6 @@ public class Core extends org.compiere.process.Core {
     }
 
     /**
-     * Get tax provider instance
-     * @param provider
-     * @return tax provider instance or null if not found
-     */
-    public static ITaxProvider getTaxProvider(MTaxProvider provider)
-    {
-        ITaxProvider calculator = null;
-        if (provider != null)
-        {
-            if (provider.getC_TaxProvider_ID() == 0)
-                return new StandardTaxProvider();
-
-            if (!provider.isActive())
-            {
-                s_log.log(Level.SEVERE, "Tax provider is inactive: " + provider);
-                return null;
-            }
-
-            String className = provider.getTaxProviderClass();
-            if (className == null || className.length() == 0)
-            {
-                s_log.log(Level.SEVERE, "Tax provider class not defined: " + provider);
-                return null;
-            }
-
-            List<ITaxProviderFactory> factoryList = Service.locator().list(ITaxProviderFactory.class).getServices();
-            if (factoryList == null)
-                return null;
-            for (ITaxProviderFactory factory : factoryList)
-            {
-                calculator = factory.newTaxProviderInstance(className);
-                if (calculator != null)
-                    return calculator;
-            }
-        }
-
-        return null;
-    }
-
-    /**
      * get Custom Replenish instance
      *
      * @param className
@@ -373,25 +335,5 @@ public class Core extends org.compiere.process.Core {
         return myPaymentExporter;
     }
 
-    /**
-     * get ProductPricing instance
-     *
-     * @return instance of the IProductPricing or null
-     */
-    public static IProductPricing getProductPricing() {
-
-        List<IProductPricingFactory> factoryList =
-                Service.locator().list(IProductPricingFactory.class).getServices();
-        if (factoryList != null) {
-            for(IProductPricingFactory factory : factoryList) {
-                IProductPricing myProductPricing = factory.newProductPricingInstance();
-                if (myProductPricing != null) {
-                    return myProductPricing;
-                }
-            }
-        }
-
-        return null;
-    }
 
 }

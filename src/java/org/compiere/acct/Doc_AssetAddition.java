@@ -4,17 +4,10 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import org.compiere.impl.*;
 import org.compiere.model.I_C_Project;
 import org.compiere.model.I_C_Project_Acct;
-import org.compiere.impl.MAccount;
-import org.compiere.impl.MAcctSchema;
-import org.compiere.impl.MAssetAcct;
-import org.compiere.impl.MAssetAddition;
-import org.compiere.impl.MCharge;
 import org.compiere.orm.MDocType;
-import org.compiere.impl.MProject;
-import org.compiere.impl.ProductCost;
-import org.compiere.impl.X_C_Project_Acct;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 

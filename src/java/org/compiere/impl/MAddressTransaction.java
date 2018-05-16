@@ -2,6 +2,7 @@ package org.compiere.impl;
 
 import org.adempiere.base.Core;
 import org.adempiere.model.IAddressValidation;
+import org.compiere.order.MOnlineTrxHistory;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Env;
 

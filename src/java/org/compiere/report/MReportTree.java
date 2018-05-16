@@ -252,11 +252,11 @@ public class MReportTree
 		{
 			
 			@SuppressWarnings("unchecked")
-			Enumeration<MTreeNode> en = (Enumeration<MTreeNode>)node.preorderEnumeration ();
+			Enumeration<?> en = (Enumeration<?>)node.preorderEnumeration ();
 			StringBuffer sb = new StringBuffer ();
 			while (en.hasMoreElements ())
 			{
-				MTreeNode nn = en.nextElement ();
+				MTreeNode nn = (MTreeNode)en.nextElement ();
 				if (!nn.isSummary ())
 				{
 					if (sb.length () > 0)

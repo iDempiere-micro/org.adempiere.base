@@ -22,7 +22,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.adempiere.base.Core;
-import org.adempiere.base.IProductPricing;
+import org.compiere.product.IProductPricing;
+import org.compiere.product.MProductCategory;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 
@@ -148,7 +149,7 @@ public class MProjectLine extends X_C_ProjectLine
 			return limitPrice;
 		if (getProject() == null)
 			return limitPrice;
-		IProductPricing pp = Core.getProductPricing();
+		IProductPricing pp = MProduct.getProductPricing();
 		pp.setProjectLine(this, get_TrxName());
 		pp.setM_PriceList_ID(m_parent.getM_PriceList_ID());
 		if (pp.calculatePrice())

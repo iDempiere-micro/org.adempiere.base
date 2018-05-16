@@ -23,13 +23,15 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_M_CostElement;
 import org.compiere.model.I_M_Product_Category_Acct;
+import org.compiere.orm.MRefList;
 import org.compiere.orm.Query;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
- 
+import org.idempiere.icommon.model.IPO;
+
 
 /**
  * 	Cost Element Model
@@ -135,7 +137,7 @@ public class MCostElement extends X_M_CostElement
 	 *	@param po parent
 	 *	@return cost element array
 	 */
-	public static List<MCostElement> getCostElementsWithCostingMethods (PO po)
+	public static List<MCostElement> getCostElementsWithCostingMethods (IPO po)
 	{
 		final String whereClause = "AD_Client_ID=? AND CostingMethod IS NOT NULL";
 		return new Query(po.getCtx(),MCostElement.Table_Name,whereClause,po.get_TrxName())
@@ -149,7 +151,7 @@ public class MCostElement extends X_M_CostElement
 	 *	@param po parent
 	 *	@return cost element array
 	 */
-	public static MCostElement[] getCostingMethods (PO po)
+	public static MCostElement[] getCostingMethods (IPO po)
 	{
 		final String whereClause ="AD_Client_ID=? AND CostElementType=? AND CostingMethod IS NOT NULL";
 		List<MCostElement> list = new Query(po.getCtx(), I_M_CostElement.Table_Name, whereClause, po.get_TrxName())

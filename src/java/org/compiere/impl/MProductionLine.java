@@ -14,6 +14,7 @@ import org.compiere.model.I_M_AttributeSet;
 import org.compiere.model.I_M_Cost;
 import org.compiere.model.I_M_ProductionPlan;
 import org.compiere.orm.Query;
+import org.compiere.product.MAttributeSetInstance;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

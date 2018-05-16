@@ -28,6 +28,7 @@ import org.compiere.crm.MUser;
 import org.compiere.crm.X_C_BP_Group;
 import org.compiere.model.I_R_RequestAction;
 import org.compiere.model.I_R_RequestUpdate;
+import org.compiere.orm.MRefList;
 import org.compiere.orm.Query;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;

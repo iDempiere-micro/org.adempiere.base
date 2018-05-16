@@ -4,7 +4,7 @@
 package org.idempiere.fa.exceptions;
 
 import org.compiere.impl.MAsset;
-import org.compiere.impl.MRefList;
+import org.compiere.orm.MRefList;
 
 
 /**

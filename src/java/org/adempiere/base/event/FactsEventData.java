@@ -17,6 +17,7 @@ import java.util.List;
 
 import org.compiere.acct.Fact;
 import org.compiere.impl.MAcctSchema;
+import org.idempiere.icommon.model.IPO;
 import org.idempiere.orm.PO;
 
 /**
@@ -27,14 +28,14 @@ import org.idempiere.orm.PO;
 public class FactsEventData {
 	private MAcctSchema acctSchema;
 	private List<Fact> facts;
-	private PO po;
+	private IPO po;
 
 	/**
 	 * @param acctSchema
 	 * @param facts
 	 * @param po
 	 */
-	public FactsEventData(MAcctSchema acctSchema, List<Fact> facts, PO po) {
+	public FactsEventData(MAcctSchema acctSchema, List<Fact> facts, IPO po) {
 		super();
 		this.acctSchema = acctSchema;
 		this.facts = facts;
@@ -58,7 +59,7 @@ public class FactsEventData {
 	/**
 	 * @return the po
 	 */
-	public PO getPo() {
+	public IPO getPo() {
 		return po;
 	}
 }

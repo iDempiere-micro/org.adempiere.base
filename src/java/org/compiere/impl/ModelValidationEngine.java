@@ -32,6 +32,7 @@ import org.compiere.orm.MTable;
 import org.compiere.orm.Query;
 import org.compiere.rule.MRule;
 import org.compiere.webutil.Login;
+import org.idempiere.icommon.model.IPO;
 import org.idempiere.orm.EventManager;
 import org.idempiere.orm.EventProperty;
 import org.adempiere.base.event.FactsEventData;
@@ -505,7 +506,7 @@ public class ModelValidationEngine
 	 *	@param timing see ModelValidator.TIMING_ constants
      *	@return error message or null
 	 */
-	public String fireDocValidate (PO po, int docTiming)
+	public String fireDocValidate (IPODoc po, int docTiming)
 	{
 		if (po == null)
 			return null;
@@ -579,7 +580,7 @@ public class ModelValidationEngine
 		return null;
 	}	//	fireDocValidate
 
-	private String fireDocValidate(PO po, int docTiming, ArrayList<ModelValidator> list)
+	private String fireDocValidate(IPODoc po, int docTiming, ArrayList<ModelValidator> list)
 	{
 		for (int i = 0; i < list.size(); i++)
 		{
@@ -691,7 +692,7 @@ public class ModelValidationEngine
 	 * @param po
 	 * @return error message or null
 	 */
-	public String fireFactsValidate (MAcctSchema schema, List<Fact> facts, PO po)
+	public String fireFactsValidate (MAcctSchema schema, List<Fact> facts, IPODoc po)
 	{
 		if (schema == null || facts == null || po == null)
 			return null;
@@ -729,7 +730,7 @@ public class ModelValidationEngine
 		return null;
 	}	//	fireFactsValidate
 
-	private String fireFactsValidate(MAcctSchema schema, List<Fact> facts, PO po,  ArrayList<FactsValidator> list)
+	private String fireFactsValidate(MAcctSchema schema, List<Fact> facts, IPO po,  ArrayList<FactsValidator> list)
 	{
 		for (int i = 0; i < list.size(); i++)
 		{

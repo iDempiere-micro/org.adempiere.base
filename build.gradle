@@ -11,7 +11,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.osgi/org.osgi.util.tracker
     compile group: 'org.osgi', name: 'org.osgi.util.tracker', version: '1.5.1'    
     // https://mvnrepository.com/artifact/org.osgi/org.osgi.service.cm
-    compile group: 'org.osgi', name: 'org.osgi.service.cm', version: '1.5.0'    
+    compile group: 'org.osgi', name: 'org.osgi.service.cm', version: '1.5.0'   
+    // https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'     
 
     compile files('./bsh-2.0b6.jar')
     compile files('./cron4j-2.2.5.jar')
@@ -51,4 +53,11 @@ dependencies {
 
     compile project(':org.compiere.rule')
     compile files('../org.compiere.rule/bin')
+
+    compile project(':org.compiere.product')
+    compile files('../org.compiere.product/bin')
+
+    compile project(':org.compiere.order')
+    compile files('../org.compiere.order/bin')
+
 }

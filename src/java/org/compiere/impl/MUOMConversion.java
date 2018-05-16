@@ -32,6 +32,7 @@ import java.util.logging.Level;
 import org.compiere.orm.MRole;
 import org.compiere.orm.MSysConfig;
 import org.compiere.orm.Query;
+import org.compiere.product.MUOM;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;

@@ -20,14 +20,15 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 
 import org.compiere.impl.MClient;
-import org.compiere.impl.MPriceListVersion;
-import org.compiere.impl.MProductPrice;
+import org.compiere.product.MPriceListVersion;
+import org.compiere.product.MProductPrice;
 import org.compiere.impl.ModelValidationEngine;
 import org.compiere.impl.ModelValidator;
 import org.compiere.impl.PO;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
+import org.idempiere.icommon.model.IPO;
 
 /**
  * Auto sync corresponding price list with the price list schema and base price list.
@@ -53,7 +54,7 @@ public class ProductPriceValidator implements ModelValidator {
 		return null;
 	}
 
-	public String modelChange(PO po, int type) throws Exception {
+	public String modelChange(IPO po, int type) throws Exception {
 		if (po instanceof MProductPrice) {
 			if (type == TYPE_AFTER_CHANGE || type == TYPE_AFTER_NEW || type == TYPE_AFTER_DELETE) {
 				MProductPrice pp = (MProductPrice) po;
@@ -134,7 +135,7 @@ public class ProductPriceValidator implements ModelValidator {
 		return null;
 	}
 	
-	public String docValidate(PO po, int timing) {
+	public String docValidate(IPO po, int timing) {
 		return null;
 	}
 }

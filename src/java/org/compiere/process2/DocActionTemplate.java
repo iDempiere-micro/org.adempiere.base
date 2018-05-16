@@ -25,6 +25,7 @@ import org.compiere.orm.MDocType;
 import org.compiere.impl.ModelValidationEngine;
 import org.compiere.impl.ModelValidator;
 import org.compiere.impl.PO;
+import org.compiere.process.DocAction;
 import org.idempiere.orm.POInfo;
 
 /**

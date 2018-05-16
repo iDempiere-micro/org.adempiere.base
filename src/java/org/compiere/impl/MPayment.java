@@ -27,11 +27,15 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_C_Payment;
+import org.compiere.order.MOnlineTrxHistory;
+import org.compiere.order.X_C_Order;
 import org.compiere.orm.*;
 import org.compiere.process.*;
-import org.compiere.process2.DocAction;
+import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;
+import org.compiere.product.MCurrency;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions2.PeriodClosedException;
 import org.adempiere.util.PaymentUtil;
@@ -1863,7 +1867,7 @@ public class MPayment extends X_C_Payment
 				m_processMsg = order.getProcessMsg();
 				order.saveEx(get_TrxName());
 				//	Set Invoice
-				MInvoice[] invoices = order.getInvoices();
+				I_C_Invoice[] invoices = order.getInvoices();
 				int length = invoices.length;
 				if (length > 0)		//	get last invoice
 					setC_Invoice_ID (invoices[length-1].getC_Invoice_ID());

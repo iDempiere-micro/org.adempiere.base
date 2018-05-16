@@ -20,6 +20,7 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.Properties;
 
+import org.compiere.order.MInOutConfirm;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
 
@@ -80,7 +81,7 @@ public class MInOutLineConfirm extends X_M_InOutLineConfirm
 	}	//	MInOutLineConfirm
 	
 	/** Ship Line				*/
-	private MInOutLine 	m_line = null;
+	private MInOutLine m_line = null;
 	
 	/**
 	 * 	Set Shipment Line

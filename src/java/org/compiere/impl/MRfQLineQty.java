@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.product.MUOM;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -103,7 +104,7 @@ public class MRfQLineQty extends X_C_RfQLineQty
 	}	//	MRfQLineQty
 	
 	/**	Unit of Measure		*/
-	private MUOM	m_uom = null;
+	private MUOM m_uom = null;
 	
 	/**
 	 * 	Get Uom Name

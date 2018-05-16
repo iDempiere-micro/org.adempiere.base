@@ -42,7 +42,7 @@ import org.compiere.impl.PO;
 import org.compiere.orm.*;
 import org.compiere.orm.MRole;
 import org.compiere.process.*;
-import org.compiere.process2.DocAction;
+import org.compiere.process.DocAction;
 import org.compiere.process2.StateEngine;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.CLogger;

@@ -23,6 +23,10 @@ import java.util.logging.Level;
 
 import org.compiere.model.I_AD_Archive;
 import org.compiere.model.I_AD_Attachment;
+import org.compiere.model.I_C_Order;
+import org.compiere.model.I_C_OrderLine;
+import org.compiere.order.X_C_Order;
+import org.compiere.order.X_C_OrderLine;
 import org.compiere.orm.MColumn;
 import org.compiere.orm.MTable;
 import org.compiere.orm.Query;
@@ -42,19 +46,19 @@ public class PO_Record
 {
 	/**	Parent Tables		*/
 	private static int[]	s_parents =	new int[]{
-		X_C_Order.Table_ID,
+		I_C_Order.Table_ID,
 		X_CM_Container.Table_ID
 	};
 	private static String[]	s_parentNames = new String[]{
-		X_C_Order.Table_Name,
+		I_C_Order.Table_Name,
 		X_CM_Container.Table_Name
 	};
 	private static int[]	s_parentChilds = new int[]{
-		X_C_OrderLine.Table_ID,
+		I_C_OrderLine.Table_ID,
 		X_CM_Container_Element.Table_ID
 	};
 	private static String[]	s_parentChildNames = new String[]{
-		X_C_OrderLine.Table_Name,
+		I_C_OrderLine.Table_Name,
 		X_CM_Container_Element.Table_Name
 	};
 	

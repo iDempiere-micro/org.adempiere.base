@@ -26,7 +26,7 @@ import org.compiere.impl.*;
 import org.compiere.orm.MRole;
 import org.compiere.orm.MTable;
 import org.compiere.orm.Query;
-import org.compiere.process2.DocAction;
+import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process2.StateEngine;
 import org.idempiere.common.util.DB;

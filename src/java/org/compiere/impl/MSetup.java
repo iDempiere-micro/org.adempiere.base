@@ -32,8 +32,13 @@ import org.compiere.crm.MBPGroup;
 import org.compiere.crm.MBPartnerLocation;
 import org.compiere.crm.MLocation;
 import org.compiere.model.I_C_AcctSchema;
+import org.compiere.product.MPriceList;
+import org.compiere.product.MPriceListVersion;
 import org.compiere.orm.*;
 import org.compiere.process.ProcessUtil;
+import org.compiere.product.MProductCategory;
+import org.compiere.product.MProductPrice;
+import org.compiere.tax.MTax;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.ProcessInfoParameter;
@@ -1309,7 +1314,7 @@ public final class MSetup
 		if (!plv.save())
 			log.log(Level.SEVERE, "PriceList_Version NOT inserted");
 		//  ProductPrice
-		MProductPrice pp = new MProductPrice(plv, product.getM_Product_ID(), 
+		MProductPrice pp = new MProductPrice(plv, product.getM_Product_ID(),
 			Env.ONE, Env.ONE, Env.ONE);
 		if (!pp.save())
 			log.log(Level.SEVERE, "ProductPrice NOT inserted");

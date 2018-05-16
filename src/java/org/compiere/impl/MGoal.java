@@ -28,6 +28,7 @@ import java.util.logging.Level;
 
 import org.compiere.crm.MUser;
 import org.compiere.model.I_PA_Goal;
+import org.compiere.orm.MRefList;
 import org.compiere.orm.MRole;
 import org.compiere.orm.MSysConfig;
 import org.compiere.orm.Query;

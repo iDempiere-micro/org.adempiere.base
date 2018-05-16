@@ -26,6 +26,7 @@ import java.util.logging.Level;
 import org.compiere.model.I_GL_Distribution;
 import org.compiere.model.I_GL_DistributionLine;
 import org.compiere.orm.Query;
+import org.compiere.product.MCurrency;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogMgt;
 import org.idempiere.common.util.CLogger;

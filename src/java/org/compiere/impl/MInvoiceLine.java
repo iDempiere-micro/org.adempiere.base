@@ -29,15 +29,19 @@ import java.util.logging.Level;
 import org.adempiere.base.Core;
 import org.compiere.model.I_C_InvoiceLine;
 import org.compiere.model.I_M_InOutLine;
+import org.compiere.order.MCharge;
+import org.compiere.order.MRMALine;
+import org.compiere.product.MPriceList;
 import org.compiere.orm.MRole;
 import org.compiere.orm.Query;
+import org.compiere.product.MUOM;
+import org.compiere.tax.*;
 import org.idempiere.common.exceptions.AdempiereException;
-import org.adempiere.model.ITaxProvider;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
-import org.adempiere.base.IProductPricing;
+import org.compiere.product.IProductPricing;
 
 /**
  *	Invoice Line Model
@@ -54,7 +58,7 @@ import org.adempiere.base.IProductPricing;
  * 				incorrectly calculated.
  * @author red1 FR: [ 2214883 ] Remove SQL code and Replace for Query
  */
-public class MInvoiceLine extends X_C_InvoiceLine
+public class MInvoiceLine extends X_C_InvoiceLine implements I_C_InvoiceLine
 {
 	/**
 	 * 
@@ -112,7 +116,7 @@ public class MInvoiceLine extends X_C_InvoiceLine
 	private static CLogger	s_log	= CLogger.getCLogger (MInvoiceLine.class);
 
 	/** Tax							*/
-	private MTax 		m_tax = null;
+	private MTax m_tax = null;
 	
 	
 	/**************************************************************************
@@ -175,7 +179,7 @@ public class MInvoiceLine extends X_C_InvoiceLine
 	private boolean		m_priceSet = false;
 	private MProduct	m_product = null;
 	/**	Charge					*/
-	private MCharge 		m_charge = null;
+	private MCharge m_charge = null;
 	
 	/**	Cached Name of the line		*/
 	private String		m_name = null;
@@ -219,7 +223,7 @@ public class MInvoiceLine extends X_C_InvoiceLine
 	 * 	Does not set quantity!
 	 *	@param oLine line
 	 */
-	public void setOrderLine (MOrderLine oLine)
+	public void setOrderLine (org.compiere.order.MOrderLine oLine)
 	{
 		setC_OrderLine_ID(oLine.getC_OrderLine_ID());
 		//
@@ -383,7 +387,7 @@ public class MInvoiceLine extends X_C_InvoiceLine
 			return;
 		//
 		if (log.isLoggable(Level.FINE)) log.fine("M_PriceList_ID=" + M_PriceList_ID);
-		m_productPricing = Core.getProductPricing();
+		m_productPricing = MProduct.getProductPricing();
 		m_productPricing.setInvoiceLine(this, get_TrxName());
 		m_productPricing.setM_PriceList_ID(M_PriceList_ID);
 		//
@@ -936,7 +940,7 @@ public class MInvoiceLine extends X_C_InvoiceLine
 	 *
 	 * @author teo_sarca [ 1583825 ]
 	 */
-	protected boolean updateInvoiceTax(boolean oldTax) {
+	public boolean updateInvoiceTax(boolean oldTax) {
 		MInvoiceTax tax = MInvoiceTax.get (this, getPrecision(), oldTax, get_TrxName());
 		if (tax != null) {
 			if (!tax.calculateTaxFromLines())
@@ -967,7 +971,7 @@ public class MInvoiceLine extends X_C_InvoiceLine
 			return success;
 		MTax tax = new MTax(getCtx(), getC_Tax_ID(), get_TrxName());
         MTaxProvider provider = new MTaxProvider(tax.getCtx(), tax.getC_TaxProvider_ID(), tax.get_TrxName());
-		ITaxProvider calculator = Core.getTaxProvider(provider);
+		IInvoiceTaxProvider calculator = MTaxProvider.getTaxProvider(provider, new StandardTaxProvider());
 		if (calculator == null)
 			throw new AdempiereException(Msg.getMsg(getCtx(), "TaxNoProvider"));
     	return calculator.recalculateTax(provider, this, newRecord);
@@ -1007,7 +1011,7 @@ public class MInvoiceLine extends X_C_InvoiceLine
 		//	Recalculate Tax for this Tax
         MTax tax = new MTax(getCtx(), getC_Tax_ID(), get_TrxName());
         MTaxProvider provider = new MTaxProvider(tax.getCtx(), tax.getC_TaxProvider_ID(), tax.get_TrxName());
-		ITaxProvider calculator = Core.getTaxProvider(provider);
+		IInvoiceTaxProvider calculator = MTaxProvider.getTaxProvider(provider, new StandardTaxProvider());
 		if (calculator == null)
 			throw new AdempiereException(Msg.getMsg(getCtx(), "TaxNoProvider"));
     	if (!calculator.updateInvoiceTax(provider, this))

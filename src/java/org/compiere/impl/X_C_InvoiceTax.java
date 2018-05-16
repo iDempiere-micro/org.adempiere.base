@@ -31,7 +31,7 @@ import org.idempiere.common.util.Env;
 /** Generated Model for C_InvoiceTax
  *  @author iDempiere (generated) 
  *  @version Release 5.1 - $Id$ */
-public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
+public class X_C_InvoiceTax extends PO implements I_Persistent
 {
 
 	/**
@@ -65,13 +65,13 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
       */
     protected int get_AccessLevel()
     {
-      return accessLevel.intValue();
+      return I_C_InvoiceTax.accessLevel.intValue();
     }
 
     /** Load Meta Data */
     protected POInfo initPO (Properties ctx)
     {
-      POInfo poi = POInfo.getPOInfo (ctx, Table_ID, get_TrxName());
+      POInfo poi = POInfo.getPOInfo (ctx, I_C_InvoiceTax.Table_ID, get_TrxName());
       return poi;
     }
 
@@ -94,9 +94,9 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	public void setC_Invoice_ID (int C_Invoice_ID)
 	{
 		if (C_Invoice_ID < 1) 
-			set_ValueNoCheck (COLUMNNAME_C_Invoice_ID, null);
+			set_ValueNoCheck (I_C_InvoiceTax.COLUMNNAME_C_Invoice_ID, null);
 		else 
-			set_ValueNoCheck (COLUMNNAME_C_Invoice_ID, Integer.valueOf(C_Invoice_ID));
+			set_ValueNoCheck (I_C_InvoiceTax.COLUMNNAME_C_Invoice_ID, Integer.valueOf(C_Invoice_ID));
 	}
 
 	/** Get Invoice.
@@ -104,7 +104,7 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	  */
 	public int getC_Invoice_ID () 
 	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_C_Invoice_ID);
+		Integer ii = (Integer)get_Value(I_C_InvoiceTax.COLUMNNAME_C_Invoice_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
@@ -114,14 +114,14 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 		@param C_InvoiceTax_UU C_InvoiceTax_UU	  */
 	public void setC_InvoiceTax_UU (String C_InvoiceTax_UU)
 	{
-		set_Value (COLUMNNAME_C_InvoiceTax_UU, C_InvoiceTax_UU);
+		set_Value (I_C_InvoiceTax.COLUMNNAME_C_InvoiceTax_UU, C_InvoiceTax_UU);
 	}
 
 	/** Get C_InvoiceTax_UU.
 		@return C_InvoiceTax_UU	  */
 	public String getC_InvoiceTax_UU () 
 	{
-		return (String)get_Value(COLUMNNAME_C_InvoiceTax_UU);
+		return (String)get_Value(I_C_InvoiceTax.COLUMNNAME_C_InvoiceTax_UU);
 	}
 
 	public org.compiere.model.I_C_Tax getC_Tax() throws RuntimeException
@@ -136,9 +136,9 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	public void setC_Tax_ID (int C_Tax_ID)
 	{
 		if (C_Tax_ID < 1) 
-			set_ValueNoCheck (COLUMNNAME_C_Tax_ID, null);
+			set_ValueNoCheck (I_C_InvoiceTax.COLUMNNAME_C_Tax_ID, null);
 		else 
-			set_ValueNoCheck (COLUMNNAME_C_Tax_ID, Integer.valueOf(C_Tax_ID));
+			set_ValueNoCheck (I_C_InvoiceTax.COLUMNNAME_C_Tax_ID, Integer.valueOf(C_Tax_ID));
 	}
 
 	/** Get Tax.
@@ -146,7 +146,7 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	  */
 	public int getC_Tax_ID () 
 	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_C_Tax_ID);
+		Integer ii = (Integer)get_Value(I_C_InvoiceTax.COLUMNNAME_C_Tax_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
@@ -162,16 +162,16 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	public void setC_TaxProvider_ID (int C_TaxProvider_ID)
 	{
 		if (C_TaxProvider_ID < 1) 
-			set_ValueNoCheck (COLUMNNAME_C_TaxProvider_ID, null);
+			set_ValueNoCheck (I_C_InvoiceTax.COLUMNNAME_C_TaxProvider_ID, null);
 		else 
-			set_ValueNoCheck (COLUMNNAME_C_TaxProvider_ID, Integer.valueOf(C_TaxProvider_ID));
+			set_ValueNoCheck (I_C_InvoiceTax.COLUMNNAME_C_TaxProvider_ID, Integer.valueOf(C_TaxProvider_ID));
 	}
 
 	/** Get Tax Provider.
 		@return Tax Provider	  */
 	public int getC_TaxProvider_ID () 
 	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_C_TaxProvider_ID);
+		Integer ii = (Integer)get_Value(I_C_InvoiceTax.COLUMNNAME_C_TaxProvider_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
@@ -183,7 +183,7 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	  */
 	public void setIsTaxIncluded (boolean IsTaxIncluded)
 	{
-		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
+		set_Value (I_C_InvoiceTax.COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
 	}
 
 	/** Get Price includes Tax.
@@ -191,7 +191,7 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	  */
 	public boolean isTaxIncluded () 
 	{
-		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
+		Object oo = get_Value(I_C_InvoiceTax.COLUMNNAME_IsTaxIncluded);
 		if (oo != null) 
 		{
 			 if (oo instanceof Boolean) 
@@ -207,7 +207,7 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	  */
 	public void setProcessed (boolean Processed)
 	{
-		set_Value (COLUMNNAME_Processed, Boolean.valueOf(Processed));
+		set_Value (I_C_InvoiceTax.COLUMNNAME_Processed, Boolean.valueOf(Processed));
 	}
 
 	/** Get Processed.
@@ -215,7 +215,7 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	  */
 	public boolean isProcessed () 
 	{
-		Object oo = get_Value(COLUMNNAME_Processed);
+		Object oo = get_Value(I_C_InvoiceTax.COLUMNNAME_Processed);
 		if (oo != null) 
 		{
 			 if (oo instanceof Boolean) 
@@ -231,7 +231,7 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	  */
 	public void setTaxAmt (BigDecimal TaxAmt)
 	{
-		set_ValueNoCheck (COLUMNNAME_TaxAmt, TaxAmt);
+		set_ValueNoCheck (I_C_InvoiceTax.COLUMNNAME_TaxAmt, TaxAmt);
 	}
 
 	/** Get Tax Amount.
@@ -239,7 +239,7 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	  */
 	public BigDecimal getTaxAmt () 
 	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_TaxAmt);
+		BigDecimal bd = (BigDecimal)get_Value(I_C_InvoiceTax.COLUMNNAME_TaxAmt);
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
@@ -251,7 +251,7 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	  */
 	public void setTaxBaseAmt (BigDecimal TaxBaseAmt)
 	{
-		set_ValueNoCheck (COLUMNNAME_TaxBaseAmt, TaxBaseAmt);
+		set_ValueNoCheck (I_C_InvoiceTax.COLUMNNAME_TaxBaseAmt, TaxBaseAmt);
 	}
 
 	/** Get Tax base Amount.
@@ -259,7 +259,7 @@ public class X_C_InvoiceTax extends PO implements I_C_InvoiceTax, I_Persistent
 	  */
 	public BigDecimal getTaxBaseAmt () 
 	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_TaxBaseAmt);
+		BigDecimal bd = (BigDecimal)get_Value(I_C_InvoiceTax.COLUMNNAME_TaxBaseAmt);
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;

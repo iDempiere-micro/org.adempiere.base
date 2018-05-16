@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.product.MPriceList;
+import org.compiere.product.MPriceListVersion;
 import org.compiere.orm.MRole;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

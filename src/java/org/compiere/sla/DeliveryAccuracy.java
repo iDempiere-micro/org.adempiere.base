@@ -22,7 +22,7 @@ import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.logging.Level;
 
-import org.compiere.impl.MInOut;
+import org.compiere.order.MInOut;
 import org.compiere.impl.MSLAGoal;
 import org.compiere.impl.MSLAMeasure;
 import org.idempiere.common.util.CLogger;

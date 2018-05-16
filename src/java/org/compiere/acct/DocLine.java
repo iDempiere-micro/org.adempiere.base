@@ -17,6 +17,7 @@
 package org.compiere.acct;
 
 import org.compiere.impl.*;
+import org.compiere.order.MCharge;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -40,7 +41,7 @@ public class DocLine
 	 *	@param po line persistent object
 	 *	@param doc header
 	 */
-	public DocLine (PO po, Doc doc)
+	public DocLine (IPODoc po, Doc doc)
 	{
 		if (po == null)
 			throw new IllegalArgumentException("PO is null");
@@ -53,7 +54,7 @@ public class DocLine
 	}	//	DocLine
 
 	/** Persistent Object		*/
-	protected PO				p_po = null;
+	protected IPODoc				p_po = null;
 	/** Parent					*/
 	private Doc					m_doc = null;
 	/**	 Log					*/
@@ -459,7 +460,7 @@ public class DocLine
 		int C_Charge_ID = getC_Charge_ID();
 		if (C_Charge_ID == 0)
 			return null;
-		return MCharge.getAccount(C_Charge_ID, as);
+		return org.compiere.impl.MCharge.getAccount(C_Charge_ID, as);
 	}   //  getChargeAccount
 
 	/**
@@ -564,7 +565,7 @@ public class DocLine
 		m_isItem = Boolean.FALSE;
 		if (getM_Product_ID() != 0)
 		{
-			MProduct product = MProduct.get(Env.getCtx(), getM_Product_ID());
+			org.compiere.product.MProduct product = MProduct.get(Env.getCtx(), getM_Product_ID());
 			if (product.get_ID() == getM_Product_ID() && product.isItem())
 				m_isItem = Boolean.TRUE;
 		}
@@ -1137,7 +1138,7 @@ public class DocLine
 	}   //  getReversalLine_ID
 	//end AZ Goodwill
 	
-	public PO getPO() 
+	public IPODoc getPO()
 	{
 		return p_po;
 	}

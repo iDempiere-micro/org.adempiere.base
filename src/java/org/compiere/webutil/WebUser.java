@@ -21,6 +21,7 @@ import org.compiere.crm.MLocation;
 import org.compiere.crm.MUser;
 import org.compiere.impl.*;
 import org.compiere.model.I_C_BPartner_Location;
+import org.compiere.orm.MRefList;
 import org.compiere.orm.MSysConfig;
 import org.compiere.orm.MTable;
 import org.idempiere.common.util.CLogger;

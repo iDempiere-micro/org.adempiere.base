@@ -3,7 +3,8 @@ package org.compiere.impl;
 import java.util.List;
 
 import org.compiere.acct.Fact;
- 
+import org.idempiere.icommon.model.IPO;
+
 
 public interface FactsValidator {
 	
@@ -20,5 +21,5 @@ public interface FactsValidator {
 	 * @return error message or null - 
      * if not null, the pocument will be marked as Invalid.
 	 */
-	public String factsValidate(MAcctSchema schema, List<Fact> facts, PO po);
+	public String factsValidate(MAcctSchema schema, List<Fact> facts, IPO po);
 }

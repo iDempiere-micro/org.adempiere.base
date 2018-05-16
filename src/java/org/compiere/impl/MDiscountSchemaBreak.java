@@ -16,6 +16,8 @@
  *****************************************************************************/
 package org.compiere.impl;
 
+import org.compiere.product.MProductCategory;
+
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.Properties;

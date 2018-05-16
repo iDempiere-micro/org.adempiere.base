@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.product.MProductCategory;
 import org.idempiere.common.util.DB;
 
 

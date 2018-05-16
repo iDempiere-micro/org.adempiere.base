@@ -13,7 +13,7 @@
  *******************************************************************************/
 package org.adempiere.exceptions2;
 
-import org.compiere.impl.MAttributeSetInstance;
+import org.compiere.product.MAttributeSetInstance;
 import org.compiere.impl.MLocator;
 import org.compiere.impl.MProduct;
 import org.compiere.impl.MWarehouse;

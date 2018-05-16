@@ -16,11 +16,9 @@
  *****************************************************************************/
 package org.compiere.webutil;
 
-import org.compiere.impl.MCurrency;
 import org.compiere.impl.MPaySelectionCheck;
 import org.compiere.impl.MPaySelectionLine;
-import org.compiere.model.I_C_PaySelectionCheck;
-import org.compiere.model.I_C_PaySelectionLine;
+import org.compiere.product.MCurrency;
 import org.compiere.util.PaymentExport;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

@@ -31,7 +31,7 @@ import org.compiere.model.I_M_MovementLine;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.MSequence;
 import org.compiere.orm.Query;
-import org.compiere.process2.DocAction;
+import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

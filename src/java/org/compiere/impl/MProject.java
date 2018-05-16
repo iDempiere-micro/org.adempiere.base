@@ -25,6 +25,7 @@ import java.util.logging.Level;
 import org.compiere.model.I_C_ProjectIssue;
 import org.compiere.model.I_C_ProjectLine;
 import org.compiere.model.I_C_ProjectPhase;
+import org.compiere.product.MPriceList;
 import org.compiere.orm.MTree_Base;
 import org.compiere.orm.Query;
 import org.idempiere.common.util.DB;

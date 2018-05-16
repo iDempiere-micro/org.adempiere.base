@@ -28,10 +28,10 @@ import java.util.Properties;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import org.compiere.product.MUOM;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.exceptions.DBException;
 import org.compiere.impl.MProduct;
-import org.compiere.impl.MUOM;
 import org.compiere.orm.Query;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

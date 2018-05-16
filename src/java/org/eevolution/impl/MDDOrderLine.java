@@ -21,12 +21,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Properties;
 
-import org.compiere.impl.MAttributeSet;
-import org.compiere.impl.MCharge;
+import org.compiere.model.I_M_Product;
+import org.compiere.order.MCharge;
 import org.compiere.impl.MLocator;
 import org.compiere.impl.MProduct;
 import org.compiere.impl.MStorageOnHand;
-import org.compiere.impl.MUOM;
+import org.compiere.product.MAttributeSet;
+import org.compiere.product.MUOM;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -171,7 +172,7 @@ public class MDDOrderLine extends X_DD_OrderLine
 	/** Cached Currency Precision	*/
 	//private Integer			m_precision = null;
 	/**	Product					*/
-	private MProduct 		m_product = null;
+	private I_M_Product 		m_product = null;
 	/** Parent					*/
 	private MDDOrder			m_parent = null;
 	
@@ -222,7 +223,7 @@ public class MDDOrderLine extends X_DD_OrderLine
 	 * 	Set Product
 	 *	@param product product
 	 */
-	public void setProduct (MProduct product)
+	public void setProduct (I_M_Product product)
 	{
 		m_product = product;
 		if (m_product != null)
@@ -271,7 +272,7 @@ public class MDDOrderLine extends X_DD_OrderLine
 	 * 	Get Product
 	 *	@return product or null
 	 */
-	public MProduct getProduct()
+	public I_M_Product getProduct()
 	{
 		if (m_product == null && getM_Product_ID() != 0)
 			m_product =  MProduct.get (getCtx(), getM_Product_ID());
@@ -496,7 +497,7 @@ public class MDDOrderLine extends X_DD_OrderLine
 	 */
 	public void setQtyOrdered (BigDecimal QtyOrdered)
 	{
-		MProduct product = getProduct();
+		I_M_Product product = getProduct();
 		if (QtyOrdered != null && product != null)
 		{
 			int precision = product.getUOMPrecision();
@@ -564,7 +565,7 @@ public class MDDOrderLine extends X_DD_OrderLine
 				|| is_ValueChanged("M_AttributeSetInstance_ID")
 				|| is_ValueChanged("M_Warehouse_ID")))
 		{
-			MProduct product = getProduct();
+			I_M_Product product = getProduct();
 			if (product.isStocked())
 			{
 				int M_AttributeSet_ID = product.getM_AttributeSet_ID();

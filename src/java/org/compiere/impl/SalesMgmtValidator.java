@@ -19,7 +19,7 @@ package org.compiere.impl;
 
 import org.compiere.bo.MOpportunity;
 import org.idempiere.common.util.CLogger;
- 
+import org.idempiere.icommon.model.IPO;
 
 
 /**
@@ -73,7 +73,7 @@ public class SalesMgmtValidator implements ModelValidator
      *	@return error message or null
      *	@exception Exception if the recipient wishes the change to be not accept.
      */
-	public String modelChange (PO po, int type) throws Exception
+	public String modelChange (IPO po, int type) throws Exception
 	{
 		if ( po == null )
 			return null;
@@ -123,7 +123,7 @@ public class SalesMgmtValidator implements ModelValidator
 	 *	@param timing see TIMING_ constants
      *	@return error message or null
 	 */
-	public String docValidate (PO po, int timing)
+	public String docValidate (IPO po, int timing)
 	{
 		return null;
 	}	//	docValidate

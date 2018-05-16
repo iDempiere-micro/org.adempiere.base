@@ -30,17 +30,18 @@ import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MAcctSchemaElement;
 import org.compiere.impl.MConversionRate;
 import org.compiere.impl.MCostDetail;
-import org.compiere.impl.MCurrency;
-import org.compiere.impl.MInOut;
-import org.compiere.impl.MInOutLine;
+import org.compiere.model.I_C_Order;
+import org.compiere.order.MInOut;
+import org.compiere.order.MInOutLine;
 import org.compiere.impl.MMatchPO;
 import org.compiere.impl.MOrder;
 import org.compiere.impl.MOrderLandedCostAllocation;
 import org.compiere.impl.MOrderLine;
 import org.compiere.impl.MProduct;
-import org.compiere.impl.MTax;
 import org.compiere.impl.ProductCost;
-import org.compiere.impl.X_M_InOut;
+import org.compiere.order.X_M_InOut;
+import org.compiere.product.MCurrency;
+import org.compiere.tax.MTax;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Util;
 
@@ -217,7 +218,7 @@ public class Doc_MatchPO extends Doc
 			BigDecimal amt = totalAmt.multiply(m_ioLine.getMovementQty()).divide(totalQty, 12, RoundingMode.HALF_UP);			
 			if (m_oLine.getC_Currency_ID() != as.getC_Currency_ID())
 			{
-				MOrder order = m_oLine.getParent();
+				I_C_Order order = m_oLine.getParent();
 				Timestamp dateAcct = inOut.getDateAcct();
 				BigDecimal rate = MConversionRate.getRate(
 					order.getC_Currency_ID(), as.getC_Currency_ID(),
@@ -250,7 +251,7 @@ public class Doc_MatchPO extends Doc
 		//	Different currency
 		if (m_oLine.getC_Currency_ID() != as.getC_Currency_ID())
 		{
-			MOrder order = m_oLine.getParent();
+			I_C_Order order = m_oLine.getParent();
 			Timestamp dateAcct = inOut.getDateAcct();
 			BigDecimal rate = MConversionRate.getRate(
 				order.getC_Currency_ID(), as.getC_Currency_ID(),

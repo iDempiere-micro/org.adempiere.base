@@ -3,6 +3,8 @@ package org.compiere.impl;
 import java.sql.ResultSet;
 import java.util.Properties;
 
+import org.compiere.orm.MRefList;
+import org.compiere.product.MAssetChange;
 import org.idempiere.common.util.DB;
 /** Generated Model for A_Asset_Use
  ** @version $Id: X_A_Asset.java,v 1.88 2004/08/27 21:26:37 jjanke Exp $ */
