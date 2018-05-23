@@ -24,10 +24,10 @@ import java.util.Dictionary;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
+import org.compiere.wf.MNote;
 import org.idempiere.common.exceptions.DBException;
 import org.compiere.model.I_R_Request;
 import org.compiere.impl.MClient;
-import org.compiere.impl.MNote;
 import org.compiere.impl.MRequest;
 import org.compiere.impl.MRequestAction;
 import org.compiere.impl.MRequestType;

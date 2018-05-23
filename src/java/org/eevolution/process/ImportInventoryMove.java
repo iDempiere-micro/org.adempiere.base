@@ -23,6 +23,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.logging.Level;
 
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.model.I_M_Movement;
 import org.compiere.model.I_M_MovementLine;
 import org.compiere.impl.MBPartner;
@@ -78,8 +79,8 @@ public class ImportInventoryMove extends SvrProcess
 	 */
 	protected void prepare()
 	{
-		ProcessInfoParameter[] parameters = getParameter();
-		for (ProcessInfoParameter para: parameters)
+		IProcessInfoParameter[] parameters = getParameter();
+		for (IProcessInfoParameter para: parameters)
 		{
 			String name = para.getParameterName();
 			if (para.getParameter() == null)

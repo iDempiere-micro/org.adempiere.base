@@ -19,6 +19,7 @@ package org.compiere.process2;
 import java.util.logging.Level;
 
 import org.compiere.impl.PO;
+import org.compiere.wf.StateEngine;
 
 /**
  *	Adempiere Service.

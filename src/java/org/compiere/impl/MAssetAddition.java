@@ -9,6 +9,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.adempiere.exceptions.FillMandatoryException;
+import org.compiere.conversionrate.MConversionType;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.Query;
 import org.compiere.orm.SetGetUtil;

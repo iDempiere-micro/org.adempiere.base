@@ -7,6 +7,7 @@ import org.compiere.impl.X_M_ShipperCfg;
 import org.compiere.impl.X_M_ShipperLabelsCfg;
 import org.compiere.impl.X_M_ShipperPackagingCfg;
 import org.compiere.impl.X_M_ShipperPickupTypesCfg;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 
@@ -17,7 +18,7 @@ public class ShipperCopyFrom extends SvrProcess
 	@Override
 	protected void prepare() 
 	{
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 		for (int i = 0; i < para.length; i++)
 		{
 			String name = para[i].getParameterName();

@@ -33,6 +33,7 @@ import javax.mail.internet.InternetAddress;
 
 import org.compiere.crm.MUser;
 import org.compiere.model.I_AD_Client;
+import org.compiere.model.I_AD_User;
 import org.compiere.orm.MSysConfig;
 import org.compiere.orm.MTree_Base;
 import org.compiere.orm.Query;
@@ -42,7 +43,7 @@ import org.idempiere.common.util.DB;
 import org.compiere.webutil.EMail;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Language;
-import org.compiere.interfaces.Server;
+import org.compiere.model.Server;
 import org.idempiere.common.base.Service;
 /**
  *  Client Model
@@ -147,20 +148,6 @@ public class MClient extends org.compiere.orm.MClient
 			m_info = org.compiere.orm.MClientInfo.get (getCtx(), getAD_Client_ID(), get_TrxName());
 		return (MClientInfo)m_info;
 	}	//	getMClientInfo
-
-
-	/**
-	 *	Get Default Accounting Currency
-	 *	@return currency or 0
-	 */
-	public int getC_Currency_ID()
-	{
-		if (m_info == null)
-			getInfo();
-		if (m_info != null)
-			return getInfo().getC_Currency_ID();
-		return 0;
-	}	//	getC_Currency_ID
 
 	/**
 	 * 	Get Language
@@ -459,6 +446,7 @@ public class MClient extends org.compiere.orm.MClient
 	 *	@param attachment optional attachment
 	 *	@return true if sent
 	 */
+	@Override
 	public boolean sendEMail (int AD_User_ID,
 			String subject, String message, File attachment)
 	{
@@ -574,6 +562,7 @@ public class MClient extends org.compiere.orm.MClient
 	 *	@param attachment optional attachment
 	 *	@return true if sent
 	 */
+	@Override
 	public boolean sendEMail (String to,
 		String subject, String message, File attachment)
 	{
@@ -589,6 +578,7 @@ public class MClient extends org.compiere.orm.MClient
 	 *  @param html
 	 *	@return true if sent
 	 */
+	@Override
 	public boolean sendEMail (String to,
 		String subject, String message, File attachment, boolean html)
 	{
@@ -654,8 +644,9 @@ public class MClient extends org.compiere.orm.MClient
 	 *  @param isHtml
 	 *	@return true if sent
 	 */
-	public boolean sendEMail (MUser from, MUser to,
-		String subject, String message, File attachment, boolean isHtml)
+	@Override
+	public boolean sendEMail (I_AD_User from, I_AD_User to,
+							  String subject, String message, File attachment, boolean isHtml)
 	{
 		EMail email = createEMail(from, to, subject, message, isHtml);
 		if (email == null)
@@ -683,7 +674,7 @@ public class MClient extends org.compiere.orm.MClient
 	 *	@param email email
 	 *	@return true if sent
 	 */
-	public boolean sendEmailNow(MUser from, MUser to, EMail email)
+	public boolean sendEmailNow(I_AD_User from, I_AD_User to, EMail email)
 	{
 		String msg = null;
 		if (isServerEMail())
@@ -788,7 +779,7 @@ public class MClient extends org.compiere.orm.MClient
 	 *	@param message nessage
 	 *	@return EMail
 	 */
-	public EMail createEMail (MUser from, MUser to,
+	public EMail createEMail (I_AD_User from, I_AD_User to,
 		String subject, String message)
 	{
 		return createEMail(from, to, subject, message, false);
@@ -803,7 +794,7 @@ public class MClient extends org.compiere.orm.MClient
 	 *  @param html
 	 *	@return EMail
 	 */
-	public EMail createEMail (MUser from, MUser to,
+	public EMail createEMail (I_AD_User from, I_AD_User to,
 		String subject, String message, boolean html)
 	{
 		if (to == null)
@@ -827,7 +818,7 @@ public class MClient extends org.compiere.orm.MClient
 	 *	@param message nessage
 	 *	@return EMail
 	 */
-	public EMail createEMail (MUser from, String to,
+	public EMail createEMail (I_AD_User from, String to,
 		String subject, String message)
 	{
 		return createEMail(from, to, subject, message, false);
@@ -842,7 +833,7 @@ public class MClient extends org.compiere.orm.MClient
 	 *  @param html
 	 *	@return EMail
 	 */
-	public EMail createEMail (MUser from, String to,
+	public EMail createEMail (I_AD_User from, String to,
 		String subject, String message, boolean html)
 	{
 		if (to == null || to.length() == 0)
@@ -1098,4 +1089,16 @@ public class MClient extends org.compiere.orm.MClient
 		super(ctx, rs, trxName);
 	}
 
+	/**
+	 *	Get Default Accounting Currency
+	 *	@return currency or 0
+	 */
+	public int getC_Currency_ID()
+	{
+		if (m_info == null)
+			getInfo();
+		if (m_info != null)
+			return getInfo().getC_Currency_ID();
+		return 0;
+	}	//	getC_Currency_ID
 }	//	MClient

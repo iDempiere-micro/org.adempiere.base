@@ -22,6 +22,7 @@ import java.util.Properties;
 import javax.mail.internet.InternetAddress;
 
 import org.compiere.webutil.EMail;
+import org.compiere.wf.MMailText;
 import org.idempiere.common.util.Env;
  
 

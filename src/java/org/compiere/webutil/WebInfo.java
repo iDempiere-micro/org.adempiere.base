@@ -20,6 +20,7 @@ import org.compiere.crm.X_AD_UserBPAccess;
 import org.compiere.impl.*;
 import org.compiere.order.MInOut;
 import org.compiere.orm.MDocType;
+import org.compiere.wf.MNote;
 import org.compiere.wf.MWFActivity;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;

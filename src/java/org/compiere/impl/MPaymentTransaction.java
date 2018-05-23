@@ -21,6 +21,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.adempiere.util.PaymentUtil;
+import org.compiere.model.IProcessInfo;
 import org.compiere.order.MOnlineTrxHistory;
 import org.compiere.orm.MSysConfig;
 import org.compiere.process.DocAction;
@@ -531,7 +532,7 @@ public class MPaymentTransaction extends X_C_PaymentTransaction implements Proce
 	 *  @return true if the next process should be performed
 	 */
 	@Override
-	public boolean startProcess(Properties ctx, ProcessInfo pi, Trx trx) {
+	public boolean startProcess(Properties ctx, IProcessInfo pi, Trx trx) {
 		if (log.isLoggable(Level.INFO)) log.info("startProcess - " + pi.getRecord_ID());
 		boolean retValue = false;
 		//

@@ -1,6 +1,7 @@
 package org.idempiere.fa.process;
 
 import org.compiere.impl.*;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.orm.POResultSet;
 import org.compiere.orm.Query;
 import org.compiere.process.ProcessInfoParameter;
@@ -41,7 +42,7 @@ public class ImportFixedAsset extends SvrProcess
 	 */
 	protected void prepare()
 	{
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 		for (int i = 0; i < para.length; i++)
 		{
 			String name = para[i].getParameterName();

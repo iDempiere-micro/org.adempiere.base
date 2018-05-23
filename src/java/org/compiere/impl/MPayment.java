@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.model.IProcessInfo;
 import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_C_Payment;
 import org.compiere.order.MOnlineTrxHistory;
@@ -640,7 +641,7 @@ public class MPayment extends X_C_Payment
 	 *  @param trx transaction
 	 *  @return true if the next process should be performed
 	 */
-	public boolean startProcess (Properties ctx, ProcessInfo pi, Trx trx)
+	public boolean startProcess (Properties ctx, IProcessInfo pi, Trx trx)
 	{
 		if (log.isLoggable(Level.INFO)) log.info("startProcess - " + pi.getRecord_ID());
 		boolean retValue = false;
@@ -2006,7 +2007,7 @@ public class MPayment extends X_C_Payment
 			MBPartner bp = new MBPartner (getCtx(), getC_BPartner_ID(), get_TrxName());
 			DB.getDatabase().forUpdate(bp, 0);
 			//	Update total balance to include this payment 
-			BigDecimal payAmt = MConversionRate.convertBase(getCtx(), getPayAmt(), 
+			BigDecimal payAmt = MConversionRate.convertBase(getCtx(), getPayAmt(),
 				getC_Currency_ID(), getDateAcct(), getC_ConversionType_ID(), getAD_Client_ID(), getAD_Org_ID());
 			if (payAmt == null)
 			{

@@ -9,6 +9,8 @@ import java.sql.Timestamp;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.conversionrate.MConversionRate;
+import org.compiere.conversionrate.MConversionType;
 import org.compiere.orm.SetGetUtil;
 import org.compiere.product.MCurrency;
 import org.idempiere.common.util.CLogger;

@@ -22,9 +22,9 @@ import java.sql.Timestamp;
 import java.util.List;
 import java.util.Properties;
 
-import org.compiere.model.I_C_AcctProcessor;
-import org.compiere.model.I_C_AcctProcessorLog;
+import org.compiere.model.*;
 import org.compiere.orm.Query;
+import org.compiere.schedule.MSchedule;
 import org.idempiere.common.util.DB;
 import org.compiere.util.Msg;
 

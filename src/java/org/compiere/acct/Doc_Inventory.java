@@ -24,7 +24,7 @@ import java.util.logging.Level;
 
 import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
-import org.compiere.impl.MConversionRate;
+import org.compiere.conversionrate.MConversionRate;
 import org.compiere.impl.MCost;
 import org.compiere.impl.MCostDetail;
 import org.compiere.impl.MCostElement;

@@ -28,13 +28,11 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.adempiere.base.Core;
 import org.compiere.crm.MUser;
 import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_C_InvoiceLine;
 import org.compiere.model.I_C_InvoiceTax;
-import org.compiere.order.*;
 import org.compiere.order.MInOut;
 import org.compiere.order.MInOutLine;
 import org.compiere.order.MRMA;
@@ -45,7 +43,6 @@ import org.compiere.product.MPriceListVersion;
 import org.compiere.orm.*;
 import org.compiere.product.MProductBOM;
 import org.compiere.tax.IInvoiceTaxProvider;
-import org.compiere.tax.ITaxProvider;
 import org.compiere.tax.MTax;
 import org.compiere.tax.MTaxProvider;
 import org.idempiere.common.exceptions.AdempiereException;
@@ -59,7 +56,6 @@ import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
-import org.idempiere.icommon.model.IPO;
 
 
 /**

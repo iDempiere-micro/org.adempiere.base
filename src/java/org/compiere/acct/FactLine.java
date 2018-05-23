@@ -24,10 +24,10 @@ import java.sql.Timestamp;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.conversionrate.MConversionRate;
 import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MAcctSchemaElement;
-import org.compiere.impl.MConversionRate;
 import org.compiere.impl.MFactAcct;
 import org.compiere.impl.MMovement;
 import org.compiere.impl.MRevenueRecognitionPlan;

@@ -18,7 +18,7 @@ import org.idempiere.orm.EventManager;
 import org.idempiere.orm.IEventTopics;
 import org.adempiere.model.MBroadcastMessage;
 import org.compiere.Adempiere;
-import org.compiere.impl.MNote;
+import org.compiere.wf.MNote;
 import org.compiere.crm.MUser;
 import org.compiere.webutil.WebUtil;
 import org.idempiere.common.exceptions.DBException;

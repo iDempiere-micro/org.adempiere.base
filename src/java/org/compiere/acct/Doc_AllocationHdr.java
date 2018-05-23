@@ -28,7 +28,7 @@ import org.compiere.impl.MAcctSchemaElement;
 import org.compiere.impl.MAllocationHdr;
 import org.compiere.impl.MAllocationLine;
 import org.compiere.impl.MCashLine;
-import org.compiere.impl.MConversionRate;
+import org.compiere.conversionrate.MConversionRate;
 import org.compiere.impl.MFactAcct;
 import org.compiere.impl.MInvoice;
 import org.compiere.impl.MInvoiceLine;

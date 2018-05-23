@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 
 import org.compiere.impl.MProcess;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.process.MPInstance;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.ProcessInfoParameter;
@@ -54,10 +55,10 @@ public class FinReportJasper extends FinReport
 		String finReportMsg = super.doIt();
 
 		// Now invoke the associated jasper report (must report on the T_Report table)
-		ArrayList<ProcessInfoParameter> list = new ArrayList<ProcessInfoParameter>();
+		ArrayList<IProcessInfoParameter> list = new ArrayList<IProcessInfoParameter>();
 
 		// Copy the list of parameters from the financial report
-		ProcessInfoParameter oldpara[] = getParameter();
+		IProcessInfoParameter oldpara[] = getParameter();
 		for (int i = 0; i < oldpara.length; i++)
 			list.add (oldpara[i]);
 		// and add the T_Report_AD_PInstance_ID parameter

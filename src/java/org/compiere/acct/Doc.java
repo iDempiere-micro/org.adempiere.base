@@ -28,6 +28,7 @@ import java.util.Iterator;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.conversionrate.MConversionRate;
 import org.compiere.impl.*;
 import org.compiere.model.I_C_AllocationHdr;
 import org.compiere.model.I_C_BankStatement;
@@ -39,6 +40,7 @@ import org.compiere.model.I_M_Production;
 import org.compiere.order.MInOut;
 import org.compiere.orm.MDocType;
 import org.compiere.process2.DocumentEngine;
+import org.compiere.wf.MNote;
 import org.idempiere.common.util.AdempiereUserError;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
@@ -46,7 +48,6 @@ import org.idempiere.common.util.Env;
 import org.compiere.util.Msg;
 import org.idempiere.common.util.Trx;
 import org.idempiere.common.util.Util;
-import org.idempiere.icommon.model.IPO;
 
 /**
  *  Posting Document Root.

@@ -22,6 +22,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
+import org.compiere.conversionrate.MConversionRate;
 import org.compiere.impl.*;
 import org.compiere.model.I_M_InOutLine;
 import org.compiere.model.I_M_RMALine;

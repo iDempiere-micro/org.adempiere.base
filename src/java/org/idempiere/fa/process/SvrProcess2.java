@@ -6,6 +6,7 @@ package org.idempiere.fa.process;
 import java.lang.reflect.Field;
 import java.util.logging.Level;
 
+import org.compiere.model.IProcessInfoParameter;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
@@ -29,7 +30,7 @@ public abstract class SvrProcess2 extends SvrProcess
 		readParameters(this, getParameter());
 	}
 
-	private static void readParameters(SvrProcess process, ProcessInfoParameter[] params)
+	private static void readParameters(SvrProcess process, IProcessInfoParameter[] params)
 	{
 		try
 		{
@@ -53,7 +54,7 @@ public abstract class SvrProcess2 extends SvrProcess
 				}
 				//
 				boolean isSet = false;
-				for (ProcessInfoParameter para : params)
+				for (IProcessInfoParameter para : params)
 				{
 					if (!parameterName.equals(para.getParameterName()))
 					{

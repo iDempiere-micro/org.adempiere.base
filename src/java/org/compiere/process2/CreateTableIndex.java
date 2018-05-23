@@ -21,6 +21,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.logging.Level;
 
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.orm.MColumn;
 import org.compiere.orm.MIndexColumn;
 import org.compiere.orm.MTable;
@@ -48,7 +49,7 @@ public class CreateTableIndex extends SvrProcess {
 	@Override
 	protected void prepare() 
 	{
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 		for (int i = 0; i < para.length; i++)
 		{
 			String name = para[i].getParameterName();

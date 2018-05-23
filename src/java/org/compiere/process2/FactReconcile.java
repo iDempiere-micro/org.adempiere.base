@@ -20,6 +20,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.rule.MRule;
@@ -44,7 +45,7 @@ public class FactReconcile extends SvrProcess
 	protected void prepare()
 	{
 		int accountID = 0;
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 		for (int i = 0; i < para.length; i++)
 		{
 			String name = para[i].getParameterName();

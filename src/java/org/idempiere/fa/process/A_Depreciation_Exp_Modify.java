@@ -3,6 +3,7 @@
  */
 package org.idempiere.fa.process;
 
+import org.compiere.model.IProcessInfoParameter;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.FillMandatoryException;
 import org.compiere.impl.MDepreciationEntry;
@@ -28,7 +29,7 @@ public class A_Depreciation_Exp_Modify extends SvrProcess
 	protected void prepare()
 	{
 		;
-		for (ProcessInfoParameter para : getParameter())
+		for (IProcessInfoParameter para : getParameter())
 		{
 			String name = para.getParameterName();
 			if (para.getParameter() == null)

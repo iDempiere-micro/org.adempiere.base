@@ -18,6 +18,7 @@ package org.compiere.webutil;
 
 import com.sun.mail.smtp.SMTPMessage;
 import org.compiere.impl.MClient;
+import org.compiere.model.IEMail;
 import org.compiere.orm.MSysConfig;
 import org.idempiere.common.util.*;
 
@@ -55,7 +56,7 @@ import java.util.logging.Level;
  *  @version  $Id: EMail.java,v 1.4 2006/07/30 00:54:35 jjanke Exp $
  *	@author	Michael Judd BF [ 2736995 ] - toURL() in java.io.File has been depreciated
  */
-public final class EMail extends org.compiere.crm.EMail implements Serializable
+public final class EMail extends org.compiere.crm.EMail implements Serializable, IEMail
 {
 	/**
 	 * 

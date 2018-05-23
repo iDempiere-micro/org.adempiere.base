@@ -28,6 +28,8 @@
  **********************************************************************/
 package org.compiere.impl;
 
+import org.compiere.model.AdempiereProcessorLog;
+
 import java.sql.ResultSet;
 import java.util.Properties;
 
@@ -37,7 +39,7 @@ import java.util.Properties;
  */
 public class MIMPProcessorLog 
 	extends X_IMP_ProcessorLog
-	implements AdempiereProcessorLog 
+	implements AdempiereProcessorLog
 {
 	/**
 	 * 

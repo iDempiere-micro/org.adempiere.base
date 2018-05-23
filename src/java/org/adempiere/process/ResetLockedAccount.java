@@ -2,6 +2,7 @@ package org.adempiere.process;
 
 import java.util.logging.Level;
 
+import org.compiere.model.IProcessInfoParameter;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.orm.MSysConfig;
 import org.compiere.crm.MUser;
@@ -19,8 +20,8 @@ public class ResetLockedAccount extends SvrProcess {
 	@Override
 	protected void prepare() 
 	{
-		ProcessInfoParameter[] para = getParameter();
-		for (ProcessInfoParameter element : para) 
+		IProcessInfoParameter[] para = getParameter();
+		for (IProcessInfoParameter element : para)
 		{
 			String name = element.getParameterName();
 			if (element.getParameter() == null

@@ -32,7 +32,7 @@ import org.compiere.model.I_M_InOutLine;
 import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MClientInfo;
-import org.compiere.impl.MConversionRate;
+import org.compiere.conversionrate.MConversionRate;
 import org.compiere.impl.MCostDetail;
 import org.compiere.impl.MInvoice;
 import org.compiere.impl.MInvoiceLine;

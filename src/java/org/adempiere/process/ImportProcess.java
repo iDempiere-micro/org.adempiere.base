@@ -5,6 +5,7 @@ package org.adempiere.process;
 
 import java.util.Properties;
 
+import org.compiere.model.IProcessInfo;
 import org.compiere.process.ProcessInfo;
 
 /**
@@ -44,5 +45,5 @@ public interface ImportProcess
 	 * @return Process Info
 	 * @see org.compiere.process.SvrProcess#getProcessInfo()
 	 */
-	public ProcessInfo getProcessInfo();
+	public IProcessInfo getProcessInfo();
 }

@@ -31,6 +31,7 @@ import org.compiere.orm.X_C_DocType;
 import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;
 import org.compiere.process.ProcessInfo;
+import org.compiere.server.ServerProcessCtl;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -421,7 +422,7 @@ public class MMovementConfirm extends X_M_MovementConfirm implements DocAction
 		//complete movement
 		setProcessed(true);
 		saveEx();
-		ProcessInfo processInfo = MWorkflow.runDocumentActionWorkflow(move, DocAction.ACTION_Complete);
+		ProcessInfo processInfo = ServerProcessCtl.runDocumentActionWorkflow(move, DocAction.ACTION_Complete);
 		if (processInfo.isError()) 
 		{
 			m_processMsg = processInfo.getSummary();
@@ -434,7 +435,7 @@ public class MMovementConfirm extends X_M_MovementConfirm implements DocAction
 			//complete inventory doc
 			for(MInventory inventory : m_inventoryDoc)
 			{
-				processInfo = MWorkflow.runDocumentActionWorkflow(inventory, DocAction.ACTION_Complete);
+				processInfo = ServerProcessCtl.runDocumentActionWorkflow(inventory, DocAction.ACTION_Complete);
 				if (processInfo.isError()) 
 				{
 					m_processMsg = processInfo.getSummary();

@@ -22,6 +22,7 @@ import java.util.logging.Level;
 import org.compiere.impl.MSLACriteria;
 import org.compiere.impl.MSLAGoal;
 import org.compiere.impl.MSLAMeasure;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereUserError;
@@ -44,7 +45,7 @@ public class SLAMeasureProcess extends SvrProcess
 	 */
 	protected void prepare()
 	{
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 		for (int i = 0; i < para.length; i++)
 		{
 			String name = para[i].getParameterName();

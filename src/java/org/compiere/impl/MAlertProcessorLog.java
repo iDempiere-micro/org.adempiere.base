@@ -16,6 +16,8 @@
  *****************************************************************************/
 package org.compiere.impl;
 
+import org.compiere.model.AdempiereProcessorLog;
+
 import java.sql.ResultSet;
 import java.util.Properties;
 

@@ -23,6 +23,10 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.model.AdempiereProcessor;
+import org.compiere.model.AdempiereProcessor2;
+import org.compiere.model.AdempiereProcessorLog;
+import org.compiere.schedule.MSchedule;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.compiere.util.Msg;

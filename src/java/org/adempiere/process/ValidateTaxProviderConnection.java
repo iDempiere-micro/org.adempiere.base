@@ -17,6 +17,7 @@ import java.util.logging.Level;
 
 import org.adempiere.base.Core;
 import org.compiere.impl.StandardTaxProvider;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.tax.ITaxProvider;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.tax.MTaxProvider;
@@ -34,7 +35,7 @@ public class ValidateTaxProviderConnection extends SvrProcess
 	@Override
 	protected void prepare() 
 	{
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 		for (int i = 0; i < para.length; i++)
 		{
 			String name = para[i].getParameterName();

@@ -20,12 +20,14 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.acct.Doc;
-import org.compiere.interfaces.Server;
+import org.compiere.model.IEMail;
+import org.compiere.model.IProcessInfo;
+import org.compiere.model.Server;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MTask;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.ProcessUtil;
-import org.compiere.process2.ServerProcessCtl;
+import org.compiere.server.ServerProcessCtl;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.CacheMgt;
 import org.compiere.webutil.EMail;
@@ -73,7 +75,7 @@ public class ServerBean implements Server
 	 *  @param pi Process Info
 	 *  @return resulting Process Info
 	 */
-	public ProcessInfo process (Properties ctx, ProcessInfo pi)
+	public IProcessInfo process (Properties ctx, IProcessInfo pi)
 	{		
 		//	Start Process
 		ProcessUtil.startJavaProcess(ctx, pi, null);
@@ -89,7 +91,7 @@ public class ServerBean implements Server
 	 *  @param AD_Workflow_ID id
 	 *  @return process info
 	 */
-	public ProcessInfo workflow (Properties ctx, ProcessInfo pi, int AD_Workflow_ID)
+	public IProcessInfo workflow (Properties ctx, IProcessInfo pi, int AD_Workflow_ID)
 	{
 		if (log.isLoggable(Level.INFO)) log.info ("AD_Workflow_ID=" + AD_Workflow_ID);
 		ServerProcessCtl.startWorkFlow(ctx, pi, AD_Workflow_ID);
@@ -129,14 +131,14 @@ public class ServerBean implements Server
 	 * @param procedureName
 	 * @return ProcessInfo
 	 */
-	public ProcessInfo dbProcess(Properties ctx, ProcessInfo processInfo, String procedureName)
+	public IProcessInfo dbProcess(Properties ctx, IProcessInfo processInfo, String procedureName)
 	{
 		ProcessUtil.startDatabaseProcedure(processInfo, procedureName, null);
 		return processInfo;
 	}
 	
 	@Override
-	public String sendEMail(Properties ctx, EMail email) {
+	public String sendEMail(Properties ctx, IEMail email) {
 		return email.send();
 	}
 }	//	ServerBean

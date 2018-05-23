@@ -30,6 +30,7 @@ import java.util.logging.Level;
 
 import org.adempiere.exceptions.AverageCostingNegativeQtyException;
 import org.adempiere.exceptions.AverageCostingZeroQtyException;
+import org.compiere.conversionrate.MConversionRate;
 import org.compiere.model.I_M_Cost;
 import org.compiere.orm.MOrg;
 import org.compiere.orm.Query;

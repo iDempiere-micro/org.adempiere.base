@@ -22,6 +22,7 @@ import java.util.logging.Level;
 import org.adempiere.exceptions.FillMandatoryException;
 import org.compiere.impl.MPOSKey;
 import org.compiere.impl.MProduct;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.orm.Query;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
@@ -36,7 +37,7 @@ public class PosKeyGenerate extends SvrProcess {
 	@Override
 	protected void prepare() {
 
-		for ( ProcessInfoParameter para : getParameter())
+		for ( IProcessInfoParameter para : getParameter())
 		{
 			
 			if ( para.getParameterName().equals("C_POSKeyLayout_ID") )

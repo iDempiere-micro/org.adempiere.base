@@ -21,6 +21,7 @@ import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.util.Properties;
 
+import org.compiere.model.IProcessInfo;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.exceptions.AdempiereException;
@@ -49,7 +50,7 @@ public class TableIndexValidate extends SvrProcess {
 		return validateTableIndex(getCtx(), index, get_TrxName(), getProcessInfo());
 	}
 	
-	public static String validateTableIndex(Properties ctx, MTableIndex index, String trxName, ProcessInfo pi) throws Exception
+	public static String validateTableIndex(Properties ctx, MTableIndex index, String trxName, IProcessInfo pi) throws Exception
 	{
 		Trx trx = Trx.get(trxName, true);
 		DatabaseMetaData md = trx.getConnection().getMetaData();

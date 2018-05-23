@@ -27,6 +27,7 @@ import org.compiere.impl.MAcctSchemaElement;
 import org.compiere.impl.MFactAcct;
 import org.compiere.impl.MInvoice;
 import org.compiere.impl.MOrder;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.order.MOrderPaySchedule;
 import org.compiere.impl.X_T_CashFlow;
 import org.compiere.process.ProcessInfoParameter;
@@ -55,7 +56,7 @@ public class CashFlow  extends SvrProcess {
 	 */
 	protected void prepare()
 	{
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 
 		for (int i = 0; i < para.length; i++)
 		{

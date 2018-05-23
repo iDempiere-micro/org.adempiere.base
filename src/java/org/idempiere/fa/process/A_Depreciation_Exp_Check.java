@@ -12,6 +12,7 @@ import org.compiere.impl.MDepreciationEntry;
 import org.compiere.impl.MDepreciationExp;
 import org.compiere.impl.MDepreciationWorkfile;
 import org.compiere.impl.MPeriod;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.orm.Query;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
@@ -33,7 +34,7 @@ public class A_Depreciation_Exp_Check extends SvrProcess
 	protected void prepare()
 	{
 		;
-		for (ProcessInfoParameter para : getParameter())
+		for (IProcessInfoParameter para : getParameter())
 		{
 			String name = para.getParameterName();
 			if (para.getParameter() == null)

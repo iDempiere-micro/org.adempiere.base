@@ -99,7 +99,7 @@ public class MCommissionDetail extends X_C_CommissionDetail
 	 */
 	public void setConvertedAmt (Timestamp date)
 	{
-		BigDecimal amt = MConversionRate.convertBase(getCtx(), 
+		BigDecimal amt = MConversionRate.convertBase(getCtx(),
 			getActualAmt(), getC_Currency_ID(), date, 0, 	//	type
 			getAD_Client_ID(), getAD_Org_ID());
 		if (amt != null)

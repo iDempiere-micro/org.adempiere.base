@@ -22,6 +22,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import org.compiere.model.IProcessInfo;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.exceptions.AdempiereException;
@@ -53,7 +54,7 @@ public class DatabaseViewValidate extends SvrProcess {
 		return validateDatabaseView(getCtx(), table, get_TrxName(), getProcessInfo());
 	}
 	
-	public static String validateDatabaseView(Properties ctx, MTable table, String trxName, ProcessInfo pi) throws Exception
+	public static String validateDatabaseView(Properties ctx, MTable table, String trxName, IProcessInfo pi) throws Exception
 	{		
 		Trx trx = Trx.get(trxName, true);
 		DatabaseMetaData md = trx.getConnection().getMetaData();

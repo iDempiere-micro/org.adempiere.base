@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.impl.MAcctSchemaElement;
 import org.compiere.impl.MPeriod;
@@ -103,7 +104,7 @@ public class FinReport extends SvrProcess
 		StringBuffer sb = new StringBuffer ("Record_ID=")
 			.append(getRecord_ID());
 		//	Parameter
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 		for (int i = 0; i < para.length; i++)
 		{
 			String name = para[i].getParameterName();

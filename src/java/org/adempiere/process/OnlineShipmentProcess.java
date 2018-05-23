@@ -18,6 +18,7 @@ import java.sql.Timestamp;
 import java.util.logging.Level;
 
 import org.compiere.impl.MPackage;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.order.MShippingTransaction;
 import org.compiere.process.ProcessInfoLog;
 import org.compiere.process.ProcessInfoParameter;
@@ -33,7 +34,7 @@ public class OnlineShipmentProcess extends SvrProcess
 	@Override
 	protected void prepare() 
 	{
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 		for (int i = 0; i < para.length; i++)
 		{
 			String name = para[i].getParameterName();

@@ -19,6 +19,7 @@ package org.eevolution.process;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereSystemError;
@@ -46,7 +47,7 @@ public class CopyFromBOM extends SvrProcess {
 	 */
 	protected void prepare()
 	{
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 
 		for (int i = 0; i < para.length; i++) {
 			String name = para[i].getParameterName();

@@ -7,6 +7,7 @@ import org.compiere.product.MAttributeInstance;
 import org.compiere.product.UUIDGenerator;
 import org.compiere.util.DisplayType;
 import org.compiere.util.Msg;
+import org.compiere.wf.MMessage;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.exceptions.DBException;
 import org.idempiere.common.util.*;

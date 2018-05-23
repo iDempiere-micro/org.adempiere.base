@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.process.DocAction;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.exceptions.DBException;
@@ -41,7 +42,7 @@ import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MAcctSchemaElement;
 import org.compiere.impl.MBPartner;
-import org.compiere.impl.MConversionType;
+import org.compiere.conversionrate.MConversionType;
 import org.compiere.impl.MElementValue;
 import org.compiere.impl.MJournal;
 import org.compiere.impl.MJournalGenerator;
@@ -90,7 +91,7 @@ public class GLJournalGenerate extends SvrProcess
 	 */
 	protected void prepare()
 	{
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 		for (int i = 0; i < para.length; i++)
 		{
 			String name = para[i].getParameterName();

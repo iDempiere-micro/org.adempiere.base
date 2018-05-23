@@ -18,6 +18,7 @@ package org.eevolution.process;
 import java.util.Hashtable;
 import java.util.logging.Level;
 
+import org.compiere.model.IProcessInfoParameter;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.model.I_EXP_Format;
 import org.compiere.orm.MColumn;
@@ -57,8 +58,8 @@ public class ExportFormatGenerator extends SvrProcess
 	 */
 	protected void prepare()
 	{
-		ProcessInfoParameter[] paras = getParameter();
-		for (ProcessInfoParameter para : paras)
+		IProcessInfoParameter[] paras = getParameter();
+		for (IProcessInfoParameter para : paras)
 		{
 			String name = para.getParameterName();
 			if (para.getParameter() == null)
