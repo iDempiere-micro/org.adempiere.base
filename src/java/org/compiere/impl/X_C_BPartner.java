@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.Properties;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.compiere.model.I_C_BPartner;
 import org.compiere.orm.MTable;
 import org.idempiere.orm.I_Persistent;
@@ -367,6 +368,7 @@ public class X_C_BPartner extends PO implements I_Persistent
         return ii.intValue();
     }
 
+    @JsonIgnore //cast issue
     public org.eevolution.model.I_C_TaxGroup getC_TaxGroup() throws RuntimeException
     {
         return (org.eevolution.model.I_C_TaxGroup)MTable.get(getCtx(), org.eevolution.model.I_C_TaxGroup.Table_Name)
@@ -622,6 +624,7 @@ public class X_C_BPartner extends PO implements I_Persistent
         return (String)get_Value(I_C_BPartner.COLUMNNAME_FreightCostRule);
     }
 
+    @JsonIgnore
     public I_AD_PrintFormat getInvoice_PrintFormat() throws RuntimeException
     {
         return (I_AD_PrintFormat)MTable.get(getCtx(), I_AD_PrintFormat.Table_Name)
