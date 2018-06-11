@@ -21,6 +21,7 @@ import org.compiere.impl.MClient;
 import org.compiere.model.IEMail;
 import org.compiere.orm.MSysConfig;
 import org.idempiere.common.util.*;
+import org.jetbrains.annotations.NotNull;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -141,7 +142,16 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 	public EMail (Properties ctx, String smtpHost, int smtpPort, boolean isSecureSmtp, String from, String to,
 		String subject, String message, boolean html)
 	{
-		
+		super(
+				smtpHost,
+				smtpPort,
+                new InternetAddress(),
+                new InternetAddress(),
+				subject,
+				"",
+				"",
+				message);
+
 		setSmtpHost(smtpHost);
 		setFrom(from);
 		String bccAddressForAllMails = MSysConfig.getValue(MSysConfig.MAIL_SEND_BCC_TO_ADDRESS, Env.getAD_Client_ID(Env.getCtx()));
@@ -169,33 +179,12 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 		m_secureSmtp = isSecureSmtp;
 	}
 
-	private void setSmtpPort(int smtpPort) {
-		m_smtpPort = smtpPort;
-	}
-
 	public void setAcknoledgmentReceipt(boolean ar) {
 		m_acknowledgementReceipt = ar;
 	}
 
-	/**	From Address				*/
-	private InternetAddress     m_from;
-	/** To Address					*/
-	private ArrayList<InternetAddress>	m_to;
-	/** CC Addresses				*/
-	private ArrayList<InternetAddress>	m_cc;
-	/** BCC Addresses				*/
-	private ArrayList<InternetAddress>	m_bcc;
-	/**	Reply To Address			*/
-	private InternetAddress		m_replyTo;
-	/**	Mail Subject				*/
-	private String  			m_subject;
 	/** Mail Plain Message			*/
 	private String  			m_messageText;
-	/** Mail HTML Message			*/
-	private String  			m_messageHTML;
-	/**	Mail SMTP Server			*/
-	private String  			m_smtpHost;
-	private int					m_smtpPort;
 	private boolean				m_secureSmtp;
 	private boolean				m_acknowledgementReceipt;
 	
@@ -221,10 +210,11 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 	 *	Send Mail direct
 	 *	@return OK or error message
 	 */
+	@Override
 	public String send ()
 	{
 		if (log.isLoggable(Level.INFO)){
-			log.info("(" + m_smtpHost + ") " + m_from + " -> " + m_to);
+			log.info("(" + getSmtpHost() + ") " + getFrom() + " -> " + getTo() );
 			log.info("(m_auth) " + m_auth);
 		}
 		
@@ -239,7 +229,7 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 		Properties props = System.getProperties();
 		props.put("mail.store.protocol", "smtp");
 		props.put("mail.transport.protocol", "smtp");
-		props.put("mail.host", m_smtpHost);
+		props.put("mail.host", getSmtpHost());
 		//Timeout for sending the email defaulted to 20 seconds
 		props.put("mail.smtp.timeout", 20000);
 
@@ -251,9 +241,9 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 		{
 			if (m_auth != null)		//	createAuthenticator was called
 				props.put("mail.smtp.auth", "true");
-			if (m_smtpPort > 0)
+			if (getSmtpPort() > 0)
 			{
-				props.put("mail.smtp.port", String.valueOf(m_smtpPort));
+				props.put("mail.smtp.port", String.valueOf(getSmtpPort()));
 			}
 			if (m_secureSmtp)
 			{
@@ -282,7 +272,7 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 		//	m_msg = new MimeMessage(session);
 			m_msg = new SMTPMessage(session);
 			//	Addresses
-			m_msg.setFrom(m_from);
+			m_msg.setFrom(getFrom());
 
 			// IDEMPIERE-2104 - intended for test or dev systems to not send undesired emails
 			boolean isDontSendToAddress = MSysConfig.getBooleanValue(MSysConfig.MAIL_DONT_SEND_TO_ADDRESS, false, Env.getAD_Client_ID(Env.getCtx()));
@@ -299,16 +289,16 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 				rec = getBccs();
 				if (rec != null && rec.length > 0)
 					m_msg.setRecipients (Message.RecipientType.BCC, rec);
-				if (m_replyTo != null)
-					m_msg.setReplyTo(new Address[] {m_replyTo});
+				if (getReplyTo() != null)
+					m_msg.setReplyTo(new Address[] {getReplyTo()});
 			} else {
 				String bccAddressForAllMails = MSysConfig.getValue(MSysConfig.MAIL_SEND_BCC_TO_ADDRESS, Env.getAD_Client_ID(Env.getCtx()));
 				if (! Util.isEmpty(bccAddressForAllMails, true)) {
 					m_msg.setRecipients (Message.RecipientType.TO, bccAddressForAllMails);
 				}
 				List<InternetAddress> replyToList=new ArrayList<InternetAddress>();
-				if(m_replyTo!=null)
-					replyToList.add(m_replyTo);
+				if(getReplyTo()!=null)
+					replyToList.add(getReplyTo());
 				InternetAddress[] rec = getTos();
 				if (rec != null && rec.length > 0){
 					m_msg.setHeader("OriginalTo", getCommaSeparatedString(rec));
@@ -327,7 +317,7 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 			m_msg.setSentDate(new java.util.Date());
 			m_msg.setHeader("Comments", "iDempiereMail");
 			if (m_acknowledgementReceipt)
-				m_msg.setHeader("Disposition-Notification-To", m_from.getAddress());
+				m_msg.setHeader("Disposition-Notification-To", getFrom().getAddress());
 		//	m_msg.setDescription("Description");
 			//	SMTP specifics
 			//m_msg.setAllow8bitMIME(true);
@@ -567,15 +557,6 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 	}	//	createAuthenticator
 
 	/**
-	 *  Get Sender
-	 *  @return Sender's internet address
-	 */
-	public InternetAddress getFrom()
-	{
-		return m_from;
-	}   //  getFrom
-
-	/**
 	 *  Set Sender
 	 *  @param newFrom Sender's email address
 	 */
@@ -588,7 +569,7 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 		}
 		try
 		{
-			m_from = new InternetAddress (newFrom, true);
+			setFrom( new InternetAddress (newFrom, true) );
 			if (MSysConfig.getBooleanValue(MSysConfig.MAIL_SEND_BCC_TO_FROM, false, Env.getAD_Client_ID(Env.getCtx())))
 				addBcc(newFrom);
 		}
@@ -600,43 +581,14 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 	}   //  setFrom
 
 	/**
-	 *  Add To Recipient
-	 *  @param newTo Recipient's email address
-	 * 	@return true if valid
-	 */
-	public boolean addTo (String newTo)
-	{
-		if (newTo == null || newTo.length() == 0)
-		{
-			m_valid = false;
-			return false;
-		}
-		InternetAddress ia = null;
-		try
-		{
-			ia = new InternetAddress (newTo, true);
-		}
-		catch (Exception e)
-		{
-			log.log(Level.WARNING, newTo + ": " + e.toString());
-			m_valid = false;
-			return false;
-		}
-		if (m_to == null)
-			m_to = new ArrayList<InternetAddress>();
-		m_to.add(ia);
-		return true;
-	}   //  addTo
-
-	/**
 	 *  Get Recipient
 	 *  @return Recipient's internet address
 	 */
 	public InternetAddress getTo()
 	{
-		if (m_to == null || m_to.size() == 0)
+		if (getM_to() == null || getM_to().size() == 0)
 			return null;
-		InternetAddress ia = (InternetAddress)m_to.get(0);
+		InternetAddress ia = (InternetAddress)getM_to().get(0);
 		return ia;
 	}   //  getTo
 
@@ -646,37 +598,13 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 	 */
 	public InternetAddress[] getTos()
 	{
-		if (m_to == null || m_to.size() == 0)
+		if (getM_to() == null || getM_to().size() == 0)
 			return null;
-		InternetAddress[] ias = new InternetAddress[m_to.size()];
-		m_to.toArray(ias);
+		InternetAddress[] ias = new InternetAddress[getM_to().size()];
+		getM_to().toArray(ias);
 		return ias;
 	}   //  getTos
 
-	/**
-	 * 	Add CC Recipient
-	 * 	@param newCc EMail cc Recipient
-	 * 	@return true if valid
-	 */
-	public boolean addCc (String newCc)
-	{
-		if (newCc == null || newCc.length() == 0)
-			return false;
-		InternetAddress ia = null;
-		try
-		{
-			ia = new InternetAddress (newCc, true);
-		}
-		catch (Exception e)
-		{
-			log.log(Level.WARNING, newCc + ": " + e.toString());
-			return false;
-		}
-		if (m_cc == null)
-			m_cc = new ArrayList<InternetAddress>();
-		m_cc.add (ia);
-		return true;
-	}	//	addCc
 
 	/**
 	 *  Get CC Recipients
@@ -684,40 +612,12 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 	 */
 	public InternetAddress[] getCcs()
 	{
-		if (m_cc == null || m_cc.size() == 0)
+		if (getM_cc()== null || getM_cc().size() == 0)
 			return null;
-		InternetAddress[] ias = new InternetAddress[m_cc.size()];
-		m_cc.toArray(ias);
+		InternetAddress[] ias = new InternetAddress[getM_cc().size()];
+		getM_cc().toArray(ias);
 		return ias;
 	}   //  getCcs
-
-	/**
-	 * 	Add BCC Recipient
-	 * 	@param newBcc EMail cc Recipient
-	 * 	@return true if valid
-	 */
-	public boolean addBcc (String newBcc)
-	{
-		if (newBcc == null || newBcc.length() == 0)
-			return false;
-		String[] addresses = newBcc.split(", *");
-		for (String bccAddress : addresses) {
-			InternetAddress ia = null;
-			try
-			{
-				ia = new InternetAddress (bccAddress, true);
-			}
-			catch (Exception e)
-			{
-				log.log(Level.WARNING, bccAddress + ": " + e.getMessage());
-				return false;
-			}
-			if (m_bcc == null)
-				m_bcc = new ArrayList<InternetAddress>();
-			m_bcc.add (ia);
-		}
-		return true;
-	}	//	addBcc
 
 	/**
 	 *  Get BCC Recipients
@@ -725,10 +625,10 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 	 */
 	public InternetAddress[] getBccs()
 	{
-		if (m_bcc == null || m_bcc.size() == 0)
+		if (getM_bcc() == null || getM_bcc().size() == 0)
 			return null;
-		InternetAddress[] ias = new InternetAddress[m_bcc.size()];
-		m_bcc.toArray(ias);
+		InternetAddress[] ias = new InternetAddress[getM_bcc().size()];
+		getM_bcc().toArray(ias);
 		return ias;
 	}   //  getBccs
 
@@ -744,47 +644,15 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 		InternetAddress ia = null;
 		try
 		{
-			ia = new InternetAddress (newTo, true);
+			super.setReplyTo( new InternetAddress (newTo, true) );
 		}
 		catch (Exception e)
 		{
 			log.log(Level.WARNING, newTo + ": " + e.toString());
 			return false;
 		}
-		m_replyTo = ia;
 		return true;
 	}   //  setReplyTo
-
-	/**
-	 *  Get Reply To
-	 *  @return Reply To internet address
-	 */
-	public InternetAddress getReplyTo()
-	{
-		return m_replyTo;
-	}   //  getReplyTo
-
-
-	/**************************************************************************
-	 *  Set Subject
-	 *  @param newSubject Subject
-	 */
-	public void setSubject(String newSubject)
-	{
-		if (newSubject == null || newSubject.length() == 0)
-			m_valid = false;
-		else
-			m_subject = newSubject;
-	}   //  setSubject
-
-	/**
-	 *  Get Subject
-	 *  @return subject
-	 */
-	public String getSubject()
-	{
-		return m_subject;
-	}   //  getSubject
 
 	/**
 	 *  Set Message
@@ -832,21 +700,6 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 		return sb.toString();
 	}   //  getMessageCRLF
 
-	/**
-	 *  Set HTML Message
-	 *  @param html message
-	 */
-	public void setMessageHTML (String html)
-	{
-		if (html == null || html.length() == 0)
-			m_valid = false;
-		else
-		{
-			m_messageHTML = html;
-			if (!m_messageHTML.endsWith("\n"))
-				m_messageHTML += "\n";
-		}
-	}   //  setMessageHTML
 
 	/**
 	 *  Set HTML Message
@@ -855,7 +708,7 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 	 */
 	public void setMessageHTML (String subject, String message)
 	{
-		m_subject = subject;
+		setSubject(subject);
 		StringBuffer sb = new StringBuffer("<HTML>\n")
 				.append("<HEAD>\n")
 				.append("<TITLE>\n")
@@ -867,17 +720,9 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 				.append("\n")
 				.append("</BODY>\n");
 		sb.append("</HTML>\n");
-		m_messageHTML = sb.toString();
+		setMessageHTML( sb.toString() );
 	}   //  setMessageHTML
 
-	/**
-	 *  Get HTML Message
-	 *  @return message
-	 */
-	public String getMessageHTML()
-	{
-		return m_messageHTML;
-	}   //  getMessageHTML
 
 	/**
 	 *	Add file Attachment
@@ -966,11 +811,11 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 		//	Simple Message
 		if (m_attachments == null || m_attachments.size() == 0)
 		{
-			if (m_messageHTML == null || m_messageHTML.length () == 0)
+			if (getMessageHTML() == null || getMessageHTML().length () == 0)
 				m_msg.setText (getMessageCRLF(), charSetName);
 			else
 				m_msg.setDataHandler (new DataHandler
-					(new ByteArrayDataSource (m_messageHTML, charSetName, "text/html")));
+					(new ByteArrayDataSource (getMessageHTML(), charSetName, "text/html")));
 			//
 			if (log.isLoggable(Level.FINE)) log.fine("(simple) " + getSubject());
 		}
@@ -982,12 +827,12 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 			//TODO: get plan text form html, i see getMessageCRLF just return empty string
 			planPart.setText (getMessageCRLF(), charSetName);
 			htmlPart = new MimeBodyPart();
-			if (m_messageHTML == null){
-				m_messageHTML = "<html><body>" + getMessageCRLF() + "</body></html>";
+			if (getMessageHTML() == null){
+				setMessageHTML( "<html><body>" + getMessageCRLF() + "</body></html>" );
 			}
 
 			htmlPart.setDataHandler (new DataHandler
-					(new ByteArrayDataSource (m_messageHTML, charSetName, "text/html")));
+					(new ByteArrayDataSource (getMessageHTML(), charSetName, "text/html")));
 			
 			// Create Multipart and its parts to it
 			Multipart mainPart = new MimeMultipart("mixed");
@@ -1040,7 +885,7 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 				mbp_2.setFileName(ds.getName());
 				if (log.isLoggable(Level.FINE)) log.fine("Added Attachment " + ds.getName() + " - " + mbp_2);
 
-				if (m_messageHTML != null && m_messageHTML.contains("cid:"+ds.getName())) {
+				if (getMessageHTML() != null && getMessageHTML().contains("cid:"+ds.getName())) {
 					mbp_2.setContentID("<" + ds.getName() + ">");
 					mbp_2.setDisposition(MimeBodyPart.INLINE);
 					viewContentPart.addBodyPart(mbp_2);
@@ -1055,35 +900,6 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 	}	//	setContent
 
 
-	/**************************************************************************
-	 *  Set SMTP Host or address
-	 *  @param newSmtpHost Mail server
-	 */
-	public void setSmtpHost(String newSmtpHost)
-	{
-		if (newSmtpHost == null || newSmtpHost.length() == 0)
-			m_valid = false;
-		else
-			m_smtpHost = newSmtpHost;
-	}   //  setSMTPHost
-
-	/**
-	 *  Get Mail Server name or address
-	 *  @return mail server
-	 */
-	public String getSmtpHost()
-	{
-		return m_smtpHost;
-	}   //  getSmtpHosr
-
-	/**
-	 *  Is Info valid to send EMail
-	 *  @return true if email is valid and can be sent
-	 */
-	public boolean isValid()
-	{
-		return m_valid;
-	}   //  isValid
 
 	/**
 	 *  Re-Check Info if valid to send EMail
@@ -1096,11 +912,11 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 			return m_valid;
 
 		//  From
-		if (m_from == null
-			|| m_from.getAddress().length() == 0
-			|| m_from.getAddress().indexOf(' ') != -1)
+		if (getFrom() == null
+			|| getFrom().getAddress().length() == 0
+			|| getFrom().getAddress().indexOf(' ') != -1)
 		{
-			log.warning("From is invalid=" + m_from);
+			log.warning("From is invalid=" + getFrom());
 			return false;
 		}
 		//	To
@@ -1122,16 +938,16 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 		}
 
 		//	Host
-		if (m_smtpHost == null || m_smtpHost.length() == 0)
+		if (getSmtpHost() == null || getSmtpHost().length() == 0)
 		{
-			log.warning("SMTP Host is invalid" + m_smtpHost);
+			log.warning("SMTP Host is invalid" + getSmtpHost());
 			return false;
 		}
 
 		//	Subject
-		if (m_subject == null || m_subject.length() == 0)
+		if (getSubject() == null || getSubject().length() == 0)
 		{
-			log.warning("Subject is invalid=" + m_subject);
+			log.warning("Subject is invalid=" + getSubject());
 			return false;
 		}
 		return true;
@@ -1154,7 +970,7 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 	public String toString ()
 	{
 		StringBuilder sb = new StringBuilder ("EMail[");
-		sb.append("From:").append(m_from)
+		sb.append("From:").append(getFrom())
 			.append(",To:").append(getTo())
 			.append(",Subject=").append(getSubject())
 			.append ("]");
@@ -1190,4 +1006,13 @@ public final class EMail extends org.compiere.crm.EMail implements Serializable,
 		additionalHeaders.add(new ValueNamePair(value, name));
 	}
 
+	@Override
+	public void setFrom(@NotNull InternetAddress from) {
+		setFrom(from.getAddress());
+	}
+
+	@Override
+	public void setReplyTo(@NotNull InternetAddress replyTo) {
+		setReplyTo( replyTo.getAddress() );
+	}
 }	//	EMail
