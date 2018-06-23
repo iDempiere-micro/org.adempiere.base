@@ -2,6 +2,7 @@
 #   ORG ADEMPIERE BASE
 #
 Bundle-Name: iDempiere Core
+DynamicImport-Package: *
 Import-Package: !bsh*,\
  !it.sauronsoftware.cron4j*,\
  !org.adempiere*,\
@@ -35,7 +36,6 @@ Export-Package: \
  org.adempiere.base*, \
  org.adempiere.base.equinox*, \
  org.adempiere.base.event*, \
- org.adempiere.exceptions*, \
  org.adempiere.impexp*, \
  org.adempiere.model*, \
  org.adempiere.pdf*, \
