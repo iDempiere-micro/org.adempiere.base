@@ -31,6 +31,7 @@ import org.compiere.impl.MOrder;
 import org.compiere.impl.MOrderLine;
 import org.compiere.impl.MRequisitionLine;
 import org.compiere.impl.ProductCost;
+import org.compiere.model.IFact;
 import org.compiere.product.MCurrency;
 import org.compiere.tax.MTax;
 import org.idempiere.common.util.DB;
@@ -335,9 +336,9 @@ public class Doc_Order extends Doc
 	 *  @param as accounting schema
 	 *  @return Fact
 	 */
-	public ArrayList<Fact> createFacts (MAcctSchema as)
+	public ArrayList<IFact> createFacts (MAcctSchema as)
 	{
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		//  Purchase Order
 		if (getDocumentType().equals(DOCTYPE_POrder))
 		{

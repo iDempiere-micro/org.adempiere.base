@@ -10,6 +10,8 @@ import java.sql.Timestamp;
 import java.util.Properties;
 
 import org.compiere.orm.MDocType;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;

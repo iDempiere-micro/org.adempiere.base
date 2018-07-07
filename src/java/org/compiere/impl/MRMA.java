@@ -2,6 +2,8 @@ package org.compiere.impl;
 
 import org.compiere.acct.Doc;
 import org.compiere.crm.MBPartner;
+import org.compiere.model.IDoc;
+import org.compiere.model.IPODoc;
 import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_M_RMALine;
 import org.compiere.order.*;
@@ -11,6 +13,8 @@ import org.compiere.orm.Query;
 import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;
 import org.compiere.util.Msg;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -475,10 +479,10 @@ public class MRMA extends org.compiere.order.MRMA implements DocAction, IPODoc {
     }	//	getLines
 
     /* Doc - To be used on ModelValidator to get the corresponding Doc from the PO */
-    private Doc m_doc;
+    private IDoc m_doc;
 
     @Override
-    public void setDoc(Doc doc) {
+    public void setDoc(IDoc doc) {
         m_doc = doc;
     }
 

@@ -13,6 +13,8 @@ import org.compiere.orm.MDocType;
 import org.compiere.orm.SetGetUtil;
 import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.util.Env;
 import org.idempiere.fa.exceptions.AssetAlreadyDepreciatedException;
 import org.idempiere.fa.exceptions.AssetNotImplementedException;

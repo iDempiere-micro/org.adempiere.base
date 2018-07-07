@@ -1,6 +1,8 @@
 package org.compiere.impl;
 
 import org.compiere.acct.Doc;
+import org.compiere.model.IDoc;
+import org.compiere.model.IPODoc;
 import org.compiere.model.I_M_InOutLineConfirm;
 import org.compiere.order.X_M_InOutConfirm;
 import org.compiere.orm.MDocType;
@@ -9,6 +11,8 @@ import org.compiere.orm.X_C_DocType;
 import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;
 import org.compiere.util.Msg;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;
 import org.idempiere.orm.PO;
@@ -655,10 +659,10 @@ public class MInOutConfirm extends org.compiere.order.MInOutConfirm implements D
     }	//	toString
 
     /* Doc - To be used on ModelValidator to get the corresponding Doc from the PO */
-    private Doc m_doc;
+    private IDoc m_doc;
 
     @Override
-    public void setDoc(Doc doc) {
+    public void setDoc(IDoc doc) {
         m_doc = doc;
     }
 }

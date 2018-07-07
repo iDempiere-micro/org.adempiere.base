@@ -28,6 +28,7 @@ import org.compiere.impl.MMovementLine;
 import org.compiere.impl.MMovementLineMA;
 import org.compiere.impl.MProduct;
 import org.compiere.impl.ProductCost;
+import org.compiere.model.IFact;
 import org.idempiere.common.util.Env;
 
 /**
@@ -122,7 +123,7 @@ public class Doc_Movement extends Doc
 	 *  @param as account schema
 	 *  @return Fact
 	 */
-	public ArrayList<Fact> createFacts (MAcctSchema as)
+	public ArrayList<IFact> createFacts (MAcctSchema as)
 	{
 		//  create Fact Header
 		Fact fact = new Fact(this, as, Fact.POST_Actual);
@@ -254,7 +255,7 @@ public class Doc_Movement extends Doc
 		}
 
 		//
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		facts.add(fact);
 		return facts;
 	}   //  createFact

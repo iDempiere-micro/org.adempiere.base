@@ -20,11 +20,11 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 
 import org.compiere.impl.MClient;
+import org.compiere.model.I_AD_Client;
 import org.compiere.product.MPriceListVersion;
 import org.compiere.product.MProductPrice;
-import org.compiere.impl.ModelValidationEngine;
-import org.compiere.impl.ModelValidator;
-import org.compiere.impl.PO;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -44,7 +44,7 @@ public class ProductPriceValidator implements ModelValidator {
 		return m_AD_Client_ID;
 	}
 
-	public void initialize(ModelValidationEngine engine, MClient client) {
+	public void initialize(ModelValidationEngine engine, I_AD_Client client) {
 		engine.addModelChange(MProductPrice.Table_Name, this);
 		if (client != null)
 			m_AD_Client_ID = client.getAD_Client_ID();

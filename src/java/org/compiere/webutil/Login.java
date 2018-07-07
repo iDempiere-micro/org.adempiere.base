@@ -26,6 +26,7 @@ import org.compiere.model.*;
 import org.compiere.orm.*;
 import org.compiere.orm.MRole;
 import org.compiere.util.Msg;
+import org.compiere.validation.ModelValidationEngine;
 import org.idempiere.common.db.CConnection;
 import org.idempiere.common.util.*;
 import org.jetbrains.annotations.NotNull;

@@ -4,10 +4,7 @@ import org.adempiere.exceptions2.NegativeInventoryDisallowedException;
 import org.adempiere.exceptions2.PeriodClosedException;
 import org.compiere.acct.Doc;
 import org.compiere.crm.MBPartner;
-import org.compiere.model.I_C_Invoice;
-import org.compiere.model.I_C_Order;
-import org.compiere.model.I_M_InOutConfirm;
-import org.compiere.model.I_M_InOutLine;
+import org.compiere.model.*;
 import org.compiere.order.X_M_InOut;
 import org.compiere.orm.*;
 import org.compiere.orm.MClient;
@@ -16,6 +13,8 @@ import org.compiere.orm.PO;
 import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;
 import org.compiere.util.Msg;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
@@ -43,13 +42,13 @@ public class MInOut extends org.compiere.order.MInOut implements DocAction, IPOD
 
 
     /* Doc - To be used on ModelValidator to get the corresponding Doc from the PO */
-    private Doc m_doc;
+    private IDoc m_doc;
 
     /**
      *      Set the accounting document associated to the PO - for use in POST ModelValidator
      *      @param doc Document
      */
-    public void setDoc(Doc doc) {
+    public void setDoc(IDoc doc) {
         m_doc = doc;
     }
 

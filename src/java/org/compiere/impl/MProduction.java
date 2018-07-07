@@ -17,6 +17,8 @@ import org.compiere.orm.MSysConfig;
 import org.compiere.orm.Query;
 import org.compiere.product.MAttributeSetInstance;
 import org.compiere.product.MProductCategory;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions2.PeriodClosedException;
 import org.compiere.acct.Doc;

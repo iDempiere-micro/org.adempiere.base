@@ -1,6 +1,8 @@
 package org.compiere.impl;
 
 import org.compiere.acct.Doc;
+import org.compiere.model.IDoc;
+import org.compiere.model.IPODoc;
 import org.compiere.orm.MRole;
 import org.compiere.product.MAttributeSet;
 import org.compiere.product.MUOM;
@@ -302,10 +304,10 @@ public class MOrderLine extends org.compiere.order.MOrderLine implements IPODoc 
 
 
     /* Doc - To be used on ModelValidator to get the corresponding Doc from the PO */
-    private Doc m_doc;
+    private IDoc m_doc;
 
     @Override
-    public void setDoc(Doc doc) {
+    public void setDoc(IDoc doc) {
         m_doc = doc;
     }
 }

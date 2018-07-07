@@ -8,6 +8,7 @@ import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MAssetAcct;
 import org.compiere.impl.MAssetReval;
+import org.compiere.model.IFact;
 import org.compiere.orm.MDocType;
 import org.idempiere.common.util.Env;
 
@@ -27,12 +28,12 @@ public class Doc_AssetReval extends Doc
 	}
 
 	
-	public ArrayList<Fact> createFacts(MAcctSchema as)
+	public ArrayList<IFact> createFacts(MAcctSchema as)
 	{
 		MAssetAcct assetAcct = getAssetAcct();
 		MAssetReval assetRe = getAssetReval();
 		
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		Fact fact = new Fact(this, as, assetAcct.getPostingType());
 		facts.add(fact);
 		

@@ -28,6 +28,8 @@ import java.util.logging.Level;
 
 import org.compiere.orm.MDocType;
 import org.compiere.orm.MSequence;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.process.DocAction;
 import org.compiere.process2.DocumentEngine;

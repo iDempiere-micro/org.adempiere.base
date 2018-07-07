@@ -10,7 +10,12 @@ import org.adempiere.exceptions.FillMandatoryException;
 import org.compiere.acct.Fact;
 import org.compiere.impl.*;
 import org.compiere.impl.SetGetModel;
+import org.compiere.model.IFact;
+import org.compiere.model.I_AD_Client;
+import org.compiere.model.I_C_AcctSchema;
 import org.compiere.orm.SetGetUtil;
+import org.compiere.validation.FactsValidator;
+import org.compiere.validation.ModelValidationEngine;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.fa.exceptions.AssetInvoiceWithMixedLines_LRO;
@@ -24,7 +29,7 @@ import org.idempiere.icommon.model.IPO;
  *
  */
 public class ModelValidator
-implements org.compiere.impl.ModelValidator, FactsValidator
+implements org.compiere.validation.ModelValidator, FactsValidator
 {
 	/** Logger */
 	private static CLogger log = CLogger.getCLogger(ModelValidator.class);
@@ -37,7 +42,7 @@ implements org.compiere.impl.ModelValidator, FactsValidator
 	}
 
 	
-	public void initialize(ModelValidationEngine engine, MClient client)
+	public void initialize(ModelValidationEngine engine, I_AD_Client client)
 	{
 		if (client != null)
 		{
@@ -253,7 +258,7 @@ implements org.compiere.impl.ModelValidator, FactsValidator
 	
 
 	
-	public String factsValidate(MAcctSchema schema, List<Fact> facts, IPO po) {
+	public String factsValidate(I_C_AcctSchema schema, List<IFact> facts, IPO po) {
 		// TODO: implement it
 		return null;
 	}

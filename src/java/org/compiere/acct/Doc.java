@@ -30,16 +30,12 @@ import java.util.logging.Level;
 
 import org.compiere.conversionrate.MConversionRate;
 import org.compiere.impl.*;
-import org.compiere.model.I_C_AllocationHdr;
-import org.compiere.model.I_C_BankStatement;
-import org.compiere.model.I_C_Cash;
-import org.compiere.model.I_C_ProjectIssue;
-import org.compiere.model.I_M_MatchInv;
-import org.compiere.model.I_M_MatchPO;
-import org.compiere.model.I_M_Production;
+import org.compiere.model.*;
 import org.compiere.order.MInOut;
 import org.compiere.orm.MDocType;
 import org.compiere.process2.DocumentEngine;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.compiere.wf.MNote;
 import org.idempiere.common.util.AdempiereUserError;
 import org.idempiere.common.util.CLogger;
@@ -108,7 +104,7 @@ import org.idempiere.common.util.Util;
  *				@see http://sourceforge.net/tracker2/?func=detail&atid=879335&aid=2520591&group_id=176962
  *  @version  $Id: Doc.java,v 1.6 2006/07/30 00:53:33 jjanke Exp $
  */
-public abstract class Doc
+public abstract class Doc implements IDoc
 {
 	/**************************************************************************
 	 * 	 Document Types
@@ -423,7 +419,7 @@ public abstract class Doc
 	protected DocLine[]			p_lines;
 
 	/** Facts                       */
-	private ArrayList<Fact>    	m_fact = null;
+	private ArrayList<IFact>    	m_fact = null;
 
 	/** No Currency in Document Indicator (-1)	*/
 	protected static final int  NO_CURRENCY = -2;
@@ -579,7 +575,7 @@ public abstract class Doc
 		p_Status = STATUS_NotPosted;
 
 		//  Create Fact per AcctSchema
-		m_fact = new ArrayList<Fact>();
+		m_fact = new ArrayList<IFact>();
 
 		getPO().setDoc(this);
 		try
@@ -672,7 +668,7 @@ public abstract class Doc
 		//  dispose facts
 		for (int i = 0; i < m_fact.size(); i++)
 		{
-			Fact fact = m_fact.get(i);
+			IFact fact = m_fact.get(i);
 			if (fact != null)
 				fact.dispose();
 		}
@@ -718,7 +714,7 @@ public abstract class Doc
 			return STATUS_PeriodClosed;
 
 		//  createFacts
-		ArrayList<Fact> facts = createFacts (m_as);
+		ArrayList<IFact> facts = createFacts (m_as);
 		if (facts == null)
 			return STATUS_Error;
 
@@ -731,7 +727,7 @@ public abstract class Doc
 
 		for (int f = 0; f < facts.size(); f++)
 		{
-			Fact fact = facts.get(f);
+			IFact fact = facts.get(f);
 			if (fact == null)
 				return STATUS_Error;
 			m_fact.add(fact);
@@ -796,7 +792,7 @@ public abstract class Doc
 			{
 				for (int i = 0; i < m_fact.size(); i++)
 				{
-					Fact fact = m_fact.get(i);
+					IFact fact = m_fact.get(i);
 					if (fact == null)
 						;
 					else if (fact.save(getTrxName()))
@@ -2293,13 +2289,13 @@ public abstract class Doc
 	 *  @param as accounting schema
 	 *  @return Facts
 	 */
-	public abstract ArrayList<Fact> createFacts (MAcctSchema as);
+	public abstract ArrayList<IFact> createFacts (MAcctSchema as);
 
 	/**
 	 *  Get Facts (the accounting logic)
 	 *  @return Facts
 	 */
-	public ArrayList<Fact> getFacts() {
+	public ArrayList<IFact> getFacts() {
 		return m_fact;
 	}
 	

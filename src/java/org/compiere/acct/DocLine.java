@@ -17,7 +17,7 @@
 package org.compiere.acct;
 
 import org.compiere.impl.*;
-import org.compiere.order.MCharge;
+import org.compiere.model.IPODoc;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;

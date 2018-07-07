@@ -13,15 +13,15 @@
  *****************************************************************************/
 package org.adempiere.model;
 
+import org.compiere.model.I_AD_Client;
+import org.compiere.validation.ModelValidationEngine;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.compiere.model.I_C_Order;
 import org.compiere.model.I_C_OrderLine;
 import org.compiere.impl.MClient;
 import org.compiere.impl.MOrder;
 import org.compiere.impl.MOrderLine;
-import org.compiere.impl.ModelValidationEngine;
-import org.compiere.impl.ModelValidator;
-import org.compiere.impl.PO;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.util.DB;
 import org.idempiere.icommon.model.IPO;
 
@@ -140,7 +140,8 @@ public class PromotionValidator implements ModelValidator {
 		return m_AD_Client_ID;
 	}
 
-	public void initialize(ModelValidationEngine engine, MClient client) {
+	@Override
+	public void initialize(ModelValidationEngine engine, I_AD_Client client) {
 		if (client != null)
 			m_AD_Client_ID = client.getAD_Client_ID();
 		engine.addDocValidate(I_C_Order.Table_Name, this);

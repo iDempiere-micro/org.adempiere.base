@@ -30,6 +30,7 @@ import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MAcctSchemaElement;
 import org.compiere.conversionrate.MConversionRate;
 import org.compiere.impl.MCostDetail;
+import org.compiere.model.IFact;
 import org.compiere.model.I_C_Order;
 import org.compiere.order.MInOut;
 import org.compiere.order.MInOutLine;
@@ -146,9 +147,9 @@ public class Doc_MatchPO extends Doc
 	 *  @param as accounting schema
 	 *  @return Fact
 	 */
-	public ArrayList<Fact> createFacts (MAcctSchema as)
+	public ArrayList<IFact> createFacts (MAcctSchema as)
 	{
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		//
 		if (getM_Product_ID() == 0		//  Nothing to do if no Product
 			|| getQty().signum() == 0)

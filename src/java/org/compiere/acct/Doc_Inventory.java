@@ -28,6 +28,7 @@ import org.compiere.conversionrate.MConversionRate;
 import org.compiere.impl.MCost;
 import org.compiere.impl.MCostDetail;
 import org.compiere.impl.MCostElement;
+import org.compiere.model.IFact;
 import org.compiere.orm.MDocType;
 import org.compiere.impl.MInventory;
 import org.compiere.impl.MInventoryLine;
@@ -172,7 +173,7 @@ public class Doc_Inventory extends Doc
 	 *  @param as account schema
 	 *  @return Fact
 	 */
-	public ArrayList<Fact> createFacts (MAcctSchema as)
+	public ArrayList<IFact> createFacts (MAcctSchema as)
 	{
 		//  create Fact Header
 		Fact fact = new Fact(this, as, Fact.POST_Actual);
@@ -423,7 +424,7 @@ public class Doc_Inventory extends Doc
 			}
 		}
 		//
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		facts.add(fact);
 		return facts;
 	}   //  createFact

@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 
 import org.compiere.impl.*;
+import org.compiere.model.IFact;
 import org.compiere.orm.MSysConfig;
 import org.idempiere.common.util.Env;
 
@@ -100,14 +101,14 @@ public class Doc_Payment extends Doc
 	 *  @param as accounting schema
 	 *  @return Fact
 	 */
-	public ArrayList<Fact> createFacts (MAcctSchema as)
+	public ArrayList<IFact> createFacts (MAcctSchema as)
 	{
 		//  create Fact Header
 		Fact fact = new Fact(this, as, Fact.POST_Actual);
 		//	Cash Transfer
 		if ("X".equals(m_TenderType) && !MSysConfig.getBooleanValue(MSysConfig.CASH_AS_PAYMENT, true , getAD_Client_ID()))
 		{
-			ArrayList<Fact> facts = new ArrayList<Fact>();
+			ArrayList<IFact> facts = new ArrayList<IFact>();
 			facts.add(fact);
 			return facts;
 		}
@@ -163,7 +164,7 @@ public class Doc_Payment extends Doc
 			fact = null;
 		}
 		//
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		facts.add(fact);
 		return facts;
 	}   //  createFact

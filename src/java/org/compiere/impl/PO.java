@@ -1,12 +1,16 @@
 package org.compiere.impl;
 
 import org.compiere.acct.Doc;
+import org.compiere.model.IDoc;
+import org.compiere.model.IPODoc;
 import org.compiere.model.I_C_ElementValue;
 import org.compiere.orm.*;
 import org.compiere.product.MAttributeInstance;
 import org.compiere.product.UUIDGenerator;
 import org.compiere.util.DisplayType;
 import org.compiere.util.Msg;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.compiere.wf.MMessage;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.exceptions.DBException;
@@ -117,7 +121,7 @@ public abstract class PO extends org.compiere.orm.PO implements IPODoc {
     /**
      * 	Get PDF Attachment Data
      *	@return data or null
-     */
+     */    
     public byte[] getPdfAttachment()
     {
         return getAttachmentData(".pdf");
@@ -2006,13 +2010,13 @@ public abstract class PO extends org.compiere.orm.PO implements IPODoc {
 
 
     /* Doc - To be used on ModelValidator to get the corresponding Doc from the PO */
-    private Doc m_doc;
+    private IDoc m_doc;
 
     /**
      *      Set the accounting document associated to the PO - for use in POST ModelValidator
      *      @param doc Document
      */
-    public void setDoc(Doc doc) {
+    public void setDoc(IDoc doc) {
         m_doc = doc;
     }
 
@@ -2020,7 +2024,7 @@ public abstract class PO extends org.compiere.orm.PO implements IPODoc {
      *      Set the accounting document associated to the PO - for use in POST ModelValidator
      *      @return Doc Document
      */
-    public Doc getDoc() {
+    public IDoc getDoc() {
         return m_doc;
     }
 

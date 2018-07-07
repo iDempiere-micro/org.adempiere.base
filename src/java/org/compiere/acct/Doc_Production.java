@@ -31,6 +31,7 @@ import org.compiere.impl.MProductionLineMA;
 import org.compiere.impl.ProductCost;
 import org.compiere.impl.X_M_Production;
 import org.compiere.impl.X_M_ProductionLine;
+import org.compiere.model.IFact;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
 
@@ -193,7 +194,7 @@ public class Doc_Production extends Doc
 	 *  @param as account schema
 	 *  @return Fact
 	 */
-	public ArrayList<Fact> createFacts (MAcctSchema as)
+	public ArrayList<IFact> createFacts (MAcctSchema as)
 	{
 		//  create Fact Header
 		Fact fact = new Fact(this, as, Fact.POST_Actual);
@@ -485,7 +486,7 @@ public class Doc_Production extends Doc
 			}
 		}
 		//
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		facts.add(fact);
 		return facts;
 	}   //  createFact

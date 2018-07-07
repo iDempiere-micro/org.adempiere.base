@@ -9,6 +9,7 @@ import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MDepreciationEntry;
 import org.compiere.impl.MDepreciationExp;
+import org.compiere.model.IFact;
 import org.idempiere.common.util.Env;
 
 
@@ -60,9 +61,9 @@ public class Doc_DepreciationEntry extends Doc
 	}   //  getBalance
 
 	
-	public ArrayList<Fact> createFacts (MAcctSchema as)
+	public ArrayList<IFact> createFacts (MAcctSchema as)
 	{
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		//	Other Acct Schema
 		if (as.getC_AcctSchema_ID() != m_C_AcctSchema_ID)
 			return facts;

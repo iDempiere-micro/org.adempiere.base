@@ -17,6 +17,8 @@
 package org.compiere.acct;
 
 import org.compiere.impl.*;
+import org.compiere.model.IFact;
+import org.compiere.model.I_Fact_Acct;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
 
@@ -34,7 +36,7 @@ import java.util.logging.Level;
  *  
  *  BF [ 2789949 ] Multicurrency in matching posting
  */
-public final class Fact
+public final class Fact implements IFact
 {
 	/**
 	 *	Constructor
@@ -292,7 +294,7 @@ public final class Fact
 	 *  If not balanced create balancing entry in currency of the document
 	 *  @return FactLine
 	 */
-	public FactLine balanceSource()
+	public I_Fact_Acct balanceSource()
 	{
 		if (!m_acctSchema.isSuspenseBalancing() || m_doc.isMultiCurrency())
 			return null;
@@ -551,7 +553,7 @@ public final class Fact
 	 *          or if no balance sheet account exist, the line with the largest amount
 	 *  @return FactLine
 	 */
-	public FactLine balanceAccounting()
+	public I_Fact_Acct balanceAccounting()
 	{
 		BigDecimal diff = getAcctBalance();		//	DR-CR
 		if (log.isLoggable(Level.FINE)) log.fine("Balance=" + diff 

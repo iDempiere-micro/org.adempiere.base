@@ -74,6 +74,10 @@ dependencies {
 
     compile project(':org.compiere.server')
     compile files('../org.compiere.server/bin')
+
+    compile project(':org.compiere.validation')
+    compile files('../org.compiere.validation/bin')
+
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 buildscript {

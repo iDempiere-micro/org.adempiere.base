@@ -10,10 +10,9 @@ import org.compiere.order.IShipmentProcessorFactory;
 import org.compiere.order.MShipperFacade;
 import org.compiere.process.IProcessFactory;
 import org.compiere.process.ProcessCall;
-import org.compiere.product.IProductPricing;
-import org.compiere.tax.MTaxProvider;
 import org.compiere.util.PaymentExport;
 import org.compiere.util.ReplenishInterface;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.base.Service;
 import org.idempiere.common.util.CLogger;
 import org.osgi.framework.FrameworkUtil;
@@ -68,24 +67,6 @@ public class Core extends org.compiere.process.Core {
                     return process;
             }
         }
-        return null;
-    }
-
-    /**
-     *
-     * @param validatorId Java class name or equinox extension Id
-     * @return ModelValidator instance of null if validatorId not found
-     */
-    public static ModelValidator getModelValidator(String validatorId) {
-        List<IModelValidatorFactory> factoryList = Service.locator().list(IModelValidatorFactory.class).getServices();
-        if (factoryList != null) {
-            for(IModelValidatorFactory factory : factoryList) {
-                ModelValidator validator = factory.newModelValidatorInstance(validatorId);
-                if (validator != null)
-                    return validator;
-            }
-        }
-
         return null;
     }
 

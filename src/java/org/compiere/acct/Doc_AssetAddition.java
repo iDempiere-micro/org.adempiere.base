@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import org.compiere.impl.*;
+import org.compiere.model.IFact;
 import org.compiere.model.I_C_Project;
 import org.compiere.model.I_C_Project_Acct;
 import org.compiere.orm.MDocType;
@@ -41,10 +42,10 @@ public class Doc_AssetAddition extends Doc
 	 * </pre>
 	 */
 	
-	public ArrayList<Fact> createFacts(MAcctSchema as)
+	public ArrayList<IFact> createFacts(MAcctSchema as)
 	{
 		MAssetAddition assetAdd = getAssetAddition();
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		Fact fact = new Fact(this, as, assetAdd.getPostingType());
 		facts.add(fact);
 		//

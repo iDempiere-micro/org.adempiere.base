@@ -3,9 +3,7 @@ package org.compiere.impl;
 import org.adempiere.exceptions.FillMandatoryException;
 import org.compiere.acct.Doc;
 import org.compiere.crm.MBPartner;
-import org.compiere.model.I_C_Invoice;
-import org.compiere.model.I_C_OrderLine;
-import org.compiere.model.I_M_InOut;
+import org.compiere.model.*;
 import org.compiere.order.*;
 import org.compiere.orm.*;
 import org.compiere.orm.MOrg;
@@ -14,6 +12,8 @@ import org.compiere.process2.DocumentEngine;
 import org.compiere.product.MPriceList;
 import org.compiere.product.MPriceListVersion;
 import org.compiere.util.Msg;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
@@ -1641,10 +1641,10 @@ public class MOrder extends org.compiere.order.MOrder implements DocAction, IPOD
     }
 
     /* Doc - To be used on ModelValidator to get the corresponding Doc from the PO */
-    private Doc m_doc;
+    private IDoc m_doc;
 
     @Override
-    public void setDoc(Doc doc) {
+    public void setDoc(IDoc doc) {
         m_doc = doc;
     }
 }

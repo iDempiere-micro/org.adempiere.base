@@ -21,7 +21,7 @@ import org.compiere.impl.MClient;
 import org.compiere.lookups.MLookup;
 import org.compiere.orm.MSysConfig;
 import org.compiere.impl.MSystem;
-import org.compiere.impl.ModelValidationEngine;
+import org.compiere.validation.ModelValidationEngine;
 import org.compiere.webutil.Login;
 import org.idempiere.common.db.CConnection;
 import org.idempiere.common.util.*;

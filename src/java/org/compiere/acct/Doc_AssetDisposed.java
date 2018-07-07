@@ -8,6 +8,7 @@ import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MAssetAcct;
 import org.compiere.impl.MAssetDisposed;
+import org.compiere.model.IFact;
 import org.compiere.orm.MDocType;
 import org.idempiere.common.util.Env;
 
@@ -42,11 +43,11 @@ public class Doc_AssetDisposed extends Doc
 	}
 
 	
-	public ArrayList<Fact> createFacts(MAcctSchema as)
+	public ArrayList<IFact> createFacts(MAcctSchema as)
 	{
 		MAssetDisposed assetDisp = (MAssetDisposed)getPO();
 		
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		Fact fact = new Fact(this, as, assetDisp.getPostingType());
 		facts.add(fact);
 		//

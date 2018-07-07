@@ -26,6 +26,7 @@ import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MRequisition;
 import org.compiere.impl.MRequisitionLine;
 import org.compiere.impl.ProductCost;
+import org.compiere.model.IFact;
 import org.idempiere.common.util.Env;
 
 /**
@@ -119,9 +120,9 @@ public class Doc_Requisition extends Doc
 	 * @param as accounting schema
 	 * @return Fact
 	 */
-	public ArrayList<Fact> createFacts (MAcctSchema as)
+	public ArrayList<IFact> createFacts (MAcctSchema as)
 	{
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		Fact fact = new Fact (this, as, Fact.POST_Reservation);
 		setC_Currency_ID(as.getC_Currency_ID());
 		//

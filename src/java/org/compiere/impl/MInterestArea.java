@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.crm.MContactInterest;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
@@ -162,7 +163,7 @@ public class MInterestArea extends X_R_InterestArea
 	/*************************************************************************/
 
 	private int 				m_AD_User_ID = -1;
-	private MContactInterest 	m_ci = null;
+	private MContactInterest m_ci = null;
 
 	/**
 	 * 	Set Subscription info "constructor".

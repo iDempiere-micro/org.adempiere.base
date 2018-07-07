@@ -45,6 +45,8 @@ import org.compiere.product.MProductBOM;
 import org.compiere.tax.IInvoiceTaxProvider;
 import org.compiere.tax.MTax;
 import org.compiere.tax.MTaxProvider;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions.BPartnerNoAddressException;
 import org.idempiere.common.exceptions.DBException;

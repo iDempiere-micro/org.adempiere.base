@@ -34,6 +34,7 @@ import org.compiere.impl.MInvoice;
 import org.compiere.impl.MInvoiceLine;
 import org.compiere.impl.MOrder;
 import org.compiere.impl.MPayment;
+import org.compiere.model.IFact;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.DB;
 import org.idempiere.common.util.Env;
@@ -71,7 +72,7 @@ public class Doc_AllocationHdr extends Doc
 	/**	Tolerance G&L				*/
 	private static final BigDecimal	TOLERANCE = BigDecimal.valueOf(0.02);
 	/** Facts						*/
-	private ArrayList<Fact>		m_facts = null;
+	private ArrayList<IFact>		m_facts = null;
 
 
 	/**
@@ -163,9 +164,9 @@ public class Doc_AllocationHdr extends Doc
 	 *  @param as accounting schema
 	 *  @return Fact
 	 */
-	public ArrayList<Fact> createFacts (MAcctSchema as)
+	public ArrayList<IFact> createFacts (MAcctSchema as)
 	{
-		m_facts = new ArrayList<Fact>();
+		m_facts = new ArrayList<IFact>();
 
 		//  create Fact Header
 		Fact fact = new Fact(this, as, Fact.POST_Actual);

@@ -18,6 +18,9 @@
 package org.compiere.impl;
 
 import org.compiere.bo.MOpportunity;
+import org.compiere.model.I_AD_Client;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.icommon.model.IPO;
 
@@ -44,7 +47,8 @@ public class SalesMgmtValidator implements ModelValidator
 	 *	@param engine validation engine 
 	 *	@param client client
 	 */
-	public void initialize (ModelValidationEngine engine, MClient client)
+	@Override
+	public void initialize (ModelValidationEngine engine, I_AD_Client client)
 	{
 		//client = null for global validator
 		if (client != null) {	
@@ -142,7 +146,7 @@ public class SalesMgmtValidator implements ModelValidator
 		return null;
 	}	//	login
 
-	
+
 	/**
 	 *	Get Client to be monitored
 	 *	@return AD_Client_ID client

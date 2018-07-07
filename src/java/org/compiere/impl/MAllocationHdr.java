@@ -31,6 +31,8 @@ import org.compiere.model.I_C_Invoice;
 import org.compiere.orm.*;
 import org.compiere.process.DocAction;
 import org.compiere.product.MCurrency;
+import org.compiere.validation.ModelValidationEngine;
+import org.compiere.validation.ModelValidator;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.adempiere.exceptions2.PeriodClosedException;
 import org.compiere.process2.DocumentEngine;

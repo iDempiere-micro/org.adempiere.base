@@ -3,6 +3,8 @@ package org.compiere.impl;
 import org.adempiere.exceptions.FillMandatoryException;
 import org.adempiere.exceptions.WarehouseLocatorConflictException;
 import org.compiere.acct.Doc;
+import org.compiere.model.IDoc;
+import org.compiere.model.IPODoc;
 import org.compiere.model.I_M_AttributeSet;
 import org.compiere.model.I_M_InOutLine;
 import org.compiere.order.MInOut;
@@ -315,10 +317,10 @@ public class MInOutLine extends org.compiere.order.MInOutLine implements IPODoc 
     }	//	setClientOrg
 
     /* Doc - To be used on ModelValidator to get the corresponding Doc from the PO */
-    private Doc m_doc;
+    private IDoc m_doc;
 
     @Override
-    public void setDoc(Doc doc) {
+    public void setDoc(IDoc doc) {
         m_doc = doc;
     }
 

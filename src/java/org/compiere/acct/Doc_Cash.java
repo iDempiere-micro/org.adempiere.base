@@ -25,6 +25,7 @@ import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MCash;
 import org.compiere.impl.MCashBook;
 import org.compiere.impl.MCashLine;
+import org.compiere.model.IFact;
 import org.idempiere.common.util.Env;
 
 /**
@@ -148,7 +149,7 @@ public class Doc_Cash extends Doc
 	 *  @param as account schema
 	 *  @return Fact
 	 */
-	public ArrayList<Fact> createFacts (MAcctSchema as)
+	public ArrayList<IFact> createFacts (MAcctSchema as)
 	{
 		//  Need to have CashBook
 		if (getC_CashBook_ID() == 0)
@@ -251,7 +252,7 @@ public class Doc_Cash extends Doc
 		}
 
 		//
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		facts.add(fact);
 		return facts;
 	}   //  createFact

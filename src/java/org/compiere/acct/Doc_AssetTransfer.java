@@ -8,6 +8,7 @@ import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
 import org.compiere.impl.MAssetTransfer;
 import org.compiere.impl.MDepreciationWorkfile;
+import org.compiere.model.IFact;
 import org.compiere.orm.MDocType;
 import org.idempiere.common.util.Env;
 
@@ -46,13 +47,13 @@ public class Doc_AssetTransfer extends Doc
 	 * </pre>
 	 */
 	
-	public ArrayList<Fact> createFacts(MAcctSchema as)
+	public ArrayList<IFact> createFacts(MAcctSchema as)
 	{
 		MAssetTransfer assetTr = getAssetTransfer();
 		MDepreciationWorkfile wk = getAssetWorkfile();	
 	    //MDepreciationExp exp = getExpense();
 		
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		Fact fact = new Fact(this, as, assetTr.getPostingType());
 		facts.add(fact);
 		//

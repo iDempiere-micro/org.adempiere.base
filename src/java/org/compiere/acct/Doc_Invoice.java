@@ -28,6 +28,7 @@ import java.util.Map;
 import java.util.logging.Level;
 
 import org.adempiere.exceptions.AverageCostingZeroQtyException;
+import org.compiere.model.IFact;
 import org.compiere.model.I_M_InOutLine;
 import org.compiere.impl.MAccount;
 import org.compiere.impl.MAcctSchema;
@@ -353,10 +354,10 @@ public class Doc_Invoice extends Doc
 	 *  @param as accounting schema
 	 *  @return Fact
 	 */
-	public ArrayList<Fact> createFacts (MAcctSchema as)
+	public ArrayList<IFact> createFacts (MAcctSchema as)
 	{
 		//
-		ArrayList<Fact> facts = new ArrayList<Fact>();
+		ArrayList<IFact> facts = new ArrayList<IFact>();
 		//  create Fact Header
 		Fact fact = new Fact(this, as, Fact.POST_Actual);
 
